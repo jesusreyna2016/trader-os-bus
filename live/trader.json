@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-21",
-  "asOf": "2026-11-21T23:15:43.820Z",
+  "asOf": "2026-11-21T23:15:28.296Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 1,
+  "todayViolations": 4,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,14 +16,32 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 1,
+    "used": 5,
     "riskPerTrade": 50,
     "dayStop": 100,
-    "pnl": -12531.97,
-    "pnlR": -250.64,
-    "maxLossStreak": 1
+    "pnl": -12862.71,
+    "pnlR": -257.25,
+    "maxLossStreak": 3
   },
   "openFlags": [
+    {
+      "rule": "R1",
+      "at": 1795237353344,
+      "sym": "ETH",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
+      "at": 1795273549912,
+      "sym": "ETH",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "stop",
+      "at": 1795300875710,
+      "sym": "ETH",
+      "note": "posicion abierta sin stop"
+    },
     {
       "rule": "stop",
       "at": 1795273591416,
@@ -47,9 +65,88 @@
       "flags": [
         "DAY_STOP_HIT"
       ]
+    },
+    {
+      "acct": "jh719yq5gt3dgsjmacy6xy45bx8jkhqm",
+      "name": "Funded 10K",
+      "sym": "ETH",
+      "side": "short",
+      "size": 6.613,
+      "entry": 1563.1,
+      "exit": 1545.49,
+      "pnl": 110.16,
+      "r": 2.2,
+      "openedAt": 1795237353344,
+      "closedAt": 1795241837930,
+      "flags": [
+        "R1_REVENGE",
+        "DAY_STOP_HIT"
+      ]
+    },
+    {
+      "acct": "jh719yq5gt3dgsjmacy6xy45bx8jkhqm",
+      "name": "Funded 10K",
+      "sym": "ETH",
+      "side": "long",
+      "size": 6,
+      "entry": 1708.12,
+      "exit": 1695.56,
+      "pnl": -81.61,
+      "r": -1.63,
+      "openedAt": 1795268321471,
+      "closedAt": 1795270188687,
+      "flags": [
+        "DAY_STOP_HIT"
+      ]
+    },
+    {
+      "acct": "jh719yq5gt3dgsjmacy6xy45bx8jkhqm",
+      "name": "Funded 10K",
+      "sym": "ETH",
+      "side": "long",
+      "size": 12,
+      "entry": 1689.30125,
+      "exit": 1679.99,
+      "pnl": -125.63,
+      "r": -2.51,
+      "openedAt": 1795273458336,
+      "closedAt": 1795300875710,
+      "flags": [
+        "DAY_STOP_HIT"
+      ]
+    },
+    {
+      "acct": "jh77972wv6djnm8ryam9f8bfjs8jj9hv",
+      "name": "Elite 3% DLL 10K Challenge",
+      "sym": "ETH",
+      "side": "long",
+      "size": 17.907,
+      "entry": 1695.475,
+      "exit": 1683.44,
+      "pnl": -233.66,
+      "r": -4.67,
+      "openedAt": 1795273549912,
+      "closedAt": 1795274173375,
+      "flags": [
+        "R1_REVENGE",
+        "DAY_STOP_HIT"
+      ]
     }
   ],
   "openPositions": [
+    {
+      "acct": "jh719yq5gt3dgsjmacy6xy45bx8jkhqm",
+      "name": "Funded 10K",
+      "sym": "ETH",
+      "side": "short",
+      "size": 15,
+      "entry": 1680.023,
+      "openedAt": 1795300875710,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ]
+    },
     {
       "acct": "jh78km012eh329gky6cbpj6a518jmn0v",
       "name": "NAS100 Composite Test Cup",
