@@ -33,6 +33,9 @@ de venganza / re-entradas impulsivas tras un SL). Todo orbita eso.
 - `live/market.json` y `live/plan.json`: el contexto y el plan del día, para juzgar si un
   trade estaba a favor del plan o fue tierra de nadie / contra-sesgo.
 - `live/edge.json`: para no recomendarle operar setups sin edge probado.
+- `events/<fecha>.jsonl`, filas con `src:"coach"` (NUDGE en vivo de _live.mjs): REVENGE, NO_STOP,
+  NO_PLAN, OVERSIZE, LOSS, AFTER_LOST, LOST_ACCOUNT, cada una con su hora. Son la evidencia en el
+  momento de lo que pasó; úsalas para fechar la fuga del día (ej. "nudge de revancha a las 14:30").
 
 ## Las reglas (registro vivo del trader)
 
