@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-22",
-  "asOf": "2026-11-22T03:30:35.818Z",
+  "asOf": "2026-11-22T03:45:28.525Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 3,
+  "todayViolations": 4,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,12 +16,12 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 5,
+    "used": 6,
     "riskPerTrade": 50,
     "dayStop": 100,
-    "pnl": -12753.36,
-    "pnlR": -255.07,
-    "maxLossStreak": 3
+    "pnl": -12987.02,
+    "pnlR": -259.74,
+    "maxLossStreak": 4
   },
   "openFlags": [
     {
@@ -32,7 +32,7 @@
     },
     {
       "rule": "R1",
-      "at": 1795300875710,
+      "at": 1795273549912,
       "sym": "ETH",
       "note": "entrada dentro de la pausa tras un SL"
     },
@@ -110,6 +110,23 @@
       ]
     },
     {
+      "acct": "jh77972wv6djnm8ryam9f8bfjs8jj9hv",
+      "name": "Elite 3% DLL 10K Challenge",
+      "sym": "ETH",
+      "side": "long",
+      "size": 17.907,
+      "entry": 1695.475,
+      "exit": 1683.44,
+      "pnl": -233.66,
+      "r": -4.67,
+      "openedAt": 1795273549912,
+      "closedAt": 1795274173375,
+      "flags": [
+        "R1_REVENGE",
+        "DAY_STOP_HIT"
+      ]
+    },
+    {
       "acct": "jh719yq5gt3dgsjmacy6xy45bx8jkhqm",
       "name": "Funded 10K",
       "sym": "ETH",
@@ -122,7 +139,7 @@
       "openedAt": 1795300875710,
       "closedAt": 1795310029062,
       "flags": [
-        "R1_REVENGE",
+        "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ]
     }
