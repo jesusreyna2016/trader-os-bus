@@ -37,11 +37,12 @@ credenciales, reintenta una vez; si sigue, usa la Contents API de GitHub
 - `events/<YYYY-MM-DD>.jsonl` — eventos semánticos Tier B (TDL_KL: TOUCH/REJECT/SWEEP/ACCEPT/CISD_*/
   ALIGN_*; TDL_REV: entradas y resoluciones TARGET_HIT/INVALIDATED; TDL_PO3: PHASE_CHANGE). Úsalos como
   confluencia y contexto en vivo (barridas, CISD, alineación), no como señal por sí solos.
-- `state/contexto-state.json` — tu historial acumulado (mismo rol que el viejo `sa-state`). **En esta
-  fase puede estar vacío (`{}`): es normal.** Donde el método pida `scorecard`/`zones`/`sourceReliability`/
-  calibración y no haya datos, usa los PRIORES por defecto que el propio método define (winRate por
-  arquetipo sección 4, reparto por sesión sección 5, convicción). NO inventes histórico: di "sin
-  histórico aún (fase paralela)".
+- `state/contexto-state.json` — tu historial acumulado (mismo rol que el viejo `sa-state`). **Sembrado
+  desde el Session Analyst (migración de calibración, 2026-11-22): trae `scorecard` con `hitLog` de 46
+  días calificados, `hitBaseline`, `emCalibration`, `zoneEdge`, `sourceReliability`, `models`, `zones` e
+  `hypotheses` reales.** Úsalos como priores de verdad (ya NO los por-defecto genéricos). El `scorecard`
+  lo reconstruyen solos los scripts cada día (abajo). Si alguna sub-sección faltara, recae en el prior por
+  defecto del método, pero ya no es el caso normal.
 - `state/trader-profile.json` — **OBLIGATORIO en CADA corrida** (sección 4.1). Es lo que hace el plan
   de Jesus, no genérico. No lo reescribas.
 
@@ -49,23 +50,34 @@ credenciales, reintenta una vez; si sigue, usa la Contents API de GitHub
 - `live/plan.json` — el plan de esta corrida (schema `sa-plan-2`, sección 7). Es el plan vivo que el
   cerebro y el Command Center leen; el método (ya renombrado) lo escribe aquí.
 - `plans/<fecha>-<RUN_TYPE>.json` — copia fechada de archivo.
-- `state/contexto-state.json` — merge de tu historial: `narrative`, `dayThesis`, `plans`, `planLatest`
-  (en esta fase NO el scorecard/zones completos; eso llega con la migración de calibración).
+- `state/contexto-state.json` — merge de tu historial: `narrative`, `dayThesis`, `plans`, `planLatest`,
+  y (en `pre-asia`) el `scorecard`/`zones`/`hypotheses` que reconstruyen los scripts python (sección 6).
 - `plans/digest.txt` — resumen móvil (sección 7).
 - `live/plan-heartbeat.json` — `{ lastRun, runType, ok, note }` de esta lente. **NO toques
   `live/trader.json`** (es del Coach) ni `live/market.json`/`live/feeds.json`/`live/edge.json` (los
   escriben las funciones Netlify del cerebro).
 
-**Desviaciones de esta fase (adaptador-primero), se reactivan con la migración de calibración:**
-- **NO corras los scripts python** del método (`grade_plans.py`, `update_scorecard.py`, `lint_plan.py`,
-  `check_plan.py`): no están en este bus. Haz a mano el auto-chequeo del plan (el de la cabecera: prosa
-  legible, coherencia de niveles, no-trade, dirección/predicciones).
-- **Secciones 6 (cierre y calificación del día) y 6.1 (semanal): DESACTIVADAS.** No escribas `reviews/`
-  ni `grades/`, no re-califiques ayer, no toques el pooling de `zones` ni el `scorecard`. En `pre-asia`
-  salta directo al plan de Asia (el flujo de plan sin la parte de calificación). La calificación
-  automática y la calibración se migran cuando el paralelo esté probado.
-- `live/journal.json` (plan vs ejecución, sección 6) puede faltar en esta fase: si falta, trátalo como
-  "sin datos de ejecución".
+**Calificación y calibración (ACTIVAS desde 2026-11-22, migración de calibración hecha):**
+- **Corre los scripts python** del método, ya están en este bus (`method/*.py`) y leen/escriben
+  `state/contexto-state.json`:
+  - `pre-asia`: `python3 method/grade_plans.py <fecha_ayer>` (califica los planes de ayer contra las
+    velas reales de `bars/<fecha_ayer>.json`, que escribe la función Netlify `tos-bus-bars` cada hora a
+    :09), luego `python3 method/update_scorecard.py <fecha_ayer>`, luego `python3 method/prune_hypotheses.py`.
+  - `pre-london`/`pre-ny`: `python3 method/prune_hypotheses.py --plans-only` antes del commit.
+  - `weekly`: `python3 method/weekly_r.py` para la expectativa en R (sección 6.1).
+  - la corrida de cripto (`crypto.md`): `python3 method/grade_plans.py --crypto <fecha_ayer>` para
+    calificar los planes de cripto de ese día UTC (escribe `grades/crypto/<fecha>.json`).
+  - Todas: valida el plan con `python3 method/lint_plan.py plans/<fecha>-<RUN_TYPE>.json` y
+    `python3 method/check_plan.py`; si fallan, arregla lo que digan y re-corre hasta que pasen.
+  - Si `grade_plans.py` no encuentra `bars/<fecha_ayer>.json` (p.ej. un día sin cotización o el primer
+    día tras arrancar la función de velas), sáltalo y anota "sin velas para calificar <fecha>" en el
+    review; NO inventes la calificación.
+- **Secciones 6 (cierre y calificación del día, solo `pre-asia`) y 6.1 (meta-revisión semanal,
+  `weekly`): ACTIVAS.** Escribe `reviews/<fecha>.md`, deja que el script escriba `grades/<fecha>.json`,
+  re-califica ayer y deja que `update_scorecard.py` reconstruya `scorecard`/`zoneEdge`/`emCalibration`
+  desde `grades/` + `hitLog`.
+- `live/journal.json` (plan vs ejecución, sección 6): si falta, trátalo como "sin datos de ejecución"
+  (esa parte del review se omite; el resto de la calificación sí corre).
 - El resto del método (secciones 2, 2b, 2c, 3, 4, 4.1, 5, 7, 8, reglas 8b/8c, `reachability.md`,
   `crypto.md`) se sigue **tal cual**, leyendo del objeto `market` construido arriba.
 

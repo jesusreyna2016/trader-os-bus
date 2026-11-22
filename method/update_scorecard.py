@@ -1,0 +1,432 @@
+#!/usr/bin/env python3
+"""Deterministic parts of the pre-asia scorecard merge, so they cannot fall behind.
+
+Usage: python3 method/update_scorecard.py <fecha_ayer>        (pre-asia, after the state merge)
+       python3 method/update_scorecard.py <fecha_ayer> --check (only verify, exit 1 if stale)
+
+1. scorecard.execution.ALL is rebuilt from scratch from live/journal.json byDay
+   (rolling 45 calendar days ending at <fecha_ayer>), never incremented by hand.
+   Before this script it was hand-merged and stayed frozen at days:14 for a week.
+2. scorecard.emErrorTicks is derived from scorecard.emCalibration (n-weighted meanErrTk per
+   symbol), so the two can never disagree again.
+3. Check: emCalibration._lastDate must be <fecha_ayer>, or reviews/<fecha_ayer>.md must say
+   "sin muestra EM" with the reason. Both were silently skipped for weeks.
+4. biasHitPct / scenarioAHitPct / scenarioABHitPct / zoneHitPct are rebuilt from
+   scorecard.hitLog (one structured entry per graded day) on top of scorecard.hitBaseline (the
+   hand-kept totals as of 2026-10-16). They were hand-merged from review prose and froze twice
+   (9 days in October, then a full week). Check: hitLog["<fecha_ayer>"] must exist, or
+   reviews/<fecha_ayer>.md must say "sin calificacion de aciertos" with the reason.
+5. scorecard.contextScore = the same hitLog grades split by the context each day had (taken
+   from that day's saved plans, never typed by hand): news risk, major calendar day, frame
+   conflict, whipsaw risk, conviction, neutral vs directional bias, weekday, macroContext risk.
+   scorecard.blindSpots / strengths list the segments where the agent is clearly worse / better
+   than its own average, so the plan can lower or keep conviction in that context.
+6. If grades/<fecha_ayer>.json exists (method/grade_plans.py, real 5m bars), its bias / scenA /
+   zone / em totals REPLACE the hand grades of hitLog["<fecha_ayer>"] (scenAB stays hand-graded,
+   it needs judgment). Check: the grades file must exist, or the review must say
+   "sin calificacion automatica" with the reason.
+7. scorecard.execution.planFit = method/plan_vs_exec.py over live/journal.json fills: each real
+   position vs the plan live at that minute (in-plan / off-zone / against / no-plan).
+9. scorecard.emCalibration is rebuilt from grades/*.json (2026-10-30): per "<SYM>|<asia|london|ny>",
+   the last 30 graded sessions, ratio = real range / raw base (plan base divided by the mult the
+   plan applied). mult = median ratio clipped to 0.7-3.0; meanErrTk/biasTk in ticks of that same
+   raw base. The hand-kept cells (including the old "londres" split) are kept under "_hand".
+8. scorecard.zoneEdge = every graded futures zone in grades/*.json up to <fecha_ayer> pooled by
+   family x vs24h, type x vs24h and family x session: n (worked + failed), wins, winRate,
+   avgR. Rule 8e reads it to keep or retire the zone hierarchy it set on 2026-10-30.
+"""
+import datetime as dt
+import io
+import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+STATE = "state/contexto-state.json"
+WINDOW_DAYS = 45
+HIT_KEYS = {"biasHitPct": "bias", "scenarioAHitPct": "scenA", "scenarioABHitPct": "scenAB", "zoneHitPct": "zone"}
+HIT_WINDOW = 60      # days of hitLog kept and summed
+HIT_LOG_ONLY = 20    # once the log has this many graded days, the hand-kept baseline is dropped
+
+
+def load(p):
+    return json.load(io.open(p, encoding="utf-8"))
+
+
+def execution(by_day, end):
+    start = (dt.date.fromisoformat(end) - dt.timedelta(days=WINDOW_DAYS - 1)).isoformat()
+    days = [d for d in by_day if start <= d.get("date", "") <= end]
+    if not days:
+        return None
+    s = lambda k: sum(int(d.get(k) or 0) for d in days)
+    pos = s("positions")
+    flags = {k: sum(1 for d in days if d.get(k)) for k in ("overtrade", "revenge", "roundTrip")}
+    return {
+        "days": len(days), "n": s("trades"), "graded": s("graded"),
+        "withBias": s("withBias"), "againstBias": s("againstBias"),
+        "validEdge": s("validEdge"), "outsideEdge": s("outsideEdge"),
+        "disciplinedPct": round(100 * sum(1 for d in days if d.get("disciplined")) / len(days)),
+        "positions": pos,
+        "partialRate": round(s("partials") / pos, 3) if pos else None,
+        "scratchRate": round(s("scratches") / pos, 3) if pos else None,
+        "fullStopRate": round(s("fullStops") / pos, 3) if pos else None,
+        "overtradeDays": flags["overtrade"], "revengeDays": flags["revenge"], "roundTripDays": flags["roundTrip"],
+        "firstDate": days[0]["date"], "lastDate": days[-1]["date"],
+        "note": "Rebuilt by method/update_scorecard.py from live/journal.json byDay (%d-day window). Account-level, the journal does not split by instrument." % WINDOW_DAYS,
+    }
+
+
+EM_TICK = {"NQ": 0.25, "ES": 0.25, "GC": 0.1, "YM": 1.0, "CL": 0.01}
+EM_WINDOW = 30
+
+
+def em_calibration_auto(sc, end):
+    samples = {}
+    for f in sorted(os.listdir("grades")) if os.path.isdir("grades") else []:
+        if not f.endswith(".json") or f[:10] > end:
+            continue
+        try:
+            g = load(os.path.join("grades", f))
+        except ValueError:
+            continue
+        for run in g.get("runs") or []:
+            sess = {"londres": "london"}.get(run.get("session"), run.get("session"))
+            try:
+                plan = load("plans/%s-%s.json" % (f[:10], run.get("run")))
+            except (FileNotFoundError, ValueError):
+                plan = {}
+            for sym, gi in (run.get("instruments") or {}).items():
+                em = gi.get("em") or {}
+                try:
+                    base, real = float(em["base"]), float(em["realPts"])
+                except (KeyError, TypeError, ValueError):
+                    continue
+                pm = (((plan.get("instruments") or {}).get(sym) or {}).get("expectedMove") or {}).get("mult")
+                try:
+                    pm = float(str(pm).split()[0]) if pm not in (None, "") else 1.0
+                except ValueError:
+                    pm = 1.0
+                raw = base / pm if pm else base
+                if raw > 0:
+                    samples.setdefault("%s|%s" % (sym, sess), []).append((f[:10], raw, real))
+    if not samples:
+        return False
+    old = {k: v for k, v in (sc.get("emCalibration") or {}).items() if k != "_hand"}
+    cal = {"_hand": (sc.get("emCalibration") or {}).get("_hand") or old,
+           "_note": "auto from grades/ (real-bar session range vs raw plan base), last %d sessions per cell" % EM_WINDOW}
+    for key, v in sorted(samples.items()):
+        v = sorted(v)[-EM_WINDOW:]
+        ratios = sorted(r / b for _, b, r in v)
+        tick = EM_TICK.get(key.split("|")[0], 0.01)
+        errs = [(r - b) / tick for _, b, r in v]
+        n = len(v)
+        cal[key] = {"n": n, "mult": round(min(3.0, max(0.7, ratios[n // 2])), 2),
+                    "p25": round(ratios[n // 4], 2), "p75": round(ratios[(3 * n) // 4], 2),
+                    "meanErrTk": round(sum(abs(e) for e in errs) / n, 1), "biasTk": round(sum(errs) / n, 1),
+                    "biasTkSign": "+" if sum(errs) > 0 else "-", "src": "auto"}
+    cal["_lastDate"] = end
+    sc["emCalibration"] = cal
+    return True
+
+
+def em_error_ticks(cal, end):
+    out = {}
+    for key, c in cal.items():
+        if "|" not in key or not isinstance(c, dict) or not c.get("n"):
+            continue
+        sym = key.split("|")[0]
+        o = out.setdefault(sym, {"n": 0, "_w": 0.0})
+        o["n"] += int(c["n"])
+        o["_w"] += float(c.get("meanErrTk") or 0) * int(c["n"])
+    for sym, o in out.items():
+        o["avgTk"] = round(o.pop("_w") / o["n"], 1) if o["n"] else None
+        o["window"] = "derived from emCalibration (all sessions, n-weighted), as of %s" % end
+    return out
+
+
+def hit_counters(sc, end):
+    """Rebuild the four hit counters from hitLog (+ baseline while the log is short). Prunes the log."""
+    log = sc.setdefault("hitLog", {})
+    start = (dt.date.fromisoformat(end) - dt.timedelta(days=HIT_WINDOW - 1)).isoformat()
+    for d in [d for d in log if d < start]:
+        del log[d]
+    days = sorted(d for d in log if d <= end)
+    base = sc.get("hitBaseline") or {}
+    use_base = len(days) < HIT_LOG_ONLY and base
+    for counter, k in HIT_KEYS.items():
+        tot = {}
+        if use_base:
+            for sym, c in (base.get(counter) or {}).items():
+                tot[sym] = [float(c.get("hits") or 0), int(c.get("n") or 0)]
+        for d in days:
+            for sym, g in log[d].items():
+                if not isinstance(g, dict) or not g.get(k):
+                    continue
+                h, n = g[k]
+                t = tot.setdefault(sym, [0.0, 0])
+                t[0] += float(h)
+                t[1] += int(n)
+        win = ("baseline %s + hitLog %d days to %s" % (base.get("asOf"), len(days), end)) if use_base \
+            else "hitLog %d graded days to %s" % (len(days), end)
+        sc[counter] = {sym: {"n": n, "hits": round(h, 2), "pct": round(100 * h / n) if n else None, "window": win}
+                       for sym, (h, n) in sorted(tot.items())}
+
+
+CTX_METRICS = ("bias", "zone", "scenA")
+CTX_MIN_N = 8          # a segment needs this many graded calls before it counts as a blind spot / strength
+RISK_ORDER = {"NINGUNA": 0, "BAJO": 0, "MEDIA": 1, "MEDIO": 1, "ALTA": 2, "ALTO": 2}
+MAJOR_TAGS = ("fomc", "nfp", "cpi", "earnings-megacap")
+
+
+def day_plans(d):
+    out = []
+    for run in ("pre-asia", "asia-2", "pre-london", "pre-ny"):
+        try:
+            out.append(load("plans/%s-%s.json" % (d, run)))
+        except (FileNotFoundError, ValueError):
+            pass
+    return out
+
+
+def day_context(plans, sym):
+    """Context of one symbol on one day: the first plan sets the call, risks take the max of the day."""
+    if not plans:
+        return None
+    first = plans[0]
+    inst0 = (first.get("instruments") or {}).get(sym) or {}
+    news = max((RISK_ORDER.get(((p.get("newsRisk") or {}).get("level") or "").upper(), 0) for p in plans), default=0)
+    macro = max((RISK_ORDER.get(((p.get("macroContext") or {}).get("risk") or "").upper(), -1) for p in plans), default=-1)
+    tags = " ".join(" ".join((p.get("calendarContext") or {}).get("tags") or []) for p in plans).lower()
+    insts = [((p.get("instruments") or {}).get(sym) or {}) for p in plans]
+    conflict = any(((i.get("frameConflict") or {}).get("on")) for i in insts)
+    whip = max((float((i.get("whipsawRisk") or {}).get("score") or 0) for i in insts), default=0)
+    bias = (inst0.get("biasDay") or "").upper()
+    ctx = {
+        "news": ["none", "medium", "high"][news],
+        "calendar": "major" if any(t in tags for t in MAJOR_TAGS) else "normal",
+        "frame": "conflict" if conflict else "aligned",
+        "whipsaw": "high" if whip >= 0.5 else "low",
+        "conviction": (inst0.get("conviction") or "n/a").lower(),
+        "bias": "neutral" if bias in ("", "NEUTRAL", "INDECISO") else "directional",
+        "weekday": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"][dt.date.fromisoformat(plans[0].get("date") or "2000-01-03").weekday()],
+    }
+    if macro >= 0:
+        ctx["macro"] = ["low", "medium", "high"][macro]
+    ca = [(((p.get("macroContext") or {}).get("crossAsset") or {}).get("bySym") or {}).get(sym) for p in plans]
+    ca = [c for c in ca if c]
+    if ca:
+        ctx["crossAsset"] = ca[0]
+    return ctx
+
+
+def context_score(sc, end):
+    log = sc.get("hitLog") or {}
+    acc = {}   # metric -> sym -> dim -> value -> [hits, n]
+    for d in sorted(x for x in log if x <= end):
+        plans = day_plans(d)
+        for sym, g in log[d].items():
+            if not isinstance(g, dict):
+                continue
+            ctx = day_context(plans, sym)
+            if not ctx:
+                continue
+            for m in CTX_METRICS:
+                if not g.get(m):
+                    continue
+                h, n = float(g[m][0]), int(g[m][1])
+                for who in (sym, "ALL"):
+                    for dim, val in ctx.items():
+                        t = acc.setdefault(m, {}).setdefault(who, {}).setdefault(dim, {}).setdefault(val, [0.0, 0])
+                        t[0] += h
+                        t[1] += n
+    score, blind, strong = {}, [], []
+    for m, by_sym in acc.items():
+        for who, dims in by_sym.items():
+            tot_h = tot_n = 0
+            for val in next(iter(dims.values())).values():
+                tot_h += val[0]
+                tot_n += val[1]
+            base = tot_h / tot_n if tot_n else None
+            for dim, vals in dims.items():
+                for val, (h, n) in vals.items():
+                    pct = round(100 * h / n) if n else None
+                    score.setdefault(m, {}).setdefault(who, {}).setdefault(dim, {})[val] = {"n": n, "hits": round(h, 2), "pct": pct}
+                    if n < CTX_MIN_N or base is None or pct is None:
+                        continue
+                    row = {"metric": m, "sym": who, "when": "%s=%s" % (dim, val), "pct": pct, "n": n, "avgPct": round(100 * base)}
+                    if pct <= 40 and pct <= 100 * base - 10:
+                        blind.append(row)
+                    elif pct >= 65 and pct >= 100 * base + 10:
+                        strong.append(row)
+    sc["contextScore"] = {"_note": "hitLog grades split by the context of each day, derived from plans/<date>-*.json by method/update_scorecard.py. as of %s" % end, **score}
+    sc["blindSpots"] = sorted(blind, key=lambda r: r["pct"])
+    sc["strengths"] = sorted(strong, key=lambda r: -r["pct"])
+
+
+SESSION_ALIAS = {"londres": "london"}
+
+
+def normalize_sessions(sc):
+    """Hand-kept cells keyed "<SYM>|<session>[|...]": merge the old "londres" spelling into
+    "london" (counts summed, rate recomputed). Idempotent; returns how many keys were merged."""
+    merged = 0
+
+    def add(dst, src):
+        for k, v in src.items():
+            if isinstance(v, dict):
+                add(dst.setdefault(k, {}), v)
+            elif isinstance(v, (int, float)) and not isinstance(v, bool) and k != "rate":
+                dst[k] = dst.get(k, 0) + v
+            elif k not in dst:
+                dst[k] = v
+
+    def fix_rates(o, num, den):
+        if isinstance(o, dict):
+            for v in o.values():
+                fix_rates(v, num, den)
+            if num in o and den in o:
+                o["rate"] = round(o[num] / max(1, o[den]), 4)
+
+    for name, pairs in (("missedOps", [("wouldvePaid", "waitAvoid")]),
+                        ("sourceReliability", [("hits", "calls")]),
+                        ("verdictScore", [("hits", "n"), ("saves", "n")])):
+        obj = sc.get(name)
+        if not isinstance(obj, dict):
+            continue
+        for key in [k for k in obj if "|londres" in k]:
+            new = key.replace("|londres", "|london")
+            add(obj.setdefault(new, {}), obj.pop(key))
+            merged += 1
+            for num, den in pairs:
+                if name == "verdictScore":
+                    for side in obj[new].values():
+                        if isinstance(side, dict) and num in side and den in side:
+                            side["rate"] = round(side[num] / max(1, side[den]), 4)
+                else:
+                    fix_rates(obj[new], num, den)
+    return merged
+
+
+def zone_edge(sc, end):
+    acc = {}
+    for f in sorted(os.listdir("grades")) if os.path.isdir("grades") else []:
+        if not f.endswith(".json") or f[:10] > end:
+            continue
+        try:
+            g = load(os.path.join("grades", f))
+        except ValueError:
+            continue
+        for run in g.get("runs") or []:
+            for inst in (run.get("instruments") or {}).values():
+                for z in inst.get("zones") or []:
+                    if z.get("outcome") not in ("worked", "failed") or z.get("r") is None:
+                        continue
+                    v = z.get("vs24h") or "n/a"
+                    for key in ("%s|%s" % (z.get("family"), v), "%s|%s" % (z.get("type"), v),
+                                "%s|%s" % (z.get("family"), SESSION_ALIAS.get(run.get("session"), run.get("session")))):
+                        t = acc.setdefault(key, [0, 0, 0.0])
+                        t[0] += 1
+                        t[1] += z["outcome"] == "worked"
+                        t[2] += z["r"]
+    sc["zoneEdge"] = {"_note": "Graded zones pooled by family|vs24h, type|vs24h, family|session (method/update_scorecard.py). as of %s" % end,
+                      **{k: {"n": n, "wins": w, "winRate": round(w / n, 3), "avgR": round(r / n, 2)} for k, (n, w, r) in sorted(acc.items())}}
+
+
+def apply_auto_grades(sc, end):
+    """Real-bar grades win over hand grades for the metrics a script can decide."""
+    try:
+        g = load("grades/%s.json" % end)
+    except (FileNotFoundError, ValueError):
+        return False
+    day = sc.setdefault("hitLog", {}).setdefault(end, {})
+    for sym, t in (g.get("hitLog") or {}).items():
+        e = day.setdefault(sym, {})
+        for k in ("bias", "scenA", "zone", "em"):
+            if k in t:
+                if k in e and "src" not in e:
+                    e.setdefault("hand", {})[k] = e[k]
+                e[k] = t[k]
+        e["src"] = "auto"
+    return True
+
+
+def main():
+    if len(sys.argv) < 2:
+        print(__doc__)
+        return 2
+    end, check_only = sys.argv[1], "--check" in sys.argv
+    state = load(STATE)
+    sc = state.setdefault("scorecard", {})
+    errs = []
+    if not check_only:
+        normalize_sessions(sc)
+
+    try:
+        by_day = sorted(load("live/journal.json").get("byDay") or [], key=lambda d: d.get("date", ""))
+    except FileNotFoundError:
+        by_day = []
+    ex = execution(by_day, end)
+    cur = (sc.get("execution") or {}).get("ALL") or {}
+    if check_only:
+        if ex and cur.get("lastDate") != ex["lastDate"]:
+            errs.append("scorecard.execution.ALL.lastDate=%s but journal has %s: run python3 method/update_scorecard.py %s" % (cur.get("lastDate"), ex["lastDate"], end))
+    elif ex:
+        sc.setdefault("execution", {})["ALL"] = ex
+    if not check_only:
+        try:
+            import plan_vs_exec
+            fit = plan_vs_exec.plan_fit(load("live/journal.json"))
+            if fit["positions"]:
+                sc.setdefault("execution", {})["planFit"] = fit
+        except FileNotFoundError:
+            pass
+
+    if not check_only and os.path.exists("grades/%s.json" % end):
+        em_calibration_auto(sc, end)
+    cal = sc.get("emCalibration") or {}
+    if not check_only:
+        sc["emErrorTicks"] = em_error_ticks(cal, end)
+    if cal.get("_lastDate") != end:
+        try:
+            rv = io.open("reviews/%s.md" % end, encoding="utf-8").read().lower()
+        except FileNotFoundError:
+            rv = ""
+        if "sin muestra em" not in rv:
+            errs.append('emCalibration._lastDate=%s, expected %s: add the EM samples of %s to emCalibration (section "Calibracion") and set _lastDate, or write "sin muestra EM: <motivo>" in reviews/%s.md' % (cal.get("_lastDate"), end, end, end))
+
+    auto = os.path.exists("grades/%s.json" % end)
+    if not check_only:
+        apply_auto_grades(sc, end)
+        hit_counters(sc, end)
+        context_score(sc, end)
+        zone_edge(sc, end)
+    if not auto:
+        try:
+            rv = io.open("reviews/%s.md" % end, encoding="utf-8").read().lower()
+        except FileNotFoundError:
+            rv = ""
+        if "sin calificacion automatica" not in rv and "sin calificación automática" not in rv:
+            errs.append('grades/%s.json missing: run python3 method/grade_plans.py %s before this script (needs bars/<day>.json in the repo), or write "sin calificacion automatica: <motivo>" in reviews/%s.md' % (end, end, end))
+    if end not in (sc.get("hitLog") or {}):
+        try:
+            rv = io.open("reviews/%s.md" % end, encoding="utf-8").read().lower()
+        except FileNotFoundError:
+            rv = ""
+        if "sin calificacion de aciertos" not in rv and "sin calificación de aciertos" not in rv:
+            errs.append('scorecard.hitLog["%s"] missing: add the day\'s bias/scenario/zone grades per symbol (section "Calibracion", hitLog), or write "sin calificacion de aciertos: <motivo>" in reviews/%s.md' % (end, end))
+
+    if not check_only:
+        io.open(STATE, "w", encoding="utf-8", newline="\n").write(json.dumps(state, ensure_ascii=False, indent=1))
+        print("contextScore: %d blind spots, %d strengths" % (len(sc.get("blindSpots") or []), len(sc.get("strengths") or [])))
+        if ex:
+            print("execution.ALL: %d days to %s, disciplined %d%%" % (ex["days"], ex["lastDate"], ex["disciplinedPct"]))
+    if errs:
+        print("FAIL\n- " + "\n- ".join(errs))
+        return 1
+    print("OK scorecard")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
