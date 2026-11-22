@@ -114,3 +114,50 @@ velocidad de re-entrada, hora del día, P&L del día en R, día de la semana y s
 día. Cuando la probabilidad cruza un umbral, Mi Mesa baja el tamaño máximo, alarga la pausa o bloquea,
 y le muestra a Jesus una tarjeta corta: "esto es lo que tu yo de otros días hizo en esta situación, y
 cuánto costó". Medir: violaciones R1 y R por semana antes y después, y la calibración del pronóstico.
+
+## 8. Factibilidad del freno anti-tilt con la API de MFP (revisado el 2026-11-22)
+
+Fuente: la especificación oficial `https://docs.myfundedperpetuals.com/openapi.yaml` (API en beta, puede
+cambiar) y el cliente actual `tradedadlog/netlify/functions/_mfp.mjs` (solo lectura).
+
+**Lo que la API permite** (requiere una key con permiso de trading; la actual es "Read Only")
+- `POST /v1/positions/{id}/close` (parcial o total) y `POST /v1/accounts/{id}/close-all-positions`.
+- `DELETE /v1/orders/{id}` y `POST /v1/accounts/{id}/cancel-all-orders`.
+- `PUT /v1/positions/{id}/exit-orders` (poner o mover TP/SL de una posición abierta).
+- Lectura de posiciones, órdenes y fills (lo que ya usa `tos-coach`).
+
+**Lo que NO permite**: no hay endpoint para pausar o bloquear trading en una cuenta, ni para fijar
+límites de pérdida o de tamaño por cuenta (`/trading-policy` es solo lectura). Por eso el freno es un
+**ejecutor**: no impide abrir, pero cierra o corrige en segundos lo que rompe una regla.
+
+**Diseño propuesto**
+- Vigilante que consulta posiciones y órdenes de las cuentas cada 2-3 s (límite documentado en el
+  cliente: ~300 req/min por IP; 3-4 cuentas caben de sobra). La spec menciona un WebSocket de cuenta
+  sin documentar; si se documenta, reemplaza el sondeo.
+- Reglas de actuación (las del registro vivo de `method/coach-review.md`):
+  - R1 (entrada dentro de la pausa post-SL): cerrar la posición.
+  - DAY_STOP_HIT: cerrar todo y cancelar órdenes.
+  - Tamaño > N veces la mediana propia: cerrar o reducir al tamaño normal.
+  - NO_STOP pasados 30 s: poner el stop del plan con `exit-orders` en vez de cerrar.
+- Con esto, el trade R1_REVENGE del 2026-11-22 (99 s después del SL, 7.5x el tamaño, −200R) se habría
+  cerrado en ~3 s.
+
+**Infraestructura**
+- No cabe en Netlify (el mínimo de las funciones programadas es 1 min). Necesita un proceso siempre
+  encendido: un servicio chico (Fly.io o Railway, ~5 USD/mes) o la PC de Jesus encendida.
+- La key de trading la crea Jesus en MFP y vive solo como secreto del servidor; nunca en un repo, un
+  archivo del bus ni un chat.
+
+**Encendido por etapas**
+1. Sombra (1-2 semanas): solo registra y notifica lo que habría cerrado; medir falsos positivos.
+2. Suave: pone stops y notifica, no cierra.
+3. Duro: cierra según las reglas.
+Siempre con un interruptor de apagado manual y un log de cada acción con su motivo y la regla.
+
+**A confirmar antes de construir**
+- Que las reglas de MFP permitan cierres automáticos vía API para estas cuentas (la API es oficial,
+  pero hay que verificarlo en sus términos).
+- Que Jesus acepte que cada cierre forzado cuesta comisión y spread.
+
+**Conexión con la sección 7**: el pronóstico de tilt ajusta los umbrales del vigilante en vivo (pausa
+más larga y tamaño máximo menor cuando sube el riesgo).
