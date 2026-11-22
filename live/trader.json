@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-22",
-  "asOf": "2026-11-22T05:30:54.794Z",
+  "asOf": "2026-11-22T05:30:40.199Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 1,
+  "todayViolations": 4,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,22 +16,50 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 5,
+    "used": 6,
     "riskPerTrade": 50,
     "dayStop": 100,
-    "pnl": -455.05,
-    "pnlR": -9.1,
+    "pnl": -12987.02,
+    "pnlR": -259.74,
     "maxLossStreak": 4
   },
   "openFlags": [
     {
       "rule": "R1",
+      "at": 1795237353344,
+      "sym": "ETH",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
       "at": 1795273549912,
       "sym": "ETH",
       "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "stop",
+      "at": 1795273591416,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
     }
   ],
   "todayTrades": [
+    {
+      "acct": "jh78km012eh329gky6cbpj6a518jmn0v",
+      "name": "NAS100 Composite Test Cup",
+      "sym": "NQ",
+      "side": "short",
+      "size": 49.6181,
+      "entry": 25099.9,
+      "exit": 25313.24915,
+      "pnl": -12531.97,
+      "r": -250.64,
+      "openedAt": 1795236083995,
+      "closedAt": 1795243817896,
+      "flags": [
+        "DAY_STOP_HIT"
+      ]
+    },
     {
       "acct": "jh719yq5gt3dgsjmacy6xy45bx8jkhqm",
       "name": "Funded 10K",
@@ -44,7 +72,10 @@
       "r": 2.2,
       "openedAt": 1795237353344,
       "closedAt": 1795241837930,
-      "flags": []
+      "flags": [
+        "R1_REVENGE",
+        "DAY_STOP_HIT"
+      ]
     },
     {
       "acct": "jh719yq5gt3dgsjmacy6xy45bx8jkhqm",
@@ -58,7 +89,9 @@
       "r": -1.63,
       "openedAt": 1795268321471,
       "closedAt": 1795270188687,
-      "flags": []
+      "flags": [
+        "DAY_STOP_HIT"
+      ]
     },
     {
       "acct": "jh719yq5gt3dgsjmacy6xy45bx8jkhqm",
@@ -72,7 +105,9 @@
       "r": -2.51,
       "openedAt": 1795273458336,
       "closedAt": 1795300875710,
-      "flags": []
+      "flags": [
+        "DAY_STOP_HIT"
+      ]
     },
     {
       "acct": "jh77972wv6djnm8ryam9f8bfjs8jj9hv",
@@ -104,11 +139,26 @@
       "openedAt": 1795300875710,
       "closedAt": 1795310029062,
       "flags": [
+        "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ]
     }
   ],
-  "openPositions": [],
+  "openPositions": [
+    {
+      "acct": "jh78km012eh329gky6cbpj6a518jmn0v",
+      "name": "NAS100 Composite Test Cup",
+      "sym": "NQ",
+      "side": "long",
+      "size": 5.1956,
+      "entry": 25581.78721226,
+      "openedAt": 1795273591416,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ]
+    }
+  ],
   "captures": [],
   "lastReview": null
 }
