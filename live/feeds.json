@@ -1,5 +1,5 @@
 {
-  "_updatedAt": "2026-11-22T20:00:55.534Z",
+  "_updatedAt": "2026-11-22T20:01:11.352Z",
   "feed:BTC": {
     "src": "feed",
     "sym": "BTC",
@@ -202,13 +202,13 @@
       "tf": "5",
       "level": "STATE",
       "event": "STATE",
-      "close": 1719.31,
+      "close": 1719.28,
       "cisd": "-1/-1/-1/1",
       "regime": "MIXED",
       "align": "CISD_DOWN",
-      "time": 1795377000000
+      "time": 1795377300000
     },
-    "receivedAt": "2026-11-22T19:56:00.397Z"
+    "receivedAt": "2026-11-22T20:00:54.396Z"
   },
   "regime:NQ": {
     "src": "regime",
