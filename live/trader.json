@@ -2,8 +2,8 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-22",
-  "asOf": "2026-11-22T06:45:29.274Z",
-  "state": "TILT",
+  "asOf": "2026-11-22T07:15:29.672Z",
+  "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 1,
   "rulesActive": [
@@ -16,23 +16,22 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 0,
+    "used": 1,
     "riskPerTrade": 50,
     "dayStop": 100,
-    "pnl": 0,
-    "pnlR": 0,
-    "maxLossStreak": 0
+    "pnl": -376.71,
+    "pnlR": -7.53,
+    "maxLossStreak": 1
   },
   "openFlags": [
     {
       "rule": "stop",
-      "at": 1795273591416,
+      "at": 1795330403378,
       "sym": "NQ",
       "note": "posicion abierta sin stop"
     }
   ],
-  "todayTrades": [],
-  "openPositions": [
+  "todayTrades": [
     {
       "acct": "jh78km012eh329gky6cbpj6a518jmn0v",
       "name": "NAS100 Composite Test Cup",
@@ -40,7 +39,25 @@
       "side": "long",
       "size": 5.1956,
       "entry": 25581.78721226,
+      "exit": 25513.8,
+      "pnl": -376.71,
+      "r": -7.53,
       "openedAt": 1795273591416,
+      "closedAt": 1795330304891,
+      "flags": [
+        "DAY_STOP_HIT"
+      ]
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh78km012eh329gky6cbpj6a518jmn0v",
+      "name": "NAS100 Composite Test Cup",
+      "sym": "NQ",
+      "side": "short",
+      "size": 38.9208,
+      "entry": 25512.8,
+      "openedAt": 1795330403378,
       "hadStop": false,
       "flags": [
         "NO_STOP"
