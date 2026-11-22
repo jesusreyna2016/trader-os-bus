@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-22",
-  "asOf": "2026-11-22T06:30:40.636Z",
-  "state": "OK",
+  "asOf": "2026-11-22T06:45:29.274Z",
+  "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 0,
+  "todayViolations": 1,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -23,9 +23,30 @@
     "pnlR": 0,
     "maxLossStreak": 0
   },
-  "openFlags": [],
+  "openFlags": [
+    {
+      "rule": "stop",
+      "at": 1795273591416,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
+    }
+  ],
   "todayTrades": [],
-  "openPositions": [],
+  "openPositions": [
+    {
+      "acct": "jh78km012eh329gky6cbpj6a518jmn0v",
+      "name": "NAS100 Composite Test Cup",
+      "sym": "NQ",
+      "side": "long",
+      "size": 5.1956,
+      "entry": 25581.78721226,
+      "openedAt": 1795273591416,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ]
+    }
+  ],
   "captures": [],
   "lastReview": null
 }
