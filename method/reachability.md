@@ -1,0 +1,109 @@
+# Regla dura · Factibilidad / alcance de sesión
+
+**Fuente de verdad operativa** junto a `method/instructions.md`. El agente DEBE aplicar esto en cada corrida (pre-asia, pre-london, pre-ny).
+
+## 6.1bis Factibilidad de zona (alcance de sesión) — REGLA DURA
+
+Problema que esto corta: publicar una A+ "bonita" (confluencia alta) que el precio **no puede
+tocar** con el presupuesto de rango que queda → el día se va sin trade y el overlay enseña
+una caja inalcanzable.
+
+### Definiciones
+- `distToZone` = distancia en puntos desde `orb.price` (o last del feed) hasta el **borde
+  alcanzable** de la zona a favor del sesgo:
+  - SHORT: `zone.lo - price` si price < zone.lo; `0` si ya está dentro; si price > zone.hi, zona atrás.
+  - LONG: `price - zone.hi` simétrico.
+- `budget` = lo que queda de rango útil:
+  - Preferir `command.remPts` si viene sano; si no, `expectedMove.base * (1 - dayUsedFrac)` con
+    `dayUsedFrac` de `expectedMove.dayUsed` / `command.atrPctUsed` (0–1).
+  - **Piso de sesión: `budget = max(lo anterior, 0.7 * expectedMove.base)`.** Lo gastado del día no
+    predice lo que hace la sesión que entra: el rango real sobre el reparto normal es ~1.4× con el
+    día usado 0-85 % y ~1.3× con ≥ 85 % (cuartil bajo ~0.7× de la base). Sin piso, un día agotado
+    daba budget 0 y toda zona salía WATCH (`instructions.md` sección 5, "Día agotado").
+  - Piso: nunca uses un budget inventado; si no hay número, marca `budgetUnknown=true` y
+    trata la zona como **no táctica** (solo watch).
+- `reachRatio = distToZone / budget` (si budget > 0).
+
+### Umbrales
+| reachRatio | Clase | Qué hacer |
+|---|---|---|
+| `≤ 0.55` | **TÁCTICA** (a tiro) | Puede ser `zones[0]` y candidata a GO/WAIT con play |
+| `0.55–0.90` | **ESTIRADA** | Solo `zones[0]` si no hay otra TÁCTICA; `verdict` ≤ WAIT; digiere "borde lejos" |
+| `> 0.90` o `budgetUnknown` | **WATCH** (inalcanzable hoy) | **Prohibido** como única/primary play. Va a `watchLevels[]` o `zones[]` con `"role":"watch"` |
+
+### Obligaciones por corrida (pre-asia, pre-london, pre-ny)
+1. Rankea candidatas A+/B por confluencia **y** por `reachRatio` (lexicográfico: primero
+   TÁCTICA, luego confluencia).
+2. `zones[0]` **debe** ser TÁCTICA si existe al menos una zona mapeada TÁCTICA a favor del
+   sesgo (aunque su confluencia sea 6 y haya una WATCH con 9). La WATCH se lista después
+   con `role:"watch"` y prosa "si el precio recupera…".
+3. Si **no** hay ninguna TÁCTICA a favor del sesgo:
+   - `verdict` = WAIT o AVOID (AVOID si además stretch ≥ 2A o chop).
+   - Publica igual el mejor nivel WATCH, pero el `focus.setup` / digest deben decir
+     **"sin borde a tiro; no hay trade de sesión"** — no "esperar el pullback a la A+ lejana"
+     como si fuera el plan operable.
+   - Ofrece **1 plan táctico alternativo** cerca de precio (`command.nearName` / `nearTk`,
+     VAL/VAH/POC/VWAP/EMA50/swing) aunque sea B (confluence ≥ 4): ese es `zones[0]` con
+     `role:"tactical"` y RR honesto; si el RR sale FLOJO/STOP_ANCHO, WAIT + reason claro.
+4. En updates (pre-london / pre-ny): **recomputa alcance**. Si la A+ strategic
+   sigue WATCH y el precio está en un borde táctico nuevo, **promueve** el táctico a
+   `zones[0]` sin esperar a pre-asia.
+5. Overlay / `tvPayload`: el payload que va a TV es el de `zones[0]` táctico (o el watch
+   solo si no hay táctico — y entonces `SIG=AVOID|WAIT` obligatorio). Nunca dibujes como
+   AZ una WATCH haciéndola pasar por el play del día.
+
+### Campos JSON (aditivo, no rompe schema)
+En cada zona:
+```
+"role": "tactical" | "watch" | "strategic",
+"reach": { "distPts": <num>, "budgetPts": <num>, "ratio": <num>, "class": "TACTICAL"|"STRETCHED"|"WATCH" }
+```
+En el instrumento (opcional):
+```
+"reachability": { "hasTactical": true|false, "bestTactical": "…", "bestWatch": "…" }
+```
+
+### Calidad / checklist
+Antes de escribir `plans/latest.json`, verifica:
+- [ ] Si `price` y `zones[0]` implican `reachRatio > 0.90`, o bien bajaste la zona a watch y
+      subiste un táctico, o el `verdict` es AVOID/WAIT con frase "sin borde a tiro".
+- [ ] `digest` no invita a "esperar la A+ lejana" como único camino operable del día.
+- [ ] `tvPayload` / líneas `TV` reflejan la zona táctica (o AVOID limpio).
+
+Esta regla **no** baja el listón de confluencia: sigue exigiendo A+ (≥6) para GO. Solo
+impide que una A+ inalcanzable se vista de plan del día.
+
+
+## Update forzado (latencia / día agotado)
+
+Además del rankeo de zonas, en **pre-london / pre-ny** (y cualquier re-disparo):
+
+1. Si `zones[0]` ya no es TÁCTICA vs precio vivo (con el piso de sesión de `budget`; un día
+   AGOTADO por sí solo no la saca) → reescribe el plan: o bien nueva zona táctica cerca de
+   precio, o `verdict=AVOID|WAIT` con frase **"sin borde a tiro"**. No dejes
+   colgado el plan de la mañana como operable.
+2. Si el precio se movió tanto que `reachRatio` de `zones[0]` pasó de TÁCTICA a WATCH desde
+   `generatedAt`, el update **debe** cambiar `zones[0]` / digest / `tvPayload` (no solo
+   heartbeat "sin cambios materiales").
+
+## Shock macro no calendarizado
+
+Si en la ventana reciente (~60–90 min) **≥3 instrumentos** rompen o invalidan su tesis
+vigente (o `dayThesis`) **sin** evento alineado en `news.events` / calendario cargado:
+
+- Sube `newsRisk.level` a **ALTA** para la sesión en curso y la siguiente.
+- Ensancha `expectedMove.base` un escalón (como OpEx/fin de trimestre: +10–15%, o el
+  siguiente bucket del método).
+- En `digest` / `summary`: marca explícito **"shock macro no calendarizado"**.
+- No inventes el evento; di que el feed de noticias no lo anticipó.
+
+Evidencia de diseño: semana 2026-09-07/11 (BCE+PPI, CPI) — 2 shocks, cada uno rompiendo 3+
+tesis antes de la siguiente corrida.
+
+## Cumplimiento
+Si `instructions.md` y este archivo divergen, gana **este archivo** para alcance de zonas.
+
+## Post-catalizador / presupuesto agotado
+Si el día es FOMC/NFP/CPI (ver `instructions.md` §5) o `remPts`≈0 tras un shock, reutiliza
+la sección **Update forzado** arriba: revisa las zonas de la mañana contra el precio vivo, baja
+convicción un escalón y no prometas targets lejanos. Sigue valiendo el piso de sesión de `budget`.

@@ -1,0 +1,108 @@
+{
+  "schema": "trader-profile-1",
+  "note": "Shared profile of the trader, read by every agent (Session Analyst, Scalp CC, Plan Coach, Watchdog). Behavioral and rule data only: no balances, no P&L, no personal life, and no broker, firm or account details. Humans own `core`; the weekly run may only rewrite `observed`.",
+  "updatedAt": "2026-11-14T16:11:00Z",
+  "core": {
+    "instruments": [
+      "NQ / NDX (Nasdaq 100)",
+      "ETH"
+    ],
+    "mainSession": "Asia session is the main one; NQ levels of the plan apply to NDX",
+    "minTimeframe": "5m",
+    "tools": "EMA 20/50 + VWAP + volume profile (VAH/POC/VAL) + key levels (PDH/PDL, DO/TDO, PWH/PWL)",
+    "edge": {
+      "es": "Operar los BORDES del perfil (VAH/POC/VAL) y niveles clave A FAVOR del sesgo, con gatillo (retest/FVG). Los trades en tierra de nadie son la fuga.",
+      "en": "Trade profile EDGES (VAH/POC/VAL) and key levels WITH the bias, on a trigger (retest/FVG). No-man's-land trades are the leak."
+    }
+  },
+  "patterns": [
+    {
+      "id": "size-escalation",
+      "since": "2026-10-06",
+      "es": "Tras un ganador grande o por frustración al devolver ganancia abierta, reentra con tamaño récord (notional máximo $41k el 2 oct, $114k el 9 oct). A partir de $80k pierde. Es su fuga principal.",
+      "en": "After a big winner, or out of frustration at giving back open profit, he re-enters at record size (max notional $41k on Oct 2, $114k on Oct 9). From $80k up he loses. His main leak."
+    },
+    {
+      "id": "no-stop-averaging",
+      "since": "2026-10-06",
+      "es": "Opera a 50x sin stop en el libro y promedia en contra con añadidos. Hasta ahora salió bien; un solo movimiento fuerte puede llevarse la cuenta.",
+      "en": "Trades 50x with no resting stop and averages against with adds. It has worked so far; one hard move can take the account."
+    },
+    {
+      "id": "revenge-after-sl",
+      "es": "Tras un SL reentra sin pausa y sube tamaño (revenge-sizing). Regla: pausa obligatoria + escribir el setup tras CUALQUIER salida.",
+      "en": "After a stop he re-enters without a pause and sizes up. Rule: mandatory pause + write the setup after ANY exit."
+    },
+    {
+      "id": "euphoria-after-win",
+      "es": "Tras un ganador grande gira de dirección a full size (18 sep: +1494 y luego -275 en 2 min). La pausa aplica también tras ganar.",
+      "en": "After a big winner he flips direction at full size. The pause also applies after a win."
+    },
+    {
+      "id": "se-me-escapa",
+      "es": "Gatillo verbal 'esto se me escapa' = FOMO/escasez, persigue y promedia en la extensión. Es señal de STOP, no de add. Una entrada con edge se siente como que el precio VIENE a él.",
+      "en": "Verbal trigger 'it's getting away from me' = FOMO; chases and adds into the extension. It is a STOP signal, never an add."
+    },
+    {
+      "id": "homerun-exit",
+      "since": "2026-09-30",
+      "es": "Entra bien pero aguanta buscando hacer todo el profit en un trade; el pullback lo saca en SL o BE sin haber cobrado. Fuga principal declarada por él.",
+      "en": "Good entries, but holds for a home run; the pullback takes him out at SL or BE with nothing banked. His own stated main leak."
+    },
+    {
+      "id": "overtrade-chop",
+      "es": "En rango estrecho encadena giros y pierde (9 oct: 16 trades en ~90 pts de rango). El giro gana en tendencia, pierde en rango: si el día es de rango, menos tamaño, no menos trades por regla.",
+      "en": "In a tight range he chains flips and loses. Flipping wins in trend, loses in range: on a range day cut size, do not cap trade count by rule."
+    },
+    {
+      "id": "account-chasing",
+      "es": "Tras perder cuentas compra otras bajo urgencia para recuperar rápido. Cualquier plan que suene a 'recuperar hoy' es una alerta.",
+      "en": "After losing accounts he rebuys under urgency to recover fast. Any plan that sounds like 'recover today' is a red flag."
+    }
+  ],
+  "exitPlan": {
+    "es": "1) Escribir TP1 y TP2 antes de entrar (niveles del plan). 2) Parcial obligatorio (1/2 o 2/3) en TP1 = primer nivel o 1R, lo que llegue antes. 3) NO mover a BE antes del parcial. 4) El runner va al siguiente nivel con objetivo fijo, no 'a donde llegue'.",
+    "en": "1) Write TP1 and TP2 before entry (plan levels). 2) Mandatory partial (1/2 or 2/3) at TP1 = first level or 1R, whichever comes first. 3) NO move to BE before the partial. 4) Runner goes to the next level with a fixed target, not 'wherever it goes'."
+  },
+  "exitBaseline": {
+    "source": "scalp-cc-bus outcomes, all kinds and TFs",
+    "asOf": "2026-11-14",
+    "NQ": {
+      "n": 10950,
+      "hit1R": 0.336,
+      "stoppedOut": 0.474,
+      "slWasGreenHalfRFirst": 0.318,
+      "slWasGreen1RFirst": 0.124,
+      "reachedTP2": 0.053
+    },
+    "readout": {
+      "es": "Solo ~33.6% de las entradas llega a 1R y apenas ~5.3% llega a TP2: el home run sigue siendo raro. ~31.8% de los SL estuvieron +0.5R en verde antes de saltar: el parcial temprano sigue siendo la palanca que falta, prácticamente igual que la lectura anterior.",
+      "en": "Only ~33.6% of entries reach 1R and barely ~5.3% reach TP2: the home run is still rare. ~31.8% of stops were +0.5R green first before getting hit: the early partial is still the missing lever, essentially unchanged from the prior read."
+    }
+  },
+  "dailyRules": {
+    "capLine": {
+      "es": "Stop puesto en el libro al entrar · tamaño definido por el riesgo antes de entrar · no añadir a una posición perdedora",
+      "en": "Resting stop in the book at entry · size set by risk before entry · no adding to a losing position"
+    },
+    "capLineMust": [
+      "stop"
+    ],
+    "entryOnlyIf": {
+      "es": "Precio en un nivel del plan Y a favor del sesgo Y con gatillo.",
+      "en": "Price at a plan level AND with the bias AND on a trigger."
+    }
+  },
+  "observed": {
+    "updatedBy": "weekly 2026-11-14",
+    "window": "2026-11-09..2026-11-13 (5 dias calendario, 0 con dato real en live/journal.json: el journal no ha agregado un solo byDay nuevo desde 2026-11-07, updatedAt sigue en 2026-11-08T03:19:02Z, 6+ dias calendario sin refrescar)",
+    "disciplinedPct": null,
+    "againstBiasRate": null,
+    "outsideEdgeRate": null,
+    "trend": {
+      "es": "Semana completamente ciega para ejecucion real: 0 de 5 dias con dato en live/journal.json (peor que el 3/5 parcial de la semana pasada), el journal lleva mas de 6 dias calendario sin agregar un solo byDay nuevo (el ultimo sigue siendo 2026-11-07). No hay disciplina, contra-sesgo, outsideEdgeRate ni calidad de salida que medir de esta semana especifica. El rollup de 45 dias (que no cambio porque no hay entrada nueva) sigue leyendo disciplinado 4%, contra-sesgo 32%, fuera de edge 27%, 28/45 dias de sobre-operar y 19/45 de revenge, partialRate 1%, fullStopRate 54% -- son los mismos numeros de hace una semana, no una lectura fresca. Si el journal no se reconecta, la siguiente semana tambien quedara sin dato.",
+      "en": "A week completely blind for real execution: 0 of 5 days with data in live/journal.json (worse than last week's partial 3/5), the journal has gone over 6 calendar days without adding a single new byDay (the latest is still 2026-11-07). There is no discipline, against-bias, outside-edge or exit-quality reading for this specific week. The 45-day rollup (unchanged since there is no new entry) still reads 4% disciplined, 32% against-bias, 27% outside-edge, 28/45 overtrade days and 19/45 revenge days, 1% partial rate, 54% full-stop rate -- the same numbers as a week ago, not a fresh read. If the journal does not reconnect, next week will also go without data."
+    },
+    "exitQuality": null
+  }
+}
