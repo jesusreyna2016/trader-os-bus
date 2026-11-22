@@ -1,0 +1,280 @@
+{
+  "_writer": "edge",
+  "_schema": 1,
+  "asOf": "2026-11-22T05:33:46.053Z",
+  "rung": 1,
+  "readyForLive": false,
+  "headline": "señal cruda scalp expRnet -0.06 (76415); edge solo en: ninguno confirmado",
+  "overall": {
+    "n": 76415,
+    "wr": 47.1,
+    "expRnet": -0.06,
+    "pfNet": 0.89,
+    "revAfterSL": 36.9
+  },
+  "topSetups": [],
+  "bySetup": {
+    "15m/RETEST/LONG": {
+      "n": 1258,
+      "wr": 50.6,
+      "expRnet": 0.074,
+      "pfNet": 1.15,
+      "expR": 0.121,
+      "revAfterSL": 58.1,
+      "hasEdge": false
+    },
+    "15m/RETEST/SHORT": {
+      "n": 1114,
+      "wr": 53.1,
+      "expRnet": 0.159,
+      "pfNet": 1.34,
+      "expR": 0.206,
+      "revAfterSL": 65.8,
+      "hasEdge": false
+    },
+    "1m/INV/LONG": {
+      "n": 560,
+      "wr": 45.7,
+      "expRnet": -0.014,
+      "pfNet": 0.97,
+      "expR": 0.129,
+      "revAfterSL": 16.5,
+      "hasEdge": false
+    },
+    "1m/INV/SHORT": {
+      "n": 491,
+      "wr": 47.5,
+      "expRnet": 0.054,
+      "pfNet": 1.12,
+      "expR": 0.161,
+      "revAfterSL": 18.3,
+      "hasEdge": false
+    },
+    "1m/RETEST/LONG": {
+      "n": 20430,
+      "wr": 44.5,
+      "expRnet": -0.132,
+      "pfNet": 0.77,
+      "expR": 0.032,
+      "revAfterSL": 28.8,
+      "hasEdge": false
+    },
+    "1m/RETEST/SHORT": {
+      "n": 17741,
+      "wr": 44.7,
+      "expRnet": -0.072,
+      "pfNet": 0.87,
+      "expR": 0.051,
+      "revAfterSL": 29,
+      "hasEdge": false
+    },
+    "29m/RETEST/LONG": {
+      "n": 548,
+      "wr": 51.8,
+      "expRnet": 0.227,
+      "pfNet": 1.49,
+      "expR": 0.267,
+      "revAfterSL": 59.2,
+      "hasEdge": false
+    },
+    "29m/RETEST/SHORT": {
+      "n": 608,
+      "wr": 49.5,
+      "expRnet": 0.151,
+      "pfNet": 1.31,
+      "expR": 0.198,
+      "revAfterSL": 76.2,
+      "hasEdge": false
+    },
+    "2m/INV/LONG": {
+      "n": 206,
+      "wr": 51.5,
+      "expRnet": -0.088,
+      "pfNet": 0.82,
+      "expR": 0.012,
+      "revAfterSL": 12.8,
+      "hasEdge": false
+    },
+    "2m/INV/SHORT": {
+      "n": 174,
+      "wr": 52.3,
+      "expRnet": 0.11,
+      "pfNet": 1.27,
+      "expR": 0.193,
+      "revAfterSL": 28.6,
+      "hasEdge": false
+    },
+    "2m/RETEST/LONG": {
+      "n": 9045,
+      "wr": 47.2,
+      "expRnet": -0.11,
+      "pfNet": 0.8,
+      "expR": 0.033,
+      "revAfterSL": 38.6,
+      "hasEdge": false
+    },
+    "2m/RETEST/SHORT": {
+      "n": 7727,
+      "wr": 47.3,
+      "expRnet": -0.06,
+      "pfNet": 0.89,
+      "expR": 0.047,
+      "revAfterSL": 39,
+      "hasEdge": false
+    },
+    "3m/RETEST/LONG": {
+      "n": 3857,
+      "wr": 51.1,
+      "expRnet": -0.038,
+      "pfNet": 0.93,
+      "expR": 0.067,
+      "revAfterSL": 50.2,
+      "hasEdge": false
+    },
+    "3m/RETEST/SHORT": {
+      "n": 3431,
+      "wr": 53.4,
+      "expRnet": 0.02,
+      "pfNet": 1.04,
+      "expR": 0.126,
+      "revAfterSL": 54.9,
+      "hasEdge": false
+    },
+    "5m/INV/LONG": {
+      "n": 74,
+      "wr": 66.2,
+      "expRnet": 0.053,
+      "pfNet": 1.18,
+      "expR": 0.111,
+      "revAfterSL": 55,
+      "hasEdge": false
+    },
+    "5m/INV/SHORT": {
+      "n": 56,
+      "wr": 51.8,
+      "expRnet": 0.015,
+      "pfNet": 1.03,
+      "expR": 0.058,
+      "revAfterSL": 43.5,
+      "hasEdge": false
+    },
+    "5m/RETEST/LONG": {
+      "n": 4900,
+      "wr": 51.2,
+      "expRnet": 0.033,
+      "pfNet": 1.07,
+      "expR": 0.104,
+      "revAfterSL": 50.5,
+      "hasEdge": false
+    },
+    "5m/RETEST/SHORT": {
+      "n": 4093,
+      "wr": 50.8,
+      "expRnet": 0.062,
+      "pfNet": 1.13,
+      "expR": 0.121,
+      "revAfterSL": 49.6,
+      "hasEdge": false
+    }
+  },
+  "gate": {
+    "phase": "shadow",
+    "rung": 1,
+    "readyForLive": false,
+    "provisionalSegment": "29m/RETEST/LONG",
+    "weeklyStable3": false,
+    "weeklyDetail": [
+      {
+        "week": "2026-W44",
+        "wrTP1": 54.5,
+        "pfNet": 1.19,
+        "ok": false
+      },
+      {
+        "week": "2026-W45",
+        "wrTP1": 51.8,
+        "pfNet": 1.91,
+        "ok": true
+      },
+      {
+        "week": "2026-W46",
+        "wrTP1": 53.7,
+        "pfNet": 1.77,
+        "ok": true
+      }
+    ]
+  },
+  "crossInsights": [
+    {
+      "with": "SA",
+      "nMatched": 48471,
+      "byVerdict": {
+        "AVOID": {
+          "n": 5777,
+          "expRnet": -0.049,
+          "pfNet": 0.91,
+          "wr": 45.8
+        },
+        "GO": {
+          "n": 4521,
+          "expRnet": -0.162,
+          "pfNet": 0.72,
+          "wr": 47.1
+        },
+        "WAIT": {
+          "n": 38173,
+          "expRnet": -0.071,
+          "pfNet": 0.87,
+          "wr": 47.6
+        }
+      },
+      "finding": "señales con SA=AVOID rinden mejor (expRnet -0.049) que con SA=GO (-0.162)"
+    }
+  ],
+  "slInsight": {
+    "week": "2026-W47",
+    "nLosses": 4590,
+    "topCauses": [
+      {
+        "cause": "stop-en-el-minimo",
+        "n": 1906
+      },
+      {
+        "cause": "RR-bajo",
+        "n": 1879
+      },
+      {
+        "cause": "contra-estructura",
+        "n": 1746
+      }
+    ],
+    "revAfterSL": 36.9,
+    "coachNote": "el mercado vuelve tras el SL ~1 de cada 3 veces (revAfterSL); por eso perseguir se siente justificado y no lo es"
+  },
+  "shadow": {
+    "weeks": [
+      "2026-W44",
+      "2026-W45",
+      "2026-W46",
+      "2026-W47"
+    ],
+    "beatsRawOf4": 3,
+    "lastWeek": {
+      "week": "2026-W47",
+      "shadow_n": 1070,
+      "shadow_expR": 0.246,
+      "raw_n": 9869,
+      "raw_expR": 0.1,
+      "shadow_beats_raw": true
+    }
+  },
+  "reversalModel": {
+    "n": 0,
+    "window": "7d",
+    "note": "sin resoluciones aun; se mide conforme TDL_REV las emita"
+  },
+  "_sources": {
+    "scalp": true,
+    "scalpGeneratedAt": "2026-11-22T02:47:56.699899+00:00"
+  }
+}
