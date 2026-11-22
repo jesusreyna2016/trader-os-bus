@@ -1,0 +1,31 @@
+{
+  "updatedAt": "2026-11-22T22:38:17Z",
+  "disciplineStreak": 0,
+  "weekly": [
+    {
+      "week": "2026-W47",
+      "cleanDaysPct": 50,
+      "violations": {
+        "R1": 2,
+        "NO_STOP": 1,
+        "DAY_STOP_HIT": 2
+      },
+      "pnlR": -208.97
+    }
+  ],
+  "leaks": [
+    {
+      "name": "revancha post-SL",
+      "count": 2,
+      "lastSeen": "2026-11-22",
+      "trend": "="
+    }
+  ],
+  "agreements": [
+    {
+      "text": "Pausa dura tras cualquier SL o salida con perdida antes de reabrir; ninguna entrada sin stop colocado.",
+      "since": "2026-11-22",
+      "status": "activo"
+    }
+  ]
+}
