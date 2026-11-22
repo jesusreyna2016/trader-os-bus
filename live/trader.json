@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-22",
-  "asOf": "2026-11-22T23:30:45.105Z",
+  "asOf": "2026-11-22T23:45:31.294Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 3,
+  "todayViolations": 1,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,128 +16,57 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 5,
+    "used": 2,
     "riskPerTrade": 50,
     "dayStop": 100,
-    "pnl": -694.94,
-    "pnlR": -13.9,
-    "maxLossStreak": 3
+    "pnl": -10376.71,
+    "pnlR": -207.53,
+    "maxLossStreak": 2
   },
   "openFlags": [
     {
       "rule": "R1",
-      "at": 1795384474545,
-      "sym": "ETH",
-      "note": "entrada dentro de la pausa tras un SL"
-    },
-    {
-      "rule": "R1",
-      "at": 1795388771940,
-      "sym": "NQ",
-      "note": "entrada dentro de la pausa tras un SL"
-    },
-    {
-      "rule": "R1",
-      "at": 1795389013000,
+      "at": 1795330403378,
       "sym": "NQ",
       "note": "entrada dentro de la pausa tras un SL"
     }
   ],
   "todayTrades": [
     {
-      "acct": "jh7fbgr4mbef7pdv2ne96qwy8x8jpss6",
-      "name": "Elite 3% DLL 25K Challenge",
-      "sym": "ETH",
+      "acct": "jh78km012eh329gky6cbpj6a518jmn0v",
+      "name": "NAS100 Composite Test Cup",
+      "sym": "NQ",
       "side": "long",
-      "size": 15,
-      "entry": 1723.355,
-      "exit": 1719.59,
-      "pnl": -71.97,
-      "r": -1.44,
-      "openedAt": 1795383677115,
-      "closedAt": 1795384474545,
-      "flags": []
-    },
-    {
-      "acct": "jh7fbgr4mbef7pdv2ne96qwy8x8jpss6",
-      "name": "Elite 3% DLL 25K Challenge",
-      "sym": "ETH",
-      "side": "short",
-      "size": 15,
-      "entry": 1719.59,
-      "exit": 1718.24,
-      "pnl": 4.46,
-      "r": 0.09,
-      "openedAt": 1795384474545,
-      "closedAt": 1795388198885,
-      "flags": [
-        "R1_REVENGE"
-      ]
-    },
-    {
-      "acct": "jh7fbgr4mbef7pdv2ne96qwy8x8jpss6",
-      "name": "Elite 3% DLL 25K Challenge",
-      "sym": "ETH",
-      "side": "long",
-      "size": 44.539,
-      "entry": 1718.5052866,
-      "exit": 1714.81,
-      "pnl": -211.42,
-      "r": -4.23,
-      "openedAt": 1795388198885,
-      "closedAt": 1795388919976,
+      "size": 5.1956,
+      "entry": 25581.78721226,
+      "exit": 25513.8,
+      "pnl": -376.71,
+      "r": -7.53,
+      "openedAt": 1795273591416,
+      "closedAt": 1795330304891,
       "flags": [
         "DAY_STOP_HIT"
       ]
     },
     {
-      "acct": "jh7fbgr4mbef7pdv2ne96qwy8x8jpss6",
-      "name": "Elite 3% DLL 25K Challenge",
-      "sym": "NQ",
-      "side": "long",
-      "size": 5,
-      "entry": 25574,
-      "exit": 25499,
-      "pnl": -377.55,
-      "r": -7.55,
-      "openedAt": 1795388771940,
-      "closedAt": 1795388890018,
-      "flags": [
-        "R1_REVENGE",
-        "DAY_STOP_HIT"
-      ]
-    },
-    {
-      "acct": "jh7fbgr4mbef7pdv2ne96qwy8x8jpss6",
-      "name": "Elite 3% DLL 25K Challenge",
+      "acct": "jh78km012eh329gky6cbpj6a518jmn0v",
+      "name": "NAS100 Composite Test Cup",
       "sym": "NQ",
       "side": "short",
-      "size": 0.5,
-      "entry": 25468.5897125,
-      "exit": 25545,
-      "pnl": -38.46,
-      "r": -0.77,
-      "openedAt": 1795389013000,
-      "closedAt": 1795389292063,
+      "size": 38.9208,
+      "entry": 25512.8,
+      "exit": 25729.6588,
+      "pnl": -10000,
+      "r": -200,
+      "openedAt": 1795330403378,
+      "closedAt": 1795342032834,
       "flags": [
         "R1_REVENGE",
         "DAY_STOP_HIT"
       ]
     }
   ],
-  "openPositions": [
-    {
-      "acct": "jh7fbgr4mbef7pdv2ne96qwy8x8jpss6",
-      "name": "Elite 3% DLL 25K Challenge",
-      "sym": "NQ",
-      "side": "long",
-      "size": 0.8,
-      "entry": 25571.96625,
-      "openedAt": 1795389292063,
-      "hadStop": true,
-      "flags": []
-    }
-  ],
+  "openPositions": [],
   "captures": [],
   "lastReview": null
 }
