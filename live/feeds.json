@@ -1,5 +1,5 @@
 {
-  "_updatedAt": "2026-11-22T17:50:07.076Z",
+  "_updatedAt": "2026-11-22T17:50:39.447Z",
   "feed:BTC": {
     "src": "feed",
     "sym": "BTC",
@@ -812,7 +812,7 @@
     "dayType": "Aceptación al alza",
     "biasDir": "NEUTRAL",
     "weeklyDir": "LONG",
-    "price": 1716.2,
+    "price": 1715.89,
     "levels": {
       "vah": 1709.33,
       "poc": 1685.98,
@@ -820,7 +820,7 @@
       "dvah": 1724.58,
       "dpoc": 1712.92,
       "dval": 1675.79,
-      "vwap": 1692.94,
+      "vwap": 1693,
       "pdh": 1716.58,
       "pdl": 1538,
       "dayOpen": 1685.62,
@@ -829,9 +829,9 @@
       "pwh": 2160.5,
       "pwl": 1711.08,
       "tdo": 1661.48,
-      "ema5": 1716.79,
-      "ema15": 1713.47,
-      "ema50": 1714.23
+      "ema5": 1716.71,
+      "ema15": 1713.65,
+      "ema50": 1714.29
     },
     "noTradeZone": [
       1591.66,
@@ -847,9 +847,9 @@
     "htf2": "Bajista",
     "rs": "ETHUSDT lidera",
     "inNtz": false,
-    "updatedAt": "2026-11-22T17:45:02.213Z",
+    "updatedAt": "2026-11-22T17:50:01.766Z",
     "src": "orb",
-    "receivedAt": "2026-11-22T17:45:02.213Z",
+    "receivedAt": "2026-11-22T17:50:01.766Z",
     "_bridged": "cc"
   },
   "regime:BTC": {
@@ -919,7 +919,7 @@
     "dayType": "Aceptación al alza",
     "biasDir": "NEUTRAL",
     "weeklyDir": "LONG",
-    "price": 60914.65,
+    "price": 60842.28,
     "levels": {
       "vah": 59064.26,
       "poc": 57942.45,
@@ -927,7 +927,7 @@
       "dvah": 61418.44,
       "dpoc": 60884.61,
       "dval": 59564.09,
-      "vwap": 60261.09,
+      "vwap": 60263.69,
       "pdh": 60996,
       "pdl": 55130,
       "dayOpen": 60215.78,
@@ -936,9 +936,9 @@
       "pwh": 75599.22,
       "pwl": 62006,
       "tdo": 59359.99,
-      "ema5": 60975.3,
-      "ema15": 60894.91,
-      "ema50": 60925.2
+      "ema5": 60962.63,
+      "ema15": 60889.35,
+      "ema50": 60921.94
     },
     "noTradeZone": [
       55568.48,
@@ -954,9 +954,9 @@
     "htf2": "Bajista",
     "rs": "BTCUSDT lidera",
     "inNtz": false,
-    "updatedAt": "2026-11-22T17:45:02.143Z",
+    "updatedAt": "2026-11-22T17:50:02.142Z",
     "src": "orb",
-    "receivedAt": "2026-11-22T17:45:02.143Z",
+    "receivedAt": "2026-11-22T17:50:02.142Z",
     "_bridged": "cc"
   }
 }
