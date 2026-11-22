@@ -67,3 +67,50 @@ chequeo automático de salud que el watchdog lea. Preferir reemplazar a duplicar
   agente de zonas cada noche). Tablero: "Qué paga · setups del bus" (artifact de claude.ai).
 - `session-analyst-bus/method/instructions.md` sección 8e y 9 · reglas nuevas del 21 nov.
 - `mi-mesa` PR #41 · digest sin ficha ya no cuenta como fuera de zona; manda fills.
+
+## 6. Visión: cómo hacerlo más eficiente, inteligente, independiente, único y preciso
+
+Pedido por Jesus el mismo día. Igual que arriba: evaluar, no aplicar a ciegas.
+
+**Más eficiente**
+- Un solo método y un solo bus; nada de copias que se desfasan.
+- Scripts deterministas para todo cálculo; la IA solo donde un script no llega (interpretar, explicar,
+  detectar anomalías). Hoy varias corridas recalculan con la IA cosas que un script hace en segundos.
+- Corridas por evento, no por reloj: el plan sale cuando `feeds.json` trae datos posteriores a la
+  reapertura, no a una hora fija (evita planes vacíos como el pre-asia de las 12:43 CT del 22 nov).
+
+**Más inteligente**
+- Un registro único de decisiones: cada veredicto, zona y trade con sus features y su resultado, en una
+  sola tabla. Hoy está repartido en session-analyst-bus, scalp-cc-bus y trader-os-bus con formatos distintos.
+- Un simulador como juez: toda regla nueva corre primero en sombra sobre velas reales (como
+  `session-analyst-bus/method/entry_study.py`) y solo se activa si gana neta con su IC.
+- Probabilidades calibradas además de GO/WAIT ("58 % con este gatillo"), para dimensionar el riesgo.
+
+**Más independiente**
+- Segunda fuente para cada dato crítico (las velas de Yahoo de `tos-bus-bars` van en ese camino);
+  menos dependencia de los webhooks de TradingView.
+- Contrato de salud por pieza: cada lente declara cómo se ve "sana" y el watchdog lo verifica. La falla
+  del digest de Mi Mesa (6 nov) habría saltado el primer día y no tres semanas después.
+- Reglas que se retiran solas cuando sus números las desmienten (como las hipótesis `trial-*` con
+  `refuteWhen`), extendido a todas las reglas.
+
+**Más único**
+- El edge personal: no "qué setup paga en el mercado" sino "qué setup paga **cuando Jesus lo opera**".
+  Cruzar el edge medido (lente Edge) con su ejecución real (trader.json, fills de Mi Mesa) deja una lista
+  corta de setups suyos; el sistema lo empuja solo hacia esos.
+
+**Más preciso**
+- Todo neto de costes, con IC, y un solo calificador para los tres sistemas (hoy Mi Mesa mide en bruto,
+  Scalp CC neto y el Session Analyst con su propio criterio).
+- Predicciones escritas antes y calificadas después, con su calibración (Brier) visible.
+
+## 7. La cereza: pronóstico de tilt
+
+Idea de la sesión revisora, la que más diferenciaría al sistema. El Coach no solo marca la fuga después:
+**la predice minutos antes**. Con el historial de trades y flags se entrena un modelo simple
+(regresión logística, sin dependencias) de la probabilidad de romper una regla en los próximos 30 min,
+con señales como: minutos desde el último SL, racha de pérdidas, salto de tamaño vs la mediana,
+velocidad de re-entrada, hora del día, P&L del día en R, día de la semana y si ya se tocó el stop del
+día. Cuando la probabilidad cruza un umbral, Mi Mesa baja el tamaño máximo, alarga la pausa o bloquea,
+y le muestra a Jesus una tarjeta corta: "esto es lo que tu yo de otros días hizo en esta situación, y
+cuánto costó". Medir: violaciones R1 y R por semana antes y después, y la calibración del pronóstico.
