@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-22",
-  "asOf": "2026-11-22T21:30:40.481Z",
-  "state": "OK",
+  "asOf": "2026-11-22T21:45:36.293Z",
+  "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 0,
+  "todayViolations": 1,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,16 +16,69 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 0,
+    "used": 2,
     "riskPerTrade": 50,
     "dayStop": 100,
-    "pnl": 0,
-    "pnlR": 0,
-    "maxLossStreak": 0
+    "pnl": -10376.71,
+    "pnlR": -207.53,
+    "maxLossStreak": 2
   },
-  "openFlags": [],
-  "todayTrades": [],
-  "openPositions": [],
+  "openFlags": [
+    {
+      "rule": "R1",
+      "at": 1795330403378,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    }
+  ],
+  "todayTrades": [
+    {
+      "acct": "jh78km012eh329gky6cbpj6a518jmn0v",
+      "name": "NAS100 Composite Test Cup",
+      "sym": "NQ",
+      "side": "long",
+      "size": 5.1956,
+      "entry": 25581.78721226,
+      "exit": 25513.8,
+      "pnl": -376.71,
+      "r": -7.53,
+      "openedAt": 1795273591416,
+      "closedAt": 1795330304891,
+      "flags": [
+        "DAY_STOP_HIT"
+      ]
+    },
+    {
+      "acct": "jh78km012eh329gky6cbpj6a518jmn0v",
+      "name": "NAS100 Composite Test Cup",
+      "sym": "NQ",
+      "side": "short",
+      "size": 38.9208,
+      "entry": 25512.8,
+      "exit": 25729.6588,
+      "pnl": -10000,
+      "r": -200,
+      "openedAt": 1795330403378,
+      "closedAt": 1795342032834,
+      "flags": [
+        "R1_REVENGE",
+        "DAY_STOP_HIT"
+      ]
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh7fbgr4mbef7pdv2ne96qwy8x8jpss6",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "ETH",
+      "side": "long",
+      "size": 15,
+      "entry": 1723.355,
+      "openedAt": 1795383677115,
+      "hadStop": true,
+      "flags": []
+    }
+  ],
   "captures": [],
   "lastReview": null
 }
