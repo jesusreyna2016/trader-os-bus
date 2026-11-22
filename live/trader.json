@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-22",
-  "asOf": "2026-11-22T00:45:26.957Z",
+  "asOf": "2026-11-22T01:15:29.718Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 4,
@@ -16,12 +16,12 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 5,
+    "used": 6,
     "riskPerTrade": 50,
     "dayStop": 100,
-    "pnl": -12862.71,
-    "pnlR": -257.25,
-    "maxLossStreak": 3
+    "pnl": -12987.02,
+    "pnlR": -259.74,
+    "maxLossStreak": 4
   },
   "openFlags": [
     {
@@ -35,12 +35,6 @@
       "at": 1795273549912,
       "sym": "ETH",
       "note": "entrada dentro de la pausa tras un SL"
-    },
-    {
-      "rule": "stop",
-      "at": 1795300875710,
-      "sym": "ETH",
-      "note": "posicion abierta sin stop"
     },
     {
       "rule": "stop",
@@ -131,9 +125,7 @@
         "R1_REVENGE",
         "DAY_STOP_HIT"
       ]
-    }
-  ],
-  "openPositions": [
+    },
     {
       "acct": "jh719yq5gt3dgsjmacy6xy45bx8jkhqm",
       "name": "Funded 10K",
@@ -141,12 +133,18 @@
       "side": "short",
       "size": 18,
       "entry": 1680.41,
+      "exit": 1686.25,
+      "pnl": -124.31,
+      "r": -2.49,
       "openedAt": 1795300875710,
-      "hadStop": false,
+      "closedAt": 1795310029062,
       "flags": [
-        "NO_STOP"
+        "OVER_MAX_TRADES",
+        "DAY_STOP_HIT"
       ]
-    },
+    }
+  ],
+  "openPositions": [
     {
       "acct": "jh78km012eh329gky6cbpj6a518jmn0v",
       "name": "NAS100 Composite Test Cup",
