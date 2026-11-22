@@ -53,6 +53,13 @@ credenciales, reintenta una vez; si sigue, usa la Contents API de GitHub
 - `state/contexto-state.json` — merge de tu historial: `narrative`, `dayThesis`, `plans`, `planLatest`,
   y (en `pre-asia`) el `scorecard`/`zones`/`hypotheses` que reconstruyen los scripts python (sección 6).
 - `plans/digest.txt` — resumen móvil (sección 7).
+- `reviews/contexto/<fecha>.md` — tus reviews de calificación (sección 6) y la semanal (6.1). **El
+  Coach es dueño de `reviews/<fecha>.md` y `reviews/weekly-latest.md` en la RAÍZ de este bus; tú NUNCA
+  escribes ahí.** TODA ruta `reviews/...` del método de abajo va bajo `reviews/contexto/...`
+  (`reviews/contexto/<fecha>.md`, `reviews/contexto/<sábado>-semana.md`, `reviews/contexto/weekly-latest.md`).
+  Los scripts python ya están adaptados a esa ruta.
+- `grades/<fecha>.json` y `grades/crypto/<fecha>.json` — los escribe `grade_plans.py` (namespace propio,
+  no choca con el Coach). `bars/<fecha>.json` lo escribe la función Netlify `tos-bus-bars`, tú solo lo lees.
 - `live/plan-heartbeat.json` — `{ lastRun, runType, ok, note }` de esta lente. **NO toques
   `live/trader.json`** (es del Coach) ni `live/market.json`/`live/feeds.json`/`live/edge.json` (los
   escriben las funciones Netlify del cerebro).
@@ -73,9 +80,9 @@ credenciales, reintenta una vez; si sigue, usa la Contents API de GitHub
     día tras arrancar la función de velas), sáltalo y anota "sin velas para calificar <fecha>" en el
     review; NO inventes la calificación.
 - **Secciones 6 (cierre y calificación del día, solo `pre-asia`) y 6.1 (meta-revisión semanal,
-  `weekly`): ACTIVAS.** Escribe `reviews/<fecha>.md`, deja que el script escriba `grades/<fecha>.json`,
-  re-califica ayer y deja que `update_scorecard.py` reconstruya `scorecard`/`zoneEdge`/`emCalibration`
-  desde `grades/` + `hitLog`.
+  `weekly`): ACTIVAS.** Escribe `reviews/contexto/<fecha>.md`, deja que el script escriba
+  `grades/<fecha>.json`, re-califica ayer y deja que `update_scorecard.py` reconstruya
+  `scorecard`/`zoneEdge`/`emCalibration` desde `grades/` + `hitLog`.
 - `live/journal.json` (plan vs ejecución, sección 6): si falta, trátalo como "sin datos de ejecución"
   (esa parte del review se omite; el resto de la calificación sí corre).
 - El resto del método (secciones 2, 2b, 2c, 3, 4, 4.1, 5, 7, 8, reglas 8b/8c, `reachability.md`,

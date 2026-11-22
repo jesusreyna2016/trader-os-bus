@@ -389,11 +389,11 @@ def main():
         sc["emErrorTicks"] = em_error_ticks(cal, end)
     if cal.get("_lastDate") != end:
         try:
-            rv = io.open("reviews/%s.md" % end, encoding="utf-8").read().lower()
+            rv = io.open("reviews/contexto/%s.md" % end, encoding="utf-8").read().lower()
         except FileNotFoundError:
             rv = ""
         if "sin muestra em" not in rv:
-            errs.append('emCalibration._lastDate=%s, expected %s: add the EM samples of %s to emCalibration (section "Calibracion") and set _lastDate, or write "sin muestra EM: <motivo>" in reviews/%s.md' % (cal.get("_lastDate"), end, end, end))
+            errs.append('emCalibration._lastDate=%s, expected %s: add the EM samples of %s to emCalibration (section "Calibracion") and set _lastDate, or write "sin muestra EM: <motivo>" in reviews/contexto/%s.md' % (cal.get("_lastDate"), end, end, end))
 
     auto = os.path.exists("grades/%s.json" % end)
     if not check_only:
@@ -403,18 +403,18 @@ def main():
         zone_edge(sc, end)
     if not auto:
         try:
-            rv = io.open("reviews/%s.md" % end, encoding="utf-8").read().lower()
+            rv = io.open("reviews/contexto/%s.md" % end, encoding="utf-8").read().lower()
         except FileNotFoundError:
             rv = ""
         if "sin calificacion automatica" not in rv and "sin calificación automática" not in rv:
-            errs.append('grades/%s.json missing: run python3 method/grade_plans.py %s before this script (needs bars/<day>.json in the repo), or write "sin calificacion automatica: <motivo>" in reviews/%s.md' % (end, end, end))
+            errs.append('grades/%s.json missing: run python3 method/grade_plans.py %s before this script (needs bars/<day>.json in the repo), or write "sin calificacion automatica: <motivo>" in reviews/contexto/%s.md' % (end, end, end))
     if end not in (sc.get("hitLog") or {}):
         try:
-            rv = io.open("reviews/%s.md" % end, encoding="utf-8").read().lower()
+            rv = io.open("reviews/contexto/%s.md" % end, encoding="utf-8").read().lower()
         except FileNotFoundError:
             rv = ""
         if "sin calificacion de aciertos" not in rv and "sin calificación de aciertos" not in rv:
-            errs.append('scorecard.hitLog["%s"] missing: add the day\'s bias/scenario/zone grades per symbol (section "Calibracion", hitLog), or write "sin calificacion de aciertos: <motivo>" in reviews/%s.md' % (end, end))
+            errs.append('scorecard.hitLog["%s"] missing: add the day\'s bias/scenario/zone grades per symbol (section "Calibracion", hitLog), or write "sin calificacion de aciertos: <motivo>" in reviews/contexto/%s.md' % (end, end))
 
     if not check_only:
         io.open(STATE, "w", encoding="utf-8", newline="\n").write(json.dumps(state, ensure_ascii=False, indent=1))
