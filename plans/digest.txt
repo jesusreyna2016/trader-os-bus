@@ -1,0 +1,11 @@
+SA pre-asia 2026-11-23 12:43 CT
+!! FEED1 caido en los 5 futuros, sin GO posible
+>> YM fade EMA50/15 48558-88 · 20:00-23:00 CT
+NQ WAIT · sin sesgo · sin setup · EM 309p
+ES WAIT · sin sesgo · sin setup · EM 60p
+GC WAIT · sin sesgo · sin setup · EM 31p · chop!
+YM WAIT · sin sesgo · sin setup · EM 352p
+CL WAIT · sin sesgo · sin setup · EM 0.45p
+Limpio: YM. BOS bajista confirmado, sin anomalias.
+Datos OK · Noticias MEDIA · Cal holiday-week
+Prec 20d: sin datos aun
