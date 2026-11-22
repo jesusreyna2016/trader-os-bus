@@ -1,7 +1,7 @@
 {
   "_writer": "edge",
   "_schema": 1,
-  "asOf": "2026-11-22T16:16:18.610Z",
+  "asOf": "2026-11-22T16:46:21.144Z",
   "rung": 1,
   "readyForLive": false,
   "headline": "señal cruda scalp expRnet -0.06 (76415); edge solo en: 29m/RETEST/LONG, 15m/RETEST/SHORT",
@@ -284,9 +284,16 @@
     }
   },
   "reversalModel": {
-    "n": 0,
+    "n": 1,
     "window": "7d",
-    "note": "sin resoluciones aun; se mide conforme TDL_REV las emita"
+    "expR": -1,
+    "wr": 0,
+    "bySession": {
+      "NA": {
+        "n": 1,
+        "expR": -1
+      }
+    }
   },
   "_sources": {
     "scalp": true,
