@@ -20821,9 +20821,10 @@
    "formed": "2026-10-01",
    "confirmWhen": "evidenceN>=5 y hits/evidenceN>=0.7",
    "refuteWhen": "3 ocurrencias seguidas donde el rango realizado queda por debajo de 1.5x el residual",
-   "status": "abierta",
+   "status": "sin_senal",
    "lastChecked": "2026-11-03",
-   "note": "2026-11-02: NQ NY realizo 789.5pts contra una base EM de 250.7 (3.15x), tras un dia ya AGOTADO en sesiones previas. 3a muestra, aun bajo el umbral n>=5 para confirmar. | 2026-11-03: NQ asia tras dia agotado (11-02, rangePct 128%) vino DENTRO de banda (246pts vs 232-385), no 3x residual -> miss."
+   "note": "2026-11-02: NQ NY realizo 789.5pts contra una base EM de 250.7 (3.15x), tras un dia ya AGOTADO en sesiones previas. 3a muestra, aun bajo el umbral n>=5 para confirmar. | 2026-11-03: NQ asia tras dia agotado (11-02, rangePct 128%) vino DENTRO de banda (246pts vs 232-385), no 3x residual -> miss. | 2026-11-22: cerrada por poda (tope de 20 abiertas, la mas vieja sin senal reciente).",
+   "closedAt": "2026-11-22"
   },
   "H-2026-10-02-gira-se-revierte-mismo-dia": {
    "claim": "Un giro de tesis confirmado con estructura real (no mecha, p.ej. IB roto + 2 niveles de invalidacion perdidos) puede deshacerse del todo dentro de la MISMA sesion que sigue, no solo quedar en duda.",
@@ -20946,9 +20947,10 @@
    "formed": "2026-11-03",
    "confirmWhen": "evidenceN>=5 y hits/evidenceN>=0.7",
    "refuteWhen": "3 ocurrencias seguidas en contra (el vaiven continua con la misma violencia)",
-   "status": "abierta",
+   "status": "sin_senal",
    "lastChecked": "2026-11-04",
-   "note": "2026-11-03: 3 reversales violentos en asia/londres por titulares de Iran (paz / ataque Qeshm / etc); NY vino con rango real 1.26pts, bajo la banda predicha (2.62-7.88) -> hit. n=1, vigilar. 2026-11-04: sin nueva ocurrencia (dia distinto, shock electoral con tendencia confirmada, no vaiven por titulares de Iran); hipotesis sigue en n=1, sin cambio."
+   "note": "2026-11-03: 3 reversales violentos en asia/londres por titulares de Iran (paz / ataque Qeshm / etc); NY vino con rango real 1.26pts, bajo la banda predicha (2.62-7.88) -> hit. n=1, vigilar. 2026-11-04: sin nueva ocurrencia (dia distinto, shock electoral con tendencia confirmada, no vaiven por titulares de Iran); hipotesis sigue en n=1, sin cambio. | 2026-11-22: cerrada por poda (tope de 20 abiertas, la mas vieja sin senal reciente).",
+   "closedAt": "2026-11-22"
   },
   "H-2026-11-04-tres-giros-misma-noche": {
    "claim": "Cuando 3+ instrumentos del complejo (ES/GC/YM) giran su tesis multi-dia la misma noche con cierres de 1h sostenidos sobre su invalidacion, el instrumento que NO confirma el giro (NQ) tiende a liderar la reversion del grupo en las 1-2 sesiones siguientes.",
@@ -21137,15 +21139,34 @@
    "status": "abierta",
    "lastChecked": "2026-11-18",
    "note": "Caso de hoy: maximo 27609.75 (sobre PDH 27498) rechazado, swing 1h 27424.50 marcado como resistencia; el plan de Asia del 19-nov la usa como invalidacion del corto de pullback. Se resuelve con el cierre de Asia de esa fecha."
+  },
+  "trial-es-calendar-major-cap": {
+   "claim": "En dias de calendario mayor (fomc/nfp/cpi/earnings-megacap) el sesgo de ES falla mas de lo normal: conviccion tope baja, sin GO en ES.",
+   "sym": "ES",
+   "evidenceN": 48,
+   "hits": 18,
+   "formed": "2026-11-21",
+   "status": "abierta",
+   "lastChecked": "2026-11-21",
+   "confirmWhen": "bias|ES|calendar=major sigue < 45% con n>=20 sesiones nuevas desde 2026-11-21",
+   "refuteWhen": "bias|ES|calendar=major >= 50% con n>=20 sesiones nuevas desde 2026-11-21",
+   "note": "Cambio de regla 8e aprobado por Jesus 2026-11-21 (propuesta 1 del weekly, 3a semana). Vive en overrides.convictionCap y lo exige lint_plan.py. Si se refuta, el weekly retira el override y lo dice en Cambios aplicados."
+  },
+  "trial-go-gatillo-asia-ny": {
+   "claim": "En Asia y NY, una zona A+ del metodo con gatillo de 5 m paga aunque la conviccion sea baja: GO al gatillo (verdict.mode gatillo).",
+   "sym": "ALL",
+   "evidenceN": 17,
+   "hits": null,
+   "formed": "2026-11-21",
+   "status": "abierta",
+   "lastChecked": "2026-11-21",
+   "confirmWhen": "los GO con verdict.mode gatillo dan avgR >= +0.25 con n >= 15 (python3 method/entry_study.py, trigger_target)",
+   "refuteWhen": "los GO con verdict.mode gatillo dan avgR < 0 con n >= 15, o las A+ con gatillo de Asia+NY caen bajo +0.15R con n >= 60",
+   "note": "Cambio de regla 8e aprobado por Jesus 2026-11-21 (reviews/2026-11-21-estudio-entradas.md). Base desde la 8e: A+ con gatillo +0.50R n35 (Asia +2.14R n5, NY +0.92R n12, Londres -0.23R n18). Lo exige lint_plan.py. Si se refuta, el weekly quita el GO al gatillo de la 8e y lo dice en Cambios aplicados."
   }
  },
  "overrides": {
   "predictionSkip": {
-   "NQ|direction": {
-    "value": true,
-    "since": "2026-09-12",
-    "evidence": "n=29, rate=0.33 (33%) — weekly 2026-09-12 auto-apply rate<0.40 n≥20"
-   },
    "GC|range": {
     "value": true,
     "since": "2026-09-12",
@@ -21154,10 +21175,16 @@
   },
   "zonePriors": {
    "bounce_val": {
-    "value": 0.68,
-    "since": "2026-09-12",
-    "winN": 136,
-    "evidence": "winRate agregado por arquetipo 0.68, winN 136 (>=30), divergencia +0.13 vs prior reversion 0.55 — aplicado manual por Jesus tras weekly 2026-09-12; edge de bordes del perfil (VAL) confirmado"
+    "value": 0.63,
+    "since": "2026-11-22",
+    "winN": 43,
+    "evidence": "winRate agregado bounce_val 0.558 (winN 43, live+0.5*seed, method/zone_type_rates.py) vs prior 0.68: diverge -0.12 (> 0.10, winN >= 30) -> -0.05 segun 6.1. Igual que el Session Analyst 2026-11-21.",
+    "prev": {
+     "value": 0.68,
+     "since": "2026-09-12",
+     "winN": 136,
+     "evidence": "winRate agregado por arquetipo 0.68, winN 136 (>=30), divergencia +0.13 vs prior reversion 0.55 — aplicado manual por Jesus tras weekly 2026-09-12; edge de bordes del perfil (VAL) confirmado"
+    }
    },
    "golden_zone": {
     "value": 0.32,
@@ -21170,6 +21197,24 @@
     "since": "2026-09-26",
     "winN": 49,
     "evidence": "winRate agregado 0.3868 (38.7%), winN 49 (>=30), diverge -0.11 vs prior base 0.50 (continuacion, sin override previo)"
+   }
+  },
+  "convictionCap": {
+   "ES|calendar=major": {
+    "value": "baja",
+    "since": "2026-11-21",
+    "evidence": "bias|ES|calendar=major 38% n=48 vs 53% promedio; blind spot 3 semanas seguidas (31%->34%->38%); GO de ES en esos dias 0 de 3 con gatillo (2 stop, 1 abierto). Aplicado por Jesus tras weekly 2026-11-21 (propuesta 1)."
+   }
+  },
+  "_retired": {
+   "predictionSkip|NQ|direction": {
+    "was": {
+     "value": true,
+     "since": "2026-09-12",
+     "evidence": "n=29, rate=0.33 (33%) — weekly 2026-09-12 auto-apply rate<0.40 n≥20"
+    },
+    "retired": "2026-11-22",
+    "why": "predictionScore NQ|direction rate 0.4143 (n=35) >= 0.40 (mismo dato que el Session Analyst, que lo retiro el 2026-11-21 por la regla de 6.1)."
    }
   }
  }

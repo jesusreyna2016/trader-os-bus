@@ -62,13 +62,23 @@ def execution(by_day, end):
     s = lambda k: sum(int(d.get(k) or 0) for d in days)
     pos = s("positions")
     flags = {k: sum(1 for d in days if d.get(k)) for k in ("overtrade", "revenge", "roundTrip")}
+    # the journal's bias/zone classifier: graded trades that land in none of withBias/againstBias/
+    # validEdge mean it did not classify (everything falls into outsideEdge). Since 2026-11-06 it is so
+    # on every day; plans and the weekly must not read that as "100% outside the zone" (section 6).
+    gd = [d for d in days if int(d.get("graded") or 0) > 0]
+    cls_days = [d for d in gd if int(d.get("withBias") or 0) + int(d.get("againstBias") or 0) + int(d.get("validEdge") or 0) > 0]
     return {
+        "classified": bool(cls_days),   # false too when nothing was graded (no fichas): nothing to read as conduct
+        "classifiedDays": len(cls_days), "gradedDays": len(gd),
         "days": len(days), "n": s("trades"), "graded": s("graded"),
         "withBias": s("withBias"), "againstBias": s("againstBias"),
         "validEdge": s("validEdge"), "outsideEdge": s("outsideEdge"),
         "disciplinedPct": round(100 * sum(1 for d in days if d.get("disciplined")) / len(days)),
         "positions": pos,
-        "partialRate": round(s("partials") / pos, 3) if pos else None,
+        # partials null = the journal did not send it (not zero): rate only over days that carry it
+        "partialRate": (lambda ds: round(sum(int(d["partials"]) for d in ds) / sum(int(d.get("positions") or 0) for d in ds), 3)
+                        if ds and sum(int(d.get("positions") or 0) for d in ds) else None)(
+                            [d for d in days if d.get("partials") is not None]),
         "scratchRate": round(s("scratches") / pos, 3) if pos else None,
         "fullStopRate": round(s("fullStops") / pos, 3) if pos else None,
         "overtradeDays": flags["overtrade"], "revengeDays": flags["revenge"], "roundTripDays": flags["roundTrip"],
@@ -108,8 +118,13 @@ def em_calibration_auto(sc, end):
                 except ValueError:
                     pm = 1.0
                 raw = base / pm if pm else base
+                # daily ATR of that plan (expectedMove.dayBudget = feed.raw.atrD), for errPctAtr
+                try:
+                    atr = float((((plan.get("instruments") or {}).get(sym) or {}).get("expectedMove") or {}).get("dayBudget") or 0)
+                except (TypeError, ValueError):
+                    atr = 0.0
                 if raw > 0:
-                    samples.setdefault("%s|%s" % (sym, sess), []).append((f[:10], raw, real))
+                    samples.setdefault("%s|%s" % (sym, sess), []).append((f[:10], raw, real, atr))
     if not samples:
         return False
     old = {k: v for k, v in (sc.get("emCalibration") or {}).items() if k != "_hand"}
@@ -117,14 +132,17 @@ def em_calibration_auto(sc, end):
            "_note": "auto from grades/ (real-bar session range vs raw plan base), last %d sessions per cell" % EM_WINDOW}
     for key, v in sorted(samples.items()):
         v = sorted(v)[-EM_WINDOW:]
-        ratios = sorted(r / b for _, b, r in v)
+        ratios = sorted(r / b for _, b, r, _ in v)
         tick = EM_TICK.get(key.split("|")[0], 0.01)
-        errs = [(r - b) / tick for _, b, r in v]
+        errs = [(r - b) / tick for _, b, r, _ in v]
+        pct = [abs(r - b) / atr * 100 for _, b, r, atr in v if atr > 0]
         n = len(v)
         cal[key] = {"n": n, "mult": round(min(3.0, max(0.7, ratios[n // 2])), 2),
                     "p25": round(ratios[n // 4], 2), "p75": round(ratios[(3 * n) // 4], 2),
                     "meanErrTk": round(sum(abs(e) for e in errs) / n, 1), "biasTk": round(sum(errs) / n, 1),
-                    "biasTkSign": "+" if sum(errs) > 0 else "-", "src": "auto"}
+                    "biasTkSign": "+" if sum(errs) > 0 else "-",
+                    "errPctAtr": round(sum(pct) / len(pct), 1) if pct else None,
+                    "errPctAtrN": len(pct), "src": "auto"}
     cal["_lastDate"] = end
     sc["emCalibration"] = cal
     return True
@@ -389,11 +407,11 @@ def main():
         sc["emErrorTicks"] = em_error_ticks(cal, end)
     if cal.get("_lastDate") != end:
         try:
-            rv = io.open("reviews/contexto/%s.md" % end, encoding="utf-8").read().lower()
+            rv = io.open("reviews/%s.md" % end, encoding="utf-8").read().lower()
         except FileNotFoundError:
             rv = ""
         if "sin muestra em" not in rv:
-            errs.append('emCalibration._lastDate=%s, expected %s: add the EM samples of %s to emCalibration (section "Calibracion") and set _lastDate, or write "sin muestra EM: <motivo>" in reviews/contexto/%s.md' % (cal.get("_lastDate"), end, end, end))
+            errs.append('emCalibration._lastDate=%s, expected %s: add the EM samples of %s to emCalibration (section "Calibracion") and set _lastDate, or write "sin muestra EM: <motivo>" in reviews/%s.md' % (cal.get("_lastDate"), end, end, end))
 
     auto = os.path.exists("grades/%s.json" % end)
     if not check_only:
@@ -403,18 +421,18 @@ def main():
         zone_edge(sc, end)
     if not auto:
         try:
-            rv = io.open("reviews/contexto/%s.md" % end, encoding="utf-8").read().lower()
+            rv = io.open("reviews/%s.md" % end, encoding="utf-8").read().lower()
         except FileNotFoundError:
             rv = ""
         if "sin calificacion automatica" not in rv and "sin calificación automática" not in rv:
-            errs.append('grades/%s.json missing: run python3 method/grade_plans.py %s before this script (needs bars/<day>.json in the repo), or write "sin calificacion automatica: <motivo>" in reviews/contexto/%s.md' % (end, end, end))
+            errs.append('grades/%s.json missing: run python3 method/grade_plans.py %s before this script (needs bars/<day>.json in the repo), or write "sin calificacion automatica: <motivo>" in reviews/%s.md' % (end, end, end))
     if end not in (sc.get("hitLog") or {}):
         try:
-            rv = io.open("reviews/contexto/%s.md" % end, encoding="utf-8").read().lower()
+            rv = io.open("reviews/%s.md" % end, encoding="utf-8").read().lower()
         except FileNotFoundError:
             rv = ""
         if "sin calificacion de aciertos" not in rv and "sin calificación de aciertos" not in rv:
-            errs.append('scorecard.hitLog["%s"] missing: add the day\'s bias/scenario/zone grades per symbol (section "Calibracion", hitLog), or write "sin calificacion de aciertos: <motivo>" in reviews/contexto/%s.md' % (end, end))
+            errs.append('scorecard.hitLog["%s"] missing: add the day\'s bias/scenario/zone grades per symbol (section "Calibracion", hitLog), or write "sin calificacion de aciertos: <motivo>" in reviews/%s.md' % (end, end))
 
     if not check_only:
         io.open(STATE, "w", encoding="utf-8", newline="\n").write(json.dumps(state, ensure_ascii=False, indent=1))

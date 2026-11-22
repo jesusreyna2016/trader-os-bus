@@ -212,7 +212,7 @@ working dir. Trabajas con archivos, no con HTTP.
   (merge, no reemplazo): actualiza `narrative`, los `models` que cambiaron, `zones`,
   `scorecard`; añade la entrada nueva a `reviews`/`dayThesis`/`plans`; pon `planLatest`.
 - `reviews/<fecha>.md` — solo en `pre-asia`: la calificación del día que cerró; `<fecha>` = `<fecha_ayer>` (= `<hoy>` − 1 día calendario, sección 1). Es la misma fecha con la que se cruza `live/journal.json`.
-- `reviews/<fecha>-semana.md` — solo `RUN_TYPE=weekly` (rutina de sábado): la meta-revisión de la semana (sección 6.1).
+- `reviews/<fecha>-semana.md` — solo `RUN_TYPE=weekly` (rutina de sábado): la meta-revisión de la semana (sección 6.1). **Si el prompt de tu rutina (pre-asia/pre-london/pre-ny) todavía dice "solo domingo pre-asia: `reviews/<HOY>-semana.md`", ignóralo: es una línea vieja; manda este método y esa revisión NO se escribe fuera del `weekly`.**
 - `reviews/weekly-latest.md` — solo `weekly`: copia idéntica de la meta-revisión más reciente en una ruta fija (la lee el Command Center por `raw.githubusercontent`, que no puede listar carpetas).
 - `plans/digest.txt` — resumen de 7-10 líneas (≤60 car/línea) para el móvil (sección 7), en cada corrida.
 - `live/plan-heartbeat.json` — `{ lastRun, runType, ok, note }` al final de CADA corrida, aunque el
@@ -951,6 +951,14 @@ bloquea mecánicamente. Cuando la medición suba de peldaño, esta sección se e
        de revisión de abajo); hipótesis `trial-cont-against-aplus`. (b) `golden_zone` deja de ser
        A+ en cualquier caso: tope **B** (`golden_zone|against` 0/6, −1R); hipótesis
        `trial-golden-zone-tope-b`. El weekly revierte cada uno si se cumple su `refuteWhen`.
+     · **Cambio 2026-11-21 (aprobado por Jesus, a prueba): ES en día de calendario mayor.** Si
+       `calendarContext.tags` del plan incluye `fomc`, `nfp`, `cpi` o `earnings-megacap`, ES lleva
+       `conviction` "baja" (nunca "alta") y por tanto no hay GO en ES ese plan; las zonas siguen en la
+       tabla como B/WAIT con su `play`. Base: `bias|ES|calendar=major` 38 % (n=48) vs 53 % del bus, 3
+       semanas seguidas como blind spot (31 % → 34 % → 38 %), y los GO de ES en esos días 0 de 3 con
+       gatillo (2 stop, 1 abierto). Vive en `state.overrides.convictionCap["ES|calendar=major"]` y `lint_plan.py` lo
+       exige. Hipótesis `trial-es-calendar-major-cap`: el weekly la RETIRA (y lo dice en Cambios
+       aplicados) si `bias|ES|calendar=major` sube a ≥ 50 % con n ≥ 20 sesiones nuevas desde su `since`.
      · Reversión con `vs24h` `"with"` o `"flat"`, y `golden_zone` siempre: tope **B**.
      · Continuación con `vs24h` `"with"` o `"flat"`: tope **B**, nunca GO. Con `"with"` resta
        **−2** (es la combinación que más pierde).
@@ -964,6 +972,18 @@ bloquea mecánicamente. Cuando la medición suba de peldaño, esta sección se e
    - **GO** = convicción "alta" + el resto de la sección 9 (precio en o llegando a la zona,
      permiso de sesión, sin estiramiento, `risk.rr` ≥ 1.5, gatillo esperable, fuera de manos
      fuera). El GO ya NO exige que el sesgo de las fuentes esté alineado.
+   - **GO al gatillo (cambio 2026-11-21, aprobado por Jesus, a prueba).** En **Asia y NY**
+     (`session` "asia" o "ny"), si `zones[0]` es A+ del método y cumple todo lo demás del GO
+     (alcanzable, sin estiramiento, `risk.rr` ≥ 1.5 y flag no malo, sin `frameConflict.on`,
+     `whipsawRisk` < 0.6, fuera de manos fuera, sin shock activo), el `verdict` puede ser GO con
+     convicción "baja". Escribe `verdict.mode: "gatillo"` y abre `verdict.reason` con "GO al
+     gatillo:"; la entrada es SOLO al gatillo de `play.trigger` (cierre de 5 m), nunca orden
+     límite. **Londres no**: ahí GO sigue exigiendo "alta". No aplica si un
+     `overrides.convictionCap` cubre ese símbolo y contexto (p. ej. ES en calendario mayor).
+     Base (`method/entry_study.py`, `reviews/2026-11-21-estudio-entradas.md`): desde la 8e las A+
+     con gatillo dan +0.50R (n=35); por sesión Asia +2.14R (n=5), NY +0.92R (n=12), Londres
+     −0.23R (n=18); con orden límite −0.16R. Hipótesis `trial-go-gatillo-asia-ny`: el weekly la
+     revierte si su `refuteWhen` se cumple. `lint_plan.py` lo verifica.
    - **Revisión**: `scorecard.zoneEdge` (lo arma `update_scorecard.py` desde `grades/`) lleva
      `family|vs24h`, `type|vs24h` y `family|session` con `avgR`. En el weekly, si
      `reversion|against` baja de `avgR` 0 con n ≥ 40, o una celda con tope B pasa a
@@ -1000,7 +1020,8 @@ bloquea mecánicamente. Cuando la medición suba de peldaño, esta sección se e
      recorrió >70 % del presupuesto y el precio
      está a mitad de rango (poco jugo, alto riesgo de chop restante). Protege de OPERAR EL CHOP,
      SOBREOPERAR y ANTICIPAR (fugas #1, #4, #7).
-   - **GO** (hay edge a favor): convicción "alta" según la regla 8e Y el precio está EN
+   - **GO** (hay edge a favor): convicción "alta" según la regla 8e (o GO al gatillo de la 8e en
+     Asia/NY con `verdict.mode: "gatillo"`) Y el precio está EN
      (o llegando a) una zona **A+ del método (reglas 8e y 8f)** en un nivel mapeado, con permiso
      de sesión (ventana del `play`), sin estar estirado, con
      `risk.rr` ≥ 1.5 y flag no malo, con un gatillo esperable ahí (FVG/iFVG, reclaim, rechazo,
@@ -1494,6 +1515,19 @@ Por sesión (Asia, Londres, NY) × instrumento, evalúa:
   claro en ≥1 instrumento Y `againstBias > withBias` (o `disciplined=false` con `overtrade`),
   **abre el review con esa frase**, antes del scorecard de mercado. Cruza `byDay` (por fecha)
   con tus planes de esos días:
+  - **Guarda de datos (desde 2026-11-21, regla dura):** si en un día `graded > 0` pero
+    `withBias + againstBias + validEdge = 0` (todo cae en `outsideEdge`), el clasificador del
+    journal NO está funcionando: no midió sesgo ni zona, solo marcó todo como fuera. Pasa en TODOS
+    los días desde el 2026-11-06 (graded 9-67 por día, 0 clasificados) y contradice
+    `zones/report.md`, donde 145 de 240 trades de Mi Mesa sí caen en zona. En ese caso **no
+    escribas "0 % disciplinado", "100 % fuera de zona" ni "operó tierra de nadie"** y no endurezcas
+    convicción ni recordatorios por eso: escribe "ejecución: el journal no clasificó sesgo/zona
+    (graded <n>, 0 clasificados)" y, para zona vs fuera, cita la sección de trades de
+    `zones/report.md` si existe. `disciplined` depende de esa misma clasificación: tampoco lo
+    uses como veredicto. `overtrade`, `revenge`, `maxLossStreak`, `trades` y `fullStops` sí valen
+    (son conteos). `scorecard.execution.ALL.classified` lo marca (lo escribe `update_scorecard.py`).
+    `partials: null` en un día = el journal no lo mandó, no es cero: `partialRate` solo se calcula
+    sobre días que lo traen (`update_scorecard.py`); no escribas "sin un solo parcial" por un null.
   - **Día de ayer, trade a trade hasta donde llegue el digest**: `trades`, `graded`,
     `withBias` vs `againstBias`, `validEdge` vs `outsideEdge`, `maxLossStreak`, y los flags
     `disciplined`/`overtrade`/`revenge`/`roundTrip`. Traduce a una frase de veredicto:
@@ -1745,7 +1779,9 @@ Prosa: la regla de la cabecera vale también aquí, **sin guión largo** en el m
    - **Contexto fuera del gráfico** (una línea): de los `macroContext.drivers` de la semana,
      cuáles explicaron el movimiento y cuáles no (según las reviews diarias, regla 8b), y si
      el `crossAsset.tone` iba con o contra el resultado del día.
-   - **Ejecución de la semana** (de `journal.json`): días disciplinados / 5, `againstBiasRate`
+   - **Ejecución de la semana** (de `journal.json`; si `scorecard.execution.ALL.classified` es
+     `false`, aplica la guarda de datos de la sección 6: ni disciplina ni fuera de zona, solo los
+     conteos y la sección de trades de `zones/report.md`): días disciplinados / 5, `againstBiasRate`
      y `outsideEdgeRate` del rollup con ▲/▼, días de `overtrade`/`revenge`, la racha de
      pérdidas peor. Una frase sobre si la disciplina mejora o empeora y qué fuga manda.
      Si el rollup trae `partialRate`/`scratchRate`, añade la calidad de salida con ▲/▼.
@@ -1777,6 +1813,16 @@ Prosa: la regla de la cabecera vale también aquí, **sin guión largo** en el m
        * ajustar el prior de un arquetipo de `zones` en ±0.05 si el `winRate` agregado del
          nivel `<tipo>` (con `winN ≥ 30`) diverge > 0.10 del prior vigente → escribe
          `overrides.zonePriors["<arquetipo>"]`.
+         El `winRate` agregado por arquetipo puro sale de `python3 method/zone_type_rates.py`
+         (suma las hojas de `state.zones`, live + 0.5·seed; `actionable:true` = cumple la regla).
+       * `predictionSkip`: "deja de cumplirse 2 semanas seguidas" se mide con el `rate` vigente en
+         cada weekly, haya muestra nueva o no (un kind retirado no genera muestra nueva: esperarla
+         lo deja retirado para siempre). Al reactivar un kind, dilo en Cambios aplicados.
+       * `overrides.convictionCap["<SYM>|<dim>=<valor>"]` (desde 2026-11-21): tope de convicción "baja"
+         en ese contexto. El weekly puede AÑADIR uno si el blind spot `bias|<SYM>|<dim>=<valor>` está
+         ≥ 12 puntos bajo el promedio del bus con n ≥ 40 tres semanas seguidas, y RETIRARLO con la
+         regla de abajo o con su `refuteWhen`. Los planes lo aplican igual que la 8e (`lint_plan.py`
+         hoy solo verifica `calendar=major`; otros contextos los aplica el agente a mano).
        Cada override lleva `{ value, since:"<sábado>", evidence:"<n, %>" }`. Si una condición
        deja de cumplirse 2 semanas seguidas, el weekly RETIRA el override (y lo dice).
      - **Estructurales** (todo lo demás: lógica de `verdict`, umbrales duros, secciones
@@ -1984,7 +2030,8 @@ de-identificado). `<n>` = `days` de la ventana. Los `%` se calculan sobre trades
 (validEdge + outsideEdge)`. Usa el agregado (`ALL` si no hay desglose por instrumento);
 redondea al entero. Añade ` · churn` si algún día del tramo trae `overtrade`, `revenge` o
 `roundTrip`. Si no existe `scorecard.execution` (falta `live/journal.json` o va sin datos),
-**omite la línea entera**, no pongas ceros.
+**omite la línea entera**, no pongas ceros. Si `scorecard.execution.ALL.classified` es `false` (guarda de datos de la sección 6), escribe
+`Ejec <n>d: journal sin clasificar<· churn si aplica>` en vez de los porcentajes.
 
 **Marcador `EM+`/`EM-`**: si un instrumento trae `expectedMove.underCal` (no null), pega el
 marcador al final de su token EM en la línea del instrumento (`NQ WAIT · sin sesgo · rebote
