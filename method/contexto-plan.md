@@ -600,8 +600,12 @@ y lo deja en `live/edge.json`. Léelo en cada corrida y crúzalo ANTES de fijar 
 5. **Frescura.** Si `edge.asOf` tiene > 24 h, úsalo con cautela y anótalo en `dataHealth.notes`. Si
    falta `edge.json`, sigue sin él y dilo ("sin edge medido esta corrida").
 
-En esta fase el edge es **advisory** (`gate.rung` bajo): informa el `verdict` y los recordatorios, no
-bloquea mecánicamente. Cuando la medición suba de peldaño, esta sección se endurece.
+La regla dura de GO (punto 1) la chequea `lint_plan.py` de forma MECÁNICA, no depende de que la
+recuerdes: si `overall.expRnet < 0` (la señal cruda pierde net) y NINGÚN `topSetups` con `hasEdge`
+respalda un setup, un `verdict` GO se marca. La severidad va atada a `gate.readyForLive`: mientras el
+edge está en **shadow** (`readyForLive:false`) es WARN (avisa, no bloquea, porque el edge aún no está
+validado); cuando el gate pase a `readyForLive:true` es ERROR (bloquea: no se publica GO sin un segmento
+probado). Así el filtro se endurece solo cuando la medición madura, sin tocar nada más.
 
 ---
 

@@ -414,6 +414,40 @@ def lint_crypto(plan):
                     warn(sym, zlabel(z, i), f"{z.get('dir')} stop {st} / tp1 {t1} on the wrong side of {lo}-{hi}")
 
 
+def load_edge():
+    import os
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "live", "edge.json")
+    try:
+        return json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+
+
+def check_edge_filter(plan):
+    """Edge filter (method 2c, step 2 of the Nov-22 note): a GO must not sit on a setup the measured
+    edge says loses net. Mechanical here so it does not depend on the agent remembering. Only bites
+    when the raw signal loses net (overall.expRnet < 0) AND no proven segment (topSetups.hasEdge)
+    backs any setup. Severity is tied to the edge gate: WARN while shadow (edge not validated yet),
+    ERROR once gate.readyForLive (then a GO without a proven segment is blocked)."""
+    edge = load_edge()
+    if not edge:
+        return  # sin edge medido: el metodo ya dice seguir sin el
+    overall = edge.get("overall") or {}
+    exprnet = overall.get("expRnet")
+    if not num(exprnet) or exprnet >= 0:
+        return  # la senal cruda no pierde net: nada que filtrar
+    if any((s or {}).get("hasEdge") for s in (edge.get("topSetups") or [])):
+        return  # hay un segmento probado al que un GO se puede apoyar (el agente mapea cual)
+    ready = bool((edge.get("gate") or {}).get("readyForLive"))
+    report = err if ready else warn
+    tag = "" if ready else " (shadow: aviso, no bloquea aun)"
+    for sym, ins in (plan.get("instruments") or {}).items():
+        if not isinstance(ins, dict) or (ins.get("verdict") or {}).get("signal") != "GO":
+            continue
+        report(sym, "edge", f"GO but edge.overall.expRnet {exprnet:g} < 0 and no proven topSetups "
+                            f"(edge filter, method 2c){tag}")
+
+
 def lint(path):
     out.clear()
     try:
@@ -424,6 +458,7 @@ def lint(path):
     ctx["old"] = str(plan.get("date", "9999")) < RULE_CHANGE
     crypto = str(plan.get("schema", "")).startswith("crypto") or str(plan.get("runType", "")).startswith("crypto")
     (lint_crypto if crypto else lint_futures)(plan)
+    check_edge_filter(plan)
     return list(out)
 
 
