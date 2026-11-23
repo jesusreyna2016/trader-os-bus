@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-23",
-  "asOf": "2026-11-23T00:45:31.655Z",
+  "asOf": "2026-11-23T01:00:44.911Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 9,
+  "todayViolations": 11,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,11 +16,11 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 9,
+    "used": 10,
     "riskPerTrade": 50,
     "dayStop": 100,
-    "pnl": -11083.31,
-    "pnlR": -221.67,
+    "pnl": -11115.82,
+    "pnlR": -222.32,
     "maxLossStreak": 3
   },
   "openFlags": [
@@ -51,6 +51,12 @@
     {
       "rule": "R1",
       "at": 1795389292063,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
+      "at": 1795394921607,
       "sym": "NQ",
       "note": "entrada dentro de la pausa tras un SL"
     }
@@ -205,6 +211,24 @@
       "openedAt": 1795394247501,
       "closedAt": 1795394775797,
       "flags": [
+        "OVER_MAX_TRADES",
+        "DAY_STOP_HIT"
+      ]
+    },
+    {
+      "acct": "jh7fbgr4mbef7pdv2ne96qwy8x8jpss6",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 0.5,
+      "entry": 25770.5,
+      "exit": 25835,
+      "pnl": -32.51,
+      "r": -0.65,
+      "openedAt": 1795394921607,
+      "closedAt": 1795395383150,
+      "flags": [
+        "R1_REVENGE",
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ]
