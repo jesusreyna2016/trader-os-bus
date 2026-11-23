@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-23",
-  "asOf": "2026-11-23T22:45:50.486Z",
+  "asOf": "2026-11-23T23:01:01.230Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 38,
+  "todayViolations": 39,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -142,6 +142,12 @@
       "at": 1795465935419,
       "sym": "NQ",
       "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "stop",
+      "at": 1795474859239,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
     },
     {
       "rule": "stop",
@@ -653,19 +659,32 @@
   ],
   "openPositions": [
     {
-      "acct": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv",
+      "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
       "name": "Select 50K Challenge",
       "sym": "NQ",
       "side": "short",
       "size": 1,
-      "entry": 26753,
+      "entry": 26833.5,
+      "openedAt": 1795474859239,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 9
+    },
+    {
+      "acct": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv",
+      "name": "Select 50K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 2,
+      "entry": 26788.86,
       "openedAt": 1795469374408,
       "hadStop": false,
       "flags": [
-        "NO_STOP",
-        "NO_ZONE"
+        "NO_STOP"
       ],
-      "distZone": 48
+      "distZone": 12
     }
   ],
   "captures": [],
