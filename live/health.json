@@ -1,9 +1,11 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-23T18:00:41.018Z",
- "status": "ok",
+ "checkedAt": "2026-11-23T18:30:36.540Z",
+ "status": "warn",
  "marketOpen": true,
- "issues": [],
+ "issues": [
+  "Edge medido: viejo (104m)"
+ ],
  "items": [
   {
    "key": "feeds",
@@ -11,7 +13,7 @@
    "writer": "TradingView -> tos-bus-snapshot",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-23T17:45:29.508Z",
+   "at": "2026-11-23T18:15:29.209Z",
    "note": "al dia"
   },
   {
@@ -20,25 +22,25 @@
    "writer": "tos-market",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-23T17:45:33.521Z",
+   "at": "2026-11-23T18:15:37.601Z",
    "note": "al dia"
   },
   {
    "key": "edge",
    "label": "Edge medido",
    "writer": "lente Edge",
-   "status": "ok",
-   "ageMin": 74,
+   "status": "warn",
+   "ageMin": 104,
    "at": "2026-11-23T16:46:48.387Z",
-   "note": "al dia"
+   "note": "viejo"
   },
   {
    "key": "bars",
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
    "status": "ok",
-   "ageMin": 52,
-   "at": "2026-11-23T17:09:08.740Z",
+   "ageMin": 21,
+   "at": "2026-11-23T18:09:08.819Z",
    "note": "al dia"
   },
   {
@@ -46,7 +48,7 @@
    "label": "Estado del trader (Coach)",
    "writer": "tos-coach",
    "status": "ok",
-   "ageMin": 75,
+   "ageMin": 104,
    "at": "2026-11-23T16:46:06.591Z",
    "note": "al dia"
   },
@@ -55,7 +57,7 @@
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
    "status": "ok",
-   "ageMin": 232,
+   "ageMin": 262,
    "at": "2026-11-23T14:09:00.000Z",
    "note": "espera la corrida de hoy"
   },
@@ -64,7 +66,7 @@
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 191,
+   "ageMin": 221,
    "at": "2026-11-23T14:50:00.000Z",
    "note": "al dia"
   },
@@ -73,7 +75,7 @@
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
    "status": "ok",
-   "ageMin": 847,
+   "ageMin": 877,
    "at": "2026-11-23T03:53:42.607Z",
    "note": "espera la corrida de hoy"
   }
