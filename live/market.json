@@ -1,7 +1,7 @@
 {
   "_writer": "contexto-composer",
   "_schema": 1,
-  "asOf": "2026-11-23T16:45:34.829Z",
+  "asOf": "2026-11-23T16:45:49.346Z",
   "symbols": {
     "BTC": {
       "verdict": null,
@@ -92,7 +92,7 @@
           "h2": -1,
           "h3": 1
         },
-        "po3": "MANIPULATION",
+        "po3": "EXPANSION",
         "po3Dir": "down",
         "lastLevelEvent": {
           "level": "H4",
@@ -196,12 +196,12 @@
         "po3": "MANIPULATION",
         "po3Dir": "down",
         "lastLevelEvent": {
-          "level": "R3",
-          "event": "TOUCH",
-          "t": 1795443900000,
-          "price": 1841.6466666667,
-          "dist": 3.0133333333,
-          "touches": 1
+          "level": "H4",
+          "event": "FAILED_BREAK",
+          "t": 1795452000000,
+          "price": 1773.744,
+          "dist": -7.194,
+          "touches": 2
         }
       }
     },
@@ -497,7 +497,7 @@
           "h3": 1
         },
         "po3": "EXPANSION",
-        "po3Dir": "up",
+        "po3Dir": "down",
         "lastLevelEvent": {
           "level": "H5",
           "event": "REJECT",
