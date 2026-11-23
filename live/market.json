@@ -1,7 +1,7 @@
 {
   "_writer": "contexto-composer",
   "_schema": 1,
-  "asOf": "2026-11-23T21:30:43.548Z",
+  "asOf": "2026-11-23T21:30:58.383Z",
   "symbols": {
     "BTC": {
       "verdict": null,
@@ -95,12 +95,12 @@
         "po3": "ACCUMULATION",
         "po3Dir": "up",
         "lastLevelEvent": {
-          "level": "PVAH",
-          "event": "TOUCH",
+          "level": "WO",
+          "event": "RETEST",
           "t": 1795469100000,
-          "price": 61679.6,
-          "dist": 10.1,
-          "touches": 23
+          "price": 61519.9,
+          "dist": 169.8,
+          "touches": 18
         }
       }
     },
