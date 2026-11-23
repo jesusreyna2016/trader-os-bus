@@ -454,13 +454,13 @@ viejo lo que solo refleja mercado cerrado).
   anterior. El en formación (`dvah/dpoc/dval`) no suma confluencia ni define zonas; como mucho
   una línea de `context` ("el POC de hoy migra hacia arriba"). Si `orb.ver` aún no es v10, sus
   vah/poc/val son del día en curso: no los uses como perfil y dilo en `dataHealth.notes`.
-- **Medias del `orb`: `orb.levels.ema5`/`ema15`/`ema50` NO son EMAs de 5/15/50 periodos.** El
-  número tras "ema" es el TIMEFRAME, no la longitud de la media. Jesus opera con EMA20 y EMA50:
-  `ema5` = su **EMA20 en el gráfico** (el feed del orb viene de 5m), `ema15` = su **EMA20 en 15m**,
-  `ema50` = su **EMA50**. Al nombrarlas en `keyLevels[].name`, zonas, `reason`, `context` o
-  `alertLevels[].label`, escríbelas SIEMPRE como "EMA20" (o "EMA20 (15m)") y "EMA50". **NUNCA escribas
-  "EMA15" ni "EMA5"**: él no usa esas medias y verlas en el plan lo confunde. Si dos de ellas forman
-  una banda, nómbrala por la que toca el precio (p.ej. "EMA20") o "EMA20/EMA50", no "EMA50/EMA15".
+- **Medias del `orb`: `orb.levels.ema20` (EMA20 en el gráfico) / `ema20_15m` (EMA20 en 15m) / `ema50`
+  (EMA50).** Jesus opera con EMA20 y EMA50. (Entradas viejas del bus pueden venir aún como `ema5`/`ema15`:
+  son lo mismo, su EMA20 por timeframe; el número era el marco, no la longitud.) Al nombrarlas en
+  `keyLevels[].name`, zonas, `reason`, `context` o `alertLevels[].label`, escríbelas SIEMPRE como
+  "EMA20" (o "EMA20 (15m)") y "EMA50". **NUNCA escribas "EMA15" ni "EMA5"**: él no usa esas medias y
+  verlas en el plan lo confunde. Si dos forman una banda, nómbrala por la que toca el precio o
+  "EMA20/EMA50", nunca "EMA50/EMA15".
 - **`orb`** no trae `receivedAt`. Contrasta sus niveles (pdh/pdl) con los de `feed.raw`
   (trae los mismos): si discrepan > 0.3 % está congelado → usa `feed` para niveles y anótalo en
   `dataHealth.notes`.
