@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-11-22T18:43:04Z",
-  "runType": "pre-asia",
-  "ok": false,
-  "note": "FEED1 caido en los 5 futuros + sin el cálculo de movimiento de 24h; plan con asterisco, todo WAIT, sin GO."
+ "lastRun": "2026-11-23T03:40:00Z",
+ "runType": "pre-asia",
+ "ok": true,
+ "note": "Plan completo NQ/ES/GC/YM/CL; CL con confluencia reducida por FEED1 caido (solo orb). Unico GO: NQ al gatillo, conviccion baja."
 }
