@@ -1,12 +1,10 @@
-SA pre-ny 2026-11-23 08:09 CT
-!! CL sin FEED1, conviccion baja forzada
->> NQ sin setup A+, vigila 25946-57 · 08:30-11:00 CT
-NQ WAIT · sin sesgo · sin setup · EM 553p
-ES WAIT · sin sesgo · sin setup · EM 93p · chop!
-GC AVOID · sin sesgo · sin setup · EM 52p · chop!
-YM WAIT · sin sesgo · sin setup · EM 689p · chop!
-CL WAIT · corto · sin setup · EM n/d
-Limpio: NQ. Solo B al gatillo, sin A+ en nadie hoy.
+SA pre-asia 2026-11-24 17:33 CT
+>> ES A+ fade VAH 7276-94 · 17:00-20:00 CT
+NQ WAIT · corto · barrida ONH · EM 284p
+ES GO · corto · fade VAH · EM 44p
+GC WAIT · corto · barrida ONH · EM 33p
+YM WAIT · corto · rechazo IB · EM 235p chop!
+CL WAIT · largo · barrida PDL · EM 1p
+Limpio: ES. fade del rebote de 24h en VAH de ayer.
 Datos OK · Noticias MEDIA · Cal -
-Prec 20d: sin datos aun
-Ejec: sin datos (journal no agrega byDay nuevo)
+Prec 44d: sesgo 52% · pred ~50%

@@ -1,0 +1,405 @@
+{
+ "date": "2026-11-23",
+ "kind": "futures",
+ "gradedAt": "2026-11-23T23:22:51.237072+00:00",
+ "runs": [
+  {
+   "run": "pre-asia",
+   "session": "asia",
+   "from": 1795405200.0,
+   "to": 1795420800.0,
+   "instruments": {
+    "NQ": {
+     "bars": 57,
+     "dir24h": "LONG",
+     "bias": {
+      "call": "LONG",
+      "movePts": -41.5,
+      "outcome": "miss"
+     },
+     "scenA": {
+      "outcome": "untriggered",
+      "target": 25750.0
+     },
+     "zones": [
+      {
+       "range": [
+        25595.0,
+        25612.0
+       ],
+       "dir": "LONG",
+       "type": "poc_reversion",
+       "grade": null,
+       "tcl": "contra",
+       "touched": false,
+       "outcome": "untouched",
+       "family": "reversion",
+       "vs24h": "with"
+      }
+     ],
+     "em": {
+      "low": 167.0,
+      "base": 264,
+      "high": 330.0,
+      "realPts": 136.0,
+      "outcome": "under"
+     }
+    },
+    "ES": {
+     "bars": 57,
+     "dir24h": "LONG",
+     "bias": null,
+     "scenA": {
+      "outcome": "untriggered",
+      "target": 7062.0
+     },
+     "zones": [
+      {
+       "range": [
+        7116.0,
+        7124.0
+       ],
+       "dir": "SHORT",
+       "type": "retest_break",
+       "grade": null,
+       "tcl": "favor",
+       "touched": false,
+       "outcome": "untouched",
+       "family": "continuation",
+       "vs24h": "against"
+      }
+     ],
+     "em": {
+      "low": 31.0,
+      "base": 40,
+      "high": 50.0,
+      "realPts": 33.25,
+      "outcome": "hit"
+     }
+    },
+    "GC": {
+     "bars": 57,
+     "dir24h": "LONG",
+     "bias": null,
+     "scenA": {
+      "outcome": "untriggered",
+      "target": 3574.0
+     },
+     "zones": [
+      {
+       "range": [
+        3580.0,
+        3592.0
+       ],
+       "dir": "SHORT",
+       "type": "fade_vah",
+       "grade": null,
+       "tcl": null,
+       "touched": false,
+       "outcome": "untouched",
+       "family": "reversion",
+       "vs24h": "against"
+      }
+     ],
+     "em": {
+      "low": 22.0,
+      "base": 31,
+      "high": 40.0,
+      "realPts": 34.5999,
+      "outcome": "hit"
+     }
+    },
+    "YM": {
+     "bars": 57,
+     "dir24h": "LONG",
+     "bias": {
+      "call": "LONG",
+      "movePts": -76,
+      "outcome": "miss"
+     },
+     "scenA": {
+      "outcome": "hit",
+      "target": 48875.0
+     },
+     "zones": [
+      {
+       "range": [
+        49046.0,
+        49104.0
+       ],
+       "dir": "SHORT",
+       "type": "retest_break",
+       "grade": null,
+       "tcl": "favor",
+       "touched": true,
+       "entry": 49011,
+       "stop": 49072.0,
+       "target": 48840.0,
+       "outcome": "open",
+       "family": "continuation",
+       "vs24h": "against"
+      },
+      {
+       "range": [
+        48397.0,
+        48666.0
+       ],
+       "dir": "LONG",
+       "type": "bounce_val",
+       "grade": null,
+       "tcl": null,
+       "touched": false,
+       "outcome": "untouched",
+       "family": "reversion",
+       "vs24h": "with"
+      }
+     ],
+     "em": {
+      "low": 170.0,
+      "base": 226,
+      "high": 330.0,
+      "realPts": 194,
+      "outcome": "hit"
+     }
+    },
+    "CL": {
+     "bars": 57,
+     "dir24h": "FLAT",
+     "bias": null,
+     "scenA": {
+      "outcome": "hit",
+      "target": 82.91
+     },
+     "zones": [
+      {
+       "range": [
+        83.35,
+        83.45
+       ],
+       "dir": "SHORT",
+       "type": "otro",
+       "grade": null,
+       "tcl": null,
+       "touched": true,
+       "outcome": "broken",
+       "family": "other",
+       "vs24h": "flat"
+      }
+     ],
+     "em": null
+    }
+   }
+  },
+  {
+   "run": "pre-ny",
+   "session": "ny",
+   "from": 1795444200.0,
+   "to": 1795471200.0,
+   "instruments": {
+    "NQ": {
+     "bars": 99,
+     "dir24h": "LONG",
+     "bias": null,
+     "scenA": {
+      "outcome": "untriggered",
+      "target": 25871.96
+     },
+     "zones": [
+      {
+       "range": [
+        25946.0,
+        25957.0
+       ],
+       "dir": "SHORT",
+       "type": "retest_break",
+       "grade": null,
+       "tcl": null,
+       "touched": false,
+       "outcome": "untouched",
+       "family": "continuation",
+       "vs24h": "against"
+      }
+     ],
+     "em": {
+      "low": 321.2,
+      "base": 552.9,
+      "high": 853.8,
+      "realPts": 686.75,
+      "outcome": "hit"
+     }
+    },
+    "ES": {
+     "bars": 99,
+     "dir24h": "LONG",
+     "bias": null,
+     "scenA": {
+      "outcome": "untriggered",
+      "target": 7093.25
+     },
+     "zones": [
+      {
+       "range": [
+        7108.0,
+        7122.75
+       ],
+       "dir": "SHORT",
+       "type": "retest_break",
+       "grade": null,
+       "tcl": null,
+       "touched": false,
+       "outcome": "untouched",
+       "family": "continuation",
+       "vs24h": "against"
+      }
+     ],
+     "em": {
+      "low": 60.4,
+      "base": 93.4,
+      "high": 129.2,
+      "realPts": 146.25,
+      "outcome": "over"
+     }
+    },
+    "GC": {
+     "bars": 99,
+     "dir24h": "LONG",
+     "bias": {
+      "call": "LONG",
+      "movePts": -55.7002,
+      "outcome": "miss"
+     },
+     "scenA": {
+      "outcome": "miss",
+      "target": 3606.99
+     },
+     "zones": [
+      {
+       "range": [
+        3619.0,
+        3630.0
+       ],
+       "dir": "SHORT",
+       "type": "otro",
+       "grade": null,
+       "tcl": null,
+       "touched": true,
+       "outcome": "broken",
+       "family": "other",
+       "vs24h": "against"
+      }
+     ],
+     "em": {
+      "low": 41.6,
+      "base": 51.6,
+      "high": 73.9,
+      "realPts": 61.2,
+      "outcome": "hit"
+     }
+    },
+    "YM": {
+     "bars": 99,
+     "dir24h": "LONG",
+     "bias": null,
+     "scenA": {
+      "outcome": "miss",
+      "target": 48996.0
+     },
+     "zones": [
+      {
+       "range": [
+        49084.0,
+        49103.0
+       ],
+       "dir": "SHORT",
+       "type": "retest_break",
+       "grade": null,
+       "tcl": null,
+       "touched": true,
+       "outcome": "broken",
+       "family": "continuation",
+       "vs24h": "against"
+      }
+     ],
+     "em": {
+      "low": 340.1,
+      "base": 689.0,
+      "high": 1168.6,
+      "realPts": 780,
+      "outcome": "hit"
+     }
+    },
+    "CL": {
+     "bars": 99,
+     "dir24h": "SHORT",
+     "bias": {
+      "call": "SHORT",
+      "movePts": -1.79,
+      "outcome": "hit"
+     },
+     "scenA": {
+      "outcome": "hit",
+      "target": 80.78
+     },
+     "zones": [],
+     "em": null
+    }
+   }
+  }
+ ],
+ "hitLog": {
+  "NQ": {
+   "bias": [
+    0,
+    1
+   ],
+   "em": [
+    1,
+    2
+   ]
+  },
+  "ES": {
+   "em": [
+    1,
+    2
+   ]
+  },
+  "GC": {
+   "bias": [
+    0,
+    1
+   ],
+   "scenA": [
+    0,
+    1
+   ],
+   "em": [
+    2,
+    2
+   ]
+  },
+  "YM": {
+   "bias": [
+    0,
+    1
+   ],
+   "scenA": [
+    1,
+    2
+   ],
+   "em": [
+    2,
+    2
+   ]
+  },
+  "CL": {
+   "bias": [
+    1,
+    1
+   ],
+   "scenA": [
+    2,
+    2
+   ]
+  }
+ }
+}
