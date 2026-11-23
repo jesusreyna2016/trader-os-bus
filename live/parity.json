@@ -1,14 +1,14 @@
 {
  "schema": "parity-1",
- "builtAt": "2026-11-23T03:40:02.626375+00:00",
+ "builtAt": "2026-11-23T03:53:42.607600+00:00",
  "windowDays": 14,
  "daysInWindow": 1,
- "agreePct": 60,
+ "agreePct": 80,
  "nBoth": 5,
  "byInstrument": {
   "NQ": {
    "n": 1,
-   "agreePct": 0
+   "agreePct": 100
   },
   "ES": {
    "n": 1,
@@ -30,12 +30,12 @@
  "today": {
   "date": "2026-11-23",
   "runType": "pre-asia",
-  "agreePct": 60,
+  "agreePct": 80,
   "by": {
    "NQ": {
-    "ctx": "WAIT",
+    "ctx": "GO",
     "sa": "GO",
-    "match": false
+    "match": true
    },
    "ES": {
     "ctx": "WAIT",
