@@ -1,0 +1,7 @@
+SA crypto-close 2026-11-23 00:25 UTC
+ETH: neutral, WAIT. sweep B techo 1,735.94, conviccion baja
+BTC: neutral, WAIT. sweep B techo 61,879.9, conviccion baja
+foco: ETH, vigilar barrida del techo de ayer, sin GO
+sin riskWindow esta corrida
+calificacion: sin planes del 22-nov en este bus (primera corrida)
+precision: sin datos (0/0 predicciones, 0/0 zonas)
