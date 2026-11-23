@@ -1,9 +1,11 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-23T23:00:40.393Z",
- "status": "ok",
+ "checkedAt": "2026-11-23T23:30:37.254Z",
+ "status": "warn",
  "marketOpen": true,
- "issues": [],
+ "issues": [
+  "Plan de futuros (pre-asia): no corrio hoy (esperado 17.5h CT) (9h)"
+ ],
  "items": [
   {
    "key": "feeds",
@@ -11,7 +13,7 @@
    "writer": "TradingView -> tos-bus-snapshot",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-23T22:46:01.305Z",
+   "at": "2026-11-23T23:15:29.422Z",
    "note": "al dia"
   },
   {
@@ -20,7 +22,7 @@
    "writer": "tos-market",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-23T22:46:03.601Z",
+   "at": "2026-11-23T23:15:33.286Z",
    "note": "al dia"
   },
   {
@@ -28,8 +30,8 @@
    "label": "Edge medido",
    "writer": "lente Edge",
    "status": "ok",
-   "ageMin": 14,
-   "at": "2026-11-23T22:46:41.324Z",
+   "ageMin": 15,
+   "at": "2026-11-23T23:15:39.148Z",
    "note": "al dia"
   },
   {
@@ -37,8 +39,8 @@
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
    "status": "ok",
-   "ageMin": 52,
-   "at": "2026-11-23T22:09:07.274Z",
+   "ageMin": 21,
+   "at": "2026-11-23T23:09:08.510Z",
    "note": "al dia"
   },
   {
@@ -47,24 +49,24 @@
    "writer": "tos-coach",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-23T22:45:50.486Z",
+   "at": "2026-11-23T23:15:34.608Z",
    "note": "al dia"
   },
   {
    "key": "plan",
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
-   "status": "ok",
-   "ageMin": 532,
+   "status": "warn",
+   "ageMin": 562,
    "at": "2026-11-23T14:09:00.000Z",
-   "note": "espera la corrida de hoy"
+   "note": "no corrio hoy (esperado 17.5h CT)"
   },
   {
    "key": "crypto",
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 491,
+   "ageMin": 521,
    "at": "2026-11-23T14:50:00.000Z",
    "note": "al dia"
   },
@@ -73,7 +75,7 @@
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
    "status": "ok",
-   "ageMin": 1147,
+   "ageMin": 1177,
    "at": "2026-11-23T03:53:42.607Z",
    "note": "espera la corrida de hoy"
   }
