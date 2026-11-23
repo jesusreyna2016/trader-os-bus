@@ -1,7 +1,7 @@
 {
   "_writer": "contexto-composer",
   "_schema": 1,
-  "asOf": "2026-11-23T14:00:46.543Z",
+  "asOf": "2026-11-23T14:01:01.806Z",
   "symbols": {
     "BTC": {
       "verdict": null,
@@ -92,7 +92,7 @@
           "h2": 1,
           "h3": 1
         },
-        "po3": "EXPANSION",
+        "po3": "DISTRIBUTION",
         "po3Dir": "up",
         "lastLevelEvent": {
           "level": "WO",
@@ -193,8 +193,8 @@
           "h2": 1,
           "h3": -1
         },
-        "po3": "MANIPULATION",
-        "po3Dir": "down",
+        "po3": "DISTRIBUTION",
+        "po3Dir": "up",
         "lastLevelEvent": {
           "level": "WO",
           "event": "SWEEP",
@@ -499,12 +499,12 @@
         "po3": "EXPANSION",
         "po3Dir": "down",
         "lastLevelEvent": {
-          "level": "PDH",
-          "event": "TOUCH",
+          "level": "H4",
+          "event": "RETEST",
           "t": 1795442100000,
-          "price": 3638.1,
-          "dist": 13.7,
-          "touches": 1
+          "price": 3613.36,
+          "dist": 41.84,
+          "touches": 10
         }
       }
     },
@@ -600,12 +600,12 @@
         "po3": "EXPANSION",
         "po3Dir": "down",
         "lastLevelEvent": {
-          "level": "H4",
-          "event": "REJECT",
-          "t": 1795434600000,
-          "price": 49272.1,
-          "dist": -75.1,
-          "touches": 1
+          "level": "MNO",
+          "event": "RETEST",
+          "t": 1795442100000,
+          "price": 48956,
+          "dist": 341,
+          "touches": 4
         }
       }
     },
