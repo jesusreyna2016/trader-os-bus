@@ -175,6 +175,12 @@ encuentras un token camelCase, un `bias*`/`*Score`/`*Zone`, un nombre de indicad
 continuación"). El slug SOLO vive en `zones[].type` (campo programático). No entregues el
 plan con jerga de campo dentro. Y cada `en` va 100% en inglés (nada de texto español dentro).
 
+**Términos del `orb` que NO son vocabulario estándar: tradúcelos a palabras.** "golden zone" / "gz"
+→ **"zona dorada"**; "gzShort" / "gzLong" → **"corto de la zona"** / **"largo de la zona"**; "cluster"
+→ **"grupo de niveles"** (o "varios niveles juntos"). Nunca los dejes tal cual en `reason`, `context`,
+`scenarioA`, `keyLevels[].name` ni `alertLevels[].label`. En inglés: "golden zone" → "golden pocket",
+"gzShort/gzLong" → "short/long from the golden pocket", "cluster" → "group of levels".
+
 **Chequeo de coherencia de niveles** (mismo momento, antes de escribir): por cada instrumento,
 el punto medio de cada `zones[].range` y de `scenarioA.entryZone` NO puede caer dentro de
 `noTradeZone`. Si cae, recorta `noTradeZone` al borde de esa zona (sección 6); si tras recortar
