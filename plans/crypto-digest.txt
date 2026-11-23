@@ -1,7 +1,8 @@
-SA crypto-close 2026-11-23 00:25 UTC
-ETH: neutral, WAIT. sweep B techo 1,735.94, conviccion baja
-BTC: neutral, WAIT. sweep B techo 61,879.9, conviccion baja
-foco: ETH, vigilar barrida del techo de ayer, sin GO
+Contexto crypto-ny 2026-11-23 08:50 CT
+ETH: LONG sesion, WAIT. Rompio balance al alza, zona sweep 1,730-1,737 broken, precio 1,803 (+4.63% 24h), conviccion baja
+BTC: LONG sesion, WAIT. Rompio balance al alza, zona sweep 61,820-61,920 broken, precio 63,548 (+3.47% 24h), conviccion baja
+foco: ETH, sin zona nueva calificada, vigilar reaccion en EMA20 1h (~1,732) o hueco 5m 1,811-1,814
+apertura NY: NQ/ES rompen al alza alineados, ETH acompaña sin divergir
 sin riskWindow esta corrida
 calificacion: sin planes del 22-nov en este bus (primera corrida)
 precision: sin datos (0/0 predicciones, 0/0 zonas)
