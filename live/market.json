@@ -1,7 +1,7 @@
 {
   "_writer": "contexto-composer",
   "_schema": 1,
-  "asOf": "2026-11-23T23:00:44.100Z",
+  "asOf": "2026-11-23T23:00:59.913Z",
   "symbols": {
     "BTC": {
       "verdict": null,
@@ -95,12 +95,12 @@
         "po3": "ACCUMULATION",
         "po3Dir": "up",
         "lastLevelEvent": {
-          "level": "WO",
-          "event": "CROSS",
-          "t": 1795473000000,
-          "price": 61519.9,
-          "dist": -126.7,
-          "touches": 19
+          "level": "MNO",
+          "event": "TOUCH",
+          "t": 1795474500000,
+          "price": 61466.3,
+          "dist": 8.8,
+          "touches": 13
         }
       }
     },
@@ -398,12 +398,12 @@
         "po3": "DISTRIBUTION",
         "po3Dir": "down",
         "lastLevelEvent": {
-          "level": "ONH",
+          "level": "PPOC",
           "event": "TOUCH",
-          "t": 1795465200000,
-          "price": 7277.75,
-          "dist": 1.5,
-          "touches": 6
+          "t": 1795474800000,
+          "price": 7264.25,
+          "dist": 7.25,
+          "touches": 1
         }
       }
     },
