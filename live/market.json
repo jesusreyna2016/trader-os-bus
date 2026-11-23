@@ -1,7 +1,7 @@
 {
   "_writer": "contexto-composer",
   "_schema": 1,
-  "asOf": "2026-11-23T14:01:01.806Z",
+  "asOf": "2026-11-23T14:01:17.983Z",
   "symbols": {
     "BTC": {
       "verdict": null,
@@ -84,11 +84,11 @@
         "touchlog": "VAH:17:24470:1~POC:3:947:0~PDH:7:22864:1~DO:14:26464:1~TDO:7:27000:1~ONH:3:0:0~ONL:3:0:0~IBH:8:1742:1~IBL:2:2249:1~ASH:3:19413:0~ASL:3:0:0~LOH:8:3451:1~LOL:3:0:0"
       },
       "struct": {
-        "regime": "CHOP",
-        "align": "CHOP",
+        "regime": "TREND_UP",
+        "align": "ALIGNED_UP",
         "cisd": {
-          "chart": -1,
-          "h1": 1,
+          "chart": 1,
+          "h1": -1,
           "h2": 1,
           "h3": 1
         },
