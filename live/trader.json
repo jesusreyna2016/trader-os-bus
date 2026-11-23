@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-23",
-  "asOf": "2026-11-23T01:00:44.911Z",
+  "asOf": "2026-11-23T01:30:40.949Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 11,
+  "todayViolations": 10,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,20 +16,14 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 10,
+    "used": 9,
     "riskPerTrade": 50,
     "dayStop": 100,
-    "pnl": -11115.82,
-    "pnlR": -222.32,
+    "pnl": -747.93,
+    "pnlR": -14.96,
     "maxLossStreak": 3
   },
   "openFlags": [
-    {
-      "rule": "R1",
-      "at": 1795330403378,
-      "sym": "NQ",
-      "note": "entrada dentro de la pausa tras un SL"
-    },
     {
       "rule": "R1",
       "at": 1795384474545,
@@ -59,42 +53,15 @@
       "at": 1795394921607,
       "sym": "NQ",
       "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
+      "at": 1795395732025,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
     }
   ],
   "todayTrades": [
-    {
-      "acct": "jh78km012eh329gky6cbpj6a518jmn0v",
-      "name": "NAS100 Composite Test Cup",
-      "sym": "NQ",
-      "side": "long",
-      "size": 5.1956,
-      "entry": 25581.78721226,
-      "exit": 25513.8,
-      "pnl": -376.71,
-      "r": -7.53,
-      "openedAt": 1795273591416,
-      "closedAt": 1795330304891,
-      "flags": [
-        "DAY_STOP_HIT"
-      ]
-    },
-    {
-      "acct": "jh78km012eh329gky6cbpj6a518jmn0v",
-      "name": "NAS100 Composite Test Cup",
-      "sym": "NQ",
-      "side": "short",
-      "size": 38.9208,
-      "entry": 25512.8,
-      "exit": 25729.6588,
-      "pnl": -10000,
-      "r": -200,
-      "openedAt": 1795330403378,
-      "closedAt": 1795342032834,
-      "flags": [
-        "R1_REVENGE",
-        "DAY_STOP_HIT"
-      ]
-    },
     {
       "acct": "jh7fbgr4mbef7pdv2ne96qwy8x8jpss6",
       "name": "Elite 3% DLL 25K Challenge",
@@ -107,9 +74,7 @@
       "r": -1.44,
       "openedAt": 1795383677115,
       "closedAt": 1795384474545,
-      "flags": [
-        "DAY_STOP_HIT"
-      ]
+      "flags": []
     },
     {
       "acct": "jh7fbgr4mbef7pdv2ne96qwy8x8jpss6",
@@ -124,8 +89,7 @@
       "openedAt": 1795384474545,
       "closedAt": 1795388198885,
       "flags": [
-        "R1_REVENGE",
-        "DAY_STOP_HIT"
+        "R1_REVENGE"
       ]
     },
     {
@@ -158,7 +122,6 @@
       "closedAt": 1795388890018,
       "flags": [
         "R1_REVENGE",
-        "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ]
     },
@@ -176,7 +139,6 @@
       "closedAt": 1795389292063,
       "flags": [
         "R1_REVENGE",
-        "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ]
     },
@@ -227,6 +189,24 @@
       "r": -0.65,
       "openedAt": 1795394921607,
       "closedAt": 1795395383150,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES",
+        "DAY_STOP_HIT"
+      ]
+    },
+    {
+      "acct": "jh7fbgr4mbef7pdv2ne96qwy8x8jpss6",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 0.3,
+      "entry": 25769.11666667,
+      "exit": 25798,
+      "pnl": -8.82,
+      "r": -0.18,
+      "openedAt": 1795395732025,
+      "closedAt": 1795396615160,
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
