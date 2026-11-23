@@ -1,6 +1,6 @@
 {
- "lastRun": "2026-11-23T03:56:00Z",
- "runType": "pre-asia",
+ "lastRun": "2026-11-23T14:09:00Z",
+ "runType": "pre-ny",
  "ok": true,
- "note": "re-disparo de pre-asia (16 min tras el anterior): sin cambios materiales, live/feeds.json no se actualizo desde la corrida previa (misma _updatedAt 03:31:08Z); plan y state intactos."
+ "note": "Plan NY publicado: 0 GO (sin move24h esta corrida, todo flat, sin A+ posible), NQ WAIT al gatillo como mas limpio, GC AVOID por estiramiento 2.33 ATR, CL sin FEED1 desde ayer."
 }

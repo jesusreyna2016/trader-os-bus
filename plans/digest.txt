@@ -1,11 +1,12 @@
-SA pre-asia 2026-11-23 21:40 CT
-!! feed CL caido, solo referencia orb, sin GO
->> NQ A+ cluster POC 25595-25612 · 21:40-01:30 CT
-NQ GO · largo · poc_reversion · EM 264p
-ES WAIT · sin sesgo · sin setup A+ · EM 40p
-GC WAIT · corto · fade VAH · EM 31p · chop!
-YM WAIT · sin sesgo · sin setup A+ · EM 226p
-CL WAIT · sin sesgo · sin setup A+ · EM -
-Limpio: NQ. Unico A+ a tiro sin frameConflict, GO gatillo.
-Datos OK · Noticias MEDIA · Cal semana-feriado
-Prec 46d: sesgo 53% · pred 58%
+SA pre-ny 2026-11-23 08:09 CT
+!! CL sin FEED1, conviccion baja forzada
+>> NQ sin setup A+, vigila 25946-57 · 08:30-11:00 CT
+NQ WAIT · sin sesgo · sin setup · EM 553p
+ES WAIT · sin sesgo · sin setup · EM 93p · chop!
+GC AVOID · sin sesgo · sin setup · EM 52p · chop!
+YM WAIT · sin sesgo · sin setup · EM 689p · chop!
+CL WAIT · corto · sin setup · EM n/d
+Limpio: NQ. Solo B al gatillo, sin A+ en nadie hoy.
+Datos OK · Noticias MEDIA · Cal -
+Prec 20d: sin datos aun
+Ejec: sin datos (journal no agrega byDay nuevo)
