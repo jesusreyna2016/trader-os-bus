@@ -3302,66 +3302,66 @@
  "scorecard": {
   "biasHitPct": {
    "CL": {
-    "n": 102,
-    "hits": 54.5,
-    "pct": 53,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "n": 100,
+    "hits": 52.5,
+    "pct": 52,
+    "window": "hitLog 46 graded days to 2026-11-20"
    },
    "ES": {
-    "n": 104,
-    "hits": 55.0,
-    "pct": 53,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "n": 102,
+    "hits": 53.0,
+    "pct": 52,
+    "window": "hitLog 46 graded days to 2026-11-20"
    },
    "GC": {
-    "n": 100,
+    "n": 99,
     "hits": 55.0,
-    "pct": 55,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "pct": 56,
+    "window": "hitLog 46 graded days to 2026-11-20"
    },
    "NQ": {
-    "n": 108,
-    "hits": 58.5,
-    "pct": 54,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "n": 106,
+    "hits": 56.5,
+    "pct": 53,
+    "window": "hitLog 46 graded days to 2026-11-20"
    },
    "YM": {
-    "n": 87,
+    "n": 86,
     "hits": 46.0,
     "pct": 53,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "window": "hitLog 46 graded days to 2026-11-20"
    }
   },
   "scenarioAHitPct": {
    "CL": {
-    "n": 109,
-    "hits": 60.0,
-    "pct": 55,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "n": 107,
+    "hits": 58.0,
+    "pct": 54,
+    "window": "hitLog 46 graded days to 2026-11-20"
    },
    "ES": {
-    "n": 88,
-    "hits": 41.0,
-    "pct": 47,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "n": 87,
+    "hits": 40.0,
+    "pct": 46,
+    "window": "hitLog 46 graded days to 2026-11-20"
    },
    "GC": {
-    "n": 94,
+    "n": 91,
     "hits": 48.0,
-    "pct": 51,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "pct": 53,
+    "window": "hitLog 46 graded days to 2026-11-20"
    },
    "NQ": {
-    "n": 86,
-    "hits": 45.0,
+    "n": 85,
+    "hits": 44.0,
     "pct": 52,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "window": "hitLog 46 graded days to 2026-11-20"
    },
    "YM": {
-    "n": 102,
+    "n": 101,
     "hits": 58.0,
     "pct": 57,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "window": "hitLog 46 graded days to 2026-11-20"
    }
   },
   "scenarioABHitPct": {
@@ -3369,90 +3369,90 @@
     "n": 33,
     "hits": 20.0,
     "pct": 61,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "window": "hitLog 46 graded days to 2026-11-20"
    },
    "ES": {
     "n": 38,
     "hits": 21.0,
     "pct": 55,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "window": "hitLog 46 graded days to 2026-11-20"
    },
    "GC": {
     "n": 29,
     "hits": 14.5,
     "pct": 50,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "window": "hitLog 46 graded days to 2026-11-20"
    },
    "NQ": {
     "n": 36,
     "hits": 19.25,
     "pct": 53,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "window": "hitLog 46 graded days to 2026-11-20"
    },
    "YM": {
     "n": 31,
     "hits": 16.0,
     "pct": 52,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "window": "hitLog 46 graded days to 2026-11-20"
    }
   },
   "emErrorTicks": {
    "CL": {
     "n": 90,
-    "avgTk": 99.1,
-    "window": "derived from emCalibration (all sessions, n-weighted), as of 2026-11-18"
+    "avgTk": 82.4,
+    "window": "derived from emCalibration (all sessions, n-weighted), as of 2026-11-20"
    },
    "ES": {
     "n": 90,
-    "avgTk": 116.1,
-    "window": "derived from emCalibration (all sessions, n-weighted), as of 2026-11-18"
+    "avgTk": 97.5,
+    "window": "derived from emCalibration (all sessions, n-weighted), as of 2026-11-20"
    },
    "GC": {
     "n": 90,
-    "avgTk": 209.3,
-    "window": "derived from emCalibration (all sessions, n-weighted), as of 2026-11-18"
+    "avgTk": 164.9,
+    "window": "derived from emCalibration (all sessions, n-weighted), as of 2026-11-20"
    },
    "NQ": {
     "n": 90,
-    "avgTk": 779.9,
-    "window": "derived from emCalibration (all sessions, n-weighted), as of 2026-11-18"
+    "avgTk": 640.8,
+    "window": "derived from emCalibration (all sessions, n-weighted), as of 2026-11-20"
    },
    "YM": {
     "n": 90,
-    "avgTk": 206.2,
-    "window": "derived from emCalibration (all sessions, n-weighted), as of 2026-11-18"
+    "avgTk": 190.9,
+    "window": "derived from emCalibration (all sessions, n-weighted), as of 2026-11-20"
    }
   },
   "zoneHitPct": {
    "CL": {
+    "n": 63,
+    "hits": 15.0,
+    "pct": 24,
+    "window": "hitLog 46 graded days to 2026-11-20"
+   },
+   "ES": {
+    "n": 51,
+    "hits": 15.0,
+    "pct": 29,
+    "window": "hitLog 46 graded days to 2026-11-20"
+   },
+   "GC": {
+    "n": 61,
+    "hits": 17.0,
+    "pct": 28,
+    "window": "hitLog 46 graded days to 2026-11-20"
+   },
+   "NQ": {
     "n": 64,
     "hits": 15.0,
     "pct": 23,
-    "window": "hitLog 46 graded days to 2026-11-18"
-   },
-   "ES": {
-    "n": 52,
-    "hits": 16.0,
-    "pct": 31,
-    "window": "hitLog 46 graded days to 2026-11-18"
-   },
-   "GC": {
-    "n": 62,
-    "hits": 17.0,
-    "pct": 27,
-    "window": "hitLog 46 graded days to 2026-11-18"
-   },
-   "NQ": {
-    "n": 65,
-    "hits": 15.0,
-    "pct": 23,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "window": "hitLog 46 graded days to 2026-11-20"
    },
    "YM": {
     "n": 57,
     "hits": 10.0,
     "pct": 18,
-    "window": "hitLog 46 graded days to 2026-11-18"
+    "window": "hitLog 46 graded days to 2026-11-20"
    }
   },
   "updatedAt": "2026-11-13T22:30:00Z",
@@ -4095,155 +4095,185 @@
    "_note": "auto from grades/ (real-bar session range vs raw plan base), last 30 sessions per cell",
    "CL|asia": {
     "n": 30,
-    "mult": 2.06,
-    "p25": 1.42,
-    "p75": 2.37,
-    "meanErrTk": 82.4,
-    "biasTk": 80.7,
+    "mult": 1.16,
+    "p25": 0.8,
+    "p75": 1.36,
+    "meanErrTk": 54.2,
+    "biasTk": 13.7,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
    "CL|london": {
     "n": 30,
-    "mult": 1.71,
-    "p25": 1.31,
-    "p75": 2.2,
-    "meanErrTk": 115.7,
-    "biasTk": 114.3,
+    "mult": 1.17,
+    "p25": 0.92,
+    "p75": 1.88,
+    "meanErrTk": 87.7,
+    "biasTk": 59.8,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
    "CL|ny": {
     "n": 30,
-    "mult": 1.3,
-    "p25": 1.0,
-    "p75": 1.67,
-    "meanErrTk": 99.1,
-    "biasTk": 70.6,
+    "mult": 1.11,
+    "p25": 0.77,
+    "p75": 1.45,
+    "meanErrTk": 105.2,
+    "biasTk": 17.2,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
    "ES|asia": {
     "n": 30,
-    "mult": 1.65,
-    "p25": 1.32,
-    "p75": 2.42,
-    "meanErrTk": 89.7,
-    "biasTk": 82.4,
+    "mult": 1.17,
+    "p25": 0.9,
+    "p75": 1.47,
+    "meanErrTk": 68.1,
+    "biasTk": 35.5,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
    "ES|london": {
     "n": 30,
-    "mult": 1.26,
-    "p25": 1.01,
-    "p75": 1.68,
-    "meanErrTk": 56.4,
-    "biasTk": 47.3,
+    "mult": 1.01,
+    "p25": 0.91,
+    "p75": 1.54,
+    "meanErrTk": 47.9,
+    "biasTk": 23.3,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
    "ES|ny": {
     "n": 30,
-    "mult": 1.68,
-    "p25": 1.33,
-    "p75": 2.87,
-    "meanErrTk": 202.2,
-    "biasTk": 196.0,
+    "mult": 1.33,
+    "p25": 0.86,
+    "p75": 1.84,
+    "meanErrTk": 176.5,
+    "biasTk": 111.0,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
    "GC|asia": {
     "n": 30,
-    "mult": 2.27,
-    "p25": 1.96,
-    "p75": 3.32,
-    "meanErrTk": 320.0,
-    "biasTk": 320.0,
+    "mult": 1.46,
+    "p25": 1.04,
+    "p75": 1.89,
+    "meanErrTk": 187.0,
+    "biasTk": 164.9,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
    "GC|london": {
     "n": 30,
-    "mult": 1.36,
-    "p25": 1.03,
-    "p75": 2.14,
-    "meanErrTk": 159.9,
-    "biasTk": 150.6,
+    "mult": 1.18,
+    "p25": 0.83,
+    "p75": 1.8,
+    "meanErrTk": 149.6,
+    "biasTk": 89.7,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
    "GC|ny": {
     "n": 30,
-    "mult": 1.2,
-    "p25": 0.94,
-    "p75": 1.53,
-    "meanErrTk": 148.1,
-    "biasTk": 69.9,
+    "mult": 1.18,
+    "p25": 0.95,
+    "p75": 1.69,
+    "meanErrTk": 158.1,
+    "biasTk": 60.8,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
    "NQ|asia": {
     "n": 30,
-    "mult": 2.13,
-    "p25": 1.6,
-    "p75": 3.3,
-    "meanErrTk": 779.6,
-    "biasTk": 770.6,
+    "mult": 1.33,
+    "p25": 0.84,
+    "p75": 1.66,
+    "meanErrTk": 532.7,
+    "biasTk": 318.0,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
    "NQ|london": {
     "n": 30,
-    "mult": 1.22,
-    "p25": 1.0,
-    "p75": 1.8,
-    "meanErrTk": 326.5,
-    "biasTk": 236.3,
+    "mult": 1.03,
+    "p25": 0.86,
+    "p75": 1.45,
+    "meanErrTk": 287.4,
+    "biasTk": 74.5,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
    "NQ|ny": {
     "n": 30,
-    "mult": 1.71,
-    "p25": 1.33,
-    "p75": 2.86,
-    "meanErrTk": 1233.6,
-    "biasTk": 1205.5,
+    "mult": 1.36,
+    "p25": 0.79,
+    "p75": 2.1,
+    "meanErrTk": 1102.2,
+    "biasTk": 636.0,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
    "YM|asia": {
     "n": 30,
-    "mult": 1.44,
-    "p25": 1.24,
-    "p75": 2.07,
-    "meanErrTk": 113.2,
-    "biasTk": 105.5,
+    "mult": 1.06,
+    "p25": 0.8,
+    "p75": 1.55,
+    "meanErrTk": 89.6,
+    "biasTk": 41.6,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
    "YM|london": {
     "n": 30,
-    "mult": 1.48,
-    "p25": 1.18,
-    "p75": 1.86,
-    "meanErrTk": 161.0,
-    "biasTk": 149.5,
+    "mult": 1.31,
+    "p25": 0.8,
+    "p75": 1.75,
+    "meanErrTk": 151.5,
+    "biasTk": 70.6,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
    "YM|ny": {
     "n": 30,
-    "mult": 2.08,
-    "p25": 1.18,
-    "p75": 3.31,
-    "meanErrTk": 344.3,
-    "biasTk": 329.7,
+    "mult": 1.58,
+    "p25": 0.78,
+    "p75": 2.68,
+    "meanErrTk": 331.7,
+    "biasTk": 153.0,
     "biasTkSign": "+",
+    "errPctAtr": null,
+    "errPctAtrN": 0,
     "src": "auto"
    },
-   "_lastDate": "2026-11-18"
+   "_lastDate": "2026-11-20"
   },
   "convictionCalibration": {
    "NQ": {
@@ -6604,99 +6634,6 @@
      },
      "em": [
       1,
-      3
-     ],
-     "src": "auto"
-    }
-   },
-   "2026-09-21": {
-    "NQ": {
-     "bias": [
-      2,
-      2
-     ],
-     "scenA": [
-      1,
-      1
-     ],
-     "zone": [
-      0,
-      1
-     ],
-     "em": [
-      1,
-      3
-     ],
-     "src": "auto"
-    },
-    "ES": {
-     "bias": [
-      2,
-      2
-     ],
-     "scenA": [
-      1,
-      1
-     ],
-     "zone": [
-      1,
-      1
-     ],
-     "em": [
-      2,
-      3
-     ],
-     "src": "auto"
-    },
-    "GC": {
-     "bias": [
-      0,
-      1
-     ],
-     "scenA": [
-      0,
-      3
-     ],
-     "zone": [
-      0,
-      1
-     ],
-     "em": [
-      3,
-      3
-     ],
-     "src": "auto"
-    },
-    "YM": {
-     "bias": [
-      0,
-      1
-     ],
-     "scenA": [
-      0,
-      1
-     ],
-     "em": [
-      0,
-      3
-     ],
-     "src": "auto"
-    },
-    "CL": {
-     "bias": [
-      2,
-      2
-     ],
-     "scenA": [
-      2,
-      2
-     ],
-     "zone": [
-      0,
-      1
-     ],
-     "em": [
-      0,
       3
      ],
      "src": "auto"
@@ -9893,2928 +9830,16 @@
      ],
      "src": "auto"
     }
-   }
+   },
+   "2026-11-20": {}
   },
   "contextScore": {
-   "_note": "hitLog grades split by the context of each day, derived from plans/<date>-*.json by method/update_scorecard.py. as of 2026-11-18",
-   "bias": {
-    "NQ": {
-     "news": {
-      "none": {
-       "n": 16,
-       "hits": 9.0,
-       "pct": 56
-      },
-      "medium": {
-       "n": 57,
-       "hits": 31.5,
-       "pct": 55
-      },
-      "high": {
-       "n": 35,
-       "hits": 18.0,
-       "pct": 51
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 57,
-       "hits": 33.5,
-       "pct": 59
-      },
-      "major": {
-       "n": 51,
-       "hits": 25.0,
-       "pct": 49
-      }
-     },
-     "frame": {
-      "aligned": {
-       "n": 44,
-       "hits": 27.5,
-       "pct": 62
-      },
-      "conflict": {
-       "n": 64,
-       "hits": 31.0,
-       "pct": 48
-      }
-     },
-     "whipsaw": {
-      "low": {
-       "n": 22,
-       "hits": 13.0,
-       "pct": 59
-      },
-      "high": {
-       "n": 86,
-       "hits": 45.5,
-       "pct": 53
-      }
-     },
-     "conviction": {
-      "media": {
-       "n": 52,
-       "hits": 28.0,
-       "pct": 54
-      },
-      "baja": {
-       "n": 47,
-       "hits": 27.5,
-       "pct": 59
-      },
-      "alta": {
-       "n": 9,
-       "hits": 3.0,
-       "pct": 33
-      }
-     },
-     "bias": {
-      "directional": {
-       "n": 102,
-       "hits": 55.0,
-       "pct": 54
-      },
-      "neutral": {
-       "n": 6,
-       "hits": 3.5,
-       "pct": 58
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 18,
-       "hits": 9.0,
-       "pct": 50
-      },
-      "tue": {
-       "n": 26,
-       "hits": 14.0,
-       "pct": 54
-      },
-      "wed": {
-       "n": 21,
-       "hits": 12.0,
-       "pct": 57
-      },
-      "thu": {
-       "n": 23,
-       "hits": 14.5,
-       "pct": 63
-      },
-      "fri": {
-       "n": 20,
-       "hits": 9.0,
-       "pct": 45
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 14,
-       "hits": 9.0,
-       "pct": 64
-      },
-      "high": {
-       "n": 23,
-       "hits": 13.0,
-       "pct": 57
-      }
-     },
-     "crossAsset": {
-      "with": {
-       "n": 13,
-       "hits": 8.0,
-       "pct": 62
-      },
-      "mixed": {
-       "n": 2,
-       "hits": 0.0,
-       "pct": 0
-      },
-      "against": {
-       "n": 8,
-       "hits": 4.0,
-       "pct": 50
-      }
-     }
-    },
-    "ALL": {
-     "news": {
-      "none": {
-       "n": 74,
-       "hits": 38.0,
-       "pct": 51
-      },
-      "medium": {
-       "n": 256,
-       "hits": 142.0,
-       "pct": 55
-      },
-      "high": {
-       "n": 171,
-       "hits": 89.0,
-       "pct": 52
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 260,
-       "hits": 157.5,
-       "pct": 61
-      },
-      "major": {
-       "n": 241,
-       "hits": 111.5,
-       "pct": 46
-      }
-     },
-     "frame": {
-      "aligned": {
-       "n": 201,
-       "hits": 122.5,
-       "pct": 61
-      },
-      "conflict": {
-       "n": 300,
-       "hits": 146.5,
-       "pct": 49
-      }
-     },
-     "whipsaw": {
-      "low": {
-       "n": 147,
-       "hits": 85.0,
-       "pct": 58
-      },
-      "high": {
-       "n": 354,
-       "hits": 184.0,
-       "pct": 52
-      }
-     },
-     "conviction": {
-      "media": {
-       "n": 187,
-       "hits": 94.0,
-       "pct": 50
-      },
-      "baja": {
-       "n": 272,
-       "hits": 156.0,
-       "pct": 57
-      },
-      "alta": {
-       "n": 42,
-       "hits": 19.0,
-       "pct": 45
-      }
-     },
-     "bias": {
-      "directional": {
-       "n": 464,
-       "hits": 241.5,
-       "pct": 52
-      },
-      "neutral": {
-       "n": 37,
-       "hits": 27.5,
-       "pct": 74
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 92,
-       "hits": 43.0,
-       "pct": 47
-      },
-      "tue": {
-       "n": 115,
-       "hits": 62.5,
-       "pct": 54
-      },
-      "wed": {
-       "n": 101,
-       "hits": 59.0,
-       "pct": 58
-      },
-      "thu": {
-       "n": 100,
-       "hits": 56.5,
-       "pct": 56
-      },
-      "fri": {
-       "n": 93,
-       "hits": 48.0,
-       "pct": 52
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 57,
-       "hits": 38.0,
-       "pct": 67
-      },
-      "high": {
-       "n": 122,
-       "hits": 62.0,
-       "pct": 51
-      }
-     },
-     "crossAsset": {
-      "with": {
-       "n": 48,
-       "hits": 28.0,
-       "pct": 58
-      },
-      "against": {
-       "n": 35,
-       "hits": 22.0,
-       "pct": 63
-      },
-      "mixed": {
-       "n": 35,
-       "hits": 15.0,
-       "pct": 43
-      }
-     }
-    },
-    "ES": {
-     "news": {
-      "none": {
-       "n": 13,
-       "hits": 6.0,
-       "pct": 46
-      },
-      "medium": {
-       "n": 54,
-       "hits": 32.0,
-       "pct": 59
-      },
-      "high": {
-       "n": 37,
-       "hits": 17.0,
-       "pct": 46
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 56,
-       "hits": 37.0,
-       "pct": 66
-      },
-      "major": {
-       "n": 48,
-       "hits": 18.0,
-       "pct": 38
-      }
-     },
-     "frame": {
-      "aligned": {
-       "n": 47,
-       "hits": 28.0,
-       "pct": 60
-      },
-      "conflict": {
-       "n": 57,
-       "hits": 27.0,
-       "pct": 47
-      }
-     },
-     "whipsaw": {
-      "low": {
-       "n": 42,
-       "hits": 23.0,
-       "pct": 55
-      },
-      "high": {
-       "n": 62,
-       "hits": 32.0,
-       "pct": 52
-      }
-     },
-     "conviction": {
-      "media": {
-       "n": 34,
-       "hits": 17.0,
-       "pct": 50
-      },
-      "baja": {
-       "n": 68,
-       "hits": 37.0,
-       "pct": 54
-      },
-      "alta": {
-       "n": 2,
-       "hits": 1.0,
-       "pct": 50
-      }
-     },
-     "bias": {
-      "directional": {
-       "n": 99,
-       "hits": 52.0,
-       "pct": 53
-      },
-      "neutral": {
-       "n": 5,
-       "hits": 3.0,
-       "pct": 60
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 18,
-       "hits": 8.0,
-       "pct": 44
-      },
-      "tue": {
-       "n": 23,
-       "hits": 12.0,
-       "pct": 52
-      },
-      "wed": {
-       "n": 20,
-       "hits": 12.0,
-       "pct": 60
-      },
-      "thu": {
-       "n": 22,
-       "hits": 11.0,
-       "pct": 50
-      },
-      "fri": {
-       "n": 21,
-       "hits": 12.0,
-       "pct": 57
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 12,
-       "hits": 9.0,
-       "pct": 75
-      },
-      "high": {
-       "n": 23,
-       "hits": 11.0,
-       "pct": 48
-      }
-     },
-     "crossAsset": {
-      "with": {
-       "n": 14,
-       "hits": 7.0,
-       "pct": 50
-      },
-      "mixed": {
-       "n": 2,
-       "hits": 0.0,
-       "pct": 0
-      },
-      "against": {
-       "n": 7,
-       "hits": 5.0,
-       "pct": 71
-      }
-     }
-    },
-    "GC": {
-     "news": {
-      "none": {
-       "n": 15,
-       "hits": 10.0,
-       "pct": 67
-      },
-      "medium": {
-       "n": 55,
-       "hits": 27.0,
-       "pct": 49
-      },
-      "high": {
-       "n": 30,
-       "hits": 18.0,
-       "pct": 60
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 54,
-       "hits": 29.0,
-       "pct": 54
-      },
-      "major": {
-       "n": 46,
-       "hits": 26.0,
-       "pct": 57
-      }
-     },
-     "frame": {
-      "conflict": {
-       "n": 43,
-       "hits": 19.0,
-       "pct": 44
-      },
-      "aligned": {
-       "n": 57,
-       "hits": 36.0,
-       "pct": 63
-      }
-     },
-     "whipsaw": {
-      "high": {
-       "n": 63,
-       "hits": 29.0,
-       "pct": 46
-      },
-      "low": {
-       "n": 37,
-       "hits": 26.0,
-       "pct": 70
-      }
-     },
-     "conviction": {
-      "media": {
-       "n": 40,
-       "hits": 19.0,
-       "pct": 48
-      },
-      "baja": {
-       "n": 48,
-       "hits": 27.0,
-       "pct": 56
-      },
-      "alta": {
-       "n": 12,
-       "hits": 9.0,
-       "pct": 75
-      }
-     },
-     "bias": {
-      "directional": {
-       "n": 93,
-       "hits": 49.0,
-       "pct": 53
-      },
-      "neutral": {
-       "n": 7,
-       "hits": 6.0,
-       "pct": 86
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 19,
-       "hits": 11.0,
-       "pct": 58
-      },
-      "tue": {
-       "n": 22,
-       "hits": 13.0,
-       "pct": 59
-      },
-      "wed": {
-       "n": 22,
-       "hits": 12.0,
-       "pct": 55
-      },
-      "thu": {
-       "n": 21,
-       "hits": 10.0,
-       "pct": 48
-      },
-      "fri": {
-       "n": 16,
-       "hits": 9.0,
-       "pct": 56
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 12,
-       "hits": 10.0,
-       "pct": 83
-      },
-      "high": {
-       "n": 25,
-       "hits": 14.0,
-       "pct": 56
-      }
-     },
-     "crossAsset": {
-      "against": {
-       "n": 5,
-       "hits": 4.0,
-       "pct": 80
-      },
-      "mixed": {
-       "n": 12,
-       "hits": 6.0,
-       "pct": 50
-      },
-      "with": {
-       "n": 7,
-       "hits": 5.0,
-       "pct": 71
-      }
-     }
-    },
-    "YM": {
-     "news": {
-      "none": {
-       "n": 12,
-       "hits": 5.0,
-       "pct": 42
-      },
-      "medium": {
-       "n": 43,
-       "hits": 23.0,
-       "pct": 53
-      },
-      "high": {
-       "n": 32,
-       "hits": 18.0,
-       "pct": 56
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 43,
-       "hits": 26.0,
-       "pct": 60
-      },
-      "major": {
-       "n": 44,
-       "hits": 20.0,
-       "pct": 45
-      }
-     },
-     "frame": {
-      "conflict": {
-       "n": 65,
-       "hits": 32.0,
-       "pct": 49
-      },
-      "aligned": {
-       "n": 22,
-       "hits": 14.0,
-       "pct": 64
-      }
-     },
-     "whipsaw": {
-      "high": {
-       "n": 69,
-       "hits": 35.0,
-       "pct": 51
-      },
-      "low": {
-       "n": 18,
-       "hits": 11.0,
-       "pct": 61
-      }
-     },
-     "conviction": {
-      "baja": {
-       "n": 51,
-       "hits": 27.0,
-       "pct": 53
-      },
-      "media": {
-       "n": 26,
-       "hits": 16.0,
-       "pct": 62
-      },
-      "alta": {
-       "n": 10,
-       "hits": 3.0,
-       "pct": 30
-      }
-     },
-     "bias": {
-      "neutral": {
-       "n": 8,
-       "hits": 5.0,
-       "pct": 62
-      },
-      "directional": {
-       "n": 79,
-       "hits": 41.0,
-       "pct": 52
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 13,
-       "hits": 3.0,
-       "pct": 23
-      },
-      "tue": {
-       "n": 21,
-       "hits": 11.0,
-       "pct": 52
-      },
-      "wed": {
-       "n": 17,
-       "hits": 12.0,
-       "pct": 71
-      },
-      "thu": {
-       "n": 19,
-       "hits": 11.0,
-       "pct": 58
-      },
-      "fri": {
-       "n": 17,
-       "hits": 9.0,
-       "pct": 53
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 7,
-       "hits": 4.0,
-       "pct": 57
-      },
-      "high": {
-       "n": 26,
-       "hits": 13.0,
-       "pct": 50
-      }
-     },
-     "crossAsset": {
-      "with": {
-       "n": 11,
-       "hits": 5.0,
-       "pct": 45
-      },
-      "mixed": {
-       "n": 3,
-       "hits": 1.0,
-       "pct": 33
-      },
-      "against": {
-       "n": 9,
-       "hits": 7.0,
-       "pct": 78
-      }
-     }
-    },
-    "CL": {
-     "news": {
-      "none": {
-       "n": 18,
-       "hits": 8.0,
-       "pct": 44
-      },
-      "medium": {
-       "n": 47,
-       "hits": 28.5,
-       "pct": 61
-      },
-      "high": {
-       "n": 37,
-       "hits": 18.0,
-       "pct": 49
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 50,
-       "hits": 32.0,
-       "pct": 64
-      },
-      "major": {
-       "n": 52,
-       "hits": 22.5,
-       "pct": 43
-      }
-     },
-     "frame": {
-      "conflict": {
-       "n": 71,
-       "hits": 37.5,
-       "pct": 53
-      },
-      "aligned": {
-       "n": 31,
-       "hits": 17.0,
-       "pct": 55
-      }
-     },
-     "whipsaw": {
-      "high": {
-       "n": 74,
-       "hits": 42.5,
-       "pct": 57
-      },
-      "low": {
-       "n": 28,
-       "hits": 12.0,
-       "pct": 43
-      }
-     },
-     "conviction": {
-      "baja": {
-       "n": 58,
-       "hits": 37.5,
-       "pct": 65
-      },
-      "media": {
-       "n": 35,
-       "hits": 14.0,
-       "pct": 40
-      },
-      "alta": {
-       "n": 9,
-       "hits": 3.0,
-       "pct": 33
-      }
-     },
-     "bias": {
-      "neutral": {
-       "n": 11,
-       "hits": 10.0,
-       "pct": 91
-      },
-      "directional": {
-       "n": 91,
-       "hits": 44.5,
-       "pct": 49
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 24,
-       "hits": 12.0,
-       "pct": 50
-      },
-      "tue": {
-       "n": 23,
-       "hits": 12.5,
-       "pct": 54
-      },
-      "wed": {
-       "n": 21,
-       "hits": 11.0,
-       "pct": 52
-      },
-      "thu": {
-       "n": 15,
-       "hits": 10.0,
-       "pct": 67
-      },
-      "fri": {
-       "n": 19,
-       "hits": 9.0,
-       "pct": 47
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 12,
-       "hits": 6.0,
-       "pct": 50
-      },
-      "high": {
-       "n": 25,
-       "hits": 11.0,
-       "pct": 44
-      }
-     },
-     "crossAsset": {
-      "against": {
-       "n": 6,
-       "hits": 2.0,
-       "pct": 33
-      },
-      "mixed": {
-       "n": 16,
-       "hits": 8.0,
-       "pct": 50
-      },
-      "with": {
-       "n": 3,
-       "hits": 3.0,
-       "pct": 100
-      }
-     }
-    }
-   },
-   "zone": {
-    "NQ": {
-     "news": {
-      "none": {
-       "n": 6,
-       "hits": 1.0,
-       "pct": 17
-      },
-      "medium": {
-       "n": 35,
-       "hits": 8.0,
-       "pct": 23
-      },
-      "high": {
-       "n": 24,
-       "hits": 6.0,
-       "pct": 25
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 35,
-       "hits": 7.0,
-       "pct": 20
-      },
-      "major": {
-       "n": 30,
-       "hits": 8.0,
-       "pct": 27
-      }
-     },
-     "frame": {
-      "aligned": {
-       "n": 27,
-       "hits": 7.0,
-       "pct": 26
-      },
-      "conflict": {
-       "n": 38,
-       "hits": 8.0,
-       "pct": 21
-      }
-     },
-     "whipsaw": {
-      "low": {
-       "n": 14,
-       "hits": 2.0,
-       "pct": 14
-      },
-      "high": {
-       "n": 51,
-       "hits": 13.0,
-       "pct": 25
-      }
-     },
-     "conviction": {
-      "media": {
-       "n": 29,
-       "hits": 5.0,
-       "pct": 17
-      },
-      "baja": {
-       "n": 35,
-       "hits": 10.0,
-       "pct": 29
-      },
-      "alta": {
-       "n": 1,
-       "hits": 0.0,
-       "pct": 0
-      }
-     },
-     "bias": {
-      "directional": {
-       "n": 63,
-       "hits": 13.0,
-       "pct": 21
-      },
-      "neutral": {
-       "n": 2,
-       "hits": 2.0,
-       "pct": 100
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 9,
-       "hits": 4.0,
-       "pct": 44
-      },
-      "wed": {
-       "n": 20,
-       "hits": 3.0,
-       "pct": 15
-      },
-      "fri": {
-       "n": 11,
-       "hits": 3.0,
-       "pct": 27
-      },
-      "tue": {
-       "n": 13,
-       "hits": 0.0,
-       "pct": 0
-      },
-      "thu": {
-       "n": 12,
-       "hits": 5.0,
-       "pct": 42
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 8,
-       "hits": 1.0,
-       "pct": 12
-      },
-      "high": {
-       "n": 16,
-       "hits": 2.0,
-       "pct": 12
-      }
-     },
-     "crossAsset": {
-      "with": {
-       "n": 8,
-       "hits": 2.0,
-       "pct": 25
-      },
-      "mixed": {
-       "n": 3,
-       "hits": 0.0,
-       "pct": 0
-      },
-      "against": {
-       "n": 5,
-       "hits": 0.0,
-       "pct": 0
-      }
-     }
-    },
-    "ALL": {
-     "news": {
-      "none": {
-       "n": 40,
-       "hits": 11.0,
-       "pct": 28
-      },
-      "medium": {
-       "n": 156,
-       "hits": 39.0,
-       "pct": 25
-      },
-      "high": {
-       "n": 104,
-       "hits": 23.0,
-       "pct": 22
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 160,
-       "hits": 38.0,
-       "pct": 24
-      },
-      "major": {
-       "n": 140,
-       "hits": 35.0,
-       "pct": 25
-      }
-     },
-     "frame": {
-      "aligned": {
-       "n": 103,
-       "hits": 25.0,
-       "pct": 24
-      },
-      "conflict": {
-       "n": 197,
-       "hits": 48.0,
-       "pct": 24
-      }
-     },
-     "whipsaw": {
-      "low": {
-       "n": 69,
-       "hits": 12.0,
-       "pct": 17
-      },
-      "high": {
-       "n": 231,
-       "hits": 61.0,
-       "pct": 26
-      }
-     },
-     "conviction": {
-      "media": {
-       "n": 113,
-       "hits": 28.0,
-       "pct": 25
-      },
-      "baja": {
-       "n": 166,
-       "hits": 42.0,
-       "pct": 25
-      },
-      "alta": {
-       "n": 21,
-       "hits": 3.0,
-       "pct": 14
-      }
-     },
-     "bias": {
-      "directional": {
-       "n": 275,
-       "hits": 64.0,
-       "pct": 23
-      },
-      "neutral": {
-       "n": 25,
-       "hits": 9.0,
-       "pct": 36
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 45,
-       "hits": 12.0,
-       "pct": 27
-      },
-      "tue": {
-       "n": 72,
-       "hits": 17.0,
-       "pct": 24
-      },
-      "wed": {
-       "n": 73,
-       "hits": 17.0,
-       "pct": 23
-      },
-      "thu": {
-       "n": 59,
-       "hits": 13.0,
-       "pct": 22
-      },
-      "fri": {
-       "n": 51,
-       "hits": 14.0,
-       "pct": 27
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 37,
-       "hits": 7.0,
-       "pct": 19
-      },
-      "high": {
-       "n": 55,
-       "hits": 13.0,
-       "pct": 24
-      }
-     },
-     "crossAsset": {
-      "with": {
-       "n": 19,
-       "hits": 5.0,
-       "pct": 26
-      },
-      "against": {
-       "n": 15,
-       "hits": 1.0,
-       "pct": 7
-      },
-      "mixed": {
-       "n": 22,
-       "hits": 6.0,
-       "pct": 27
-      }
-     }
-    },
-    "ES": {
-     "news": {
-      "none": {
-       "n": 7,
-       "hits": 3.0,
-       "pct": 43
-      },
-      "medium": {
-       "n": 27,
-       "hits": 7.0,
-       "pct": 26
-      },
-      "high": {
-       "n": 18,
-       "hits": 6.0,
-       "pct": 33
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 26,
-       "hits": 7.0,
-       "pct": 27
-      },
-      "major": {
-       "n": 26,
-       "hits": 9.0,
-       "pct": 35
-      }
-     },
-     "frame": {
-      "aligned": {
-       "n": 19,
-       "hits": 6.0,
-       "pct": 32
-      },
-      "conflict": {
-       "n": 33,
-       "hits": 10.0,
-       "pct": 30
-      }
-     },
-     "whipsaw": {
-      "low": {
-       "n": 15,
-       "hits": 4.0,
-       "pct": 27
-      },
-      "high": {
-       "n": 37,
-       "hits": 12.0,
-       "pct": 32
-      }
-     },
-     "conviction": {
-      "media": {
-       "n": 20,
-       "hits": 6.0,
-       "pct": 30
-      },
-      "baja": {
-       "n": 31,
-       "hits": 10.0,
-       "pct": 32
-      },
-      "alta": {
-       "n": 1,
-       "hits": 0.0,
-       "pct": 0
-      }
-     },
-     "bias": {
-      "directional": {
-       "n": 52,
-       "hits": 16.0,
-       "pct": 31
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 6,
-       "hits": 3.0,
-       "pct": 50
-      },
-      "tue": {
-       "n": 14,
-       "hits": 5.0,
-       "pct": 36
-      },
-      "wed": {
-       "n": 16,
-       "hits": 4.0,
-       "pct": 25
-      },
-      "thu": {
-       "n": 9,
-       "hits": 2.0,
-       "pct": 22
-      },
-      "fri": {
-       "n": 7,
-       "hits": 2.0,
-       "pct": 29
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 7,
-       "hits": 2.0,
-       "pct": 29
-      },
-      "high": {
-       "n": 8,
-       "hits": 3.0,
-       "pct": 38
-      }
-     },
-     "crossAsset": {
-      "with": {
-       "n": 3,
-       "hits": 1.0,
-       "pct": 33
-      },
-      "mixed": {
-       "n": 3,
-       "hits": 1.0,
-       "pct": 33
-      },
-      "against": {
-       "n": 3,
-       "hits": 0.0,
-       "pct": 0
-      }
-     }
-    },
-    "GC": {
-     "news": {
-      "none": {
-       "n": 7,
-       "hits": 3.0,
-       "pct": 43
-      },
-      "medium": {
-       "n": 30,
-       "hits": 10.0,
-       "pct": 33
-      },
-      "high": {
-       "n": 25,
-       "hits": 4.0,
-       "pct": 16
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 37,
-       "hits": 11.0,
-       "pct": 30
-      },
-      "major": {
-       "n": 25,
-       "hits": 6.0,
-       "pct": 24
-      }
-     },
-     "frame": {
-      "conflict": {
-       "n": 34,
-       "hits": 11.0,
-       "pct": 32
-      },
-      "aligned": {
-       "n": 28,
-       "hits": 6.0,
-       "pct": 21
-      }
-     },
-     "whipsaw": {
-      "high": {
-       "n": 44,
-       "hits": 13.0,
-       "pct": 30
-      },
-      "low": {
-       "n": 18,
-       "hits": 4.0,
-       "pct": 22
-      }
-     },
-     "conviction": {
-      "media": {
-       "n": 21,
-       "hits": 8.0,
-       "pct": 38
-      },
-      "baja": {
-       "n": 31,
-       "hits": 8.0,
-       "pct": 26
-      },
-      "alta": {
-       "n": 10,
-       "hits": 1.0,
-       "pct": 10
-      }
-     },
-     "bias": {
-      "directional": {
-       "n": 59,
-       "hits": 14.0,
-       "pct": 24
-      },
-      "neutral": {
-       "n": 3,
-       "hits": 3.0,
-       "pct": 100
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 10,
-       "hits": 3.0,
-       "pct": 30
-      },
-      "tue": {
-       "n": 16,
-       "hits": 3.0,
-       "pct": 19
-      },
-      "wed": {
-       "n": 10,
-       "hits": 3.0,
-       "pct": 30
-      },
-      "thu": {
-       "n": 15,
-       "hits": 3.0,
-       "pct": 20
-      },
-      "fri": {
-       "n": 11,
-       "hits": 5.0,
-       "pct": 45
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 6,
-       "hits": 1.0,
-       "pct": 17
-      },
-      "high": {
-       "n": 14,
-       "hits": 3.0,
-       "pct": 21
-      }
-     },
-     "crossAsset": {
-      "against": {
-       "n": 3,
-       "hits": 1.0,
-       "pct": 33
-      },
-      "with": {
-       "n": 4,
-       "hits": 0.0,
-       "pct": 0
-      },
-      "mixed": {
-       "n": 7,
-       "hits": 1.0,
-       "pct": 14
-      }
-     }
-    },
-    "CL": {
-     "news": {
-      "none": {
-       "n": 11,
-       "hits": 4.0,
-       "pct": 36
-      },
-      "medium": {
-       "n": 33,
-       "hits": 6.0,
-       "pct": 18
-      },
-      "high": {
-       "n": 20,
-       "hits": 5.0,
-       "pct": 25
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 32,
-       "hits": 9.0,
-       "pct": 28
-      },
-      "major": {
-       "n": 32,
-       "hits": 6.0,
-       "pct": 19
-      }
-     },
-     "frame": {
-      "conflict": {
-       "n": 47,
-       "hits": 10.0,
-       "pct": 21
-      },
-      "aligned": {
-       "n": 17,
-       "hits": 5.0,
-       "pct": 29
-      }
-     },
-     "whipsaw": {
-      "high": {
-       "n": 49,
-       "hits": 14.0,
-       "pct": 29
-      },
-      "low": {
-       "n": 15,
-       "hits": 1.0,
-       "pct": 7
-      }
-     },
-     "conviction": {
-      "baja": {
-       "n": 36,
-       "hits": 9.0,
-       "pct": 25
-      },
-      "media": {
-       "n": 25,
-       "hits": 5.0,
-       "pct": 20
-      },
-      "alta": {
-       "n": 3,
-       "hits": 1.0,
-       "pct": 33
-      }
-     },
-     "bias": {
-      "neutral": {
-       "n": 15,
-       "hits": 3.0,
-       "pct": 20
-      },
-      "directional": {
-       "n": 49,
-       "hits": 12.0,
-       "pct": 24
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 11,
-       "hits": 2.0,
-       "pct": 18
-      },
-      "tue": {
-       "n": 17,
-       "hits": 6.0,
-       "pct": 35
-      },
-      "wed": {
-       "n": 16,
-       "hits": 3.0,
-       "pct": 19
-      },
-      "thu": {
-       "n": 11,
-       "hits": 2.0,
-       "pct": 18
-      },
-      "fri": {
-       "n": 9,
-       "hits": 2.0,
-       "pct": 22
-      }
-     },
-     "macro": {
-      "high": {
-       "n": 9,
-       "hits": 4.0,
-       "pct": 44
-      },
-      "medium": {
-       "n": 8,
-       "hits": 2.0,
-       "pct": 25
-      }
-     },
-     "crossAsset": {
-      "mixed": {
-       "n": 8,
-       "hits": 4.0,
-       "pct": 50
-      }
-     }
-    },
-    "YM": {
-     "news": {
-      "medium": {
-       "n": 31,
-       "hits": 8.0,
-       "pct": 26
-      },
-      "high": {
-       "n": 17,
-       "hits": 2.0,
-       "pct": 12
-      },
-      "none": {
-       "n": 9,
-       "hits": 0.0,
-       "pct": 0
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 30,
-       "hits": 4.0,
-       "pct": 13
-      },
-      "major": {
-       "n": 27,
-       "hits": 6.0,
-       "pct": 22
-      }
-     },
-     "frame": {
-      "conflict": {
-       "n": 45,
-       "hits": 9.0,
-       "pct": 20
-      },
-      "aligned": {
-       "n": 12,
-       "hits": 1.0,
-       "pct": 8
-      }
-     },
-     "whipsaw": {
-      "high": {
-       "n": 50,
-       "hits": 9.0,
-       "pct": 18
-      },
-      "low": {
-       "n": 7,
-       "hits": 1.0,
-       "pct": 14
-      }
-     },
-     "conviction": {
-      "media": {
-       "n": 18,
-       "hits": 4.0,
-       "pct": 22
-      },
-      "alta": {
-       "n": 6,
-       "hits": 1.0,
-       "pct": 17
-      },
-      "baja": {
-       "n": 33,
-       "hits": 5.0,
-       "pct": 15
-      }
-     },
-     "bias": {
-      "directional": {
-       "n": 52,
-       "hits": 9.0,
-       "pct": 17
-      },
-      "neutral": {
-       "n": 5,
-       "hits": 1.0,
-       "pct": 20
-      }
-     },
-     "weekday": {
-      "tue": {
-       "n": 12,
-       "hits": 3.0,
-       "pct": 25
-      },
-      "wed": {
-       "n": 11,
-       "hits": 4.0,
-       "pct": 36
-      },
-      "thu": {
-       "n": 12,
-       "hits": 1.0,
-       "pct": 8
-      },
-      "fri": {
-       "n": 13,
-       "hits": 2.0,
-       "pct": 15
-      },
-      "mon": {
-       "n": 9,
-       "hits": 0.0,
-       "pct": 0
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 8,
-       "hits": 1.0,
-       "pct": 12
-      },
-      "high": {
-       "n": 8,
-       "hits": 1.0,
-       "pct": 12
-      }
-     },
-     "crossAsset": {
-      "with": {
-       "n": 4,
-       "hits": 2.0,
-       "pct": 50
-      },
-      "against": {
-       "n": 4,
-       "hits": 0.0,
-       "pct": 0
-      },
-      "mixed": {
-       "n": 1,
-       "hits": 0.0,
-       "pct": 0
-      }
-     }
-    }
-   },
-   "scenA": {
-    "NQ": {
-     "news": {
-      "none": {
-       "n": 15,
-       "hits": 6.0,
-       "pct": 40
-      },
-      "medium": {
-       "n": 42,
-       "hits": 23.0,
-       "pct": 55
-      },
-      "high": {
-       "n": 29,
-       "hits": 16.0,
-       "pct": 55
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 40,
-       "hits": 18.0,
-       "pct": 45
-      },
-      "major": {
-       "n": 46,
-       "hits": 27.0,
-       "pct": 59
-      }
-     },
-     "frame": {
-      "aligned": {
-       "n": 33,
-       "hits": 20.0,
-       "pct": 61
-      },
-      "conflict": {
-       "n": 53,
-       "hits": 25.0,
-       "pct": 47
-      }
-     },
-     "whipsaw": {
-      "low": {
-       "n": 16,
-       "hits": 10.0,
-       "pct": 62
-      },
-      "high": {
-       "n": 70,
-       "hits": 35.0,
-       "pct": 50
-      }
-     },
-     "conviction": {
-      "media": {
-       "n": 45,
-       "hits": 24.0,
-       "pct": 53
-      },
-      "alta": {
-       "n": 6,
-       "hits": 2.0,
-       "pct": 33
-      },
-      "baja": {
-       "n": 35,
-       "hits": 19.0,
-       "pct": 54
-      }
-     },
-     "bias": {
-      "directional": {
-       "n": 83,
-       "hits": 43.0,
-       "pct": 52
-      },
-      "neutral": {
-       "n": 3,
-       "hits": 2.0,
-       "pct": 67
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 18,
-       "hits": 7.0,
-       "pct": 39
-      },
-      "tue": {
-       "n": 19,
-       "hits": 12.0,
-       "pct": 63
-      },
-      "wed": {
-       "n": 21,
-       "hits": 11.0,
-       "pct": 52
-      },
-      "fri": {
-       "n": 17,
-       "hits": 9.0,
-       "pct": 53
-      },
-      "thu": {
-       "n": 11,
-       "hits": 6.0,
-       "pct": 55
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 8,
-       "hits": 2.0,
-       "pct": 25
-      },
-      "high": {
-       "n": 16,
-       "hits": 9.0,
-       "pct": 56
-      }
-     },
-     "crossAsset": {
-      "with": {
-       "n": 9,
-       "hits": 4.0,
-       "pct": 44
-      },
-      "mixed": {
-       "n": 2,
-       "hits": 1.0,
-       "pct": 50
-      },
-      "against": {
-       "n": 6,
-       "hits": 3.0,
-       "pct": 50
-      }
-     }
-    },
-    "ALL": {
-     "news": {
-      "none": {
-       "n": 78,
-       "hits": 37.0,
-       "pct": 47
-      },
-      "medium": {
-       "n": 245,
-       "hits": 131.0,
-       "pct": 53
-      },
-      "high": {
-       "n": 156,
-       "hits": 84.0,
-       "pct": 54
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 240,
-       "hits": 123.0,
-       "pct": 51
-      },
-      "major": {
-       "n": 239,
-       "hits": 129.0,
-       "pct": 54
-      }
-     },
-     "frame": {
-      "aligned": {
-       "n": 160,
-       "hits": 88.0,
-       "pct": 55
-      },
-      "conflict": {
-       "n": 319,
-       "hits": 164.0,
-       "pct": 51
-      }
-     },
-     "whipsaw": {
-      "low": {
-       "n": 114,
-       "hits": 61.0,
-       "pct": 54
-      },
-      "high": {
-       "n": 365,
-       "hits": 191.0,
-       "pct": 52
-      }
-     },
-     "conviction": {
-      "media": {
-       "n": 179,
-       "hits": 96.0,
-       "pct": 54
-      },
-      "baja": {
-       "n": 265,
-       "hits": 138.0,
-       "pct": 52
-      },
-      "alta": {
-       "n": 35,
-       "hits": 18.0,
-       "pct": 51
-      }
-     },
-     "bias": {
-      "directional": {
-       "n": 438,
-       "hits": 225.0,
-       "pct": 51
-      },
-      "neutral": {
-       "n": 41,
-       "hits": 27.0,
-       "pct": 66
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 94,
-       "hits": 40.0,
-       "pct": 43
-      },
-      "tue": {
-       "n": 104,
-       "hits": 57.0,
-       "pct": 55
-      },
-      "wed": {
-       "n": 109,
-       "hits": 64.0,
-       "pct": 59
-      },
-      "thu": {
-       "n": 82,
-       "hits": 45.0,
-       "pct": 55
-      },
-      "fri": {
-       "n": 90,
-       "hits": 46.0,
-       "pct": 51
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 49,
-       "hits": 22.0,
-       "pct": 45
-      },
-      "high": {
-       "n": 94,
-       "hits": 47.0,
-       "pct": 50
-      }
-     },
-     "crossAsset": {
-      "with": {
-       "n": 37,
-       "hits": 20.0,
-       "pct": 54
-      },
-      "against": {
-       "n": 25,
-       "hits": 13.0,
-       "pct": 52
-      },
-      "mixed": {
-       "n": 35,
-       "hits": 15.0,
-       "pct": 43
-      }
-     }
-    },
-    "ES": {
-     "news": {
-      "none": {
-       "n": 15,
-       "hits": 5.0,
-       "pct": 33
-      },
-      "medium": {
-       "n": 49,
-       "hits": 24.0,
-       "pct": 49
-      },
-      "high": {
-       "n": 24,
-       "hits": 12.0,
-       "pct": 50
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 45,
-       "hits": 19.0,
-       "pct": 42
-      },
-      "major": {
-       "n": 43,
-       "hits": 22.0,
-       "pct": 51
-      }
-     },
-     "frame": {
-      "aligned": {
-       "n": 36,
-       "hits": 15.0,
-       "pct": 42
-      },
-      "conflict": {
-       "n": 52,
-       "hits": 26.0,
-       "pct": 50
-      }
-     },
-     "whipsaw": {
-      "low": {
-       "n": 32,
-       "hits": 12.0,
-       "pct": 38
-      },
-      "high": {
-       "n": 56,
-       "hits": 29.0,
-       "pct": 52
-      }
-     },
-     "conviction": {
-      "media": {
-       "n": 34,
-       "hits": 16.0,
-       "pct": 47
-      },
-      "baja": {
-       "n": 52,
-       "hits": 25.0,
-       "pct": 48
-      },
-      "alta": {
-       "n": 2,
-       "hits": 0.0,
-       "pct": 0
-      }
-     },
-     "bias": {
-      "directional": {
-       "n": 85,
-       "hits": 41.0,
-       "pct": 48
-      },
-      "neutral": {
-       "n": 3,
-       "hits": 0.0,
-       "pct": 0
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 16,
-       "hits": 4.0,
-       "pct": 25
-      },
-      "tue": {
-       "n": 20,
-       "hits": 12.0,
-       "pct": 60
-      },
-      "wed": {
-       "n": 21,
-       "hits": 11.0,
-       "pct": 52
-      },
-      "thu": {
-       "n": 15,
-       "hits": 5.0,
-       "pct": 33
-      },
-      "fri": {
-       "n": 16,
-       "hits": 9.0,
-       "pct": 56
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 10,
-       "hits": 2.0,
-       "pct": 20
-      },
-      "high": {
-       "n": 14,
-       "hits": 8.0,
-       "pct": 57
-      }
-     },
-     "crossAsset": {
-      "with": {
-       "n": 8,
-       "hits": 4.0,
-       "pct": 50
-      },
-      "mixed": {
-       "n": 3,
-       "hits": 2.0,
-       "pct": 67
-      },
-      "against": {
-       "n": 5,
-       "hits": 1.0,
-       "pct": 20
-      }
-     }
-    },
-    "GC": {
-     "news": {
-      "none": {
-       "n": 13,
-       "hits": 7.0,
-       "pct": 54
-      },
-      "medium": {
-       "n": 47,
-       "hits": 21.0,
-       "pct": 45
-      },
-      "high": {
-       "n": 34,
-       "hits": 20.0,
-       "pct": 59
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 49,
-       "hits": 25.0,
-       "pct": 51
-      },
-      "major": {
-       "n": 45,
-       "hits": 23.0,
-       "pct": 51
-      }
-     },
-     "frame": {
-      "conflict": {
-       "n": 54,
-       "hits": 25.0,
-       "pct": 46
-      },
-      "aligned": {
-       "n": 40,
-       "hits": 23.0,
-       "pct": 58
-      }
-     },
-     "whipsaw": {
-      "high": {
-       "n": 67,
-       "hits": 31.0,
-       "pct": 46
-      },
-      "low": {
-       "n": 27,
-       "hits": 17.0,
-       "pct": 63
-      }
-     },
-     "conviction": {
-      "media": {
-       "n": 34,
-       "hits": 16.0,
-       "pct": 47
-      },
-      "baja": {
-       "n": 47,
-       "hits": 24.0,
-       "pct": 51
-      },
-      "alta": {
-       "n": 13,
-       "hits": 8.0,
-       "pct": 62
-      }
-     },
-     "bias": {
-      "directional": {
-       "n": 89,
-       "hits": 44.0,
-       "pct": 49
-      },
-      "neutral": {
-       "n": 5,
-       "hits": 4.0,
-       "pct": 80
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 17,
-       "hits": 6.0,
-       "pct": 35
-      },
-      "tue": {
-       "n": 21,
-       "hits": 13.0,
-       "pct": 62
-      },
-      "wed": {
-       "n": 20,
-       "hits": 10.0,
-       "pct": 50
-      },
-      "thu": {
-       "n": 18,
-       "hits": 9.0,
-       "pct": 50
-      },
-      "fri": {
-       "n": 18,
-       "hits": 10.0,
-       "pct": 56
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 8,
-       "hits": 5.0,
-       "pct": 62
-      },
-      "high": {
-       "n": 22,
-       "hits": 12.0,
-       "pct": 55
-      }
-     },
-     "crossAsset": {
-      "against": {
-       "n": 4,
-       "hits": 3.0,
-       "pct": 75
-      },
-      "mixed": {
-       "n": 9,
-       "hits": 4.0,
-       "pct": 44
-      },
-      "with": {
-       "n": 8,
-       "hits": 6.0,
-       "pct": 75
-      }
-     }
-    },
-    "YM": {
-     "news": {
-      "none": {
-       "n": 17,
-       "hits": 7.0,
-       "pct": 41
-      },
-      "medium": {
-       "n": 52,
-       "hits": 33.0,
-       "pct": 63
-      },
-      "high": {
-       "n": 33,
-       "hits": 18.0,
-       "pct": 55
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 52,
-       "hits": 31.0,
-       "pct": 60
-      },
-      "major": {
-       "n": 50,
-       "hits": 27.0,
-       "pct": 54
-      }
-     },
-     "frame": {
-      "conflict": {
-       "n": 81,
-       "hits": 46.0,
-       "pct": 57
-      },
-      "aligned": {
-       "n": 21,
-       "hits": 12.0,
-       "pct": 57
-      }
-     },
-     "whipsaw": {
-      "high": {
-       "n": 87,
-       "hits": 51.0,
-       "pct": 59
-      },
-      "low": {
-       "n": 15,
-       "hits": 7.0,
-       "pct": 47
-      }
-     },
-     "conviction": {
-      "baja": {
-       "n": 67,
-       "hits": 35.0,
-       "pct": 52
-      },
-      "media": {
-       "n": 26,
-       "hits": 19.0,
-       "pct": 73
-      },
-      "alta": {
-       "n": 9,
-       "hits": 4.0,
-       "pct": 44
-      }
-     },
-     "bias": {
-      "neutral": {
-       "n": 12,
-       "hits": 7.0,
-       "pct": 58
-      },
-      "directional": {
-       "n": 90,
-       "hits": 51.0,
-       "pct": 57
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 21,
-       "hits": 8.0,
-       "pct": 38
-      },
-      "tue": {
-       "n": 21,
-       "hits": 11.0,
-       "pct": 52
-      },
-      "wed": {
-       "n": 22,
-       "hits": 16.0,
-       "pct": 73
-      },
-      "thu": {
-       "n": 18,
-       "hits": 12.0,
-       "pct": 67
-      },
-      "fri": {
-       "n": 20,
-       "hits": 11.0,
-       "pct": 55
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 12,
-       "hits": 4.0,
-       "pct": 33
-      },
-      "high": {
-       "n": 20,
-       "hits": 9.0,
-       "pct": 45
-      }
-     },
-     "crossAsset": {
-      "with": {
-       "n": 9,
-       "hits": 4.0,
-       "pct": 44
-      },
-      "mixed": {
-       "n": 5,
-       "hits": 1.0,
-       "pct": 20
-      },
-      "against": {
-       "n": 7,
-       "hits": 5.0,
-       "pct": 71
-      }
-     }
-    },
-    "CL": {
-     "news": {
-      "none": {
-       "n": 18,
-       "hits": 12.0,
-       "pct": 67
-      },
-      "medium": {
-       "n": 55,
-       "hits": 30.0,
-       "pct": 55
-      },
-      "high": {
-       "n": 36,
-       "hits": 18.0,
-       "pct": 50
-      }
-     },
-     "calendar": {
-      "normal": {
-       "n": 54,
-       "hits": 30.0,
-       "pct": 56
-      },
-      "major": {
-       "n": 55,
-       "hits": 30.0,
-       "pct": 55
-      }
-     },
-     "frame": {
-      "conflict": {
-       "n": 79,
-       "hits": 42.0,
-       "pct": 53
-      },
-      "aligned": {
-       "n": 30,
-       "hits": 18.0,
-       "pct": 60
-      }
-     },
-     "whipsaw": {
-      "high": {
-       "n": 85,
-       "hits": 45.0,
-       "pct": 53
-      },
-      "low": {
-       "n": 24,
-       "hits": 15.0,
-       "pct": 62
-      }
-     },
-     "conviction": {
-      "baja": {
-       "n": 64,
-       "hits": 35.0,
-       "pct": 55
-      },
-      "media": {
-       "n": 40,
-       "hits": 21.0,
-       "pct": 52
-      },
-      "alta": {
-       "n": 5,
-       "hits": 4.0,
-       "pct": 80
-      }
-     },
-     "bias": {
-      "neutral": {
-       "n": 18,
-       "hits": 14.0,
-       "pct": 78
-      },
-      "directional": {
-       "n": 91,
-       "hits": 46.0,
-       "pct": 51
-      }
-     },
-     "weekday": {
-      "mon": {
-       "n": 22,
-       "hits": 15.0,
-       "pct": 68
-      },
-      "tue": {
-       "n": 23,
-       "hits": 9.0,
-       "pct": 39
-      },
-      "wed": {
-       "n": 25,
-       "hits": 16.0,
-       "pct": 64
-      },
-      "thu": {
-       "n": 20,
-       "hits": 13.0,
-       "pct": 65
-      },
-      "fri": {
-       "n": 19,
-       "hits": 7.0,
-       "pct": 37
-      }
-     },
-     "macro": {
-      "medium": {
-       "n": 11,
-       "hits": 9.0,
-       "pct": 82
-      },
-      "high": {
-       "n": 22,
-       "hits": 9.0,
-       "pct": 41
-      }
-     },
-     "crossAsset": {
-      "against": {
-       "n": 3,
-       "hits": 1.0,
-       "pct": 33
-      },
-      "mixed": {
-       "n": 16,
-       "hits": 7.0,
-       "pct": 44
-      },
-      "with": {
-       "n": 3,
-       "hits": 2.0,
-       "pct": 67
-      }
-     }
-    }
-   }
+   "_note": "hitLog grades split by the context of each day, derived from plans/<date>-*.json by method/update_scorecard.py. as of 2026-11-20"
   },
-  "blindSpots": [
-   {
-    "metric": "zone",
-    "sym": "NQ",
-    "when": "weekday=tue",
-    "pct": 0,
-    "n": 13,
-    "avgPct": 23
-   },
-   {
-    "metric": "zone",
-    "sym": "YM",
-    "when": "news=none",
-    "pct": 0,
-    "n": 9,
-    "avgPct": 18
-   },
-   {
-    "metric": "zone",
-    "sym": "YM",
-    "when": "weekday=mon",
-    "pct": 0,
-    "n": 9,
-    "avgPct": 18
-   },
-   {
-    "metric": "zone",
-    "sym": "ALL",
-    "when": "crossAsset=against",
-    "pct": 7,
-    "n": 15,
-    "avgPct": 24
-   },
-   {
-    "metric": "zone",
-    "sym": "CL",
-    "when": "whipsaw=low",
-    "pct": 7,
-    "n": 15,
-    "avgPct": 23
-   },
-   {
-    "metric": "zone",
-    "sym": "GC",
-    "when": "conviction=alta",
-    "pct": 10,
-    "n": 10,
-    "avgPct": 27
-   },
-   {
-    "metric": "zone",
-    "sym": "NQ",
-    "when": "macro=medium",
-    "pct": 12,
-    "n": 8,
-    "avgPct": 23
-   },
-   {
-    "metric": "zone",
-    "sym": "NQ",
-    "when": "macro=high",
-    "pct": 12,
-    "n": 16,
-    "avgPct": 23
-   },
-   {
-    "metric": "zone",
-    "sym": "ALL",
-    "when": "conviction=alta",
-    "pct": 14,
-    "n": 21,
-    "avgPct": 24
-   },
-   {
-    "metric": "zone",
-    "sym": "GC",
-    "when": "news=high",
-    "pct": 16,
-    "n": 25,
-    "avgPct": 27
-   },
-   {
-    "metric": "scenA",
-    "sym": "ES",
-    "when": "macro=medium",
-    "pct": 20,
-    "n": 10,
-    "avgPct": 47
-   },
-   {
-    "metric": "bias",
-    "sym": "YM",
-    "when": "weekday=mon",
-    "pct": 23,
-    "n": 13,
-    "avgPct": 53
-   },
-   {
-    "metric": "scenA",
-    "sym": "NQ",
-    "when": "macro=medium",
-    "pct": 25,
-    "n": 8,
-    "avgPct": 52
-   },
-   {
-    "metric": "scenA",
-    "sym": "ES",
-    "when": "weekday=mon",
-    "pct": 25,
-    "n": 16,
-    "avgPct": 47
-   },
-   {
-    "metric": "bias",
-    "sym": "YM",
-    "when": "conviction=alta",
-    "pct": 30,
-    "n": 10,
-    "avgPct": 53
-   },
-   {
-    "metric": "bias",
-    "sym": "NQ",
-    "when": "conviction=alta",
-    "pct": 33,
-    "n": 9,
-    "avgPct": 54
-   },
-   {
-    "metric": "bias",
-    "sym": "CL",
-    "when": "conviction=alta",
-    "pct": 33,
-    "n": 9,
-    "avgPct": 53
-   },
-   {
-    "metric": "scenA",
-    "sym": "ES",
-    "when": "news=none",
-    "pct": 33,
-    "n": 15,
-    "avgPct": 47
-   },
-   {
-    "metric": "scenA",
-    "sym": "ES",
-    "when": "weekday=thu",
-    "pct": 33,
-    "n": 15,
-    "avgPct": 47
-   },
-   {
-    "metric": "scenA",
-    "sym": "YM",
-    "when": "macro=medium",
-    "pct": 33,
-    "n": 12,
-    "avgPct": 57
-   },
-   {
-    "metric": "scenA",
-    "sym": "GC",
-    "when": "weekday=mon",
-    "pct": 35,
-    "n": 17,
-    "avgPct": 51
-   },
-   {
-    "metric": "scenA",
-    "sym": "CL",
-    "when": "weekday=fri",
-    "pct": 37,
-    "n": 19,
-    "avgPct": 55
-   },
-   {
-    "metric": "bias",
-    "sym": "ES",
-    "when": "calendar=major",
-    "pct": 38,
-    "n": 48,
-    "avgPct": 53
-   },
-   {
-    "metric": "scenA",
-    "sym": "YM",
-    "when": "weekday=mon",
-    "pct": 38,
-    "n": 21,
-    "avgPct": 57
-   },
-   {
-    "metric": "scenA",
-    "sym": "NQ",
-    "when": "weekday=mon",
-    "pct": 39,
-    "n": 18,
-    "avgPct": 52
-   },
-   {
-    "metric": "scenA",
-    "sym": "CL",
-    "when": "weekday=tue",
-    "pct": 39,
-    "n": 23,
-    "avgPct": 55
-   },
-   {
-    "metric": "bias",
-    "sym": "CL",
-    "when": "conviction=media",
-    "pct": 40,
-    "n": 35,
-    "avgPct": 53
-   },
-   {
-    "metric": "scenA",
-    "sym": "NQ",
-    "when": "news=none",
-    "pct": 40,
-    "n": 15,
-    "avgPct": 52
-   }
-  ],
-  "strengths": [
-   {
-    "metric": "bias",
-    "sym": "CL",
-    "when": "bias=neutral",
-    "pct": 91,
-    "n": 11,
-    "avgPct": 53
-   },
-   {
-    "metric": "bias",
-    "sym": "GC",
-    "when": "macro=medium",
-    "pct": 83,
-    "n": 12,
-    "avgPct": 55
-   },
-   {
-    "metric": "scenA",
-    "sym": "CL",
-    "when": "macro=medium",
-    "pct": 82,
-    "n": 11,
-    "avgPct": 55
-   },
-   {
-    "metric": "bias",
-    "sym": "YM",
-    "when": "crossAsset=against",
-    "pct": 78,
-    "n": 9,
-    "avgPct": 53
-   },
-   {
-    "metric": "scenA",
-    "sym": "CL",
-    "when": "bias=neutral",
-    "pct": 78,
-    "n": 18,
-    "avgPct": 55
-   },
-   {
-    "metric": "bias",
-    "sym": "ES",
-    "when": "macro=medium",
-    "pct": 75,
-    "n": 12,
-    "avgPct": 53
-   },
-   {
-    "metric": "bias",
-    "sym": "GC",
-    "when": "conviction=alta",
-    "pct": 75,
-    "n": 12,
-    "avgPct": 55
-   },
-   {
-    "metric": "scenA",
-    "sym": "GC",
-    "when": "crossAsset=with",
-    "pct": 75,
-    "n": 8,
-    "avgPct": 51
-   },
-   {
-    "metric": "bias",
-    "sym": "ALL",
-    "when": "bias=neutral",
-    "pct": 74,
-    "n": 37,
-    "avgPct": 54
-   },
-   {
-    "metric": "scenA",
-    "sym": "YM",
-    "when": "conviction=media",
-    "pct": 73,
-    "n": 26,
-    "avgPct": 57
-   },
-   {
-    "metric": "scenA",
-    "sym": "YM",
-    "when": "weekday=wed",
-    "pct": 73,
-    "n": 22,
-    "avgPct": 57
-   },
-   {
-    "metric": "bias",
-    "sym": "YM",
-    "when": "weekday=wed",
-    "pct": 71,
-    "n": 17,
-    "avgPct": 53
-   },
-   {
-    "metric": "bias",
-    "sym": "GC",
-    "when": "whipsaw=low",
-    "pct": 70,
-    "n": 37,
-    "avgPct": 55
-   },
-   {
-    "metric": "scenA",
-    "sym": "CL",
-    "when": "weekday=mon",
-    "pct": 68,
-    "n": 22,
-    "avgPct": 55
-   },
-   {
-    "metric": "bias",
-    "sym": "ALL",
-    "when": "macro=medium",
-    "pct": 67,
-    "n": 57,
-    "avgPct": 54
-   },
-   {
-    "metric": "bias",
-    "sym": "GC",
-    "when": "news=none",
-    "pct": 67,
-    "n": 15,
-    "avgPct": 55
-   },
-   {
-    "metric": "bias",
-    "sym": "CL",
-    "when": "weekday=thu",
-    "pct": 67,
-    "n": 15,
-    "avgPct": 53
-   },
-   {
-    "metric": "scenA",
-    "sym": "YM",
-    "when": "weekday=thu",
-    "pct": 67,
-    "n": 18,
-    "avgPct": 57
-   },
-   {
-    "metric": "scenA",
-    "sym": "CL",
-    "when": "news=none",
-    "pct": 67,
-    "n": 18,
-    "avgPct": 55
-   },
-   {
-    "metric": "bias",
-    "sym": "ES",
-    "when": "calendar=normal",
-    "pct": 66,
-    "n": 56,
-    "avgPct": 53
-   },
-   {
-    "metric": "scenA",
-    "sym": "ALL",
-    "when": "bias=neutral",
-    "pct": 66,
-    "n": 41,
-    "avgPct": 53
-   },
-   {
-    "metric": "bias",
-    "sym": "CL",
-    "when": "conviction=baja",
-    "pct": 65,
-    "n": 58,
-    "avgPct": 53
-   }
-  ],
+  "blindSpots": [],
+  "strengths": [],
   "zoneEdge": {
-   "_note": "Graded zones pooled by family|vs24h, type|vs24h, family|session (method/update_scorecard.py). as of 2026-11-18",
+   "_note": "Graded zones pooled by family|vs24h, type|vs24h, family|session (method/update_scorecard.py). as of 2026-11-20",
    "bounce_val|against": {
     "n": 5,
     "wins": 1,
@@ -13277,7 +10302,8 @@
   "2026-11-16": "# Revision 2026-11-16 (dia de futuros completo: Asia, Londres y NY)\n\nCalificacion automatica corrida: `grade_plans.py 2026-11-16` + `update_scorecard.py 2026-11-16`\n(ver `grades/2026-11-16.json`). Los numeros de abajo vienen de ahi, no de memoria.\n\n## Resumen del dia\n\nLunes de risk-off amplio: los 5 instrumentos cerraron las 24h en SHORT (NQ -3.32%, ES -2.18%,\nGC -0.87%, YM -1.55%, CL -3.08%), con NQ/ES/YM superando el 118-149% de su ATR diario y CL\nestirandose 13x su ATR de 5m. El VIX saltara 24% con la curva en backwardation real. El plan de\n`pre-asia` (domingo) pedia rebote de 24h en los 5: fallo en los 5. Londres y NY si acertaron\nsesgo SHORT una vez que la tendencia se confirmo con autoridad.\n\n## NQ\n\n- **Asia**: sesgo LONG (fade de 24h) -> **miss** (movePts -387.25). Escenario A (hacia\n  28050.5) -> **hit** nominal por recorrido pero en la direccion contraria a la jugada; en la\n  practica la sesion fue B (continuacion corta) sin dar el rebote. Zona `golden_zone`\n  27900-27955 -> tocada, **failed** (-1R). Zona `ib_fade` 27374-27516 -> no tocada. EM: real\n  621.25pts vs banda 273-585 -> **sobre la banda** (quedo corto, como viene pasando en Asia\n  todo octubre/noviembre).\n- **Londres**: sesgo SHORT -> **hit** (-148pts). Escenario A (hacia POC 27803.25) -> miss.\n  Zona `bounce_val` 27698.50-27719.75 (GO tactico) -> tocada, rompio el lado malo primero\n  (**broken**, no disparo limpio). EM 299.25 dentro de banda 242-442 -> **hit**.\n- **NY**: sesgo SHORT -> **hit** (-403.5pts). Zona `ib_fade` 27374-27516 -> tocada,\n  **failed** (-1R). EM 481.5 vs banda 493-986 -> **bajo la banda** (unico EM corto del dia en\n  NQ; la sesion cerro con el dia ya agotado y sin extender mas de lo que ya habia dado).\n- **Veredicto**: el WAIT de Asia evito comprar una zona que fallo (correcto). El GO tactico de\n  Londres (bounce_val) califica como **miss real**: rompio el lado malo antes de disparar\n  limpio. AVOID no se uso.\n- **Causa del fallo (Asia)**: `sesgo_mal_leido` -- el prior de continuacion (8e) pesaba mas\n  que la estadistica generica de reversion de Asia, y el plan se inclino hacia el rebote sin\n  suficiente evidencia de shock/aceptacion en ese momento.\n- **Contra-caso**: el de Asia citaba el sesgo semanal alcista y un gap sin rellenar arriba\n  como argumento de rebote -- perdio limpio, el lado corto gano con autoridad. `sesgo_mal_leido`.\n\n## ES\n\n- **Asia**: sesgo LONG -> **miss** (-39.25pts). Escenario A -> **miss**. Zona `sweep_pdl`\n  7561-7580 -> tocada, **failed**. EM 76.5 vs banda 37.2-62.6 -> **sobre la banda**.\n- **Londres**: sesgo SHORT -> **hit** (-22.25). Zona `bounce_val` 7532-7538 -> abierta sin\n  resolver en la ventana graded (**open**). EM 50.75 dentro de banda 38.9-66.3 -> **hit**.\n- **NY**: sesgo SHORT -> **hit** (-105). Zona `bounce_val` 7532-7538 -> tocada, rompio el\n  lado malo (**broken**). EM 118.5 dentro de banda 73.4-148.6 -> **hit**.\n- **Veredicto**: WAIT de Asia y Londres correctos (ninguna zona dio +1R limpio). El feed de\n  niveles, caido desde el viernes, volvio durante Londres sin coste real.\n- **Causa del fallo (Asia)**: `sesgo_mal_leido`, mismo guion que NQ.\n\n## GC\n\n- **Asia**: sin sesgo claro (orb NEUTRAL). Escenario A -> **miss**. Zona `poc_reversion`\n  3879-3888 -> tocada, **failed** (-1R). Zona `fade_vah` 3927-3947 -> no tocada. EM 69.1 vs\n  banda 38.5-63.8 -> **sobre la banda**.\n- **Londres**: sesgo SHORT -> **miss** (+9.7pts, reclamo real desde el 50% de extension).\n  Escenario A (hacia 3879.1) -> **hit**. Zona `ext_target` 3843.1-3857.1 -> abierta\n  (**open**, el reclamo seguia en curso al cierre de la ventana). EM 26.3 vs banda 28.1-59.4\n  -> **bajo la banda**.\n- **NY**: sesgo SHORT -> **hit** (-13.1). Escenario A (hacia el POC 3888.45) -> **hit**. Zona\n  `liq_reclaim` 3871.1-3879.5 -> tocada, **failed** (-1R; el reclamo murio y GC volvio a\n  romper el PWL hacia el cierre). EM 48.9 dentro de banda 36.0-60.1 -> **hit**.\n- **Veredicto**: el AVOID de Asia (`verdictScore` lo cuenta `save`) evito perseguir el reclamo\n  fallido. Londres leyo bien el reclamo (escenario A hit) aunque el sesgo puntual fallara por\n  poco. El dia termino exactamente donde el modelo lo tenia marcado: rompiendo el PWL/VAL de\n  3 dias (3856.6/3871.1) con cierre 1h, confirmando la regla vigente.\n- **Causa del fallo (Londres, sesgo)**: `cambio_de_regimen` -- el reclamo real desde el 50% de\n  extension no estaba en el guion de \"ni perseguir ni anticipar\" del plan de Londres.\n\n## YM\n\n- **Asia**: sesgo LONG -> **miss** (-64). Escenario A -> **miss**. Zona `golden_zone`\n  52290-52375 -> tocada, **failed** (-1R; golden_zone sigue confirmando su prior bajo, 0 de\n  varias en lo que va de la racha). EM 270 dentro de banda 232.4-387.6 -> **hit**.\n- **Londres**: sin sesgo (NEUTRAL). Escenario A -> **miss**. Zona `golden_zone` 52290-52375\n  -> **open**. EM 231 vs banda 293-499 -> **bajo la banda**.\n- **NY**: sin sesgo (NEUTRAL). Escenario A -> **miss**. Zona `golden_zone` 52290-52375 ->\n  tocada, rompio el lado malo (**broken**). EM 845 vs banda 432-1221.6 -> **hit** (dentro, en\n  el extremo alto: YM finalmente salio de la caja de 4-5 sesiones, rompiendo el PDL 52081\n  con autoridad hacia el cierre).\n- **Veredicto**: WAIT las 3 sesiones, correcto -- ninguna golden_zone pago (siguen 0 de varias\n  en la racha, confirma `zonePriors.golden_zone` = 0.32 del override). YM por fin resolvio la\n  caja de 5 sesiones, hacia abajo.\n- **Causa del fallo (whipsaw)**: `cambio_de_regimen` -- la caja se rompio justo en la sesion\n  que se esperaba seguridad fuera del 0.6 de whipsawRisk; revisar si el regimen ya daba aviso\n  antes del cierre de NY.\n\n## CL\n\n- **Asia**: sesgo LONG -> **hit** (+0.39, unico acierto de sesgo del complejo en Asia).\n  Escenario A (pullback al cluster VWAP/EMA) -> **hit**. Zona `pullback_cont` 88.78-88.97 ->\n  tocada, rompio el lado malo (**broken**). EM 1.88 dentro de banda 1.28-2.01 -> **hit**.\n- **Londres**: sesgo LONG -> **miss** (-1.65, el giro largo murio en esta sesion). Escenario A\n  (hacia 90.1) -> **miss**. Zona `retest_break` 89.15-89.64 -> tocada, rompio el lado malo\n  (**broken** -- el 4to y ultimo rechazo del techo). EM 2.55 vs banda 1.4-2.46 -> **sobre la\n  banda**.\n- **NY**: sesgo SHORT -> **hit** (-1.51). Escenario A (hacia 87.34) -> **untriggered** (no\n  llego a disparar el gatillo en la ventana). Zona `retest_break` 88.0-88.45 (bajista) -> no\n  tocada. EM 1.85 vs banda 2.19-3.55 -> **bajo la banda** (dia ya agotado, el EM normal de\n  sesion no se recorta por regla, pero aqui si quedo corto).\n- **Veredicto**: el giro de tesis (largo de 4 dias -> corto reinstalado) se jugo bien en\n  Londres/NY: WAIT mientras se confirmaba, sin perseguir el ultimo rechazo del techo.\n- **Causa del fallo (Londres)**: `narrativa_rota` -- el giro largo del 12-nov se rompio por su\n  propia estructura (BOS bajista + cierre bajo su invalidacion), sin un evento de calendario\n  detras; coincide con el patron ya medido en `models/CL` de reversales sin catalizador.\n\n## Plan vs ejecucion\n\n`live/journal.json` sigue sin actualizarse desde 2026-11-08 (`updatedAt` 2026-11-08T03:19Z, el\nultimo `byDay` real es 2026-11-07). **Sin datos de ejecucion para 2026-11-16**: no se puede\ncruzar el plan con lo que Jesus realmente operó ese dia. `scorecard.execution.ALL` (reconstruido\npor `update_scorecard.py`) sigue leyendo la misma ventana de 31 dias a 2026-11-07 (disciplinado\n3%, contra-sesgo 44%, fuera de zona 63%, 17/31 dias de sobre-operar) -- son los mismos numeros de\nhace mas de una semana, no una lectura fresca de ayer. Si el journal no se reconecta, mañana\ntampoco habra dato nuevo.\n\n## Contra-caso\n\nEn los 5 instrumentos el contra-caso de Asia (sesgo semanal/COT/SMT a favor de un rebote) perdio\nlimpio frente al guion de continuacion -- en NQ/ES/GC/YM fue `sesgo_mal_leido` (el plan se\ninclino al rebote sin bastante evidencia de shock), en CL el propio contra-caso (\"rebote de\ngestion real hacia el cierre\") tampoco aparecio y el giro de tesis se sostuvo. Leccion de\nproceso: ninguno de los 5 contra-casos de Asia se resolvio \"GIRA\" y el mercado tampoco pedia\ngirar -- el sesgo de continuacion (8e, prior del dia + shock) manda mas que la estadistica\ngenerica de reversion de Asia cuando hay evidencia de shock real detras (VIX en backwardation,\nFed Warsh aceptado).\n\n## 3 lecciones concretas\n\n1. **El EM de Asia se quedo corto otra vez en NQ/ES/GC** (over en los 3) en un dia de shock\n   real -- confirma `emCalibration` (mult ya > 2x en los 3), pero recuerda que incluso con la\n   correccion automatica un dia de shock puede seguir superando la banda alta.\n2. **golden_zone sigue sin pagar** (otra `failed` en YM, 0 de varias en la racha): el override\n   `zonePriors.golden_zone = 0.32` sigue justificado, no subirla sin evidencia nueva.\n3. **CL confirmo su propio patron de reversales sin catalizador** (el giro largo murio sin un\n   evento de calendario detras) -- la regla `R-CL-reversal-completo-sin-catalizador` del modelo\n   sigue viva y relevante, vigilar si el nuevo corto reinstalado repite el patron al reves.\n\n## Nota\n\nSin muestra EM: no aplica (las 5 celdas tuvieron banda). Sin calificacion de aciertos: no aplica\n(hitLog escrito para los 5 simbolos). `scorecard.contextScore`: 46 blind spots, 23 strengths\ntras el recalculo de hoy (ver `state/sa-state.json`).\n",
   "2026-11-17": "# Cierre parcial de Asia · 2026-11-17 (via pre-london)\n\n**GC — ruptura de tesis confirmada.** El corto de 4 dias murio: PWL 3856.70 (soporte\nsemanal defendido 3 dias) quedo reclamado con cierre 1h sostenido sobre 3871.10 (la\ninvalidacion que la propia tesis marcaba) y move24h giro de SHORT a LONG (+0.59%).\nExtendio hasta 3889.6 (maximo de Londres de ayer / ONH) pero esa ruptura fallo con\nrechazo claro de vuelta a 3877.3 en la misma sesion -- doble barrida (abajo del PWL,\narriba del maximo de Londres), sin autoridad direccional limpia en ningun lado.\nNarrativa reiniciada (dia 1, ver narrative). El verdict de Asia (WAIT) se sostuvo: no\nhabia A+ a tiro cuando se escribio el plan, y el reclamo que siguio tampoco habria dado\nun GO limpio (zona sweep_pwl, familia topada en B). El contra-caso de ayer (\"si recupera\nel PWL con autoridad, la ruptura del lunes queda en duda\") se cumplio.\n\n**NQ/ES — zonas tacticas tocadas, sesgo de fondo intacto.** La zona B de reclamo\n(VAL/PDL en ambos) se toco segun lo previsto: NQ barrio 27180.50 (bajo el PDL 27234.75)\ny reclamo; ES toco el PDL 7420.25 dentro del mismo rango y reclamo. En ambos casos el\nprecio sigue bajo EMA20/VWAP/apertura del dia -- el reclamo no rompio ningun nivel de\ninvalidacion de la tesis de fondo. El WAIT de Asia se sostuvo (sin A+ a tiro).\n\n**YM — barrido del ONL sin resolucion.** Asia barrio 51438 (overnight low) y rebota\nparcialmente, todavia dentro de la caja de 6 sesiones sin romper ningun lado. El\nchecklist diario paso de +1 (lectura previa) a neutral (0): el conflicto de marcos de\nayer se disolvio. Verdict de Asia (WAIT) se sostuvo.\n\n**CL — toque leve del soporte, titular nuevo en contra.** Asia barrio el minimo de la\nnoche (84.73, 0.07pts bajo el borde de la zona de demanda) y reclamo dentro del rango\n84.80-85.34. Un titular fresco de escalada en el estrecho de Ormuz (tanquero atacado)\naparecio durante la sesion, tirando en contra del corto estructural -- no se ve todavia\nen el precio pero se nombra en macroContext y en el contra-caso de la sesion de Londres.\n\n**Plan vs ejecucion:** sin datos (`live/journal.json` sigue sin refrescar desde\n2026-11-07/08, igual que reporto la pre-asia de hoy).\n\nNota: esta es la calificacion en prosa de la sesion que acaba de cerrar (regla de\npre-london, seccion 1 de `instructions.md`); la calificacion numerica formal\n(scorecard/hitLog/zones) para el dia completo 2026-11-17 la hace `pre-asia` de manana con\n`grade_plans.py`/`update_scorecard.py`.\n\n## Cierre parcial de Londres · 2026-11-17 (via pre-ny)\n\n**GC -- escenario A confirmado con autoridad.** El rechazo de 3878.80-3889.60 (maximo de\nLondres de ayer y overnight, ya fallido) se activo tal cual lo preveia el plan de\npre-london: precio cayo desde 3877.3 hasta 3859.9, tocando el POC previo (3876.1) y\nextendiendo hacia el PWL reclamado (3856.70) y la zona dorada (3850.0-3861.6). El verdict\nGO de pre-london se habria cobrado (objetivo 1, POC, ya tocado). Dia 1 de la tesis\nreiniciada confirmandose con el primer dia limpio.\n\n**NQ/ES -- escenario B activado, no el A.** Contra lo que marcaba el plan de pre-london\ncomo primario (continuacion corta tras rechazar el cluster POC/EMA20/VWAP), el precio\nreclamo ese cluster con autoridad (escenario B) y extendio hasta probar la resistencia\nsiguiente (NQ 27473-27498, ES 7443-7505) sin cerrar por ahora sobre la invalidacion de la\ntesis (NQ 27465, ES 7468.50). El contra-caso de ayer en ambos (\"si Londres reclama el\ncluster con autoridad, el corto pierde traccion esta noche\") se esta cumpliendo en parte;\nla tesis estructural EVOLUCIONA pero no se rompio.\n\n**YM -- sin resolucion, sexta sesion en la caja.** El unico setup a tiro de pre-london\n(reclamo 51512-51574, largo contra el sesgo, estirado 5.5x ATR) no se toco: el precio\nsiguio cayendo, barrio el ONL 51323 y rebrincos sin autoridad, quedando bajo el FVG 5m\n51385-51418. El AVOID de pre-london se sostuvo (habria sido perseguir un nivel que nunca\nse alcanzo).\n\n**CL -- el titular de Ormuz gano traccion real.** El WAIT de pre-london (\"perseguir el\nsoporte 84.80-85.34 es la fuga de perseguir, con un titular fresco en contra\") se sostuvo\nbien: el precio reboto con fuerza desde 84.68 hasta la zona dorada 85.71-86.52, un\nmovimiento de +1.8%, dejando el precio ahora muy estirado (4.4x ATR) en la direccion\nopuesta.\n\n**Plan vs ejecucion:** sin datos (`live/journal.json` sigue sin refrescar desde\n2026-11-07/08).\n\nNota: esta es la calificacion en prosa de la sesion de Londres que acaba de cerrar\n(regla de pre-ny, seccion 1 de `instructions.md`); la calificacion numerica formal\n(scorecard/hitLog/zones) para el dia completo 2026-11-17 la hace `pre-asia` de manana con\n`grade_plans.py`/`update_scorecard.py`.\n\n## Cierre completo del dia · 2026-11-17 (via pre-asia del 18, con grade_plans.py)\n\nCalificacion automatica de los 3 planes del dia (`grades/2026-11-17.json`) contra las velas\nreales. Tabla sesion x instrumento (sesgo / escenario A / zonas tocadas-respetadas / EM real\nvs presupuesto):\n\n| Sesion | NQ | ES | GC | YM | CL |\n|---|---|---|---|---|---|\n| Asia | sesgo FALLO (corto vs +44.5pts), A FALLO, EM 317.5p (dentro de banda) | sesgo OK, A sin disparo, EM 42p (dentro) | sesgo FALLO (corto vs +14.9pts), A FALLO, EM 43.7p (dentro) | sesgo OK, A sin disparo, EM 307p (dentro) | sesgo OK, A sin disparo, EM 0.91p (muy por debajo de la banda baja) |\n| Londres | sesgo OK, A OK, EM 382.75p (dentro) | sesgo OK, A OK, EM 60.75p (dentro) | sesgo OK, A sin disparo, EM 37.8p (dentro) | sesgo OK, A OK, EM 360p (por debajo de banda baja) | sesgo FALLO (rebote +1.8% por Ormuz vs el corto), A FALLO, EM 2.37p (dentro) |\n| NY | sesgo OK, A sin disparo, EM 692.5p (por ENCIMA de banda alta) | sesgo OK, A sin disparo, EM 129p (por encima) | sesgo OK, A OK, EM 50.2p (por encima) | sesgo OK, A OK, EM 898p (por encima) | sesgo OK, A OK, EM 2.03p (dentro) |\n\n**Zonas**: dia muy malo para la tabla de zonas en los 5 instrumentos (la mayoria `failed` o\n`untouched`/`broken`): NQ 0/2 respetadas, ES 0/1, YM 0/1, GC 1/4 (el `sweep_pwl` de Londres si\nfunciono), CL 1/2 (el `demand` de Londres si funciono, justo antes del rebote de Ormuz). Es el\npatron esperable en un dia de tendencia resuelta con exhaustion: las zonas de rebote/reversion\ncasi nunca llegan limpias cuando el dia solo quiere ir en una direccion.\n\n**Sesgo del dia (hitLog, 3 sesiones)**: NQ 2/3, ES 3/3, GC 2/3, YM 3/3, CL 2/3. El patron es\nclaro: NQ y GC fallaron el sesgo en Asia (ambos marcados SHORT, ambos subieron antes de\nresolver bajista mas tarde) y CL fallo en Londres (el rebote de Ormuz le gano al corto por una\nsesion). ES y YM acertaron las 3 sesiones limpio.\n\n**Escenario A**: NQ 1/2, ES 1/1, GC 1/2, YM 2/2, CL 1/2 (omitiendo las sesiones `untriggered`,\nque no cuentan ni como acierto ni como fallo). YM fue el mas limpio calificando escenario.\n\n**EM (estimado de movimiento)**: acerto la banda baja-alta en 9 de 15 celdas sesion x\ninstrumento; las 4 celdas de NY (NQ, ES, GC, YM) se quedaron CORTAS feo (realPts muy por\nencima de la banda alta) -- confirma otra vez que el dia de tendencia resuelta se come el\npresupuesto normal x1.3-1.7 como marca `R-NQ-agotado-no-limita-sesion` y equivalentes, no solo\nen NQ. CL en cambio quedo muy por DEBAJO de su banda baja en Asia y Londres (0.91p y 2.37p vs\nun EM base >1.5p) -- dia de balance real antes del round-trip de NY, el patron `Balance`/dayType\nque marco `orb` todo el dia se confirmo hasta la tarde.\n\n**Narrativa**: NQ y ES CONFIRMARON la tesis bajista de fondo con autoridad (dia 4, cierre en el\ntercio inferior, sin pullback real). YM confirmo tambien, con la particularidad de que hoy fue\nla sesion que por fin rompio la caja de 5-6 sesiones sin resolver (dia 6 del ciclo). GC ROMPIO y\nREINICIO su tesis: el corto de 4 dias murio con el reclamo del PWL, hubo un dia entero de doble\nbarrida sin autoridad, y solo en NY se confirmo un nuevo corto limpio (dia 1 del ciclo nuevo).\nCL mantuvo su tesis de fondo (corto, dia 3) pero con un round-trip violento en medio (barrida,\nrebote de Ormuz +1.8%, vuelta abajo) -- la tesis no se rompio pero el camino fue mucho menos\nlimpio que en los indices.\n\n**Regimen**: NQ/ES/YM pasaron de \"en transicion/rango\" a \"tendencia bajista resuelta\" (NQ y ES\nllevan ya 4 sesiones de tendencia, YM recien entra en su 1a sesion de tendencia tras 5-6 de\nrango). GC paso por CHOP (doble barrida) antes de resolver BEAR al cierre. CL se quedo en\n\"balance\" la mayor parte del dia, con un escape de regimen (el rebote de Ormuz) que no llego a\ncambiar el regimen de fondo.\n\n**Fuentes** (solo informativo desde la 8e): no se recalculan a mano, las toca\n`update_scorecard.py`.\n\n**Conviccion**: todas las corridas de hoy llevaban `conviction: baja` en el momento critico de\nAsia/Londres salvo GO puntuales de sesiones previas; no hay una lectura \"alta\" que calificar hoy\nmismo en los planes de ayer con los que se compara. No se fuerza el numero.\n\n**Oportunidad perdida**: el `sweep_pwl` de GC en Londres y el `demand` de CL en Londres SI\npagaron (`worked`) estando en WAIT -- no se dejo pasar nada grande, eran B en tabla, no A+, y el\nplan no las marcaba como GO. Sin missedOps grande que anotar hoy.\n\n**Veredicto (GO/AVOID calificados)**: los planes de ayer no llevaban ningun GO en los 5\ninstrumentos (todo WAIT/AVOID segun la sesion) -- dia consistente con la regla de la 8e: sin A+\ndel metodo a tiro en ninguna sesion, cero GO forzado. Eso es lo correcto dado como salio el dia\n(zonas fallando 10 de 12 veces).\n\n**Whipsaw**: el dia resulto en TENDENCIA resuelta en NQ/ES/YM/GC (al cierre) y en BALANCE en CL\nhasta el round-trip de NY. Las lecturas de `whipsawRisk` de los planes de ayer tendian a\n\"media/baja\" en la mayoria de sesiones, lo que calza bien con como resolvio el dia salvo en el\ntramo de Asia de NQ/GC (donde el sesgo fallo igual sin ser necesariamente un dia de chop).\n\n**Predicciones**: se remite a `scorecard.predictionScore` (reconstruido por el script); no hay\nlectura nueva fuera de lo ya recalculado. GC sigue con `range` flojo (38% 20d, n=56): sus\npredicciones de rango vienen mal calibradas, hay que leerlas con mas cuidado.\n\n**Contra-caso**: en GC el contra-caso de las corridas de ayer (\"si recupera el PWL con\nautoridad, el corto queda en duda\") se cumplio exactamente -- acierto de proceso, no sesgo mal\nleido. En CL el contra-caso de Londres (vigilar el titular de Ormuz) tambien se cumplio -- el\ncorto no se forzo durante el rebote. En NQ el plan de Asia no vio venir el alza inicial de\n+44.5pts con suficiente peso en el contra-caso; es la unica sesion de hoy donde se puede hablar\nde `sesgo_mal_leido` real.\n\n**Causas de fallo del dia**: NQ Asia = `sesgo_mal_leido` (el 59% historico de Asia yendo contra\nlas 24h previas se cumplio, pero el plan de ayer no le dio suficiente peso al fade). GC Asia =\n`sesgo_mal_leido` por el mismo patron. CL Londres = `noticia_no_anticipada` (titular de escalada\nen Ormuz, geopolitica real, no estaba en el calendario). El resto del dia: sin causa de fallo\nmayor, las zonas fallando es ruido esperado de un dia de tendencia (`zona_sin_confluencia_real`\nno aplica, eran B en tabla, no A+ forzadas).\n\n## Plan vs ejecucion\n\nSin datos: `live/journal.json` sigue sin refrescar desde 2026-11-08 (10+ dias calendario). No\nhay trade a trade, disciplina ni calidad de salida que medir para 2026-11-17 especificamente.\nEl rollup de 45 dias que lee `scorecard.execution.ALL` tampoco se movio desde la semana pasada\n(sigue en la ventana a 2026-11-07): disciplinado 3%, contra-sesgo n=125/(158+125)=44% de los\ntrades calificados, fuera de zona n=5/(3+5)=63% de los calificados, 17/31 dias de sobre-operar,\n14/31 de revenge. Si el journal no se reconecta, el `weekly` del sabado tampoco va a tener dato\nfresco de la semana.\n\n## 3 lecciones concretas\n\n1. **Asia sigue yendo contra las 24h previas la mayoria de las veces (regla 8e, 59% medido):**\n   hoy NQ y GC lo confirmaron otra vez (ambos subieron contra el sesgo SHORT antes de resolver\n   bajista mas tarde en el dia). El plan de Asia debe seguir dandole peso real al fade aunque la\n   tendencia de fondo sea fuerte -- no es garantia de nada, pero el patron se repite.\n2. **Dia de tendencia resuelta = EM se come la banda alta en NY, no solo en NQ:** hoy las 4\n   celdas de NY que superaron la banda alta (NQ, ES, GC, YM) confirman que el ajuste de\n   `emCalibration` (mult >=1.5 en todas las celdas de NY) sigue siendo necesario y no un caso\n   aislado del NQ.\n3. **Un titular geopolitico real (Ormuz) le gano una sesion al corto estructural de CL:** el\n   plan de Londres lo vio venir en el contra-caso y no persiguio el corto durante el rebote --\n   eso evito un fallo mayor. La leccion no es \"ignora el corto\", es \"cuando hay un titular fresco\n   de oferta real, dale peso de verdad al escenario B esa sesion, no solo una linea de cortesia\".\n",
   "2026-11-18": "# Revision 2026-11-18\n\nDia de tendencia generalizada y violenta en los 5 instrumentos, con las minutas del FOMC (lectura halcona, aceptada) y el desplome de NVDA tras earnings como los dos motores reales. Sesgo SHORT acerto en 12 de 15 sesiones (80%), el dia mas limpio del grupo en varias semanas.\n\n## Plan vs ejecucion\n\nJesus opero CONTRA el plan y fuera de zona todo el dia: 30 trades, 0% dentro de zona A+/B del plan (outsideEdge 30/30), racha de 14 perdidas seguidas (la peor registrada, antes el peor dato eran 6), 18/30 stops completos (60%, peor que el 39.1% de la ventana de 45 dias), `overtrade` y `revenge` marcados. withBias/againstBias salen ambos en 0 (el journal no pudo etiquetar sesgo en estos trades), asi que la fuga que manda hoy no es \"contra el sesgo\" sino jugar tierra de nadie de forma sistematica.\n\nNo es un dia suelto: es el mismo patron de las ultimas 6+ semanas (rollup de 45 dias: disciplinado 0%, fuera de edge 100%, 42/45 dias con overtrade, 38/45 con revenge). Sin datos de calidad de salida (`partials` null); de los 30 trades, 18 fueron stop completo y 12 cerraron en algun punto intermedio sin dato de parcial.\n\nComparado con la ventana rodante: ayer fue PEOR que el promedio en racha de perdidas (14 vs tipico 4-6) y en tasa de stop completo (60% vs 39.1%). ▼ en ambos frente a la media de 45 dias.\n\n## Sesion x instrumento\n\n| Sesion | Sym | Sesgo | EscenarioA | EM (real/base) | Zonas |\n|---|---|---|---|---|---|\n| Asia | NQ | hit (-14.75) | sin disparar | hit (512/385) | ambas sin tocar/rotas |\n| Asia | ES | hit (-7.75) | sin disparar | sobre banda (71.5/48.8) | sin tocar/abierta |\n| Asia | GC | hit (-82.4) | fallo | sobre banda (92.8/45.0) | rota/sin tocar |\n| Asia | YM | **fallo** (+10) | fallo | hit (284/268.3) | rota/sin tocar |\n| Asia | CL | hit (-1.72) | **acerto** | sobre banda (2.19/1.7) | abierta/rota |\n| Londres | NQ | hit (-142.5) | fallo | bajo banda (254.5/339.9) | fallo |\n| Londres | ES | hit (-32.0) | sin disparar | hit (49.0/57.7) | sin tocar |\n| Londres | GC | **fallo** (+5.2) | **acerto** | hit (48.3/39.3) | fallo |\n| Londres | YM | hit (-287) | **acerto** | hit (364/431.0) | **funciono** (sweep ONL) |\n| Londres | CL | **fallo** (+0.08) | **acerto** | hit (2.25/2.07) | **funciono** (pullback) |\n| NY | NQ | hit (-16.5) | **acerto** | bajo banda (403.8/639.3) | rota/**funciono** |\n| NY | ES | hit (-19.5) | sin disparar | hit (83.5/102.4) | fallo/sin tocar |\n| NY | GC | hit (-49.0) | **acerto** | hit (60.1/47.3) | rota |\n| NY | YM | hit (-334) | sin disparar | hit (629/809.6) | sin tocar/rota |\n| NY | CL | hit (-2.14) | **acerto** | hit (2.92/2.72) | **funciono** (pullback) |\n\nSesgo: 12/15 (80%). EscenarioA (de las que dispararon): 7/10 (70%). EM: 7 dentro de banda, 6 sobre banda, 2 bajo banda (NQ Londres y NY se quedaron CORTOS en el calibrado 2.13x de Asia/sesion, pese al ajuste ya aplicado; Asia de NQ y GC/ES/CL salieron todavia mas largas que la banda alta). Las 4 zonas que SI funcionaron (YM Londres sweep_onl, CL Londres y NY pullback_cont, NQ NY pullback_cont) eran todas continuacion `vs24h=with` (tope B de metodo, nunca A+): el filtro A+/B sigue protegiendo de perseguir, no de la zona que de verdad paga en un dia de tendencia pura.\n\n## Zonas (automatico, `grades/2026-11-18.json`)\n\nIncrementado el playbook de `zones` con el pooling jerarquico de siempre. Ningun avgR por zoneEdge cruzo umbral de revision (sigue dominando `continuation|with` negativo y `continuation|against` positivo, consistente con la regla 8e vigente).\n\n## Fuentes y conviccion\n\nConvicción fue \"baja\" en las 15 combinaciones sesion x instrumento (sin GO ni AVOID con conviccion alta ayer). De esas 15, el sesgo acerto en 12 (80%): convicción baja sigue sin ser sinonimo de mal sesgo, el dia de ayer lo confirma otra vez.\n\n`sourceReliability` y `predictionScore` NO se actualizaron esta corrida por limite de tiempo (son metricas informativas, ya no pesan en decisiones por la regla 8e); quedan pendientes de un repaso en una corrida futura.\n\n## Oportunidad perdida (`missedOps`)\n\n15/15 combinaciones fueron WAIT/AVOID. Las unicas zonas que funcionaron con >=1R (YM Londres, CL Londres/NY, NQ NY) eran todas continuacion `with` las 24h, nunca A+ del metodo: `wouldvePaid` no sube hoy (+0 en los 15), el filtro no dejo pasar ninguna A+ real.\n\n## Veredicto (`verdictScore`)\n\nSolo GC tuvo AVOID (Londres y NY); en ambos el precio hizo un movimiento violento que habria sido doloroso para cualquiera que comprara el rebote: `save` en los 2. El resto fue WAIT (no se califica aqui, lo cubre `missedOps`).\n\n## Whipsaw (`whipsawCal`)\n\nCalificado a mano cruzando `movePts` contra el rango real de cada sesion (sin bars detalladas por tick): NQ 3/3 acerto (las 3 sesiones con rango grande y resolucion neta chica o clara, coincidiendo con el score dado), ES 1/3, GC 2/3, YM 2/3, CL 0/3. CL fue el peor: el score marcaba chop en asia/ny pero el dia resultó limpio y resuelto ahi; vigilar si se repite.\n\n## Contra-caso\n\nNinguno de los 5 contra-casos de ayer (los que pedian un reclamo de nivel para girar el sesgo) se activo: los 5 instrumentos mantuvieron el corto. Acierto de proceso, no hay `sesgo_mal_leido` que anotar hoy.\n\n## Narrativa\n\nNQ, ES, GC, YM y CL: CONFIRMADA en los 5, sin ruptura. NQ sube a dia 5, ES a dia 5, GC a dia 2 (ciclo reiniciado el 17-nov), YM a dia 7, CL a dia 4. Unico matiz: NQ cerro el dia NETO arriba del cierre de ayer (gap +306.5pts parcialmente devuelto), asi que aunque el sesgo de sesion acerto en las 3 ventanas, la tesis diaria pura habria que vigilarla si se repite un segundo dia de reversal-desde-maximo.\n\n## Causa de los fallos\n\n- YM asia (+10, miss): `cambio_de_regimen` tactico, pausa corta antes de que Londres resolviera con autoridad.\n- GC londres (+5.2, miss): `cambio_de_regimen` tactico, mismo patron, resuelto en NY.\n- CL londres (+0.08, miss): `cambio_de_regimen` tactico, resuelto en NY.\n- NQ/GC escenario A fallido en algunas sesiones: `zona_sin_confluencia_real` parcial, el nivel se tocaba pero el objetivo quedaba fuera del reparto de esa sesion especifica (se resolvio en la sesion siguiente, no es que el nivel fallara del todo).\n- EM fuera de banda (6 sobre, 2 bajo): `EM_mal_calibrado` parcial, consistente con el dia de catalizador mayor (Fed + NVDA) que pide el escalon de +20-25% y no solo el +10% generico; ya se aplico el `mult` de `emCalibration` pero un dia de esta magnitud sigue rompiendo la banda alta en varios instrumentos.\n\n## 3 lecciones\n\n1. El filtro A+/B (8e) protegio de perseguir, pero las 4 zonas que SI pagaron ayer eran todas continuacion `with` las 24h (tope B): en un dia de tendencia generalizada y confirmada por catalizador real, el B de continuacion con el movimiento merece mas peso táctico del que recibe hoy, aunque la regla de no-GO siga siendo correcta por disciplina.\n2. La ejecucion real de Jesus sigue sin relacion con el plan (100% fuera de zona, racha de 14 perdidas): el problema no es el metodo, es la disciplina de entrada. La racha de ayer es la peor del periodo medido.\n3. whipsawCal calificó mal CL dos de tres sesiones: en dias de catalizador real (Fed + NVDA) el whipsaw score por defecto puede estar sesgado a sobreestimar el chop en CL; vigilar si se repite antes de tocar la regla.\n\n## Nota operativa\n\nCron de esta corrida disparo ~1h antes de lo esperado (desajuste de DST, 15:13 CT en vez de ~16:05 CT): el perfil de dia anterior y el PDH/PDL de `command` aun no habian rotado al cierre de las 16:00 CT. Se uso el perfil de HOY casi terminado (`dvah/dpoc/dval`) y el `hod/lod` de hoy como sustitutos razonables; detalle completo en `dataHealth.notes` del plan.\n",
-  "2026-11-19": "# Revision parcial 2026-11-19 (cierre de Asia, escrita por pre-london)\n\nAsia fue un dia de reversion violenta, no de continuacion del corto de 5 dias. Catalizador real: titular de distension geopolitica (cumbre Trump-Putin-Xi, ~00:50 CT) leido como risk-on -- indices al maximo de la noche, oro vendiendose mas.\n\n- **NQ**: rompio el PDH (27609.75) y el maximo de ayer, llegando a 27635.75 (4.68 ATR estirado del VWAP). El 1h ya confirma largo (checklist), diario/4h siguen cortos: CONFLICT real, no solo mecha. El pullback de continuacion que el plan de Asia pedia (27325-27351) nunca se dio -- el precio lo atraveso entero sin pausa real.\n- **ES**: mismo patron, recupero 7391 con reclamo del VWAP, 4.95 ATR estirado (el mas extremo de los 5) sobre un 24h ya FLAT.\n- **YM**: rebote de +300pts desde el minimo (50258) casi hasta el maximo de la noche (50558), 4.79 ATR estirado, sin romper el checklist (sigue -1 en las 3 TF): el rebote mas extremo del ciclo corto de 7 sesiones.\n- **GC**: sin drama, sigue el corto confirmado en las 3 TF, ya sin el estiramiento extremo de ayer (0.36 ATR vs 11.27 de ayer), chopeando 3721.8-3739.4.\n- **CL**: igual, corto confirmado sin estiramiento, chopeando 81.77-82.50; EIA de la semana ya paso.\n\n**Lectura**: el plan de Asia (pre-asia) acerto el sesgo direccional de fondo (corto) en GC/YM/CL pero el pullback de continuacion de NQ (la unica zona GO del dia) nunca llego -- el precio se fue directo contra el, y en NQ/ES el salto fue tan vertical que invalido el nivel que la propia tesis marcaba como limite. Pendiente de calificacion numerica completa (EM, zonas, predicciones) en la pre-asia de manana con `grade_plans.py`/`update_scorecard.py`; esto es solo el cierre parcial cualitativo que pide la corrida de pre-london.\n\n**Ejecucion**: sin datos nuevos del journal para la sesion de Asia de hoy (el ultimo dato agregado sigue siendo el rollup de 45 dias: 0% disciplinado, 100% fuera de zona, 42/45 dias con overtrade, 38/45 con revenge -- patron cronico).\n"
+  "2026-11-19": "# Revision parcial 2026-11-19 (cierre de Asia, escrita por pre-london)\n\nAsia fue un dia de reversion violenta, no de continuacion del corto de 5 dias. Catalizador real: titular de distension geopolitica (cumbre Trump-Putin-Xi, ~00:50 CT) leido como risk-on -- indices al maximo de la noche, oro vendiendose mas.\n\n- **NQ**: rompio el PDH (27609.75) y el maximo de ayer, llegando a 27635.75 (4.68 ATR estirado del VWAP). El 1h ya confirma largo (checklist), diario/4h siguen cortos: CONFLICT real, no solo mecha. El pullback de continuacion que el plan de Asia pedia (27325-27351) nunca se dio -- el precio lo atraveso entero sin pausa real.\n- **ES**: mismo patron, recupero 7391 con reclamo del VWAP, 4.95 ATR estirado (el mas extremo de los 5) sobre un 24h ya FLAT.\n- **YM**: rebote de +300pts desde el minimo (50258) casi hasta el maximo de la noche (50558), 4.79 ATR estirado, sin romper el checklist (sigue -1 en las 3 TF): el rebote mas extremo del ciclo corto de 7 sesiones.\n- **GC**: sin drama, sigue el corto confirmado en las 3 TF, ya sin el estiramiento extremo de ayer (0.36 ATR vs 11.27 de ayer), chopeando 3721.8-3739.4.\n- **CL**: igual, corto confirmado sin estiramiento, chopeando 81.77-82.50; EIA de la semana ya paso.\n\n**Lectura**: el plan de Asia (pre-asia) acerto el sesgo direccional de fondo (corto) en GC/YM/CL pero el pullback de continuacion de NQ (la unica zona GO del dia) nunca llego -- el precio se fue directo contra el, y en NQ/ES el salto fue tan vertical que invalido el nivel que la propia tesis marcaba como limite. Pendiente de calificacion numerica completa (EM, zonas, predicciones) en la pre-asia de manana con `grade_plans.py`/`update_scorecard.py`; esto es solo el cierre parcial cualitativo que pide la corrida de pre-london.\n\n**Ejecucion**: sin datos nuevos del journal para la sesion de Asia de hoy (el ultimo dato agregado sigue siendo el rollup de 45 dias: 0% disciplinado, 100% fuera de zona, 42/45 dias con overtrade, 38/45 con revenge -- patron cronico).\n",
+  "2026-11-20": "# Contexto · review 2026-11-20 (viernes)\n\nsin calificacion automatica: primer dia operativo de la lente Contexto en trader-os-bus\n(la corrida pre-asia de ese viernes nunca completo con exito: feed caido / sin\nplan propio escrito ese dia). No existe plan `plans/2026-11-20-*.json` de esta lente\nque calificar contra `bars/2026-11-20.json`. `grade_plans.py 2026-11-20` confirma\n\"graded 0 runs: nothing gradable\". Se corre igual por la regla de domingo (seccion 1):\nno hay `reviews[\"2026-11-20\"]` previo, asi que esta pre-asia del domingo lo cubre antes\nde armar el plan de hoy. `scorecard.hitLog[\"2026-11-20\"]` queda registrado vacio y\n`emCalibration._lastDate` avanza a 2026-11-20 para que el pipeline no se trabe.\n\nNota de mantenimiento: `method/update_scorecard.py` referenciaba `reviews/<fecha>.md`\n(ruta RAIZ, del Coach) en 3 chequeos en vez de `reviews/contexto/<fecha>.md`; corregido\nhoy. Tambien importaba `plan_vs_exec` (modulo que no llego en la migracion del bus);\nel import ahora se tolera como opcional (igual que la falta de `live/journal.json`).\n"
  },
  "dayThesis": {
   "2026-11-14": {
