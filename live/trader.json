@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-23",
-  "asOf": "2026-11-23T03:15:47.584Z",
+  "asOf": "2026-11-23T03:16:02.792Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 11,
+  "todayViolations": 10,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -59,12 +59,6 @@
       "at": 1795395732025,
       "sym": "NQ",
       "note": "entrada dentro de la pausa tras un SL"
-    },
-    {
-      "rule": "stop",
-      "at": 1795403627078,
-      "sym": "NQ",
-      "note": "posicion abierta sin stop"
     }
   ],
   "todayTrades": [
@@ -220,21 +214,7 @@
       ]
     }
   ],
-  "openPositions": [
-    {
-      "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
-      "name": "Elite 3% DLL 25K Challenge",
-      "sym": "NQ",
-      "side": "long",
-      "size": 3,
-      "entry": 25770,
-      "openedAt": 1795403627078,
-      "hadStop": false,
-      "flags": [
-        "NO_STOP"
-      ]
-    }
-  ],
+  "openPositions": [],
   "captures": [],
   "lastReview": null
 }
