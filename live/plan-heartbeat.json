@@ -1,6 +1,6 @@
 {
- "lastRun": "2026-11-23T03:40:00Z",
+ "lastRun": "2026-11-23T03:56:00Z",
  "runType": "pre-asia",
  "ok": true,
- "note": "Plan completo NQ/ES/GC/YM/CL; CL con confluencia reducida por FEED1 caido (solo orb). Unico GO: NQ al gatillo, conviccion baja."
+ "note": "re-disparo de pre-asia (16 min tras el anterior): sin cambios materiales, live/feeds.json no se actualizo desde la corrida previa (misma _updatedAt 03:31:08Z); plan y state intactos."
 }
