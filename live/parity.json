@@ -1,45 +1,45 @@
 {
  "schema": "parity-1",
- "builtAt": "2026-11-23T03:53:42.607600+00:00",
+ "builtAt": "2026-11-23T23:45:24.132758+00:00",
  "windowDays": 14,
- "daysInWindow": 1,
- "agreePct": 80,
- "nBoth": 5,
+ "daysInWindow": 2,
+ "agreePct": 70,
+ "nBoth": 10,
  "byInstrument": {
   "NQ": {
-   "n": 1,
+   "n": 2,
    "agreePct": 100
   },
   "ES": {
-   "n": 1,
+   "n": 2,
    "agreePct": 0
   },
   "GC": {
-   "n": 1,
+   "n": 2,
    "agreePct": 100
   },
   "YM": {
-   "n": 1,
+   "n": 2,
    "agreePct": 100
   },
   "CL": {
-   "n": 1,
-   "agreePct": 100
+   "n": 2,
+   "agreePct": 50
   }
  },
  "today": {
-  "date": "2026-11-23",
+  "date": "2026-11-24",
   "runType": "pre-asia",
-  "agreePct": 80,
+  "agreePct": 60,
   "by": {
    "NQ": {
-    "ctx": "GO",
-    "sa": "GO",
+    "ctx": "WAIT",
+    "sa": "WAIT",
     "match": true
    },
    "ES": {
-    "ctx": "WAIT",
-    "sa": "GO",
+    "ctx": "GO",
+    "sa": "WAIT",
     "match": false
    },
    "GC": {
@@ -54,8 +54,8 @@
    },
    "CL": {
     "ctx": "WAIT",
-    "sa": "WAIT",
-    "match": true
+    "sa": "AVOID",
+    "match": false
    }
   },
   "nBoth": 5
