@@ -291,6 +291,12 @@ de sesión ni toca `plans/`. Solo lee los planes + `reviews/` diarios + `state` 
    por non-fast-forward; como los archivos son disjuntos el rebase aplica limpio).
    Si tras 6 intentos falla y hay `$TOS_BUS_TOKEN`, usa la Contents API (abajo).
    Verifica al final que `git log origin/main -1` es tu commit.
+6b. **Registro de paridad (best-effort, Paso 4, solo `pre-asia`).** Tras el push del plan, desde la
+   raíz corre `python3 method/parity.py`. Compara tu plan con el Session Analyst viejo y actualiza
+   `live/parity.json` + `state/parity-log.jsonl` (ver `method/parity.md`). Si cambió algo:
+   `git add live/parity.json state/parity-log.jsonl && git commit -m "parity <fecha>"` y el mismo
+   bucle de rebase+push del paso 6. Si `parity.py` imprime un aviso o falla, IGNÓRALO y no toques
+   nada más: es best-effort y NUNCA debe afectar al plan ya publicado.
 7. Responde un resumen de 6-9 líneas (la línea `!! alarma` primero si `plan.alarm` != null, luego `>> focus` +
    una por instrumento con su `verdict` + "más limpio: X" + qué se calificó si es `pre-asia`
    + nota de sizing/límite diario si aplica + cualquier CONFLICT de tesis o tag de calendario
@@ -298,7 +304,7 @@ de sesión ni toca `plans/`. Solo lee los planes + `reviews/` diarios + `state` 
 
 | RUN_TYPE | Cron CT | Qué produce |
 |---|---|---|
-| `pre-asia` | 16:05 | **Cierre + aprendizaje del día que terminó** (sección 6) y luego **plan completo** de Asia + tesis del día |
+| `pre-asia` | 17:20 | **Cierre + aprendizaje del día que terminó** (sección 6) y luego **plan completo** de Asia + tesis del día. 17:20 CT = tras la reapertura de futuros de las 17:00 (feeds frescos, fuera del break de mantenimiento) |
 | `pre-london` | 01:25 | **Update enfocado**: califica Asia vs el plan, qué cambió, plan de Londres, tesis ajustada, rango restante |
 | `pre-ny` | 07:55 | **Update enfocado**: califica Londres (mañana) vs el plan, qué cambió, plan de NY, tesis ajustada, rango restante |
 | `weekly` | sáb 10:00 | **Meta-revisión** de la semana lun-vie que cerró (sección 6.1). Sin plan de sesión. |
