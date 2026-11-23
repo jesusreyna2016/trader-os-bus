@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-23",
-  "asOf": "2026-11-23T10:45:35.258Z",
+  "asOf": "2026-11-23T11:15:35.906Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 2,
@@ -16,11 +16,11 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 4,
+    "used": 5,
     "riskPerTrade": 50,
     "dayStop": 100,
-    "pnl": -201.11,
-    "pnlR": -4.02,
+    "pnl": -124.76,
+    "pnlR": -2.5,
     "maxLossStreak": 2
   },
   "openFlags": [
@@ -38,6 +38,20 @@
     }
   ],
   "todayTrades": [
+    {
+      "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 15,
+      "entry": 25811.2,
+      "exit": 25817,
+      "pnl": 76.35,
+      "r": 1.53,
+      "openedAt": 1795403627078,
+      "closedAt": 1795414815693,
+      "flags": []
+    },
     {
       "acct": "jh7fbgr4mbef7pdv2ne96qwy8x8jpss6",
       "name": "Elite 3% DLL 25K Challenge",
