@@ -1,0 +1,70 @@
+{
+ "schema": "parity-1",
+ "builtAt": "2026-11-23T03:40:02.626375+00:00",
+ "windowDays": 14,
+ "daysInWindow": 1,
+ "agreePct": 60,
+ "nBoth": 5,
+ "byInstrument": {
+  "NQ": {
+   "n": 1,
+   "agreePct": 0
+  },
+  "ES": {
+   "n": 1,
+   "agreePct": 0
+  },
+  "GC": {
+   "n": 1,
+   "agreePct": 100
+  },
+  "YM": {
+   "n": 1,
+   "agreePct": 100
+  },
+  "CL": {
+   "n": 1,
+   "agreePct": 100
+  }
+ },
+ "today": {
+  "date": "2026-11-23",
+  "runType": "pre-asia",
+  "agreePct": 60,
+  "by": {
+   "NQ": {
+    "ctx": "WAIT",
+    "sa": "GO",
+    "match": false
+   },
+   "ES": {
+    "ctx": "WAIT",
+    "sa": "GO",
+    "match": false
+   },
+   "GC": {
+    "ctx": "WAIT",
+    "sa": "WAIT",
+    "match": true
+   },
+   "YM": {
+    "ctx": "WAIT",
+    "sa": "WAIT",
+    "match": true
+   },
+   "CL": {
+    "ctx": "WAIT",
+    "sa": "WAIT",
+    "match": true
+   }
+  },
+  "nBoth": 5
+ },
+ "criterion": {
+  "agreeTarget": 90,
+  "minDays": 10,
+  "verdictAgreeMet": false,
+  "readyToCut": false,
+  "note": "Paso 4: >=90% mismo verdict por instrumento en >=10 dias de la ventana. Falta cruzar E[R] calificado igual o mejor (fase 2) antes del corte; readyToCut se decide a mano."
+ }
+}
