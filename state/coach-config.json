@@ -1,0 +1,10 @@
+{
+  "schema": "coach-config-1",
+  "note": "Reglas del Coach que controla Jesus. El Coach la lee cada corrida; editar aqui cambia los umbrales sin redeploy. dayStopUsd es un freno BLANDO: debe pegar antes del limite duro de la firma.",
+  "updatedAt": "2026-11-23T18:40:00Z",
+  "maxTrades": 5,
+  "dayStopUsd": 500,
+  "riskPerTradeUsd": 50,
+  "pauseMin": 10,
+  "lossStreakLock": 3
+}
