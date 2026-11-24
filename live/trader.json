@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T01:00:47.130Z",
+  "asOf": "2026-11-24T01:30:45.852Z",
   "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 34,
+  "todayViolations": 37,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,22 +16,22 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 23,
+    "used": 24,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": -451.08,
-    "pnlR": -9.02,
+    "pnl": 1902.31,
+    "pnlR": 38.05,
     "maxLossStreak": 16
   },
   "offZone": {
-    "count": 0,
-    "pnl": 0,
-    "ofTrades": 23
+    "count": 3,
+    "pnl": -81.63,
+    "ofTrades": 24
   },
   "dataHealth": {
-    "scanned": 6,
-    "total": 249,
-    "ok": 6,
+    "scanned": 7,
+    "total": 250,
+    "ok": 7,
     "failed": [],
     "partial": false
   },
@@ -127,10 +127,40 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
+      "rule": "R1",
       "at": 1795481802573,
       "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "stop",
+      "at": 1795482564407,
+      "sym": "NQ",
       "note": "posicion abierta sin stop"
+    },
+    {
+      "rule": "stop",
+      "at": 1795482614761,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
+    },
+    {
+      "rule": "zona",
+      "at": 1795444383211,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (22 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
+      "at": 1795447829990,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (29 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
+      "at": 1795458397564,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (22 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -181,7 +211,7 @@
       "flags": [
         "DAY_STOP_HIT"
       ],
-      "distZone": 8
+      "distZone": 16
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -217,7 +247,7 @@
         "R1_REVENGE",
         "DAY_STOP_HIT"
       ],
-      "distZone": 14
+      "distZone": 12
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -253,9 +283,10 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT"
+        "DAY_STOP_HIT",
+        "NO_ZONE"
       ],
-      "distZone": 4
+      "distZone": 22
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -274,7 +305,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 11
+      "distZone": 15
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -291,9 +322,10 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT"
+        "DAY_STOP_HIT",
+        "NO_ZONE"
       ],
-      "distZone": 4
+      "distZone": 29
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -312,7 +344,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 12
+      "distZone": 13
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -407,7 +439,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 11
+      "distZone": 13
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -424,9 +456,10 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT"
+        "DAY_STOP_HIT",
+        "NO_ZONE"
       ],
-      "distZone": 2
+      "distZone": 22
     },
     {
       "acct": "jh79gq4f1jz53eetjas6r7yt8x8js06b",
@@ -445,7 +478,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 10
+      "distZone": 13
     },
     {
       "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
@@ -500,7 +533,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 6
+      "distZone": 18
     },
     {
       "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
@@ -552,9 +585,7 @@
         "OVER_MAX_TRADES"
       ],
       "distZone": 0
-    }
-  ],
-  "openPositions": [
+    },
     {
       "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
       "name": "Select 50K Challenge",
@@ -562,12 +593,48 @@
       "side": "long",
       "size": 19.5613,
       "entry": 26813.29419313,
+      "exit": 26935,
+      "pnl": 2353.39,
+      "r": 47.07,
       "openedAt": 1795481802573,
+      "closedAt": 1795482504832,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
+      ],
+      "distZone": 16
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv",
+      "name": "Select 50K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 2,
+      "entry": 26915.64,
+      "openedAt": 1795482564407,
       "hadStop": false,
       "flags": [
-        "NO_STOP"
+        "NO_STOP",
+        "NO_ZONE"
       ],
-      "distZone": 9
+      "distZone": 24
+    },
+    {
+      "acct": "jh7376hedbye40xapyfn9abgvs8jvwef",
+      "name": "Funded 50K",
+      "sym": "NQ",
+      "side": "long",
+      "size": 6,
+      "entry": 26920.22833333,
+      "openedAt": 1795482614761,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP",
+        "NO_ZONE"
+      ],
+      "distZone": 29
     }
   ],
   "captures": [],
