@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T00:00:53.113Z",
+  "asOf": "2026-11-24T00:15:37.163Z",
   "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 32,
+  "todayViolations": 33,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 21,
+    "used": 22,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 80.04,
-    "pnlR": 1.6,
+    "pnl": 1126.86,
+    "pnlR": 22.54,
     "maxLossStreak": 16
   },
   "offZone": {
     "count": 4,
     "pnl": 842.36,
-    "ofTrades": 21
+    "ofTrades": 22
   },
   "dataHealth": {
     "scanned": 6,
@@ -128,7 +128,7 @@
     },
     {
       "rule": "stop",
-      "at": 1795478015136,
+      "at": 1795478561511,
       "sym": "NQ",
       "note": "posicion abierta sin stop"
     },
@@ -205,7 +205,7 @@
       "flags": [
         "DAY_STOP_HIT"
       ],
-      "distZone": 5
+      "distZone": 7
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -434,7 +434,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 1
+      "distZone": 3
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -472,7 +472,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 2
+      "distZone": 4
     },
     {
       "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
@@ -546,9 +546,7 @@
         "OVER_MAX_TRADES"
       ],
       "distZone": 0
-    }
-  ],
-  "openPositions": [
+    },
     {
       "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
       "name": "Select 50K Challenge",
@@ -556,7 +554,26 @@
       "side": "long",
       "size": 22,
       "entry": 26655,
+      "exit": 26704,
+      "pnl": 1046.82,
+      "r": 20.94,
       "openedAt": 1795478015136,
+      "closedAt": 1795478523044,
+      "flags": [
+        "OVER_MAX_TRADES"
+      ],
+      "distZone": 0
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
+      "name": "Select 50K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 5,
+      "entry": 26700,
+      "openedAt": 1795478561511,
       "hadStop": false,
       "flags": [
         "NO_STOP"
