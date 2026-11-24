@@ -1,6 +1,6 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-24T01:30:37.834Z",
+ "checkedAt": "2026-11-24T01:45:27.455Z",
  "status": "ok",
  "marketOpen": true,
  "issues": [],
@@ -10,8 +10,8 @@
    "label": "Datos crudos (feeds)",
    "writer": "TradingView -> tos-bus-snapshot",
    "status": "ok",
-   "ageMin": 30,
-   "at": "2026-11-24T01:00:42.486Z",
+   "ageMin": 15,
+   "at": "2026-11-24T01:30:41.086Z",
    "note": "al dia"
   },
   {
@@ -19,8 +19,8 @@
    "label": "Estado del mercado",
    "writer": "tos-market",
    "status": "ok",
-   "ageMin": 30,
-   "at": "2026-11-24T01:00:45.791Z",
+   "ageMin": 15,
+   "at": "2026-11-24T01:30:44.327Z",
    "note": "al dia"
   },
   {
@@ -28,8 +28,8 @@
    "label": "Edge medido",
    "writer": "lente Edge",
    "status": "ok",
-   "ageMin": 30,
-   "at": "2026-11-24T01:00:51.744Z",
+   "ageMin": 15,
+   "at": "2026-11-24T01:30:50.414Z",
    "note": "al dia"
   },
   {
@@ -37,7 +37,7 @@
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
    "status": "ok",
-   "ageMin": 22,
+   "ageMin": 36,
    "at": "2026-11-24T01:09:07.399Z",
    "note": "al dia"
   },
@@ -46,8 +46,8 @@
    "label": "Estado del trader (Coach)",
    "writer": "tos-coach",
    "status": "ok",
-   "ageMin": 30,
-   "at": "2026-11-24T01:00:47.130Z",
+   "ageMin": 15,
+   "at": "2026-11-24T01:30:45.852Z",
    "note": "al dia"
   },
   {
@@ -55,7 +55,7 @@
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
    "status": "ok",
-   "ageMin": 117,
+   "ageMin": 132,
    "at": "2026-11-23T23:33:10.000Z",
    "note": "al dia"
   },
@@ -64,7 +64,7 @@
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 64,
+   "ageMin": 78,
    "at": "2026-11-24T00:27:00.000Z",
    "note": "al dia"
   },
@@ -73,7 +73,7 @@
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
    "status": "ok",
-   "ageMin": 105,
+   "ageMin": 120,
    "at": "2026-11-23T23:45:24.132Z",
    "note": "al dia"
   }
