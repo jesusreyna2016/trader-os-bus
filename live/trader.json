@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T16:15:33.132Z",
+  "asOf": "2026-11-24T16:30:44.138Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 37,
@@ -24,8 +24,8 @@
     "maxLossStreak": 8
   },
   "offZone": {
-    "count": 11,
-    "pnl": 26.29,
+    "count": 9,
+    "pnl": 1518.52,
     "ofTrades": 23
   },
   "dataHealth": {
@@ -166,43 +166,31 @@
       "rule": "zona",
       "at": 1795516751714,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (79 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (60 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795522914232,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (31 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795523240503,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (20 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795523251890,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (25 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (24 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795528917007,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (30 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (37 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795531591861,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (79 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (60 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795531602529,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (83 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (64 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
@@ -324,7 +312,7 @@
         "OVER_MAX_TRADES",
         "NO_ZONE"
       ],
-      "distZone": 79
+      "distZone": 60
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -378,7 +366,7 @@
         "OVER_MAX_TRADES",
         "NO_ZONE"
       ],
-      "distZone": 31
+      "distZone": 24
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -433,10 +421,9 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT",
-        "NO_ZONE"
+        "DAY_STOP_HIT"
       ],
-      "distZone": 20
+      "distZone": 13
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -453,10 +440,9 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT",
-        "NO_ZONE"
+        "DAY_STOP_HIT"
       ],
-      "distZone": 25
+      "distZone": 18
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -513,7 +499,7 @@
         "DAY_STOP_HIT",
         "NO_ZONE"
       ],
-      "distZone": 30
+      "distZone": 37
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -550,7 +536,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 13
+      "distZone": 6
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -569,7 +555,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 19
+      "distZone": 12
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -589,7 +575,7 @@
         "DAY_STOP_HIT",
         "NO_ZONE"
       ],
-      "distZone": 79
+      "distZone": 60
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -609,7 +595,7 @@
         "DAY_STOP_HIT",
         "NO_ZONE"
       ],
-      "distZone": 83
+      "distZone": 64
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -658,15 +644,14 @@
       "name": "Elite 3% DLL 25K Challenge",
       "sym": "NQ",
       "side": "short",
-      "size": 2.6,
-      "entry": 26311.16076923,
+      "size": 3,
+      "entry": 26273.42233333,
       "openedAt": 1795532472532,
       "hadStop": false,
       "flags": [
-        "NO_STOP",
-        "NO_ZONE"
+        "NO_STOP"
       ],
-      "distZone": 29
+      "distZone": 9
     }
   ],
   "captures": [
