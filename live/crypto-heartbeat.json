@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-11-23T14:50:00Z",
-  "runType": "crypto-ny",
+  "lastRun": "2026-11-24T00:27:00Z",
+  "runType": "crypto-close",
   "ok": true,
-  "note": "ETH/BTC rompieron el dia de balance al alza durante la noche, las dos zonas sweep_pdh del close quedan broken; apertura de NY confirma (NQ/ES alineados al alza, ETH sin divergir), biasSession a LONG en las dos; WAIT en las dos, conviccion baja por regla dura (sin zona A+ viva)."
+  "note": "plan escrito, lint OK, personalizacion OK. ETH y BTC WAIT, zonas bounce_val A+ pero conviccion baja."
 }

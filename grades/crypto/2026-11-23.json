@@ -1,0 +1,127 @@
+{
+ "date": "2026-11-23",
+ "kind": "crypto",
+ "gradedAt": "2026-11-24T00:16:33.192978+00:00",
+ "runs": [
+  {
+   "run": "2026-11-23-close",
+   "from": 1795393550.0,
+   "to": 1795445100.0,
+   "instruments": {
+    "ETHUSDT": {
+     "bars": 185,
+     "dir24h": "LONG",
+     "bias": null,
+     "zones": [
+      {
+       "range": [
+        1730.0,
+        1737.0
+       ],
+       "dir": "SHORT",
+       "type": "sweep_pdh",
+       "grade": "B",
+       "tcl": "contra",
+       "touched": true,
+       "outcome": "broken",
+       "family": "sweep",
+       "vs24h": "against"
+      }
+     ]
+    },
+    "BTCUSDT": {
+     "bars": 185,
+     "dir24h": "LONG",
+     "bias": null,
+     "zones": [
+      {
+       "range": [
+        61820.0,
+        61920.0
+       ],
+       "dir": "SHORT",
+       "type": "sweep_pdh",
+       "grade": "B",
+       "tcl": "contra",
+       "touched": true,
+       "outcome": "broken",
+       "family": "sweep",
+       "vs24h": "against"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "run": "2026-11-23-ny",
+   "from": 1795445400.0,
+   "to": 1795478400.0,
+   "instruments": {
+    "ETHUSDT": {
+     "bars": 112,
+     "dir24h": "LONG",
+     "bias": {
+      "call": "LONG",
+      "movePts": -68.3901,
+      "outcome": "miss"
+     },
+     "zones": [
+      {
+       "range": [
+        1730.0,
+        1737.0
+       ],
+       "dir": "SHORT",
+       "type": "sweep_pdh",
+       "grade": "B",
+       "tcl": "contra",
+       "touched": true,
+       "outcome": "broken",
+       "family": "sweep",
+       "vs24h": "against"
+      }
+     ]
+    },
+    "BTCUSDT": {
+     "bars": 112,
+     "dir24h": "LONG",
+     "bias": {
+      "call": "LONG",
+      "movePts": -1504.3711,
+      "outcome": "miss"
+     },
+     "zones": [
+      {
+       "range": [
+        61820.0,
+        61920.0
+       ],
+       "dir": "SHORT",
+       "type": "sweep_pdh",
+       "grade": "B",
+       "tcl": "contra",
+       "touched": true,
+       "outcome": "broken",
+       "family": "sweep",
+       "vs24h": "against"
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "hitLog": {
+  "ETHUSDT": {
+   "bias": [
+    0,
+    1
+   ]
+  },
+  "BTCUSDT": {
+   "bias": [
+    0,
+    1
+   ]
+  }
+ }
+}

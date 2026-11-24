@@ -1,8 +1,7 @@
-Contexto crypto-ny 2026-11-23 08:50 CT
-ETH: LONG sesion, WAIT. Rompio balance al alza, zona sweep 1,730-1,737 broken, precio 1,803 (+4.63% 24h), conviccion baja
-BTC: LONG sesion, WAIT. Rompio balance al alza, zona sweep 61,820-61,920 broken, precio 63,548 (+3.47% 24h), conviccion baja
-foco: ETH, sin zona nueva calificada, vigilar reaccion en EMA20 1h (~1,732) o hueco 5m 1,811-1,814
-apertura NY: NQ/ES rompen al alza alineados, ETH acompaña sin divergir
-sin riskWindow esta corrida
-calificacion: sin planes del 22-nov en este bus (primera corrida)
-precision: sin datos (0/0 predicciones, 0/0 zonas)
+Contexto crypto-close 2026-11-24 18:30 CT
+ETH: NEUTRAL, WAIT. Viaje de ida y vuelta ayer (1,849 y vuelta a 1,713), zona bounce_val 1,701-1,710 A+ (score 9) pero conviccion baja, precio 1,713.45 (-0.91% 24h)
+BTC: NEUTRAL, WAIT. Mismo viaje (64,811.8 y vuelta a 61,457), zona bounce_val 60,605-60,911.5 A+ (score 8) pero conviccion baja, precio 61,456.9 (-0.14% 24h)
+foco: ETH, vigilar barrida del PDL 1,701.54 con reclamo sobre 1,704
+sin hueco de CME hoy (martes, ventana viernes-lunes cerrada), sin riskWindow esta corrida
+calificacion de ayer (2026-11-23 close+ny): las dos barridas del techo (sweep_pdh) rompieron sin reclamo, broken
+precision: 0/8 predicciones, 0/4 zonas
