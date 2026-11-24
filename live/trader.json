@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T11:30:43.876Z",
+  "asOf": "2026-11-24T11:45:34.543Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 5,
@@ -165,10 +165,35 @@
       "flags": [
         "OVER_MAX_TRADES"
       ],
-      "distZone": 9
+      "distZone": 0
     }
   ],
-  "openPositions": [],
+  "openPositions": [
+    {
+      "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 5,
+      "entry": 26296,
+      "openedAt": 1795519883453,
+      "hadStop": true,
+      "flags": [],
+      "distZone": 14
+    },
+    {
+      "acct": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv",
+      "name": "Select 50K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 5,
+      "entry": 26297,
+      "openedAt": 1795519901029,
+      "hadStop": true,
+      "flags": [],
+      "distZone": 15
+    }
+  ],
   "captures": [
     {
       "key": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv:1795483893392",
