@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T20:00:58.655Z",
+  "asOf": "2026-11-24T20:15:34.284Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 37,
@@ -24,8 +24,8 @@
     "maxLossStreak": 8
   },
   "offZone": {
-    "count": 8,
-    "pnl": 533.56,
+    "count": 4,
+    "pnl": 2438.97,
     "ofTrades": 23
   },
   "dataHealth": {
@@ -164,33 +164,9 @@
     },
     {
       "rule": "zona",
-      "at": 1795522914232,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (33 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795523240503,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (22 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795523251890,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (27 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
       "at": 1795528917007,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (46 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795530911223,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (21 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (24 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
@@ -356,10 +332,9 @@
       "closedAt": 1795522927270,
       "flags": [
         "R1_REVENGE",
-        "OVER_MAX_TRADES",
-        "NO_ZONE"
+        "OVER_MAX_TRADES"
       ],
-      "distZone": 33
+      "distZone": 11
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -378,7 +353,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 3
+      "distZone": 4
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -397,7 +372,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 2
+      "distZone": 5
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -414,10 +389,9 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT",
-        "NO_ZONE"
+        "DAY_STOP_HIT"
       ],
-      "distZone": 22
+      "distZone": 0
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -434,10 +408,9 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT",
-        "NO_ZONE"
+        "DAY_STOP_HIT"
       ],
-      "distZone": 27
+      "distZone": 5
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -494,7 +467,7 @@
         "DAY_STOP_HIT",
         "NO_ZONE"
       ],
-      "distZone": 46
+      "distZone": 24
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -531,7 +504,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 15
+      "distZone": 7
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -548,10 +521,9 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT",
-        "NO_ZONE"
+        "DAY_STOP_HIT"
       ],
-      "distZone": 21
+      "distZone": 1
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -644,7 +616,7 @@
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 17
+      "distZone": 5
     }
   ],
   "captures": [
