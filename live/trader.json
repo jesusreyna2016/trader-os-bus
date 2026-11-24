@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T03:00:46.574Z",
+  "asOf": "2026-11-24T03:15:36.894Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 47,
@@ -24,8 +24,8 @@
     "maxLossStreak": 16
   },
   "offZone": {
-    "count": 3,
-    "pnl": -599.16,
+    "count": 0,
+    "pnl": 0,
     "ofTrades": 30
   },
   "dataHealth": {
@@ -167,24 +167,6 @@
       "at": 1795488379839,
       "sym": "NQ",
       "note": "posicion abierta sin stop"
-    },
-    {
-      "rule": "zona",
-      "at": 1795447829990,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (23 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795458397564,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (22 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795488039711,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (23 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -235,7 +217,7 @@
       "flags": [
         "DAY_STOP_HIT"
       ],
-      "distZone": 16
+      "distZone": 15
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -271,7 +253,7 @@
         "R1_REVENGE",
         "DAY_STOP_HIT"
       ],
-      "distZone": 6
+      "distZone": 1
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -309,7 +291,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 16
+      "distZone": 7
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -328,7 +310,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 9
+      "distZone": 2
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -345,10 +327,9 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT",
-        "NO_ZONE"
+        "DAY_STOP_HIT"
       ],
-      "distZone": 23
+      "distZone": 1
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -367,7 +348,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 7
+      "distZone": 1
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -479,10 +460,9 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT",
-        "NO_ZONE"
+        "DAY_STOP_HIT"
       ],
-      "distZone": 22
+      "distZone": 9
     },
     {
       "acct": "jh79gq4f1jz53eetjas6r7yt8x8js06b",
@@ -520,7 +500,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 7
+      "distZone": 0
     },
     {
       "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
@@ -556,7 +536,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 18
+      "distZone": 13
     },
     {
       "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
@@ -625,7 +605,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 10
+      "distZone": 4
     },
     {
       "acct": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv",
@@ -711,10 +691,9 @@
       "openedAt": 1795488039711,
       "closedAt": 1795488379839,
       "flags": [
-        "OVER_MAX_TRADES",
-        "NO_ZONE"
+        "OVER_MAX_TRADES"
       ],
-      "distZone": 23
+      "distZone": 8
     },
     {
       "acct": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv",
@@ -732,7 +711,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 18
+      "distZone": 13
     }
   ],
   "openPositions": [
