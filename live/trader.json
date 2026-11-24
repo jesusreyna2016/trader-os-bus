@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T00:30:43.497Z",
+  "asOf": "2026-11-24T00:45:36.477Z",
   "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 33,
+  "todayViolations": 32,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -125,12 +125,6 @@
       "at": 1795465935419,
       "sym": "NQ",
       "note": "entrada dentro de la pausa tras un SL"
-    },
-    {
-      "rule": "stop",
-      "at": 1795478561511,
-      "sym": "NQ",
-      "note": "posicion abierta sin stop"
     }
   ],
   "todayTrades": [
@@ -181,7 +175,7 @@
       "flags": [
         "DAY_STOP_HIT"
       ],
-      "distZone": 3
+      "distZone": 1
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -217,7 +211,7 @@
         "R1_REVENGE",
         "DAY_STOP_HIT"
       ],
-      "distZone": 4
+      "distZone": 15
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -255,7 +249,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 6
+      "distZone": 19
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -274,7 +268,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 1
+      "distZone": 18
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -293,7 +287,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 13
+      "distZone": 12
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -312,7 +306,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 3
+      "distZone": 17
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -407,7 +401,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 1
+      "distZone": 5
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -426,7 +420,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 8
+      "distZone": 3
     },
     {
       "acct": "jh79gq4f1jz53eetjas6r7yt8x8js06b",
@@ -445,7 +439,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 0
+      "distZone": 4
     },
     {
       "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
@@ -464,7 +458,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 3
+      "distZone": 16
     },
     {
       "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
@@ -500,7 +494,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 4
+      "distZone": 1
     },
     {
       "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
@@ -543,13 +537,11 @@
       "name": "Select 50K Challenge",
       "sym": "NQ",
       "side": "short",
-      "size": 8,
-      "entry": 26720.38875,
+      "size": 23,
+      "entry": 26734.73217392,
       "openedAt": 1795478561511,
-      "hadStop": false,
-      "flags": [
-        "NO_STOP"
-      ],
+      "hadStop": true,
+      "flags": [],
       "distZone": 0
     }
   ],
