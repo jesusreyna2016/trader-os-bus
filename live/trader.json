@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T04:45:34.715Z",
+  "asOf": "2026-11-24T05:00:46.932Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 49,
@@ -24,8 +24,8 @@
     "maxLossStreak": 16
   },
   "offZone": {
-    "count": 4,
-    "pnl": -1114.7,
+    "count": 5,
+    "pnl": -1138.57,
     "ofTrades": 31
   },
   "dataHealth": {
@@ -176,6 +176,12 @@
     },
     {
       "rule": "zona",
+      "at": 1795447829990,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (20 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
       "at": 1795458397564,
       "sym": "NQ",
       "note": "entrada en tierra de nadie (22 pts al nivel mas cercano)"
@@ -283,7 +289,7 @@
         "R1_REVENGE",
         "DAY_STOP_HIT"
       ],
-      "distZone": 1
+      "distZone": 3
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -321,7 +327,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 11
+      "distZone": 13
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -340,7 +346,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 4
+      "distZone": 6
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -357,9 +363,10 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT"
+        "DAY_STOP_HIT",
+        "NO_ZONE"
       ],
-      "distZone": 18
+      "distZone": 20
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -378,7 +385,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 2
+      "distZone": 4
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -531,7 +538,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 2
+      "distZone": 4
     },
     {
       "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
@@ -636,7 +643,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 5
+      "distZone": 7
     },
     {
       "acct": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv",
