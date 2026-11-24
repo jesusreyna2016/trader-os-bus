@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T11:45:34.543Z",
+  "asOf": "2026-11-24T12:00:47.332Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 5,
@@ -165,7 +165,7 @@
       "flags": [
         "OVER_MAX_TRADES"
       ],
-      "distZone": 0
+      "distZone": 12
     }
   ],
   "openPositions": [
