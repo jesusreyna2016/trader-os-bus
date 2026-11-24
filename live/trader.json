@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T14:01:02.846Z",
+  "asOf": "2026-11-24T14:15:34.665Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 22,
+  "todayViolations": 23,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 15,
+    "used": 16,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": -2525.91,
-    "pnlR": -50.52,
+    "pnl": -2497.48,
+    "pnlR": -49.95,
     "maxLossStreak": 8
   },
   "offZone": {
-    "count": 3,
-    "pnl": -1825.65,
-    "ofTrades": 15
+    "count": 6,
+    "pnl": -2699.44,
+    "ofTrades": 16
   },
   "dataHealth": {
     "scanned": 6,
@@ -110,21 +110,39 @@
     },
     {
       "rule": "zona",
+      "at": 1795516751714,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (38 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
       "at": 1795522914232,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (48 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (50 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
+      "at": 1795522966833,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (20 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795523240503,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (37 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (39 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795523251890,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (42 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (44 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
+      "at": 1795528917007,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (63 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -229,9 +247,10 @@
       "openedAt": 1795516751714,
       "closedAt": 1795516759641,
       "flags": [
-        "OVER_MAX_TRADES"
+        "OVER_MAX_TRADES",
+        "NO_ZONE"
       ],
-      "distZone": 18
+      "distZone": 38
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -285,7 +304,7 @@
         "OVER_MAX_TRADES",
         "NO_ZONE"
       ],
-      "distZone": 48
+      "distZone": 50
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -302,9 +321,10 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT"
+        "DAY_STOP_HIT",
+        "NO_ZONE"
       ],
-      "distZone": 18
+      "distZone": 20
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -323,7 +343,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 17
+      "distZone": 19
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -343,7 +363,7 @@
         "DAY_STOP_HIT",
         "NO_ZONE"
       ],
-      "distZone": 37
+      "distZone": 39
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -363,7 +383,7 @@
         "DAY_STOP_HIT",
         "NO_ZONE"
       ],
-      "distZone": 42
+      "distZone": 44
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -402,6 +422,25 @@
         "DAY_STOP_HIT"
       ],
       "distZone": 4
+    },
+    {
+      "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 3,
+      "entry": 26217,
+      "exit": 26227,
+      "pnl": 28.43,
+      "r": 0.57,
+      "openedAt": 1795528917007,
+      "closedAt": 1795529456046,
+      "flags": [
+        "OVER_MAX_TRADES",
+        "DAY_STOP_HIT",
+        "NO_ZONE"
+      ],
+      "distZone": 63
     }
   ],
   "openPositions": [],
