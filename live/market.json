@@ -1,7 +1,7 @@
 {
   "_writer": "contexto-composer",
   "_schema": 1,
-  "asOf": "2026-11-24T19:15:33.734Z",
+  "asOf": "2026-11-24T19:15:49.287Z",
   "symbols": {
     "BTC": {
       "verdict": null,
@@ -499,12 +499,12 @@
         "po3": "DISTRIBUTION",
         "po3Dir": "down",
         "lastLevelEvent": {
-          "level": "PDL",
-          "event": "TOUCH",
-          "t": 1795545900000,
-          "price": 3552.3,
-          "dist": 1.4,
-          "touches": 1
+          "level": "L4",
+          "event": "FAILED_BREAK",
+          "t": 1795547400000,
+          "price": 3558.115,
+          "dist": 1.585,
+          "touches": 3
         }
       }
     },
