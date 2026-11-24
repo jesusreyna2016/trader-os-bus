@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T10:30:44.743Z",
-  "state": "LOCKOUT",
+  "asOf": "2026-11-24T10:45:35.258Z",
+  "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 4,
+  "todayViolations": 5,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 4,
+    "used": 6,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": -1342.29,
-    "pnlR": -26.85,
+    "pnl": 1001.89,
+    "pnlR": 20.04,
     "maxLossStreak": 3
   },
   "offZone": {
-    "count": 0,
-    "pnl": 0,
-    "ofTrades": 4
+    "count": 1,
+    "pnl": -45.17,
+    "ofTrades": 6
   },
   "dataHealth": {
     "scanned": 6,
@@ -55,10 +55,16 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
+      "rule": "R1",
       "at": 1795504502886,
       "sym": "NQ",
-      "note": "posicion abierta sin stop"
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "zona",
+      "at": 1795516751714,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (25 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -132,9 +138,7 @@
         "DAY_STOP_HIT"
       ],
       "distZone": 4
-    }
-  ],
-  "openPositions": [
+    },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
       "name": "Elite 3% DLL 25K Challenge",
@@ -142,14 +146,36 @@
       "side": "short",
       "size": 6,
       "entry": 26804.09,
+      "exit": 26405,
+      "pnl": 2389.35,
+      "r": 47.79,
       "openedAt": 1795504502886,
-      "hadStop": false,
+      "closedAt": 1795516751714,
       "flags": [
-        "NO_STOP"
+        "R1_REVENGE"
       ],
       "distZone": 19
+    },
+    {
+      "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 6,
+      "entry": 26405,
+      "exit": 26398,
+      "pnl": -45.17,
+      "r": -0.9,
+      "openedAt": 1795516751714,
+      "closedAt": 1795516759641,
+      "flags": [
+        "OVER_MAX_TRADES",
+        "NO_ZONE"
+      ],
+      "distZone": 25
     }
   ],
+  "openPositions": [],
   "captures": [
     {
       "key": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv:1795483893392",
