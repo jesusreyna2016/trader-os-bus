@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T05:30:59.370Z",
+  "asOf": "2026-11-24T05:45:36.487Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 48,
@@ -692,7 +692,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 6
+      "distZone": 3
     },
     {
       "acct": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv",
