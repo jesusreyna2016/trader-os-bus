@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T17:00:46.486Z",
+  "asOf": "2026-11-24T17:15:35.772Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 37,
@@ -166,19 +166,19 @@
       "rule": "zona",
       "at": 1795516751714,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (40 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (21 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795531591861,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (40 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (21 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795531602529,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (44 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (25 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
@@ -300,7 +300,7 @@
         "OVER_MAX_TRADES",
         "NO_ZONE"
       ],
-      "distZone": 40
+      "distZone": 21
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -353,7 +353,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 6
+      "distZone": 8
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -410,7 +410,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 17
+      "distZone": 19
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -429,7 +429,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 12
+      "distZone": 14
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -485,7 +485,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 7
+      "distZone": 6
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -541,7 +541,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 18
+      "distZone": 19
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -561,7 +561,7 @@
         "DAY_STOP_HIT",
         "NO_ZONE"
       ],
-      "distZone": 40
+      "distZone": 21
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -581,7 +581,7 @@
         "DAY_STOP_HIT",
         "NO_ZONE"
       ],
-      "distZone": 44
+      "distZone": 25
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -630,14 +630,14 @@
       "name": "Elite 3% DLL 25K Challenge",
       "sym": "NQ",
       "side": "short",
-      "size": 3.1,
-      "entry": 26268.34419355,
+      "size": 3.3,
+      "entry": 26262.79636364,
       "openedAt": 1795532472532,
       "hadStop": false,
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 8
+      "distZone": 2
     }
   ],
   "captures": [
