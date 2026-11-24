@@ -1,6 +1,6 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-24T01:00:40.697Z",
+ "checkedAt": "2026-11-24T01:30:37.834Z",
  "status": "ok",
  "marketOpen": true,
  "issues": [],
@@ -10,8 +10,8 @@
    "label": "Datos crudos (feeds)",
    "writer": "TradingView -> tos-bus-snapshot",
    "status": "ok",
-   "ageMin": 15,
-   "at": "2026-11-24T00:45:31.124Z",
+   "ageMin": 30,
+   "at": "2026-11-24T01:00:42.486Z",
    "note": "al dia"
   },
   {
@@ -19,8 +19,8 @@
    "label": "Estado del mercado",
    "writer": "tos-market",
    "status": "ok",
-   "ageMin": 15,
-   "at": "2026-11-24T00:45:35.000Z",
+   "ageMin": 30,
+   "at": "2026-11-24T01:00:45.791Z",
    "note": "al dia"
   },
   {
@@ -28,8 +28,8 @@
    "label": "Edge medido",
    "writer": "lente Edge",
    "status": "ok",
-   "ageMin": 15,
-   "at": "2026-11-24T00:45:41.660Z",
+   "ageMin": 30,
+   "at": "2026-11-24T01:00:51.744Z",
    "note": "al dia"
   },
   {
@@ -37,8 +37,8 @@
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
    "status": "ok",
-   "ageMin": 52,
-   "at": "2026-11-24T00:09:09.235Z",
+   "ageMin": 22,
+   "at": "2026-11-24T01:09:07.399Z",
    "note": "al dia"
   },
   {
@@ -46,8 +46,8 @@
    "label": "Estado del trader (Coach)",
    "writer": "tos-coach",
    "status": "ok",
-   "ageMin": 15,
-   "at": "2026-11-24T00:45:36.477Z",
+   "ageMin": 30,
+   "at": "2026-11-24T01:00:47.130Z",
    "note": "al dia"
   },
   {
@@ -55,7 +55,7 @@
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
    "status": "ok",
-   "ageMin": 88,
+   "ageMin": 117,
    "at": "2026-11-23T23:33:10.000Z",
    "note": "al dia"
   },
@@ -64,7 +64,7 @@
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 34,
+   "ageMin": 64,
    "at": "2026-11-24T00:27:00.000Z",
    "note": "al dia"
   },
@@ -73,7 +73,7 @@
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
    "status": "ok",
-   "ageMin": 75,
+   "ageMin": 105,
    "at": "2026-11-23T23:45:24.132Z",
    "note": "al dia"
   }
