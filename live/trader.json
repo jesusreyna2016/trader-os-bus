@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T11:15:31.444Z",
+  "asOf": "2026-11-24T11:30:43.876Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 5,
@@ -24,8 +24,8 @@
     "maxLossStreak": 3
   },
   "offZone": {
-    "count": 1,
-    "pnl": -45.17,
+    "count": 0,
+    "pnl": 0,
     "ofTrades": 6
   },
   "dataHealth": {
@@ -59,12 +59,6 @@
       "at": 1795504502886,
       "sym": "NQ",
       "note": "entrada dentro de la pausa tras un SL"
-    },
-    {
-      "rule": "zona",
-      "at": 1795516751714,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (43 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -169,10 +163,9 @@
       "openedAt": 1795516751714,
       "closedAt": 1795516759641,
       "flags": [
-        "OVER_MAX_TRADES",
-        "NO_ZONE"
+        "OVER_MAX_TRADES"
       ],
-      "distZone": 43
+      "distZone": 9
     }
   ],
   "openPositions": [],
