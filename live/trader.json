@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T21:00:57.607Z",
+  "asOf": "2026-11-24T21:15:35.829Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 39,
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 24,
+    "used": 25,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": -3773.68,
-    "pnlR": -75.47,
+    "pnl": -4161.73,
+    "pnlR": -83.23,
     "maxLossStreak": 8
   },
   "offZone": {
-    "count": 3,
-    "pnl": 2410.54,
-    "ofTrades": 24
+    "count": 4,
+    "pnl": 2333.97,
+    "ofTrades": 25
   },
   "dataHealth": {
     "scanned": 6,
@@ -151,12 +151,6 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
-      "at": 1795553460140,
-      "sym": "NQ",
-      "note": "posicion abierta sin stop"
-    },
-    {
       "rule": "zona",
       "at": 1795504481348,
       "sym": "NQ",
@@ -167,6 +161,12 @@
       "at": 1795504502886,
       "sym": "NQ",
       "note": "entrada en tierra de nadie (33 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
+      "at": 1795523008428,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (20 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
@@ -281,7 +281,7 @@
       "flags": [
         "OVER_MAX_TRADES"
       ],
-      "distZone": 1
+      "distZone": 18
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -334,7 +334,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 4
+      "distZone": 3
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -353,7 +353,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 18
+      "distZone": 19
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -370,9 +370,10 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT"
+        "DAY_STOP_HIT",
+        "NO_ZONE"
       ],
-      "distZone": 19
+      "distZone": 20
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -391,7 +392,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 1
+      "distZone": 0
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -410,7 +411,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 6
+      "distZone": 5
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -466,7 +467,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 9
+      "distZone": 10
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -503,7 +504,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 6
+      "distZone": 7
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -522,7 +523,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 0
+      "distZone": 1
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -541,7 +542,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 1
+      "distZone": 18
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -560,7 +561,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 5
+      "distZone": 14
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -618,10 +619,8 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 4
-    }
-  ],
-  "openPositions": [
+      "distZone": 3
+    },
     {
       "acct": "jh79gq4f1jz53eetjas6r7yt8x8js06b",
       "name": "Elite 3% DLL 25K Challenge",
@@ -629,14 +628,19 @@
       "side": "long",
       "size": 6.4,
       "entry": 26228,
+      "exit": 26168,
+      "pnl": -388.05,
+      "r": -7.76,
       "openedAt": 1795553460140,
-      "hadStop": false,
+      "closedAt": 1795554206666,
       "flags": [
-        "NO_STOP"
+        "OVER_MAX_TRADES",
+        "DAY_STOP_HIT"
       ],
-      "distZone": 2
+      "distZone": 1
     }
   ],
+  "openPositions": [],
   "captures": [
     {
       "key": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv:1795483893392",
