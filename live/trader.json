@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T12:45:32.306Z",
+  "asOf": "2026-11-24T13:00:46.810Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 20,
+  "todayViolations": 21,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 13,
+    "used": 14,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": -2282.54,
-    "pnlR": -45.65,
+    "pnl": -2170.12,
+    "pnlR": -43.4,
     "maxLossStreak": 8
   },
   "offZone": {
     "count": 2,
     "pnl": -378.59,
-    "ofTrades": 13
+    "ofTrades": 14
   },
   "dataHealth": {
     "scanned": 6,
@@ -97,10 +97,10 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
+      "rule": "R1",
       "at": 1795524180236,
       "sym": "NQ",
-      "note": "posicion abierta sin stop"
+      "note": "entrada dentro de la pausa tras un SL"
     },
     {
       "rule": "stop",
@@ -112,7 +112,7 @@
       "rule": "zona",
       "at": 1795516751714,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (38 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (36 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
@@ -226,7 +226,7 @@
         "OVER_MAX_TRADES",
         "NO_ZONE"
       ],
-      "distZone": 38
+      "distZone": 36
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -357,9 +357,7 @@
         "DAY_STOP_HIT"
       ],
       "distZone": 19
-    }
-  ],
-  "openPositions": [
+    },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
       "name": "Elite 3% DLL 25K Challenge",
@@ -367,13 +365,20 @@
       "side": "long",
       "size": 3,
       "entry": 26289,
+      "exit": 26327,
+      "pnl": 112.42,
+      "r": 2.25,
       "openedAt": 1795524180236,
-      "hadStop": false,
+      "closedAt": 1795524702463,
       "flags": [
-        "NO_STOP"
+        "R1_REVENGE",
+        "OVER_MAX_TRADES",
+        "DAY_STOP_HIT"
       ],
       "distZone": 7
-    },
+    }
+  ],
+  "openPositions": [
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
       "name": "Elite 3% DLL 25K Challenge",
