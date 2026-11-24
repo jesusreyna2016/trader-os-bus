@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-11-24T00:27:00Z",
-  "runType": "crypto-close",
+  "lastRun": "2026-11-24T14:52:00Z",
+  "runType": "crypto-ny",
   "ok": true,
-  "note": "plan escrito, lint OK, personalizacion OK. ETH y BTC WAIT, zonas bounce_val A+ pero conviccion baja."
+  "note": "plan actualizado, lint OK. Zonas bounce_val del close rotas de noche (ETH y BTC bajo su stop), 2a barrida del PDL en curso en las dos, BTC mas cerca del reclamo. BTC biasSession a SHORT (giro 1h/4h confirmado). WAIT en las dos, conviccion baja."
 }

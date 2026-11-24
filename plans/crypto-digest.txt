@@ -1,7 +1,8 @@
-Contexto crypto-close 2026-11-24 18:30 CT
-ETH: NEUTRAL, WAIT. Viaje de ida y vuelta ayer (1,849 y vuelta a 1,713), zona bounce_val 1,701-1,710 A+ (score 9) pero conviccion baja, precio 1,713.45 (-0.91% 24h)
-BTC: NEUTRAL, WAIT. Mismo viaje (64,811.8 y vuelta a 61,457), zona bounce_val 60,605-60,911.5 A+ (score 8) pero conviccion baja, precio 61,456.9 (-0.14% 24h)
-foco: ETH, vigilar barrida del PDL 1,701.54 con reclamo sobre 1,704
-sin hueco de CME hoy (martes, ventana viernes-lunes cerrada), sin riskWindow esta corrida
-calificacion de ayer (2026-11-23 close+ny): las dos barridas del techo (sweep_pdh) rompieron sin reclamo, broken
+Contexto crypto-ny 2026-11-24 08:53 CT
+ETH: NEUTRAL, WAIT. Rompio stop de noche (minimo 1,673.27, bajo 1,697), recupero casi todo, ahora 2a barrida del PDL 1,701.54, precio 1,701.90 (-4.97% 24h), sin reclamo (falta 1,704)
+BTC: SHORT (giro confirmado en 1h/4h), WAIT. Rompio stop de noche (minimo 59,614.6, bajo 60,500), recupero casi todo, 2a barrida del PDL 60,611.8 muy fresca, precio 60,677.7 (-4.32% 24h), a $2.3 del reclamo 60,680
+foco: ETH, BTC mas cerca del reclamo que ETH, sigue sin GO, conviccion baja en las dos
+NQ/ES abrieron el cash a la baja (-1.64% / -0.84% 24h) sin romper su balance inicial, acompañando la baja de cripto
+sin dato en la ventana de las 07:30 CT hoy, sin titular nuevo desde el close, sin riskWindow esta corrida
+calificacion de ayer sin cambios (2026-11-23 close+ny): las dos barridas del techo rompieron sin reclamo, broken
 precision: 0/8 predicciones, 0/4 zonas
