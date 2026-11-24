@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T03:45:49.440Z",
-  "state": "TILT",
+  "asOf": "2026-11-24T04:00:48.243Z",
+  "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 46,
+  "todayViolations": 49,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 30,
+    "used": 31,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 1720.36,
-    "pnlR": 34.41,
+    "pnl": 892.77,
+    "pnlR": 17.86,
     "maxLossStreak": 16
   },
   "offZone": {
     "count": 2,
     "pnl": -539.41,
-    "ofTrades": 30
+    "ofTrades": 31
   },
   "dataHealth": {
     "scanned": 7,
@@ -157,8 +157,20 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
+      "rule": "R1",
+      "at": 1795488379839,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
       "rule": "stop",
       "at": 1795488384165,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
+    },
+    {
+      "rule": "stop",
+      "at": 1795492797835,
       "sym": "NQ",
       "note": "posicion abierta sin stop"
     },
@@ -223,7 +235,7 @@
       "flags": [
         "DAY_STOP_HIT"
       ],
-      "distZone": 12
+      "distZone": 16
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -259,7 +271,7 @@
         "R1_REVENGE",
         "DAY_STOP_HIT"
       ],
-      "distZone": 6
+      "distZone": 5
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -297,7 +309,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 4
+      "distZone": 2
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -316,7 +328,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 3
+      "distZone": 2
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -335,7 +347,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 2
+      "distZone": 5
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -354,7 +366,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 5
+      "distZone": 3
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -468,7 +480,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 6
+      "distZone": 13
     },
     {
       "acct": "jh79gq4f1jz53eetjas6r7yt8x8js06b",
@@ -506,7 +518,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 5
+      "distZone": 4
     },
     {
       "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
@@ -542,7 +554,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 10
+      "distZone": 17
     },
     {
       "acct": "jh7ekyfjahdz3rk7j444k34cp18jshmf",
@@ -611,7 +623,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 2
+      "distZone": 0
     },
     {
       "acct": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv",
@@ -701,7 +713,7 @@
       "flags": [
         "OVER_MAX_TRADES"
       ],
-      "distZone": 5
+      "distZone": 12
     },
     {
       "acct": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv",
@@ -719,7 +731,25 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 10
+      "distZone": 17
+    },
+    {
+      "acct": "jh7376hedbye40xapyfn9abgvs8jvwef",
+      "name": "Funded 50K",
+      "sym": "NQ",
+      "side": "short",
+      "size": 18,
+      "entry": 26744.44444444,
+      "exit": 26789,
+      "pnl": -827.59,
+      "r": -16.55,
+      "openedAt": 1795488379839,
+      "closedAt": 1795492753069,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
+      ],
+      "distZone": 0
     }
   ],
   "openPositions": [
@@ -742,12 +772,14 @@
       "name": "Funded 50K",
       "sym": "NQ",
       "side": "short",
-      "size": 18,
-      "entry": 26744.44444444,
-      "openedAt": 1795488379839,
-      "hadStop": true,
-      "flags": [],
-      "distZone": 0
+      "size": 1,
+      "entry": 26784,
+      "openedAt": 1795492797835,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 13
     }
   ],
   "captures": [
