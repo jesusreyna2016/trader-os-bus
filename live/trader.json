@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T09:15:32.771Z",
+  "asOf": "2026-11-24T09:30:43.752Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 3,
@@ -123,7 +123,7 @@
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 17
+      "distZone": 19
     },
     {
       "acct": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv",
