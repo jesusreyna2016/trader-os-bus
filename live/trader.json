@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T16:45:36.371Z",
+  "asOf": "2026-11-24T17:00:46.486Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 37,
@@ -410,7 +410,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 5
+      "distZone": 17
     },
     {
       "acct": "jh76pqcjvdqjerm2jz2mhmdzh18jsjjx",
@@ -429,7 +429,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 0
+      "distZone": 12
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -485,7 +485,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 19
+      "distZone": 7
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -522,7 +522,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 12
+      "distZone": 13
     },
     {
       "acct": "jh7a98ke1gya5zsywct171qm458jszvk",
@@ -541,7 +541,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 6
+      "distZone": 18
     },
     {
       "acct": "jh7axfq9m2e7k50ftfp3txfrqx8jrd7p",
@@ -630,14 +630,14 @@
       "name": "Elite 3% DLL 25K Challenge",
       "sym": "NQ",
       "side": "short",
-      "size": 3,
-      "entry": 26273.42233333,
+      "size": 3.1,
+      "entry": 26268.34419355,
       "openedAt": 1795532472532,
       "hadStop": false,
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 9
+      "distZone": 8
     }
   ],
   "captures": [
