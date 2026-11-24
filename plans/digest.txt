@@ -1,11 +1,11 @@
-SA pre-ny 2026-11-24 07:59 CT
->> ES retest cluster roto 7182-7192 · 08:30-11:30 CT
-NQ WAIT · corto · retest · EM 594p
-ES WAIT · corto · retest · EM 101p
-GC WAIT · sin sesgo · sweep VAL · EM 55p
-YM WAIT · corto · retest · EM 715p
-CL WAIT · sin sesgo · fade VAH · EM 2p
-Limpio: ES. estructura mas clara, bajo L3 con cierre.
-Datos OK · Noticias MEDIA · Cal -
-Prec 20d: sin datos aun
-Ejec 45d: contra-sesgo 100% · fuera zona 100% · churn
+SA pre-asia 2026-11-25 17:35 CT
+!! GC rango debil 20d (38%), ya exento, sin accion nueva
+>> ES A+ rebote VAL 7171-7182 · 18:00-02:00 CT
+NQ WAIT · largo · rebote VAL · EM 340p chop!
+ES WAIT · largo · rebote VAL · EM 50p
+GC WAIT · largo · sin setup · EM 37p
+YM WAIT · corto · fade VAH · EM 256p
+CL WAIT · corto · fade VAH · EM 1.0p
+Limpio: ES. Sin conflicto, A+ a 40pts, no llega aun.
+Datos OK · Noticias NINGUNA · Cal -
+Prec 20d: sesgo 52% · pred 55%

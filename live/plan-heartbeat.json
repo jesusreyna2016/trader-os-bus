@@ -1,6 +1,6 @@
 {
- "lastRun": "2026-11-24T13:59:00Z",
- "runType": "pre-ny",
+ "lastRun": "2026-11-24T23:42:00Z",
+ "runType": "pre-asia",
  "ok": true,
- "note": "Plan NY publicado, fase adaptador (sin move24h.py ni scripts de calibracion): 5 WAIT, ninguna A+ posible esta corrida (vs24h flat en toda zona). Selloff amplio y vivo tras el comentario halcon de la Fed de ayer: NQ/ES/YM/GC/CL estirados 2.9-5.5 ATR. Mas limpio: ES (aceptacion confirmada bajo L3 7182). GC con el swing 3625 tocado y perdido en la ultima hora (EVOLVING). CL CONFLICT, toca resistencia PWL/VAH tras reclamo violento desde 79.07. CB Consumer Confidence 09:00 CT, manos fuera 08:55-09:05."
+ "note": "Plan Asia publicado, 5 WAIT (sin GO esta corrida). Calificado 2026-11-24: bias 5/12, scenA 9/12, zonas 0/9, em 7/15 (sesgo de Asia fallo 4/5, zonas tocaron pero rompieron mal en dia de tendencia). GC hipotesis 3625 cerrada/refutada. ES mas limpio (A+ VAL, sin conflicto). CL en decision real sobre VAH/PDH 82.14 (EIA es mañana, no hoy). Alarma pasiva: GC rango 20d+ 38%, ya exenta."
 }
