@@ -1,10 +1,11 @@
-SA pre-london 2026-11-24 01:45 CT
->> ES A+ retest VAH/ONH 7276.5-7294 · 01:30-05:30 CT
-NQ WAIT · corto · pullback cont · EM 330p
-ES GO · corto · retest VAH · EM 57p
-GC WAIT · corto · ruptura POC · EM 39p
-YM WAIT · sin sesgo · fade VAH · EM 435p · chop!
-CL WAIT · corto · retest PDL/VAL · EM 1.4p
-Limpio: ES, barrida confirmada, edge medido respalda.
-Datos OK · Noticias MEDIA · Cal thanksgiving-week
-Prec 20d: sesgo ~52% · pred ~50%
+SA pre-ny 2026-11-24 07:59 CT
+>> ES retest cluster roto 7182-7192 · 08:30-11:30 CT
+NQ WAIT · corto · retest · EM 594p
+ES WAIT · corto · retest · EM 101p
+GC WAIT · sin sesgo · sweep VAL · EM 55p
+YM WAIT · corto · retest · EM 715p
+CL WAIT · sin sesgo · fade VAH · EM 2p
+Limpio: ES. estructura mas clara, bajo L3 con cierre.
+Datos OK · Noticias MEDIA · Cal -
+Prec 20d: sin datos aun
+Ejec 45d: contra-sesgo 100% · fuera zona 100% · churn

@@ -1,6 +1,6 @@
 {
- "lastRun": "2026-11-24T07:48:00Z",
- "runType": "pre-london",
+ "lastRun": "2026-11-24T13:59:00Z",
+ "runType": "pre-ny",
  "ok": true,
- "note": "Plan Londres publicado: 1 GO (ES retest VAH/ONH, barrida confirmada con CISD bajista 5m/15m, edge medido respalda). 4 WAIT: NQ A+ aun lejos (40pts), GC estirado 3.4 ATR tras round-trip a 3676.7, YM frameConflict activo (invalidacion de Asia ya atras), CL barrida+reclamo sin A+ en ningun lado. lint_plan.py/check_plan.py desactivados esta fase (adaptador), chequeo manual de reglas duras."
+ "note": "Plan NY publicado, fase adaptador (sin move24h.py ni scripts de calibracion): 5 WAIT, ninguna A+ posible esta corrida (vs24h flat en toda zona). Selloff amplio y vivo tras el comentario halcon de la Fed de ayer: NQ/ES/YM/GC/CL estirados 2.9-5.5 ATR. Mas limpio: ES (aceptacion confirmada bajo L3 7182). GC con el swing 3625 tocado y perdido en la ultima hora (EVOLVING). CL CONFLICT, toca resistencia PWL/VAH tras reclamo violento desde 79.07. CB Consumer Confidence 09:00 CT, manos fuera 08:55-09:05."
 }
