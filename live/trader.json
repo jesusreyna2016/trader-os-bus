@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-24",
-  "asOf": "2026-11-24T10:00:45.315Z",
+  "asOf": "2026-11-24T10:15:33.771Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 3,
+  "todayViolations": 4,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 3,
+    "used": 4,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": -1801.89,
-    "pnlR": -36.04,
+    "pnl": -1342.29,
+    "pnlR": -26.85,
     "maxLossStreak": 3
   },
   "offZone": {
     "count": 0,
     "pnl": 0,
-    "ofTrades": 3
+    "ofTrades": 4
   },
   "dataHealth": {
     "scanned": 6,
@@ -45,6 +45,12 @@
     {
       "rule": "R1",
       "at": 1795502604751,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
+      "at": 1795504481348,
       "sym": "NQ",
       "note": "entrada dentro de la pausa tras un SL"
     },
@@ -108,6 +114,24 @@
         "DAY_STOP_HIT"
       ],
       "distZone": 10
+    },
+    {
+      "acct": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv",
+      "name": "Select 50K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 1.1742,
+      "entry": 26820,
+      "exit": 26427,
+      "pnl": 459.6,
+      "r": 9.19,
+      "openedAt": 1795504481348,
+      "closedAt": 1795514539056,
+      "flags": [
+        "R1_REVENGE",
+        "DAY_STOP_HIT"
+      ],
+      "distZone": 4
     }
   ],
   "openPositions": [
@@ -124,18 +148,6 @@
         "NO_STOP"
       ],
       "distZone": 19
-    },
-    {
-      "acct": "jh73cmvm6b4w8dgc5ncmavabj98jrwjv",
-      "name": "Select 50K Challenge",
-      "sym": "NQ",
-      "side": "short",
-      "size": 1.1742,
-      "entry": 26820,
-      "openedAt": 1795504481348,
-      "hadStop": true,
-      "flags": [],
-      "distZone": 4
     }
   ],
   "captures": [
