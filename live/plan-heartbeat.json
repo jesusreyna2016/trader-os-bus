@@ -1,6 +1,6 @@
 {
- "lastRun": "2026-11-23T23:33:10Z",
- "runType": "pre-asia",
+ "lastRun": "2026-11-24T07:48:00Z",
+ "runType": "pre-london",
  "ok": true,
- "note": "Plan Asia publicado: 1 GO (ES fade VAH al gatillo), 4 WAIT (NQ/GC barridas tope B, YM frameConflict, CL conflicto de tesis). Calificado 2026-11-23: sesgo fallo 3/4, CL limpio."
+ "note": "Plan Londres publicado: 1 GO (ES retest VAH/ONH, barrida confirmada con CISD bajista 5m/15m, edge medido respalda). 4 WAIT: NQ A+ aun lejos (40pts), GC estirado 3.4 ATR tras round-trip a 3676.7, YM frameConflict activo (invalidacion de Asia ya atras), CL barrida+reclamo sin A+ en ningun lado. lint_plan.py/check_plan.py desactivados esta fase (adaptador), chequeo manual de reglas duras."
 }

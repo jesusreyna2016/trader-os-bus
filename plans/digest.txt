@@ -1,10 +1,10 @@
-SA pre-asia 2026-11-24 17:33 CT
->> ES A+ fade VAH 7276-94 · 17:00-20:00 CT
-NQ WAIT · corto · barrida ONH · EM 284p
-ES GO · corto · fade VAH · EM 44p
-GC WAIT · corto · barrida ONH · EM 33p
-YM WAIT · corto · rechazo IB · EM 235p chop!
-CL WAIT · largo · barrida PDL · EM 1p
-Limpio: ES. fade del rebote de 24h en VAH de ayer.
-Datos OK · Noticias MEDIA · Cal -
-Prec 44d: sesgo 52% · pred ~50%
+SA pre-london 2026-11-24 01:45 CT
+>> ES A+ retest VAH/ONH 7276.5-7294 · 01:30-05:30 CT
+NQ WAIT · corto · pullback cont · EM 330p
+ES GO · corto · retest VAH · EM 57p
+GC WAIT · corto · ruptura POC · EM 39p
+YM WAIT · sin sesgo · fade VAH · EM 435p · chop!
+CL WAIT · corto · retest PDL/VAL · EM 1.4p
+Limpio: ES, barrida confirmada, edge medido respalda.
+Datos OK · Noticias MEDIA · Cal thanksgiving-week
+Prec 20d: sesgo ~52% · pred ~50%
