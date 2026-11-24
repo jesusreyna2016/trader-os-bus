@@ -1,45 +1,45 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-24T22:45:24.098Z",
+ "checkedAt": "2026-11-24T23:00:37.645Z",
  "status": "ok",
- "marketOpen": false,
+ "marketOpen": true,
  "issues": [],
  "items": [
   {
    "key": "feeds",
    "label": "Datos crudos (feeds)",
    "writer": "TradingView -> tos-bus-snapshot",
-   "status": "off",
+   "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-24T22:30:35.486Z",
-   "note": "mercado cerrado"
+   "at": "2026-11-24T22:45:27.573Z",
+   "note": "al dia"
   },
   {
    "key": "market",
    "label": "Estado del mercado",
    "writer": "tos-market",
-   "status": "off",
+   "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-24T22:30:40.044Z",
-   "note": "mercado cerrado"
+   "at": "2026-11-24T22:45:30.203Z",
+   "note": "al dia"
   },
   {
    "key": "edge",
    "label": "Edge medido",
    "writer": "lente Edge",
-   "status": "off",
+   "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-24T22:30:46.534Z",
-   "note": "mercado cerrado"
+   "at": "2026-11-24T22:45:35.737Z",
+   "note": "al dia"
   },
   {
    "key": "bars",
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
-   "status": "off",
-   "ageMin": 36,
+   "status": "ok",
+   "ageMin": 51,
    "at": "2026-11-24T22:09:08.321Z",
-   "note": "mercado cerrado"
+   "note": "al dia"
   },
   {
    "key": "trader",
@@ -47,7 +47,7 @@
    "writer": "tos-coach",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-24T22:30:41.579Z",
+   "at": "2026-11-24T22:45:31.707Z",
    "note": "al dia"
   },
   {
@@ -55,7 +55,7 @@
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
    "status": "ok",
-   "ageMin": 526,
+   "ageMin": 542,
    "at": "2026-11-24T13:59:00.000Z",
    "note": "espera la corrida de hoy"
   },
@@ -64,7 +64,7 @@
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 473,
+   "ageMin": 489,
    "at": "2026-11-24T14:52:00.000Z",
    "note": "al dia"
   },
@@ -73,7 +73,7 @@
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
    "status": "ok",
-   "ageMin": 1380,
+   "ageMin": 1395,
    "at": "2026-11-23T23:45:24.132Z",
    "note": "espera la corrida de hoy"
   }
