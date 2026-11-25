@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T04:00:43.853Z",
+  "asOf": "2026-11-25T04:15:30.648Z",
   "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 2,
+  "todayViolations": 4,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 5,
+    "used": 6,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 988.93,
-    "pnlR": 19.78,
+    "pnl": 990.01,
+    "pnlR": 19.8,
     "maxLossStreak": 1
   },
   "offZone": {
     "count": 3,
     "pnl": 484.03,
-    "ofTrades": 5
+    "ofTrades": 6
   },
   "dataHealth": {
     "scanned": 2,
@@ -43,9 +43,15 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
+      "rule": "R1",
       "at": 1795578492209,
       "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "stop",
+      "at": 1795579963821,
+      "sym": "ETH",
       "note": "posicion abierta sin stop"
     },
     {
@@ -149,9 +155,7 @@
       "closedAt": 1795578492209,
       "flags": [],
       "distZone": 9
-    }
-  ],
-  "openPositions": [
+    },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
       "name": "Funded 10K",
@@ -159,12 +163,32 @@
       "side": "short",
       "size": 2,
       "entry": 25967,
+      "exit": 25965,
+      "pnl": 1.08,
+      "r": 0.02,
       "openedAt": 1795578492209,
+      "closedAt": 1795579980491,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
+      ],
+      "distZone": 4
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
+      "name": "Funded 10K",
+      "sym": "ETH",
+      "side": "long",
+      "size": 15,
+      "entry": 1662.08,
+      "openedAt": 1795579963821,
       "hadStop": false,
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 4
+      "distZone": 1
     }
   ],
   "captures": [
