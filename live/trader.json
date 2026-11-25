@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T21:30:42.436Z",
-  "state": "LOCKOUT",
+  "asOf": "2026-11-25T21:45:31.887Z",
+  "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 18,
+  "todayViolations": 21,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 14,
+    "used": 17,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 1366.35,
-    "pnlR": 27.33,
+    "pnl": 2607.74,
+    "pnlR": 52.15,
     "maxLossStreak": 4
   },
   "offZone": {
-    "count": 9,
-    "pnl": 445.14,
-    "ofTrades": 14
+    "count": 10,
+    "pnl": 1057.65,
+    "ofTrades": 17
   },
   "dataHealth": {
     "scanned": 3,
@@ -73,22 +73,22 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
-      "at": 1795630636222,
-      "sym": "NQ",
-      "note": "posicion abierta sin stop"
-    },
-    {
-      "rule": "stop",
+      "rule": "R1",
       "at": 1795630611178,
       "sym": "NQ",
-      "note": "posicion abierta sin stop"
+      "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
+      "rule": "R1",
       "at": 1795630620053,
       "sym": "SP500",
-      "note": "posicion abierta sin stop"
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
+      "at": 1795630636222,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
     },
     {
       "rule": "zona",
@@ -143,6 +143,12 @@
       "at": 1795625479906,
       "sym": "NQ",
       "note": "entrada en tierra de nadie (100 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
+      "at": 1795630636222,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (20 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -390,23 +396,6 @@
         "OVER_MAX_TRADES"
       ],
       "distZone": 0
-    }
-  ],
-  "openPositions": [
-    {
-      "acct": "jh70qet243gxtmtn8yw4v1pxp58jwky0",
-      "name": "Select 25K Challenge",
-      "sym": "NQ",
-      "side": "long",
-      "size": 4.5,
-      "entry": 25894.98456889,
-      "openedAt": 1795630636222,
-      "hadStop": false,
-      "flags": [
-        "NO_STOP",
-        "NO_ZONE"
-      ],
-      "distZone": 20
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -415,10 +404,14 @@
       "side": "long",
       "size": 4.5,
       "entry": 25897.771,
+      "exit": 26033.6,
+      "pnl": 603.76,
+      "r": 12.08,
       "openedAt": 1795630611178,
-      "hadStop": false,
+      "closedAt": 1795642453466,
       "flags": [
-        "NO_STOP"
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
       ],
       "distZone": 17
     },
@@ -429,13 +422,37 @@
       "side": "long",
       "size": 1,
       "entry": 7156.98673375,
+      "exit": 7182.6,
+      "pnl": 25.12,
+      "r": 0.5,
       "openedAt": 1795630620053,
-      "hadStop": false,
+      "closedAt": 1795642454287,
       "flags": [
-        "NO_STOP"
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
       ]
+    },
+    {
+      "acct": "jh70qet243gxtmtn8yw4v1pxp58jwky0",
+      "name": "Select 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 4.5,
+      "entry": 25894.98456889,
+      "exit": 26031.92750059,
+      "pnl": 612.51,
+      "r": 12.25,
+      "openedAt": 1795630636222,
+      "closedAt": 1795642468608,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES",
+        "NO_ZONE"
+      ],
+      "distZone": 20
     }
   ],
+  "openPositions": [],
   "captures": [
     {
       "key": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y:1795570735062",
