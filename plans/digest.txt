@@ -1,11 +1,11 @@
-SA pre-asia 2026-11-25 17:35 CT
-!! GC rango debil 20d (38%), ya exento, sin accion nueva
->> ES A+ rebote VAL 7171-7182 · 18:00-02:00 CT
-NQ WAIT · largo · rebote VAL · EM 340p chop!
-ES WAIT · largo · rebote VAL · EM 50p
-GC WAIT · largo · sin setup · EM 37p
-YM WAIT · corto · fade VAH · EM 256p
-CL WAIT · corto · fade VAH · EM 1.0p
-Limpio: ES. Sin conflicto, A+ a 40pts, no llega aun.
+SA pre-london 2026-11-25 01:45 CT
+!! GC pred rango debil 20d (38%,n=56), pasivo
+>> ES A+ PDL/IB 7144.75-7152.25 · 02:00-07:15
+NQ WAIT · corto · sin setup · EM 322p
+ES WAIT · corto · retest PDL/IB · EM 56p
+GC WAIT · corto · retest FVG1h · EM 34p
+YM WAIT · sin sesgo · fade VAH/PDH · EM 329p · chop!
+CL WAIT · corto · retest FVG · EM 1.2p
+Limpio: ES. A+ ya en precio, falta cierre de rechazo.
 Datos OK · Noticias NINGUNA · Cal -
-Prec 20d: sesgo 52% · pred 55%
+Prec 20d: sesgo ~52% · pred ~58%
