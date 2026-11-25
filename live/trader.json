@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T18:30:42.666Z",
+  "asOf": "2026-11-25T18:45:33.501Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 18,
@@ -383,14 +383,14 @@
       "name": "Select 25K Challenge",
       "sym": "NQ",
       "side": "long",
-      "size": 2,
-      "entry": 25814.00978,
+      "size": 2.5,
+      "entry": 25804.565024,
       "openedAt": 1795630636222,
       "hadStop": false,
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 19
+      "distZone": 10
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
