@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T06:15:33.732Z",
+  "asOf": "2026-11-25T06:30:40.801Z",
   "state": "OK",
   "disciplineStreak": 0,
   "todayViolations": 0,
@@ -43,12 +43,12 @@
       "name": "Funded 10K",
       "sym": "NQ",
       "side": "short",
-      "size": 4.0726,
-      "entry": 25913.12426951,
+      "size": 5.5726,
+      "entry": 25901.0946237,
       "openedAt": 1795582912738,
       "hadStop": true,
       "flags": [],
-      "distZone": 16
+      "distZone": 8
     }
   ],
   "captures": [
