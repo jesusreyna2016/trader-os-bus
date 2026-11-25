@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T07:15:29.235Z",
+  "asOf": "2026-11-25T07:30:40.246Z",
   "state": "OK",
   "disciplineStreak": 0,
   "todayViolations": 0,
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 0,
+    "used": 1,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 0,
-    "pnlR": 0,
+    "pnl": 1008.78,
+    "pnlR": 20.18,
     "maxLossStreak": 0
   },
   "offZone": {
-    "count": 0,
-    "pnl": 0,
-    "ofTrades": 0
+    "count": 1,
+    "pnl": 1008.78,
+    "ofTrades": 1
   },
   "dataHealth": {
     "scanned": 1,
@@ -35,9 +35,15 @@
     "failed": [],
     "partial": false
   },
-  "openFlags": [],
-  "todayTrades": [],
-  "openPositions": [
+  "openFlags": [
+    {
+      "rule": "zona",
+      "at": 1795582912738,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (22 pts al nivel mas cercano)"
+    }
+  ],
+  "todayTrades": [
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
       "name": "Funded 10K",
@@ -45,12 +51,18 @@
       "side": "short",
       "size": 5.5726,
       "entry": 25901.0946237,
+      "exit": 25718.5,
+      "pnl": 1008.78,
+      "r": 20.18,
       "openedAt": 1795582912738,
-      "hadStop": true,
-      "flags": [],
-      "distZone": 8
+      "closedAt": 1795591251408,
+      "flags": [
+        "NO_ZONE"
+      ],
+      "distZone": 22
     }
   ],
+  "openPositions": [],
   "captures": [
     {
       "key": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y:1795570735062",
