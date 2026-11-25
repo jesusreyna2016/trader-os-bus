@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T03:45:33.043Z",
+  "asOf": "2026-11-25T04:00:43.853Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 2,
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 4,
+    "used": 5,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 1003.23,
-    "pnlR": 20.06,
+    "pnl": 988.93,
+    "pnlR": 19.78,
     "maxLossStreak": 1
   },
   "offZone": {
     "count": 3,
     "pnl": 484.03,
-    "ofTrades": 4
+    "ofTrades": 5
   },
   "dataHealth": {
     "scanned": 2,
@@ -44,7 +44,7 @@
     },
     {
       "rule": "stop",
-      "at": 1795576394092,
+      "at": 1795578492209,
       "sym": "NQ",
       "note": "posicion abierta sin stop"
     },
@@ -81,7 +81,7 @@
       "openedAt": 1795570735062,
       "closedAt": 1795573182086,
       "flags": [],
-      "distZone": 5
+      "distZone": 11
     },
     {
       "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
@@ -134,9 +134,7 @@
         "NO_ZONE"
       ],
       "distZone": 26
-    }
-  ],
-  "openPositions": [
+    },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
       "name": "Funded 10K",
@@ -144,12 +142,29 @@
       "side": "long",
       "size": 1,
       "entry": 25980,
+      "exit": 25967,
+      "pnl": -14.3,
+      "r": -0.29,
       "openedAt": 1795576394092,
+      "closedAt": 1795578492209,
+      "flags": [],
+      "distZone": 9
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
+      "name": "Funded 10K",
+      "sym": "NQ",
+      "side": "short",
+      "size": 2,
+      "entry": 25967,
+      "openedAt": 1795578492209,
       "hadStop": false,
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 10
+      "distZone": 4
     }
   ],
   "captures": [
