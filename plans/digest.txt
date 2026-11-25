@@ -1,11 +1,11 @@
-SA pre-london 2026-11-25 01:45 CT
-!! GC pred rango debil 20d (38%,n=56), pasivo
->> ES A+ PDL/IB 7144.75-7152.25 · 02:00-07:15
-NQ WAIT · corto · sin setup · EM 322p
-ES WAIT · corto · retest PDL/IB · EM 56p
-GC WAIT · corto · retest FVG1h · EM 34p
-YM WAIT · sin sesgo · fade VAH/PDH · EM 329p · chop!
-CL WAIT · corto · retest FVG · EM 1.2p
-Limpio: ES. A+ ya en precio, falta cierre de rechazo.
-Datos OK · Noticias NINGUNA · Cal -
-Prec 20d: sesgo ~52% · pred ~58%
+SA pre-ny 2026-11-25 08:07 CT
+!! CL: corto 8d roto, GIRA a largo, capado B (vs 24h)
+>> ES B demanda 7053-68 · 08:30-11:00 CT
+NQ WAIT · corto · demanda B (rebote fallo) · EM 439p chop!
+ES WAIT · corto · demanda B en precio · EM 76p
+GC WAIT · corto · sin A+, solo cont. B · EM 23p
+YM WAIT · corto · retest A+ lejos · EM 314p chop!
+CL WAIT · largo (giro) · retest B · EM 1.9p
+Limpio: ES. En precio, sin conflicto, falta rechazo.
+Datos OK · Noticias MEDIA · Cal core-pce,gdp
+Prec 20d: sesgo 49-57% · pred ~40-50%

@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-11-25T07:49:12.000Z",
-  "runType": "pre-london",
+  "lastRun": "2026-11-25T14:07:18.000Z",
+  "runType": "pre-ny",
   "ok": true,
-  "note": "plan reconstruido para Londres (zonas re-score, 5 simbolos), todo WAIT: GC/NQ sin A+ a tiro, ES/CL A+ en precio pendientes de confirmacion, YM bloqueado por conflicto de marcos"
+  "note": "plan reconstruido para NY (zonas re-score, 5 simbolos), todo WAIT: CL gira a largo tras romper su corto de 8 dias (capado en B), resto corto con zonas B en precio o lejos, sin A+ accionable"
 }
