@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T15:15:29.574Z",
-  "state": "TILT",
+  "asOf": "2026-11-25T15:30:43.253Z",
+  "state": "OK",
   "disciplineStreak": 0,
-  "todayViolations": 1,
+  "todayViolations": 0,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -35,14 +35,7 @@
     "failed": [],
     "partial": false
   },
-  "openFlags": [
-    {
-      "rule": "stop",
-      "at": 1795619662546,
-      "sym": "NQ",
-      "note": "posicion abierta sin stop"
-    }
-  ],
+  "openFlags": [],
   "todayTrades": [
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -66,15 +59,14 @@
       "name": "Funded 10K",
       "sym": "NQ",
       "side": "short",
-      "size": 1,
-      "entry": 25287.677,
+      "size": 3,
+      "entry": 25229.159,
       "openedAt": 1795619662546,
-      "hadStop": false,
+      "hadStop": true,
       "flags": [
-        "NO_STOP",
         "NO_ZONE"
       ],
-      "distZone": 78
+      "distZone": 68
     }
   ],
   "captures": [
