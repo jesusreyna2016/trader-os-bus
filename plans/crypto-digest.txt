@@ -1,8 +1,8 @@
-Contexto crypto-close 2026-11-25 18:30 CT
-ETH: SHORT, WAIT. Bajo VAL de ayer (1,682.41), a 2 puntos del PDL/swing 1h (1,668.83), precio 1,670.88 (-1.86% 24h), vigilando barrida + reclamo sobre 1,670 hacia VAL/POC
-BTC: SHORT, WAIT. Bajo VAL de ayer (60,004.0), a 87 puntos del PDL/swing 1h (59,469.0), IB de hoy roto sin reclamo, precio 59,556 (-2.45% 24h), vigilando barrida + reclamo sobre 59,520
-foco: ETH, BTC mas alineado a la baja (checklist corto en diario/4h/1h), conviccion baja en las dos
-riskWindow 13:15-14:00 UTC: Core PCE y PIB preliminar de EE.UU. (alto impacto) a las 13:30 UTC, nada de GO ahi
-sin titular cripto fresco de las ultimas 24h (news.json ~27h de antiguedad), sin hueco de CME hoy (miercoles)
-calificacion de ayer (2026-11-24 close+ny): las dos zonas bounce_val del close funcionaron, las mismas de la ny sin tocar
+Contexto crypto-ny 2026-11-25 08:49 CT
+ETH: SHORT, WAIT. Zona de rebote PDL/VAL rota (barrida sin reclamo, stop 1,664 superado). Precio 1,615.19 (-3.34% 24h), ya en la extension completa de ayer y un FVG alcista de 1h, sin calificar aun
+BTC: SHORT, WAIT. Zona de rebote PDL/VAL rota (stop 59,340 superado). Precio 57,566.10 (-3.48% 24h), en el borde de un FVG alcista de 1h y la extension 50-100% de ayer, sin calificar aun
+foco: ETH, sin zona A+ viva en ninguna; vigilando reaccion en la extension/FVG para el plan siguiente
+riskWindow cerrada: Core PCE/PIB (13:15-14:00 UTC) ya paso, sin otro evento de alto impacto hoy
+fondeo de ETH paso de cargado de cortos a neutral; miedo extremo sube un poco (13); sin titular ni shock nuevo
+calificacion de ayer (2026-11-24 close+ny) sigue igual: las dos zonas bounce_val del close funcionaron
 precision: 3/4 predicciones, 2/4 zonas

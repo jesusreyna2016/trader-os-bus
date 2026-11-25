@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-11-25T00:27:00Z",
-  "runType": "crypto-close",
+  "lastRun": "2026-11-25T14:49:45Z",
+  "runType": "crypto-ny",
   "ok": true,
-  "note": "califique 2026-11-24 (grade_plans.py --crypto): 2 zonas bounce_val worked, 3/4 predicciones. Plan nuevo escrito, lint OK. ETH y BTC bajo su VAL de ayer, acercandose al PDL/swing 1h; zona de rebote A+ del metodo en las dos, conviccion baja. riskWindow 13:15-14:00 UTC por Core PCE/PIB. WAIT en las dos."
+  "note": "update ligero: zona de rebote PDL/VAL rota en ETH y BTC (barrida sin reclamo, stop superado en las dos), precio en la extension/FVG de 1h sin calificar aun. Fondeo ETH paso a neutral, sesgo de sesion ETH a corto. riskWindow de Core PCE/PIB cerrada tras pasar. WAIT en las dos, lint OK."
 }
