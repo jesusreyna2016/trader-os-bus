@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T23:30:39.644Z",
-  "state": "TILT",
+  "asOf": "2026-11-25T23:45:37.250Z",
+  "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 21,
+  "todayViolations": 30,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 17,
+    "used": 21,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 2607.74,
-    "pnlR": 52.15,
+    "pnl": 1835.32,
+    "pnlR": 36.71,
     "maxLossStreak": 4
   },
   "offZone": {
     "count": 8,
     "pnl": 431.68,
-    "ofTrades": 17
+    "ofTrades": 21
   },
   "dataHealth": {
     "scanned": 3,
@@ -89,6 +89,36 @@
       "at": 1795630636222,
       "sym": "NQ",
       "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
+      "at": 1795648131539,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
+      "at": 1795649502246,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
+      "at": 1795649505699,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "stop",
+      "at": 1795649576283,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
+    },
+    {
+      "rule": "stop",
+      "at": 1795649572054,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
     },
     {
       "rule": "zona",
@@ -435,20 +465,6 @@
         "OVER_MAX_TRADES"
       ],
       "distZone": 0
-    }
-  ],
-  "openPositions": [
-    {
-      "acct": "jh70qet243gxtmtn8yw4v1pxp58jwky0",
-      "name": "Select 25K Challenge",
-      "sym": "NQ",
-      "side": "long",
-      "size": 6,
-      "entry": 26038.26110518,
-      "openedAt": 1795648131539,
-      "hadStop": true,
-      "flags": [],
-      "distZone": 0
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -457,9 +473,98 @@
       "side": "long",
       "size": 6,
       "entry": 26035.2,
+      "exit": 26003,
+      "pnl": -201.01,
+      "r": -4.02,
       "openedAt": 1795648122462,
-      "hadStop": true,
-      "flags": [],
+      "closedAt": 1795649505699,
+      "flags": [
+        "OVER_MAX_TRADES"
+      ],
+      "distZone": 0
+    },
+    {
+      "acct": "jh70qet243gxtmtn8yw4v1pxp58jwky0",
+      "name": "Select 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 6,
+      "entry": 26038.26110518,
+      "exit": 26000.55447167,
+      "pnl": -230.14,
+      "r": -4.6,
+      "openedAt": 1795648131539,
+      "closedAt": 1795649502246,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
+      ],
+      "distZone": 0
+    },
+    {
+      "acct": "jh70qet243gxtmtn8yw4v1pxp58jwky0",
+      "name": "Select 25K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 6,
+      "entry": 25999.24403167,
+      "exit": 26026.9,
+      "pnl": -169.84,
+      "r": -3.4,
+      "openedAt": 1795649502246,
+      "closedAt": 1795649576283,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
+      ],
+      "distZone": 0
+    },
+    {
+      "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 6,
+      "entry": 26002.20039667,
+      "exit": 26029.47169333,
+      "pnl": -171.43,
+      "r": -3.43,
+      "openedAt": 1795649505699,
+      "closedAt": 1795649572054,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
+      ],
+      "distZone": 0
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh70qet243gxtmtn8yw4v1pxp58jwky0",
+      "name": "Select 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 11,
+      "entry": 26029.99482369,
+      "openedAt": 1795649576283,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 0
+    },
+    {
+      "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 16,
+      "entry": 26032.34243796,
+      "openedAt": 1795649572054,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
       "distZone": 0
     }
   ],
