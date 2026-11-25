@@ -1,7 +1,7 @@
 {
-  "builtAt": "2026-11-23T21:15:37.539Z",
+  "builtAt": "2026-11-25T03:15:33.935Z",
   "news": {
-    "fetchedAt": 1795468537254,
+    "fetchedAt": 1795576533715,
     "source": "forexfactory",
     "events": [
       {
@@ -104,7 +104,7 @@
         "tags": [
           "oil"
         ],
-        "forecast": null,
+        "forecast": "2.0M",
         "previous": "3.4M"
       },
       {
@@ -123,221 +123,260 @@
     "earningsSource": "nasdaq",
     "headlines": [
       {
-        "title": "US seeks to recover $1.1B in crypto stolen in North Korea-linked Binance hack",
-        "ts": 1795467843000,
-        "source": "Cointelegraph",
+        "title": "Analysis | Trump’s Nvidia gambit shows the stock market is the economy",
+        "ts": 1795575382000,
+        "source": "The Washington Post",
         "tags": [
-          "geo",
-          "crypto",
-          "hack"
+          "trump"
         ]
       },
       {
-        "title": "Fed's John Williams indicates higher interest rates likely 'over time' to address inflation",
-        "ts": 1795467737000,
-        "source": "CNBC",
-        "tags": [
-          "fed"
-        ]
-      },
-      {
-        "title": "US Stock Selloff Revives Question of a Fed ‘Put,’ This Time Under Warsh",
-        "ts": 1795467679000,
-        "source": "Bloomberg.com",
-        "tags": [
-          "geo",
-          "fed"
-        ]
-      },
-      {
-        "title": "Peterson: Here’s what Bessent’s about-face on Jensen Huang reveals about Trump and China",
-        "ts": 1795467659000,
+        "title": "Op-ed: Trump’s Nvidia board intervention put a price on national security. Our adversaries will take note",
+        "ts": 1795575008000,
         "source": "CNBC",
         "tags": [
           "trump"
         ]
       },
       {
-        "title": "Kalshi secures temporary win in New York gambling law dispute",
-        "ts": 1795466323000,
-        "source": "Cointelegraph",
-        "tags": [
-          "crypto"
-        ]
-      },
-      {
-        "title": "North Korea Moves $247 Million of Binance Hack Loot Through Bitcoin Mixers",
-        "ts": 1795466162000,
-        "source": "Decrypt",
-        "tags": [
-          "geo",
-          "crypto",
-          "hack"
-        ]
-      },
-      {
-        "title": "Trump wanted to rescue the stock market with Huang return — but the long-term pain will be worse",
-        "ts": 1795465800000,
-        "source": "New York Post",
-        "tags": [
-          "trump"
-        ]
-      },
-      {
-        "title": "DOJ seeks $1.17 billion in USDC tied to Binance hack; Circle could issue replacement tokens",
-        "ts": 1795464034000,
+        "title": "New York senator proposes 10% tax on prediction market fees to fund universal pre-K",
+        "ts": 1795574774000,
         "source": "The Block",
         "tags": [
-          "crypto",
-          "hack"
-        ]
-      },
-      {
-        "title": "Why Nvidia Needed Jensen Huang Back—And What His Return Really Changes",
-        "ts": 1795463841000,
-        "source": "Decrypt",
-        "tags": [
           "crypto"
         ]
       },
       {
-        "title": "Trump administration proposes rule that could curb ESG investing in 401(k)s",
-        "ts": 1795463188000,
+        "title": "Houthi attack on Saudi Arabian sovereign wealth fund PIF's tower injures 11",
+        "ts": 1795574203000,
+        "source": "CNBC",
+        "tags": [
+          "geo"
+        ]
+      },
+      {
+        "title": "Trump open to pardoning Jensen Huang if needed: NY Post",
+        "ts": 1795572585000,
         "source": "CNBC",
         "tags": [
           "trump"
         ]
       },
       {
-        "title": "BTCS offloads $44M in ETH to reduce DeFi debt amid market downturn",
-        "ts": 1795462506000,
-        "source": "Cointelegraph",
+        "title": "Futures Fall; Trump Muses About Taking Nvidia Stake",
+        "ts": 1795572120000,
+        "source": "Investor's Business Daily",
         "tags": [
-          "crypto",
-          "eth"
+          "trump"
         ]
       },
       {
-        "title": "Eric Trump-Backed American Bitcoin Stock Surges 18% After Securing $150M Bitcoin-Backed Loan",
-        "ts": 1795462208000,
-        "source": "Benzinga",
+        "title": "Wall St futures fall after S&P 500, Nasdaq end lower; inflation data eyed",
+        "ts": 1795570920000,
+        "source": "Yahoo Finance",
         "tags": [
-          "trump",
+          "fed"
+        ]
+      },
+      {
+        "title": "CleanSpark weighs selling more Bitcoin than it mines to de-risk books",
+        "ts": 1795570859000,
+        "source": "Cointelegraph",
+        "tags": [
           "crypto"
         ]
       },
       {
-        "title": "Base makes quantum security a 2027 priority as regulators warn of risks",
-        "ts": 1795461406000,
-        "source": "Cointelegraph",
-        "tags": [
-          "crypto",
-          "geo",
-          "regulation"
-        ]
-      },
-      {
-        "title": "Donald Trump says he 'convinced' Nvidia to reinstate Jensen Huang",
-        "ts": 1795461284000,
+        "title": "Trump's Nvidia intervention ties his political fortunes to the AI boom",
+        "ts": 1795568585000,
         "source": "BBC",
         "tags": [
           "trump"
         ]
       },
       {
-        "title": "GPU Jesus Has Risen: Jensen Huang’s Nvidia Comeback Gets a Meme Parade",
-        "ts": 1795459521000,
-        "source": "Decrypt",
-        "tags": [
-          "crypto"
-        ]
-      },
-      {
-        "title": "CFTC prediction market rules advance to White House review amid state-federal jurisdiction fight",
-        "ts": 1795458609000,
-        "source": "The Block",
-        "tags": [
-          "crypto",
-          "trump",
-          "fed",
-          "regulation"
-        ]
-      },
-      {
-        "title": "Solo Bitcoin Miner Scores Again, Hitting $191,000 Jackpot Against the Odds",
-        "ts": 1795457785000,
-        "source": "Decrypt",
-        "tags": [
-          "crypto"
-        ]
-      },
-      {
-        "title": "Perps and Swaps: How to Trade the News on Decrypt",
-        "ts": 1795457745000,
-        "source": "Decrypt",
-        "tags": [
-          "crypto"
-        ]
-      },
-      {
-        "title": "Cuomo says rivals urged companies to opt out of OKXICE tokenized stocks",
-        "ts": 1795455738000,
-        "source": "Cointelegraph",
-        "tags": [
-          "crypto"
-        ]
-      },
-      {
-        "title": "Sky cofounder weighs SKY sale to repay $77 million as stUSDS pool runs dry",
-        "ts": 1795455110000,
-        "source": "The Block",
-        "tags": [
-          "crypto"
-        ]
-      },
-      {
-        "title": "Jensen Huang’s Wealth Rises $36 Billion as Nvidia Surge Burns Short Sellers for $12 Billion",
-        "ts": 1795454888000,
-        "source": "Decrypt",
-        "tags": [
-          "crypto"
-        ]
-      },
-      {
-        "title": "UAE stock market resilience: DFM and ADX defy Oil slump and global volatility",
-        "ts": 1795454259000,
-        "source": "FXStreet",
+        "title": "Princeton Dropped Its Oil-Stock Ban in June. Energy Stocks Have Returned 162% Since the End of 2019",
+        "ts": 1795566653000,
+        "source": "Energy News Beat",
         "tags": [
           "oil"
         ]
       },
       {
-        "title": "Trump tells CNBC ‘I made the deal’ to reinstate Nvidia’s Jensen Huang",
-        "ts": 1795454199000,
+        "title": "How Trump may have profited from Huang's return to Nvidia",
+        "ts": 1795564553000,
+        "source": "PBS",
+        "tags": [
+          "trump"
+        ]
+      },
+      {
+        "title": "Hackers breach CIA intelligence network in latest US cyberattack",
+        "ts": 1795564096000,
+        "source": "Cointelegraph",
+        "tags": [
+          "crypto",
+          "hack"
+        ]
+      },
+      {
+        "title": "Comment on Stock Contributions to Trump Accounts",
+        "ts": 1795562315000,
+        "source": "The Tax Law Center",
+        "tags": [
+          "trump"
+        ]
+      },
+      {
+        "title": "U.S. stock futures edge mixed as tech weakness and inflation focus weigh on sentiment",
+        "ts": 1795561771000,
+        "source": "Traders Union",
+        "tags": [
+          "fed"
+        ]
+      },
+      {
+        "title": "OpenAI and Anthropic Insiders Fear Their Next AI Models Are Too Dangerous to Release",
+        "ts": 1795559762000,
+        "source": "Decrypt",
+        "tags": [
+          "crypto"
+        ]
+      },
+      {
+        "title": "Trump Account contributions from friends and family pass $1 billion mark, Treasury says",
+        "ts": 1795558727000,
         "source": "CNBC",
         "tags": [
           "trump"
         ]
       },
       {
-        "title": "Trump’s Own Stock Portfolio Likely Benefits From Nvidia’s Rise",
-        "ts": 1795453475000,
-        "source": "The New York Times",
+        "title": "Jensen Huang returns to Nvidia. Trump takes credit, posts meme",
+        "ts": 1795558519000,
+        "source": "USA Today",
         "tags": [
           "trump"
         ]
       },
       {
-        "title": "Trump's Pressure and Stock Plunge Lead to Jensen Huang's Shock Return to Nvidia",
-        "ts": 1795453330000,
-        "source": "news.sbs.co.kr",
+        "title": "Here’s what happened in crypto today",
+        "ts": 1795558330000,
+        "source": "Cointelegraph",
+        "tags": [
+          "crypto"
+        ]
+      },
+      {
+        "title": "Bitcoin miner CleanSpark swings to $987 million annual loss as BTC production declines",
+        "ts": 1795558245000,
+        "source": "The Block",
+        "tags": [
+          "crypto"
+        ]
+      },
+      {
+        "title": "Dell earnings beat on AI strength, company authorizes $25 billion buyback",
+        "ts": 1795558065000,
+        "source": "CNBC",
+        "tags": [
+          "earnings"
+        ]
+      },
+      {
+        "title": "Europol follows $28.5M crypto trail in streaming piracy crackdown",
+        "ts": 1795557025000,
+        "source": "Cointelegraph",
+        "tags": [
+          "crypto"
+        ]
+      },
+      {
+        "title": "Anthropic’s Claude Ship Lets AI Write, Review and Approve Its Own Code",
+        "ts": 1795556762000,
+        "source": "Decrypt",
+        "tags": [
+          "crypto"
+        ]
+      },
+      {
+        "title": "Tourmaline Oil Corp. stock rises Tuesday, outperforms market",
+        "ts": 1795556100000,
+        "source": "MarketWatch",
+        "tags": [
+          "oil"
+        ]
+      },
+      {
+        "title": "Imperial Oil Ltd. stock rises Tuesday, outperforms market",
+        "ts": 1795555920000,
+        "source": "MarketWatch",
+        "tags": [
+          "oil"
+        ]
+      },
+      {
+        "title": "Stock Market Today, November 24, 2026: Nasdaq Falls as Nvidia and Anthropic Slide, Oil price at $89, Gold Drops to $3,620",
+        "ts": 1795555529000,
+        "source": "Eurasia Business News",
+        "tags": [
+          "oil"
+        ]
+      },
+      {
+        "title": "What Would It Take For Lower Oil Prices To Break Occidental Stock?",
+        "ts": 1795555110000,
+        "source": "Trefis",
+        "tags": [
+          "oil"
+        ]
+      },
+      {
+        "title": "Coldcard Bitcoin Exploit, Revisited: How a Hidden Flaw Survived Years of Audits",
+        "ts": 1795554962000,
+        "source": "Decrypt",
+        "tags": [
+          "crypto",
+          "hack"
+        ]
+      },
+      {
+        "title": "Trump wanted Jensen Huang back. Now, the president is all alone in Washington",
+        "ts": 1795554819000,
+        "source": "CNBC",
         "tags": [
           "trump"
         ]
       },
       {
-        "title": "Bitcoin rebounds 17% from $55K lows as Nvidia rally sparks $500M crypto liquidations",
-        "ts": 1795452677000,
+        "title": "SEC staff gives Molecule no-action relief for scientific research tokens",
+        "ts": 1795553594000,
+        "source": "The Block",
+        "tags": [
+          "crypto",
+          "regulation"
+        ]
+      },
+      {
+        "title": "Utah moves to dismiss criminal charges against Kalshi after trading halt",
+        "ts": 1795553307000,
+        "source": "Cointelegraph",
+        "tags": [
+          "crypto"
+        ]
+      },
+      {
+        "title": "Ethereum Foundation Says AI Is a More Urgent Threat Than Quantum Computing",
+        "ts": 1795552562000,
+        "source": "Decrypt",
+        "tags": [
+          "crypto",
+          "eth"
+        ]
+      },
+      {
+        "title": "Bitcoin sell-off driven by weak demand, forced liquidations: 21Shares",
+        "ts": 1795549463000,
         "source": "Cointelegraph",
         "tags": [
           "crypto",
@@ -345,240 +384,193 @@
         ]
       },
       {
-        "title": "Tom Lee Says Ethereum Is as Scarce as Bitcoin—And Bitmine Just Bought More",
-        "ts": 1795452363000,
+        "title": "Bitcoin Losses Are the Worst Since FTX. Is the Bottom Near?",
+        "ts": 1795548932000,
         "source": "Decrypt",
         "tags": [
-          "crypto",
-          "eth"
-        ]
-      },
-      {
-        "title": "Eric Trump’s American Bitcoin Borrows $150 M Loan Against BTC, Stock Jumps 20%",
-        "ts": 1795452107000,
-        "source": "Coinpedia",
-        "tags": [
-          "trump",
           "crypto"
         ]
       },
       {
-        "title": "American Airlines Shares Rise on Falling Oil Prices",
-        "ts": 1795451783000,
-        "source": "Wisevoter",
+        "title": "Nvidia stock surges as Jensen Huang rehired. Thank you, Trump!",
+        "ts": 1795548900000,
+        "source": "The Hill",
+        "tags": [
+          "trump"
+        ]
+      },
+      {
+        "title": "Coldcard reveals how Bitcoin wallet flaw went undetected for over 5 years",
+        "ts": 1795547066000,
+        "source": "Cointelegraph",
+        "tags": [
+          "crypto"
+        ]
+      },
+      {
+        "title": "What the CFTC’s New Crypto Reserves Guidance Actually Allows—And What It Doesn’t",
+        "ts": 1795546527000,
+        "source": "Decrypt",
+        "tags": [
+          "earnings",
+          "crypto",
+          "regulation"
+        ]
+      },
+      {
+        "title": "South Korea Moves to Lift Its ICO Ban After Nearly a Decade",
+        "ts": 1795545363000,
+        "source": "Decrypt",
+        "tags": [
+          "crypto",
+          "regulation"
+        ]
+      },
+      {
+        "title": "Payward’s Krak plans early 2027 launch of US credit cards with bitcoin cashback, including one secured by USDC",
+        "ts": 1795545302000,
+        "source": "The Block",
+        "tags": [
+          "crypto"
+        ]
+      },
+      {
+        "title": "Consumer confidence shoots up after Democrats' midterm victories — though inflation worries persist",
+        "ts": 1795545283000,
+        "source": "CNBC",
+        "tags": [
+          "fed"
+        ]
+      },
+      {
+        "title": "CFTC sets new prediction market rules as more firms seek US entry",
+        "ts": 1795545102000,
+        "source": "Cointelegraph",
+        "tags": [
+          "crypto",
+          "regulation"
+        ]
+      },
+      {
+        "title": "Vedanta Oil and Gas Limited (VOGL.NS) Stock Price, News, Quote & History",
+        "ts": 1795544782000,
+        "source": "Yahoo! Finance Canada",
         "tags": [
           "oil"
         ]
       },
       {
-        "title": "Bitcoin Rallies, Anthropic Sinks as Nvidia Surges 35% on Jensen Huang’s Return",
-        "ts": 1795451524000,
+        "title": "Wall Street and Crypto Are in 'Extreme Fear'. What's Spooking Investors?",
+        "ts": 1795544162000,
         "source": "Decrypt",
         "tags": [
           "crypto"
         ]
       },
       {
-        "title": "Cross River Bank enters Bitcoin-backed lending with $250K loans",
-        "ts": 1795451017000,
+        "title": "BlackRock launches tokenized money market fund accepting stablecoins in Hong Kong",
+        "ts": 1795543642000,
         "source": "Cointelegraph",
         "tags": [
-          "crypto"
+          "crypto",
+          "etf"
         ]
       },
       {
-        "title": "Trump Bought $265,000 in Nvidia Stock in September. Now He Says the American Economy ‘Needs’ Disgraced CEO Jensen Huang’s Leadership",
-        "ts": 1795450920000,
-        "source": "شبكة تواصل الإخبارية",
-        "tags": [
-          "trump"
-        ]
-      },
-      {
-        "title": "How market depth shapes the price of a weekend Bitcoin sale",
-        "ts": 1795449475000,
-        "source": "Cointelegraph",
-        "tags": [
-          "crypto"
-        ]
-      },
-      {
-        "title": "Trump Gave Nvidia's Board Assurances That Jensen Huang Was Not A National Security Threat, And Now The Stock Is Soaring",
-        "ts": 1795448880000,
-        "source": "24/7 Wall St.",
-        "tags": [
-          "trump"
-        ]
-      },
-      {
-        "title": "DeFi Development extends Solana buying streak to 11 straight weeks, SOL treasury hits 2.62 million",
-        "ts": 1795448091000,
-        "source": "The Block",
-        "tags": [
-          "crypto"
-        ]
-      },
-      {
-        "title": "Netflix’s ‘The Altruists’ sparks FTX portrayal debate among crypto bigwigs from CZ to Star Xu",
-        "ts": 1795447131000,
-        "source": "CNBC",
-        "tags": [
-          "crypto"
-        ]
-      },
-      {
-        "title": "GameStop Gains Attention as Analysts Favor Shares and Trump Buys Stock",
-        "ts": 1795446584000,
-        "source": "bsinews.id",
-        "tags": [
-          "trump"
-        ]
-      },
-      {
-        "title": "Trump blames Democrats for Iran escalation, stock market decline",
-        "ts": 1795446328000,
-        "source": "アラブニュース",
-        "tags": [
-          "geo",
-          "trump"
-        ]
-      },
-      {
-        "title": "Bitmine adds 7,819 ETH as Tom Lee makes the ‘hard money’ case",
-        "ts": 1795446161000,
+        "title": "Rep. Raskin probes Trump Jr.’s firm’s investments into Polymarket and Juul over ‘suspiciously well-timed government favors’",
+        "ts": 1795543503000,
         "source": "The Block",
         "tags": [
           "crypto",
-          "eth"
-        ]
-      },
-      {
-        "title": "Bitcoin, crypto and tech stocks rally as Nvidia reinstates Jensen Huang as CEO; NVDA jumps 30%",
-        "ts": 1795446141000,
-        "source": "The Block",
-        "tags": [
-          "crypto"
-        ]
-      },
-      {
-        "title": "Trump claims credit as Jensen Huang returns to Nvidia",
-        "ts": 1795445621000,
-        "source": "NPR",
-        "tags": [
           "trump"
         ]
       },
       {
-        "title": "Nvidia reinstates Jensen Huang as CEO amid ongoing intelligence probe",
-        "ts": 1795445220000,
-        "source": "Cointelegraph",
+        "title": "What Is Pons? The Robinhood Chain Meme Coin Launchpad Explained",
+        "ts": 1795542322000,
+        "source": "Decrypt",
         "tags": [
-          "crypto"
-        ]
-      },
-      {
-        "title": "Nvidia Stock Jumped on Trump's Call to Rehire Jensen Huang.",
-        "ts": 1795444080000,
-        "source": "The Motley Fool",
-        "tags": [
-          "trump"
-        ]
-      },
-      {
-        "title": "Nvidia stock soars as Trump makes U-turn on Jensen Huang, cheers Huang's return as CEO",
-        "ts": 1795443759000,
-        "source": "Yahoo Finance Singapore",
-        "tags": [
-          "trump"
-        ]
-      },
-      {
-        "title": "Trump hosts crypto gala as his meme coin falls below $1",
-        "ts": 1795443342000,
-        "source": "CNBC",
-        "tags": [
-          "trump",
           "crypto"
         ]
       }
     ]
   },
   "macro": {
-    "generatedAt": "2026-11-23T21:15:34.618Z",
+    "generatedAt": "2026-11-25T03:15:31.051Z",
     "intermarket": {
       "ZN": {
-        "last": 106.641,
-        "chgPct": -0.19,
-        "prevHigh": 106.891,
-        "prevLow": 105.906,
+        "last": 106.906,
+        "chgPct": 0.04,
+        "prevHigh": 107,
+        "prevLow": 106.516,
         "brokePrevHigh": false,
         "brokePrevLow": false,
-        "chg5dPct": 1.14,
-        "asOf": "2026-11-23T21:05:28.000Z"
+        "chg5dPct": 1.06,
+        "asOf": "2026-11-25T03:05:00.000Z"
       },
       "VIX9D": {
-        "last": 28.11,
-        "chgPct": -30.97,
-        "prevHigh": 46.21,
-        "prevLow": 27.35,
-        "brokePrevHigh": false,
-        "brokePrevLow": false,
-        "chg5dPct": 21.43,
-        "asOf": "2026-11-23T21:00:17.000Z"
-      },
-      "VIX": {
-        "last": 26.81,
-        "chgPct": -25.3,
-        "prevHigh": 40.03,
-        "prevLow": 26.94,
+        "last": 26.68,
+        "chgPct": -3.89,
+        "prevHigh": 40.72,
+        "prevLow": 27.23,
         "brokePrevHigh": false,
         "brokePrevLow": true,
-        "chg5dPct": 17.02,
-        "asOf": "2026-11-23T21:00:16.000Z"
-      },
-      "US10Y": {
-        "last": 4.918,
-        "chgPct": 0.12,
-        "prevHigh": 4.996,
-        "prevLow": 4.906,
-        "brokePrevHigh": false,
-        "brokePrevLow": false,
-        "chg5dPct": -3.96,
-        "asOf": "2026-11-23T19:59:52.000Z"
+        "chg5dPct": -0.07,
+        "asOf": "2026-11-24T21:15:01.000Z"
       },
       "DXY": {
-        "last": 104.312,
-        "chgPct": 0.48,
-        "prevHigh": 103.95,
-        "prevLow": 103.58,
-        "brokePrevHigh": true,
+        "last": 103.903,
+        "chgPct": 0.09,
+        "prevHigh": 104.4,
+        "prevLow": 103.75,
+        "brokePrevHigh": false,
         "brokePrevLow": false,
-        "chg5dPct": 0.74,
-        "asOf": "2026-11-23T21:05:29.000Z"
+        "chg5dPct": 0.04,
+        "asOf": "2026-11-25T03:05:28.000Z"
       },
-      "VIX3M": {
-        "last": 25.69,
-        "chgPct": -16.97,
-        "prevHigh": 33.31,
-        "prevLow": 25.98,
+      "US10Y": {
+        "last": 4.904,
+        "chgPct": -0.28,
+        "prevHigh": 4.982,
+        "prevLow": 4.908,
         "brokePrevHigh": false,
         "brokePrevLow": true,
-        "chg5dPct": 11.6,
-        "asOf": "2026-11-23T21:00:16.000Z"
+        "chg5dPct": -3.9,
+        "asOf": "2026-11-24T19:59:53.000Z"
       },
-      "BTC": {
-        "last": 61315.01,
-        "chgPct": 0.25,
-        "prevHigh": 61561.594,
-        "prevLow": 58660.473,
+      "VIX3M": {
+        "last": 25.47,
+        "chgPct": -0.12,
+        "prevHigh": 30.94,
+        "prevLow": 24.77,
         "brokePrevHigh": false,
         "brokePrevLow": false,
-        "chg5dPct": -2.65,
-        "asOf": "2026-11-23T21:15:30.000Z"
+        "chg5dPct": 1.96,
+        "asOf": "2026-11-24T21:15:01.000Z"
+      },
+      "BTC": {
+        "last": 59416.05,
+        "chgPct": -2.93,
+        "prevHigh": 64478.363,
+        "prevLow": 60297.496,
+        "brokePrevHigh": false,
+        "brokePrevLow": true,
+        "chg5dPct": -4.02,
+        "asOf": "2026-11-25T03:15:25.000Z"
+      },
+      "VIX": {
+        "last": 26.36,
+        "chgPct": -0.98,
+        "prevHigh": 35.08,
+        "prevLow": 15.39,
+        "brokePrevHigh": false,
+        "brokePrevLow": false,
+        "chg5dPct": 3.53,
+        "asOf": "2026-11-24T21:15:01.000Z"
       },
       "vixCurve": {
-        "vix9dOverVix": 1.048,
-        "vixOverVix3m": 1.044,
+        "vix9dOverVix": 1.012,
+        "vixOverVix3m": 1.035,
         "state": "backwardation"
       }
     },
@@ -626,58 +618,58 @@
       }
     },
     "crypto": {
+      "cmeGap": {
+        "cmeClose": 1673,
+        "cmeCloseDate": "2026-11-24",
+        "gapPct": -0.68
+      },
       "fearGreed": {
-        "value": 11,
+        "value": 13,
         "label": "Extreme Fear",
         "prev": 11
       },
-      "cmeGap": {
-        "cmeClose": 1597.5,
-        "cmeCloseDate": "2026-11-20",
-        "gapPct": 7.93
-      },
-      "ethSpot": 1724.12,
+      "ethSpot": 1661.55,
       "ethBtc": {
-        "last": 0.02813,
-        "chg24hPct": -0.05,
-        "chg7dPct": 0.22
+        "last": 0.02797,
+        "chg24hPct": 0.2,
+        "chg7dPct": -0.45
       },
       "dvol": {
-        "last": 65.59,
-        "chg24h": -4.59
+        "last": 66.28,
+        "chg24h": 0.43
       },
       "ethDeriv": {
-        "fundingPct": -0.0069,
-        "fundingState": "shorts-crowded",
-        "oiUsd": 1433461235,
-        "oiChg24hPct": -2.37,
-        "longShortAccounts": 2.9,
-        "longShortChg24h": 0.63
+        "fundingPct": 0.0075,
+        "fundingState": "neutral",
+        "oiUsd": 1433126157,
+        "oiChg24hPct": -0.35,
+        "longShortAccounts": 3.11,
+        "longShortChg24h": 0.02
       },
       "btcDeriv": {
-        "fundingPct": 0.0063,
+        "fundingPct": 0.0032,
         "fundingState": "neutral",
-        "oiUsd": 2681530001,
-        "oiChg24hPct": -4.69,
-        "longShortAccounts": 2.65,
-        "longShortChg24h": 0.45
+        "oiUsd": 2702317548,
+        "oiChg24hPct": -0.03,
+        "longShortAccounts": 2.64,
+        "longShortChg24h": -0.06
       }
     },
     "flows": [
       {
         "type": "month-end",
         "date": "2026-11-30",
-        "inDays": 7
+        "inDays": 6
       },
       {
         "type": "vix-expiry",
         "date": "2026-12-16",
-        "inDays": 23
+        "inDays": 22
       },
       {
         "type": "triple-witching",
         "date": "2026-12-18",
-        "inDays": 25
+        "inDays": 24
       }
     ]
   }
