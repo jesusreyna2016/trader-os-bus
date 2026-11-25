@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T17:01:06.161Z",
+  "asOf": "2026-11-25T17:15:35.146Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 10,
@@ -24,8 +24,8 @@
     "maxLossStreak": 4
   },
   "offZone": {
-    "count": 5,
-    "pnl": -566.19,
+    "count": 6,
+    "pnl": -916.32,
     "ofTrades": 8
   },
   "dataHealth": {
@@ -82,19 +82,25 @@
       "rule": "zona",
       "at": 1795619662546,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (43 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (32 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795623083132,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (48 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (29 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
+      "at": 1795623195116,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (22 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795623260424,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (50 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (31 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
@@ -140,7 +146,7 @@
       "flags": [
         "NO_ZONE"
       ],
-      "distZone": 43
+      "distZone": 32
     },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -172,7 +178,7 @@
       "flags": [
         "NO_ZONE"
       ],
-      "distZone": 48
+      "distZone": 29
     },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -187,9 +193,10 @@
       "openedAt": 1795623195116,
       "closedAt": 1795623252337,
       "flags": [
-        "R1_REVENGE"
+        "R1_REVENGE",
+        "NO_ZONE"
       ],
-      "distZone": 4
+      "distZone": 22
     },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -208,7 +215,7 @@
         "OVER_MAX_TRADES",
         "NO_ZONE"
       ],
-      "distZone": 50
+      "distZone": 31
     },
     {
       "acct": "jh70qet243gxtmtn8yw4v1pxp58jwky0",
@@ -260,10 +267,9 @@
       "openedAt": 1795625329526,
       "hadStop": false,
       "flags": [
-        "NO_STOP",
-        "NO_ZONE"
+        "NO_STOP"
       ],
-      "distZone": 37
+      "distZone": 17
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
