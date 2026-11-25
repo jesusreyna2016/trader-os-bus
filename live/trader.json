@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T22:30:43.491Z",
+  "asOf": "2026-11-25T22:45:29.943Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 21,
@@ -478,8 +478,8 @@
     }
   ],
   "lastReview": {
-    "date": "2026-11-24",
-    "path": "reviews/2026-11-24.md",
+    "date": "2026-11-25",
+    "path": "reviews/2026-11-25.md",
     "headline": "Veredicto: ROTO** (por reglas, no por P&L)"
   }
 }
