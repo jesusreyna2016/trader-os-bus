@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T02:01:09.461Z",
+  "asOf": "2026-11-25T02:15:36.103Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 1,
@@ -57,10 +57,33 @@
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 11
+      "distZone": 1
     }
   ],
-  "captures": [],
+  "captures": [
+    {
+      "key": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y:1795570735062",
+      "date": "2026-11-25",
+      "sym": "NQ",
+      "side": "short",
+      "entry": 26086.97142857,
+      "pnl": null,
+      "acctNo": "FP-64532137",
+      "stage": "evaluation",
+      "openedAt": 1795570735062,
+      "reason": "rechazo en el vwap, continuacion de la tendencia bajista",
+      "emotion": null,
+      "checklist": {
+        "atLevel": true,
+        "withBias": true,
+        "hadTrigger": true
+      },
+      "atEntry": true,
+      "shot": null,
+      "at": "2026-11-25T02:13:00.318Z",
+      "src": "la-mesa"
+    }
+  ],
   "lastReview": {
     "date": "2026-11-24",
     "path": "reviews/2026-11-24.md",
