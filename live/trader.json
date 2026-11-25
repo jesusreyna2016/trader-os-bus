@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T04:30:43.170Z",
+  "asOf": "2026-11-25T04:45:26.891Z",
   "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 4,
+  "todayViolations": 6,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 6,
+    "used": 7,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 990.01,
-    "pnlR": 19.8,
+    "pnl": 865.17,
+    "pnlR": 17.3,
     "maxLossStreak": 1
   },
   "offZone": {
     "count": 3,
     "pnl": 484.03,
-    "ofTrades": 6
+    "ofTrades": 7
   },
   "dataHealth": {
     "scanned": 2,
@@ -50,8 +50,14 @@
     },
     {
       "rule": "stop",
-      "at": 1795579963821,
+      "at": 1795581131012,
       "sym": "ETH",
+      "note": "posicion abierta sin stop"
+    },
+    {
+      "rule": "stop",
+      "at": 1795581300295,
+      "sym": "NQ",
       "note": "posicion abierta sin stop"
     },
     {
@@ -173,9 +179,7 @@
         "OVER_MAX_TRADES"
       ],
       "distZone": 4
-    }
-  ],
-  "openPositions": [
+    },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
       "name": "Funded 10K",
@@ -183,12 +187,46 @@
       "side": "long",
       "size": 23.815,
       "entry": 1663.17562881,
+      "exit": 1658.93,
+      "pnl": -124.84,
+      "r": -2.5,
       "openedAt": 1795579963821,
+      "closedAt": 1795581131012,
+      "flags": [
+        "OVER_MAX_TRADES"
+      ],
+      "distZone": 2
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
+      "name": "Funded 10K",
+      "sym": "ETH",
+      "side": "short",
+      "size": 23.815,
+      "entry": 1658.93,
+      "openedAt": 1795581131012,
       "hadStop": false,
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 2
+      "distZone": 1
+    },
+    {
+      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
+      "name": "Funded 10K",
+      "sym": "NQ",
+      "side": "short",
+      "size": 1.0069,
+      "entry": 25944.1,
+      "openedAt": 1795581300295,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP",
+        "NO_ZONE"
+      ],
+      "distZone": 27
     }
   ],
   "captures": [
