@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T15:30:43.253Z",
-  "state": "OK",
+  "asOf": "2026-11-25T16:15:36.756Z",
+  "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 0,
+  "todayViolations": 2,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 1,
+    "used": 5,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 1008.78,
-    "pnlR": 20.18,
-    "maxLossStreak": 0
+    "pnl": 664.58,
+    "pnlR": 13.29,
+    "maxLossStreak": 2
   },
   "offZone": {
-    "count": 0,
-    "pnl": 0,
-    "ofTrades": 1
+    "count": 1,
+    "pnl": -495.97,
+    "ofTrades": 5
   },
   "dataHealth": {
     "scanned": 1,
@@ -35,7 +35,26 @@
     "failed": [],
     "partial": false
   },
-  "openFlags": [],
+  "openFlags": [
+    {
+      "rule": "R1",
+      "at": 1795623195116,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "stop",
+      "at": 1795623260424,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
+    },
+    {
+      "rule": "zona",
+      "at": 1795623083132,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (48 pts al nivel mas cercano)"
+    }
+  ],
   "todayTrades": [
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -51,9 +70,7 @@
       "closedAt": 1795591251408,
       "flags": [],
       "distZone": 14
-    }
-  ],
-  "openPositions": [
+    },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
       "name": "Funded 10K",
@@ -61,12 +78,79 @@
       "side": "short",
       "size": 3,
       "entry": 25229.159,
+      "exit": 25223.41087333,
+      "pnl": 13.46,
+      "r": 0.27,
       "openedAt": 1795619662546,
-      "hadStop": true,
+      "closedAt": 1795620900340,
+      "flags": [],
+      "distZone": 14
+    },
+    {
+      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
+      "name": "Funded 10K",
+      "sym": "NQ",
+      "side": "short",
+      "size": 8,
+      "entry": 25164.31968366,
+      "exit": 25101.85082874,
+      "pnl": 488.44,
+      "r": 9.77,
+      "openedAt": 1795620955184,
+      "closedAt": 1795623083132,
+      "flags": [],
+      "distZone": 3
+    },
+    {
+      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
+      "name": "Funded 10K",
+      "sym": "NQ",
+      "side": "long",
+      "size": 8,
+      "entry": 25101.959945,
+      "exit": 25041.21690544,
+      "pnl": -495.97,
+      "r": -9.92,
+      "openedAt": 1795623083132,
+      "closedAt": 1795623186966,
       "flags": [
         "NO_ZONE"
       ],
-      "distZone": 68
+      "distZone": 48
+    },
+    {
+      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
+      "name": "Funded 10K",
+      "sym": "NQ",
+      "side": "short",
+      "size": 7,
+      "entry": 25049.49982429,
+      "exit": 25098.26536571,
+      "pnl": -350.13,
+      "r": -7,
+      "openedAt": 1795623195116,
+      "closedAt": 1795623252337,
+      "flags": [
+        "R1_REVENGE"
+      ],
+      "distZone": 4
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
+      "name": "Funded 10K",
+      "sym": "NQ",
+      "side": "long",
+      "size": 2,
+      "entry": 25103.8,
+      "openedAt": 1795623260424,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP",
+        "NO_ZONE"
+      ],
+      "distZone": 50
     }
   ],
   "captures": [
