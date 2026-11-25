@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T23:00:44.126Z",
+  "asOf": "2026-11-25T23:15:32.963Z",
   "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 21,
+  "todayViolations": 23,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -24,8 +24,8 @@
     "maxLossStreak": 4
   },
   "offZone": {
-    "count": 10,
-    "pnl": 1057.65,
+    "count": 8,
+    "pnl": 431.68,
     "ofTrades": 17
   },
   "dataHealth": {
@@ -91,10 +91,16 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "zona",
-      "at": 1795619662546,
+      "rule": "stop",
+      "at": 1795648131539,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (20 pts al nivel mas cercano)"
+      "note": "posicion abierta sin stop"
+    },
+    {
+      "rule": "stop",
+      "at": 1795648122462,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
     },
     {
       "rule": "zona",
@@ -143,12 +149,6 @@
       "at": 1795625479906,
       "sym": "NQ",
       "note": "entrada en tierra de nadie (100 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795630636222,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (20 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -165,7 +165,7 @@
       "openedAt": 1795582912738,
       "closedAt": 1795591251408,
       "flags": [],
-      "distZone": 14
+      "distZone": 0
     },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -179,9 +179,7 @@
       "r": 0.27,
       "openedAt": 1795619662546,
       "closedAt": 1795620900340,
-      "flags": [
-        "NO_ZONE"
-      ],
+      "flags": [],
       "distZone": 20
     },
     {
@@ -360,7 +358,7 @@
       "flags": [
         "OVER_MAX_TRADES"
       ],
-      "distZone": 0
+      "distZone": 1
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -395,7 +393,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 0
+      "distZone": 6
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -413,7 +411,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 17
+      "distZone": 0
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -446,13 +444,41 @@
       "closedAt": 1795642468608,
       "flags": [
         "R1_REVENGE",
-        "OVER_MAX_TRADES",
-        "NO_ZONE"
+        "OVER_MAX_TRADES"
       ],
-      "distZone": 20
+      "distZone": 0
     }
   ],
-  "openPositions": [],
+  "openPositions": [
+    {
+      "acct": "jh70qet243gxtmtn8yw4v1pxp58jwky0",
+      "name": "Select 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 6,
+      "entry": 26038.26110518,
+      "openedAt": 1795648131539,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 0
+    },
+    {
+      "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 6,
+      "entry": 26035.2,
+      "openedAt": 1795648122462,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 0
+    }
+  ],
   "captures": [
     {
       "key": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y:1795570735062",
