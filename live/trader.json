@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T05:00:47.846Z",
+  "asOf": "2026-11-25T05:15:32.523Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 8,
+  "todayViolations": 9,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -24,8 +24,8 @@
     "maxLossStreak": 3
   },
   "offZone": {
-    "count": 2,
-    "pnl": 490.55,
+    "count": 1,
+    "pnl": 294.82,
     "ofTrades": 9
   },
   "dataHealth": {
@@ -61,10 +61,10 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "zona",
-      "at": 1795574533943,
+      "rule": "stop",
+      "at": 1795582912738,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (22 pts al nivel mas cercano)"
+      "note": "posicion abierta sin stop"
     },
     {
       "rule": "zona",
@@ -102,7 +102,7 @@
       "openedAt": 1795573303121,
       "closedAt": 1795574531431,
       "flags": [],
-      "distZone": 15
+      "distZone": 4
     },
     {
       "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
@@ -117,10 +117,9 @@
       "openedAt": 1795574533943,
       "closedAt": 1795575932174,
       "flags": [
-        "R1_REVENGE",
-        "NO_ZONE"
+        "R1_REVENGE"
       ],
-      "distZone": 22
+      "distZone": 3
     },
     {
       "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
@@ -152,7 +151,7 @@
       "openedAt": 1795576394092,
       "closedAt": 1795578492209,
       "flags": [],
-      "distZone": 14
+      "distZone": 1
     },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -170,7 +169,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 16
+      "distZone": 14
     },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -187,7 +186,7 @@
       "flags": [
         "OVER_MAX_TRADES"
       ],
-      "distZone": 2
+      "distZone": 0
     },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -223,10 +222,25 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 7
+      "distZone": 12
     }
   ],
-  "openPositions": [],
+  "openPositions": [
+    {
+      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
+      "name": "Funded 10K",
+      "sym": "NQ",
+      "side": "short",
+      "size": 4.0726,
+      "entry": 25913.12426951,
+      "openedAt": 1795582912738,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 9
+    }
+  ],
   "captures": [
     {
       "key": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y:1795570735062",
