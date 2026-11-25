@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T03:00:44.332Z",
-  "state": "OK",
+  "asOf": "2026-11-25T03:15:36.694Z",
+  "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 0,
+  "todayViolations": 2,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,31 +16,55 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 2,
+    "used": 4,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 512.68,
-    "pnlR": 10.25,
+    "pnl": 1003.23,
+    "pnlR": 20.06,
     "maxLossStreak": 1
   },
   "offZone": {
-    "count": 1,
-    "pnl": -6.52,
-    "ofTrades": 2
+    "count": 3,
+    "pnl": 484.03,
+    "ofTrades": 4
   },
   "dataHealth": {
-    "scanned": 1,
-    "total": 251,
-    "ok": 1,
+    "scanned": 2,
+    "total": 252,
+    "ok": 2,
     "failed": [],
     "partial": false
   },
   "openFlags": [
     {
+      "rule": "R1",
+      "at": 1795574533943,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "stop",
+      "at": 1795576394092,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
+    },
+    {
       "rule": "zona",
       "at": 1795573303121,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (20 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (32 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
+      "at": 1795574533943,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (25 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
+      "at": 1795575938060,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (26 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -57,7 +81,7 @@
       "openedAt": 1795570735062,
       "closedAt": 1795573182086,
       "flags": [],
-      "distZone": 11
+      "distZone": 7
     },
     {
       "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
@@ -74,10 +98,8 @@
       "flags": [
         "NO_ZONE"
       ],
-      "distZone": 20
-    }
-  ],
-  "openPositions": [
+      "distZone": 32
+    },
     {
       "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
       "name": "Elite 3% DLL 10K Challenge",
@@ -85,10 +107,49 @@
       "side": "short",
       "size": 4,
       "entry": 25929,
+      "exit": 25879,
+      "pnl": 195.73,
+      "r": 3.91,
       "openedAt": 1795574533943,
-      "hadStop": true,
-      "flags": [],
-      "distZone": 13
+      "closedAt": 1795575932174,
+      "flags": [
+        "R1_REVENGE",
+        "NO_ZONE"
+      ],
+      "distZone": 25
+    },
+    {
+      "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
+      "name": "Elite 3% DLL 10K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 4,
+      "entry": 25879,
+      "exit": 25954,
+      "pnl": 294.82,
+      "r": 5.9,
+      "openedAt": 1795575938060,
+      "closedAt": 1795576324915,
+      "flags": [
+        "NO_ZONE"
+      ],
+      "distZone": 26
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
+      "name": "Funded 10K",
+      "sym": "NQ",
+      "side": "long",
+      "size": 1,
+      "entry": 25980,
+      "openedAt": 1795576394092,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 10
     }
   ],
   "captures": [
