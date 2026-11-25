@@ -1,6 +1,6 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-25T17:00:37.536Z",
+ "checkedAt": "2026-11-25T17:15:26.247Z",
  "status": "ok",
  "marketOpen": true,
  "issues": [],
@@ -10,8 +10,8 @@
    "label": "Datos crudos (feeds)",
    "writer": "TradingView -> tos-bus-snapshot",
    "status": "ok",
-   "ageMin": 15,
-   "at": "2026-11-25T16:45:29.450Z",
+   "ageMin": 14,
+   "at": "2026-11-25T17:00:59.315Z",
    "note": "al dia"
   },
   {
@@ -19,8 +19,8 @@
    "label": "Estado del mercado",
    "writer": "tos-market",
    "status": "ok",
-   "ageMin": 15,
-   "at": "2026-11-25T16:45:33.742Z",
+   "ageMin": 14,
+   "at": "2026-11-25T17:01:04.454Z",
    "note": "al dia"
   },
   {
@@ -28,8 +28,8 @@
    "label": "Edge medido",
    "writer": "lente Edge",
    "status": "ok",
-   "ageMin": 15,
-   "at": "2026-11-25T16:45:39.309Z",
+   "ageMin": 14,
+   "at": "2026-11-25T17:01:13.938Z",
    "note": "al dia"
   },
   {
@@ -37,8 +37,8 @@
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
    "status": "ok",
-   "ageMin": 111,
-   "at": "2026-11-25T15:09:08.387Z",
+   "ageMin": 6,
+   "at": "2026-11-25T17:09:07.572Z",
    "note": "al dia"
   },
   {
@@ -46,8 +46,8 @@
    "label": "Estado del trader (Coach)",
    "writer": "tos-coach",
    "status": "ok",
-   "ageMin": 15,
-   "at": "2026-11-25T16:45:35.274Z",
+   "ageMin": 14,
+   "at": "2026-11-25T17:01:06.161Z",
    "note": "al dia"
   },
   {
@@ -55,7 +55,7 @@
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
    "status": "ok",
-   "ageMin": 173,
+   "ageMin": 188,
    "at": "2026-11-25T14:07:18.000Z",
    "note": "espera la corrida de hoy"
   },
@@ -64,7 +64,7 @@
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 131,
+   "ageMin": 146,
    "at": "2026-11-25T14:49:45.000Z",
    "note": "al dia"
   },
@@ -73,7 +73,7 @@
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
    "status": "ok",
-   "ageMin": 1038,
+   "ageMin": 1053,
    "at": "2026-11-24T23:42:53.385Z",
    "note": "espera la corrida de hoy"
   }
