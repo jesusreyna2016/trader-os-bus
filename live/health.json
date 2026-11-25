@@ -1,6 +1,6 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-25T22:00:34.942Z",
+ "checkedAt": "2026-11-25T22:15:22.921Z",
  "status": "ok",
  "marketOpen": false,
  "issues": [],
@@ -11,7 +11,7 @@
    "writer": "TradingView -> tos-bus-snapshot",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-25T21:45:26.204Z",
+   "at": "2026-11-25T22:00:38.547Z",
    "note": "mercado cerrado"
   },
   {
@@ -20,7 +20,7 @@
    "writer": "tos-market",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-25T21:45:30.465Z",
+   "at": "2026-11-25T22:00:42.863Z",
    "note": "mercado cerrado"
   },
   {
@@ -29,7 +29,7 @@
    "writer": "lente Edge",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-25T21:45:35.535Z",
+   "at": "2026-11-25T22:00:48.067Z",
    "note": "mercado cerrado"
   },
   {
@@ -37,8 +37,8 @@
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
    "status": "off",
-   "ageMin": 51,
-   "at": "2026-11-25T21:09:08.122Z",
+   "ageMin": 6,
+   "at": "2026-11-25T22:09:09.499Z",
    "note": "mercado cerrado"
   },
   {
@@ -47,7 +47,7 @@
    "writer": "tos-coach",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-25T21:45:31.887Z",
+   "at": "2026-11-25T22:00:44.192Z",
    "note": "al dia"
   },
   {
@@ -55,7 +55,7 @@
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
    "status": "ok",
-   "ageMin": 473,
+   "ageMin": 488,
    "at": "2026-11-25T14:07:18.000Z",
    "note": "espera la corrida de hoy"
   },
@@ -64,7 +64,7 @@
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 431,
+   "ageMin": 446,
    "at": "2026-11-25T14:49:45.000Z",
    "note": "al dia"
   },
@@ -73,7 +73,7 @@
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
    "status": "ok",
-   "ageMin": 1338,
+   "ageMin": 1352,
    "at": "2026-11-24T23:42:53.385Z",
    "note": "espera la corrida de hoy"
   }
