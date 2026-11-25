@@ -1,11 +1,11 @@
-SA pre-ny 2026-11-25 08:07 CT
-!! CL: corto 8d roto, GIRA a largo, capado B (vs 24h)
->> ES B demanda 7053-68 · 08:30-11:00 CT
-NQ WAIT · corto · demanda B (rebote fallo) · EM 439p chop!
-ES WAIT · corto · demanda B en precio · EM 76p
-GC WAIT · corto · sin A+, solo cont. B · EM 23p
-YM WAIT · corto · retest A+ lejos · EM 314p chop!
-CL WAIT · largo (giro) · retest B · EM 1.9p
-Limpio: ES. En precio, sin conflicto, falta rechazo.
-Datos OK · Noticias MEDIA · Cal core-pce,gdp
-Prec 20d: sesgo 49-57% · pred ~40-50%
+SA pre-asia 2026-11-26 17:40 CT
+!! feriado Accion Gracias manana, liquidez delgada
+>> GC ya rechazo PDH/ONH 3610-20 · 20:00-23:00 CT
+NQ WAIT · corto · sin setup, nadie · EM 285p chop!
+ES WAIT · corto · fade VAH/PDH 44% · EM 42p chop!
+GC WAIT · corto · sweep PDH ya jugado · EM 31p chop!
+YM WAIT · corto · sin setup, nadie · EM 217p chop!
+CL WAIT · corto · sin setup, nadie · EM 0.80 chop!
+Limpio: GC. Sin conflicto de marcos, gatillo ya paso.
+Datos OK · Noticias NINGUNA · Cal feriado-accion-gracias
+Prec 20d: sesgo 52% · pred 55%

@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-11-25T14:07:18.000Z",
-  "runType": "pre-ny",
-  "ok": true,
-  "note": "plan reconstruido para NY (zonas re-score, 5 simbolos), todo WAIT: CL gira a largo tras romper su corto de 8 dias (capado en B), resto corto con zonas B en precio o lejos, sin A+ accionable"
+ "lastRun": "2026-11-25T23:40:00.000Z",
+ "runType": "pre-asia",
+ "ok": true,
+ "note": "plan 2026-11-26 Asia: 5 WAIT, round-trip de ayer en los 5 (extreme_range_unresolved), feriado Accion de Gracias manana, sin zona de calidad excepto B en ES/GC"
 }
