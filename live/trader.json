@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T05:45:28.902Z",
-  "state": "LOCKOUT",
+  "asOf": "2026-11-25T06:00:43.535Z",
+  "state": "OK",
   "disciplineStreak": 0,
-  "todayViolations": 8,
+  "todayViolations": 0,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 9,
+    "used": 0,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 737.41,
-    "pnlR": 14.75,
-    "maxLossStreak": 3
+    "pnl": 0,
+    "pnlR": 0,
+    "maxLossStreak": 0
   },
   "offZone": {
     "count": 0,
     "pnl": 0,
-    "ofTrades": 9
+    "ofTrades": 0
   },
   "dataHealth": {
     "scanned": 2,
@@ -35,182 +35,8 @@
     "failed": [],
     "partial": false
   },
-  "openFlags": [
-    {
-      "rule": "R1",
-      "at": 1795574533943,
-      "sym": "NQ",
-      "note": "entrada dentro de la pausa tras un SL"
-    },
-    {
-      "rule": "R1",
-      "at": 1795578492209,
-      "sym": "NQ",
-      "note": "entrada dentro de la pausa tras un SL"
-    },
-    {
-      "rule": "R1",
-      "at": 1795581131012,
-      "sym": "ETH",
-      "note": "entrada dentro de la pausa tras un SL"
-    },
-    {
-      "rule": "R1",
-      "at": 1795581300295,
-      "sym": "NQ",
-      "note": "entrada dentro de la pausa tras un SL"
-    }
-  ],
-  "todayTrades": [
-    {
-      "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
-      "name": "Elite 3% DLL 10K Challenge",
-      "sym": "NQ",
-      "side": "short",
-      "size": 3.5,
-      "entry": 26086.97142857,
-      "exit": 25938,
-      "pnl": 519.2,
-      "r": 10.38,
-      "openedAt": 1795570735062,
-      "closedAt": 1795573182086,
-      "flags": [],
-      "distZone": 11
-    },
-    {
-      "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
-      "name": "Elite 3% DLL 10K Challenge",
-      "sym": "NQ",
-      "side": "long",
-      "size": 1,
-      "entry": 25936,
-      "exit": 25930,
-      "pnl": -6.52,
-      "r": -0.13,
-      "openedAt": 1795573303121,
-      "closedAt": 1795574531431,
-      "flags": [],
-      "distZone": 14
-    },
-    {
-      "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
-      "name": "Elite 3% DLL 10K Challenge",
-      "sym": "NQ",
-      "side": "short",
-      "size": 4,
-      "entry": 25929,
-      "exit": 25879,
-      "pnl": 195.73,
-      "r": 3.91,
-      "openedAt": 1795574533943,
-      "closedAt": 1795575932174,
-      "flags": [
-        "R1_REVENGE"
-      ],
-      "distZone": 17
-    },
-    {
-      "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
-      "name": "Elite 3% DLL 10K Challenge",
-      "sym": "NQ",
-      "side": "long",
-      "size": 4,
-      "entry": 25879,
-      "exit": 25954,
-      "pnl": 294.82,
-      "r": 5.9,
-      "openedAt": 1795575938060,
-      "closedAt": 1795576324915,
-      "flags": [],
-      "distZone": 9
-    },
-    {
-      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
-      "name": "Funded 10K",
-      "sym": "NQ",
-      "side": "long",
-      "size": 1,
-      "entry": 25980,
-      "exit": 25967,
-      "pnl": -14.3,
-      "r": -0.29,
-      "openedAt": 1795576394092,
-      "closedAt": 1795578492209,
-      "flags": [],
-      "distZone": 1
-    },
-    {
-      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
-      "name": "Funded 10K",
-      "sym": "NQ",
-      "side": "short",
-      "size": 2,
-      "entry": 25967,
-      "exit": 25965,
-      "pnl": 1.08,
-      "r": 0.02,
-      "openedAt": 1795578492209,
-      "closedAt": 1795579980491,
-      "flags": [
-        "R1_REVENGE",
-        "OVER_MAX_TRADES"
-      ],
-      "distZone": 14
-    },
-    {
-      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
-      "name": "Funded 10K",
-      "sym": "ETH",
-      "side": "long",
-      "size": 23.815,
-      "entry": 1663.17562881,
-      "exit": 1658.93,
-      "pnl": -124.84,
-      "r": -2.5,
-      "openedAt": 1795579963821,
-      "closedAt": 1795581131012,
-      "flags": [
-        "OVER_MAX_TRADES"
-      ],
-      "distZone": 0
-    },
-    {
-      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
-      "name": "Funded 10K",
-      "sym": "ETH",
-      "side": "short",
-      "size": 27.846,
-      "entry": 1659.04363697,
-      "exit": 1662.20371434,
-      "pnl": -116.32,
-      "r": -2.33,
-      "openedAt": 1795581131012,
-      "closedAt": 1795582826645,
-      "flags": [
-        "R1_REVENGE",
-        "OVER_MAX_TRADES"
-      ],
-      "distZone": 1
-    },
-    {
-      "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
-      "name": "Funded 10K",
-      "sym": "NQ",
-      "side": "short",
-      "size": 1.0069,
-      "entry": 25944.1,
-      "exit": 25954,
-      "pnl": -11.44,
-      "r": -0.23,
-      "openedAt": 1795581300295,
-      "closedAt": 1795582827867,
-      "flags": [
-        "R1_REVENGE",
-        "OVER_MAX_TRADES"
-      ],
-      "distZone": 6
-    }
-  ],
+  "openFlags": [],
+  "todayTrades": [],
   "openPositions": [
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
