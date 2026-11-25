@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T01:30:56.833Z",
-  "state": "OK",
+  "asOf": "2026-11-25T01:45:34.317Z",
+  "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 0,
+  "todayViolations": 1,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -29,15 +29,37 @@
     "ofTrades": 0
   },
   "dataHealth": {
-    "scanned": 0,
-    "total": 250,
-    "ok": 0,
+    "scanned": 1,
+    "total": 251,
+    "ok": 1,
     "failed": [],
     "partial": false
   },
-  "openFlags": [],
+  "openFlags": [
+    {
+      "rule": "stop",
+      "at": 1795570735062,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
+    }
+  ],
   "todayTrades": [],
-  "openPositions": [],
+  "openPositions": [
+    {
+      "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
+      "name": "Elite 3% DLL 10K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 2.5,
+      "entry": 26104.96,
+      "openedAt": 1795570735062,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 3
+    }
+  ],
   "captures": [],
   "lastReview": {
     "date": "2026-11-24",
