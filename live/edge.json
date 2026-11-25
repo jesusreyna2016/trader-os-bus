@@ -1,7 +1,7 @@
 {
   "_writer": "edge",
   "_schema": 1,
-  "asOf": "2026-11-25T06:30:44.143Z",
+  "asOf": "2026-11-25T06:45:36.606Z",
   "rung": 1,
   "readyForLive": false,
   "headline": "señal cruda scalp expRnet -0.06 (76415); edge solo en: 29m/RETEST/LONG, 15m/RETEST/SHORT",
@@ -284,14 +284,14 @@
     }
   },
   "reversalModel": {
-    "n": 11,
+    "n": 12,
     "window": "7d",
-    "expR": -0.391,
-    "wr": 18.2,
+    "expR": -0.442,
+    "wr": 16.7,
     "bySession": {
       "NA": {
-        "n": 11,
-        "expR": -0.391
+        "n": 12,
+        "expR": -0.442
       }
     }
   },
