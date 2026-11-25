@@ -1,0 +1,135 @@
+{
+ "date": "2026-11-24",
+ "kind": "crypto",
+ "gradedAt": "2026-11-25T00:17:43.892271+00:00",
+ "runs": [
+  {
+   "run": "2026-11-24-close",
+   "from": 1795480020.0,
+   "to": 1795531500.0,
+   "instruments": {
+    "ETHUSDT": {
+     "bars": 185,
+     "dir24h": "SHORT",
+     "bias": null,
+     "zones": [
+      {
+       "range": [
+        1701.0,
+        1710.0
+       ],
+       "dir": "LONG",
+       "type": "bounce_val",
+       "grade": "A+",
+       "tcl": "contra",
+       "touched": true,
+       "entry": 1713.3199,
+       "stop": 1697.0,
+       "target": 1716.0,
+       "outcome": "worked",
+       "family": "reversion",
+       "vs24h": "against",
+       "r": 0.16
+      }
+     ]
+    },
+    "BTCUSDT": {
+     "bars": 185,
+     "dir24h": "FLAT",
+     "bias": null,
+     "zones": [
+      {
+       "range": [
+        60605.0,
+        60911.5
+       ],
+       "dir": "LONG",
+       "type": "bounce_val",
+       "grade": "A+",
+       "tcl": null,
+       "touched": true,
+       "entry": 60920,
+       "stop": 60500.0,
+       "target": 60950.0,
+       "outcome": "worked",
+       "family": "reversion",
+       "vs24h": "flat",
+       "r": 0.07
+      }
+     ]
+    }
+   }
+  },
+  {
+   "run": "2026-11-24-ny",
+   "from": 1795531920.0,
+   "to": 1795564800.0,
+   "instruments": {
+    "ETHUSDT": {
+     "bars": 108,
+     "dir24h": "SHORT",
+     "bias": null,
+     "zones": [
+      {
+       "range": [
+        1701.0,
+        1710.0
+       ],
+       "dir": "LONG",
+       "type": "bounce_val",
+       "grade": "A+",
+       "tcl": "contra",
+       "touched": false,
+       "outcome": "untouched",
+       "family": "reversion",
+       "vs24h": "against"
+      }
+     ]
+    },
+    "BTCUSDT": {
+     "bars": 108,
+     "dir24h": "SHORT",
+     "bias": {
+      "call": "SHORT",
+      "movePts": -335.9101,
+      "outcome": "hit"
+     },
+     "zones": [
+      {
+       "range": [
+        60605.0,
+        60911.5
+       ],
+       "dir": "LONG",
+       "type": "bounce_val",
+       "grade": "A+",
+       "tcl": null,
+       "touched": false,
+       "outcome": "untouched",
+       "family": "reversion",
+       "vs24h": "against"
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "hitLog": {
+  "ETHUSDT": {
+   "zone": [
+    1,
+    1
+   ]
+  },
+  "BTCUSDT": {
+   "bias": [
+    1,
+    1
+   ],
+   "zone": [
+    1,
+    1
+   ]
+  }
+ }
+}
