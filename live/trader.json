@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T05:15:32.523Z",
+  "asOf": "2026-11-25T05:30:40.919Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 9,
+  "todayViolations": 8,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -24,8 +24,8 @@
     "maxLossStreak": 3
   },
   "offZone": {
-    "count": 1,
-    "pnl": 294.82,
+    "count": 2,
+    "pnl": -17.96,
     "ofTrades": 9
   },
   "dataHealth": {
@@ -61,16 +61,16 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
-      "at": 1795582912738,
+      "rule": "zona",
+      "at": 1795573303121,
       "sym": "NQ",
-      "note": "posicion abierta sin stop"
+      "note": "entrada en tierra de nadie (24 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
-      "at": 1795575938060,
+      "at": 1795581300295,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (26 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (24 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -101,8 +101,10 @@
       "r": -0.13,
       "openedAt": 1795573303121,
       "closedAt": 1795574531431,
-      "flags": [],
-      "distZone": 4
+      "flags": [
+        "NO_ZONE"
+      ],
+      "distZone": 24
     },
     {
       "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
@@ -119,7 +121,7 @@
       "flags": [
         "R1_REVENGE"
       ],
-      "distZone": 3
+      "distZone": 17
     },
     {
       "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
@@ -133,10 +135,8 @@
       "r": 5.9,
       "openedAt": 1795575938060,
       "closedAt": 1795576324915,
-      "flags": [
-        "NO_ZONE"
-      ],
-      "distZone": 26
+      "flags": [],
+      "distZone": 15
     },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -169,7 +169,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 14
+      "distZone": 1
     },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -220,9 +220,10 @@
       "closedAt": 1795582827867,
       "flags": [
         "R1_REVENGE",
-        "OVER_MAX_TRADES"
+        "OVER_MAX_TRADES",
+        "NO_ZONE"
       ],
-      "distZone": 12
+      "distZone": 24
     }
   ],
   "openPositions": [
@@ -234,11 +235,9 @@
       "size": 4.0726,
       "entry": 25913.12426951,
       "openedAt": 1795582912738,
-      "hadStop": false,
-      "flags": [
-        "NO_STOP"
-      ],
-      "distZone": 9
+      "hadStop": true,
+      "flags": [],
+      "distZone": 1
     }
   ],
   "captures": [
