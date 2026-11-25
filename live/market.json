@@ -1,7 +1,7 @@
 {
   "_writer": "contexto-composer",
   "_schema": 1,
-  "asOf": "2026-11-25T22:15:35.787Z",
+  "asOf": "2026-11-25T22:15:47.844Z",
   "symbols": {
     "BTC": {
       "verdict": null,
@@ -96,10 +96,10 @@
         "po3Dir": "up",
         "lastLevelEvent": {
           "level": "PPOC",
-          "event": "TOUCH",
-          "t": 1795644300000,
+          "event": "REJECT",
+          "t": 1795644600000,
           "price": 60458.5,
-          "dist": 7.1,
+          "dist": -145.5,
           "touches": 6
         }
       }
