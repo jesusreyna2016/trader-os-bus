@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T06:00:43.535Z",
+  "asOf": "2026-11-25T06:15:33.732Z",
   "state": "OK",
   "disciplineStreak": 0,
   "todayViolations": 0,
@@ -29,9 +29,9 @@
     "ofTrades": 0
   },
   "dataHealth": {
-    "scanned": 2,
+    "scanned": 1,
     "total": 252,
-    "ok": 2,
+    "ok": 1,
     "failed": [],
     "partial": false
   },
@@ -48,7 +48,7 @@
       "openedAt": 1795582912738,
       "hadStop": true,
       "flags": [],
-      "distZone": 1
+      "distZone": 16
     }
   ],
   "captures": [
