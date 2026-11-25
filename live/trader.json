@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T23:15:32.963Z",
+  "asOf": "2026-11-25T23:30:39.644Z",
   "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 23,
+  "todayViolations": 21,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -89,18 +89,6 @@
       "at": 1795630636222,
       "sym": "NQ",
       "note": "entrada dentro de la pausa tras un SL"
-    },
-    {
-      "rule": "stop",
-      "at": 1795648131539,
-      "sym": "NQ",
-      "note": "posicion abierta sin stop"
-    },
-    {
-      "rule": "stop",
-      "at": 1795648122462,
-      "sym": "NQ",
-      "note": "posicion abierta sin stop"
     },
     {
       "rule": "zona",
@@ -458,10 +446,8 @@
       "size": 6,
       "entry": 26038.26110518,
       "openedAt": 1795648131539,
-      "hadStop": false,
-      "flags": [
-        "NO_STOP"
-      ],
+      "hadStop": true,
+      "flags": [],
       "distZone": 0
     },
     {
@@ -472,10 +458,8 @@
       "size": 6,
       "entry": 26035.2,
       "openedAt": 1795648122462,
-      "hadStop": false,
-      "flags": [
-        "NO_STOP"
-      ],
+      "hadStop": true,
+      "flags": [],
       "distZone": 0
     }
   ],
