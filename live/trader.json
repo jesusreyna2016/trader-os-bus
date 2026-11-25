@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T18:15:35.117Z",
-  "state": "TILT",
+  "asOf": "2026-11-25T18:30:42.666Z",
+  "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 13,
+  "todayViolations": 18,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 11,
+    "used": 14,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 1579.21,
-    "pnlR": 31.58,
+    "pnl": 1366.35,
+    "pnlR": 27.33,
     "maxLossStreak": 4
   },
   "offZone": {
     "count": 7,
     "pnl": 306.83,
-    "ofTrades": 11
+    "ofTrades": 14
   },
   "dataHealth": {
     "scanned": 3,
@@ -61,20 +61,32 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
+      "rule": "R1",
+      "at": 1795630475132,
+      "sym": "SP500",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
       "at": 1795630484993,
       "sym": "NQ",
-      "note": "posicion abierta sin stop"
+      "note": "entrada dentro de la pausa tras un SL"
     },
     {
       "rule": "stop",
-      "at": 1795630472585,
+      "at": 1795630636222,
       "sym": "NQ",
       "note": "posicion abierta sin stop"
     },
     {
       "rule": "stop",
-      "at": 1795630475132,
+      "at": 1795630611178,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
+    },
+    {
+      "rule": "stop",
+      "at": 1795630620053,
       "sym": "SP500",
       "note": "posicion abierta sin stop"
     },
@@ -311,22 +323,6 @@
       "flags": [
         "OVER_MAX_TRADES"
       ]
-    }
-  ],
-  "openPositions": [
-    {
-      "acct": "jh70qet243gxtmtn8yw4v1pxp58jwky0",
-      "name": "Select 25K Challenge",
-      "sym": "NQ",
-      "side": "short",
-      "size": 1,
-      "entry": 25683.64459,
-      "openedAt": 1795630484993,
-      "hadStop": false,
-      "flags": [
-        "NO_STOP"
-      ],
-      "distZone": 0
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -335,10 +331,13 @@
       "side": "short",
       "size": 0.5,
       "entry": 25689.8,
+      "exit": 25804.6,
+      "pnl": -58.04,
+      "r": -1.16,
       "openedAt": 1795630472585,
-      "hadStop": false,
+      "closedAt": 1795630611178,
       "flags": [
-        "NO_STOP"
+        "OVER_MAX_TRADES"
       ],
       "distZone": 0
     },
@@ -349,7 +348,73 @@
       "side": "short",
       "size": 1,
       "entry": 7132.9523951,
+      "exit": 7156.95120219,
+      "pnl": -24.36,
+      "r": -0.49,
       "openedAt": 1795630475132,
+      "closedAt": 1795630620053,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
+      ]
+    },
+    {
+      "acct": "jh70qet243gxtmtn8yw4v1pxp58jwky0",
+      "name": "Select 25K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 1,
+      "entry": 25683.64459,
+      "exit": 25813.45875,
+      "pnl": -130.46,
+      "r": -2.61,
+      "openedAt": 1795630484993,
+      "closedAt": 1795630636222,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
+      ],
+      "distZone": 0
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh70qet243gxtmtn8yw4v1pxp58jwky0",
+      "name": "Select 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 2,
+      "entry": 25814.00978,
+      "openedAt": 1795630636222,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 19
+    },
+    {
+      "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 2.5,
+      "entry": 25815.24,
+      "openedAt": 1795630611178,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP",
+        "NO_ZONE"
+      ],
+      "distZone": 20
+    },
+    {
+      "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "SP500",
+      "side": "long",
+      "size": 1,
+      "entry": 7156.98673375,
+      "openedAt": 1795630620053,
       "hadStop": false,
       "flags": [
         "NO_STOP"
