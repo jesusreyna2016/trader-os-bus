@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T08:15:32.965Z",
+  "asOf": "2026-11-25T08:30:41.189Z",
   "state": "OK",
   "disciplineStreak": 0,
   "todayViolations": 0,
@@ -40,7 +40,7 @@
       "rule": "zona",
       "at": 1795582912738,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (31 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (35 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -59,7 +59,7 @@
       "flags": [
         "NO_ZONE"
       ],
-      "distZone": 31
+      "distZone": 35
     }
   ],
   "openPositions": [],
