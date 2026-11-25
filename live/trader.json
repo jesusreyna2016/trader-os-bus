@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T20:15:31.165Z",
+  "asOf": "2026-11-25T20:30:42.993Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 18,
@@ -383,30 +383,30 @@
       "name": "Select 25K Challenge",
       "sym": "NQ",
       "side": "long",
-      "size": 3,
-      "entry": 25840.70418667,
+      "size": 4,
+      "entry": 25871.25764,
       "openedAt": 1795630636222,
       "hadStop": false,
       "flags": [
         "NO_STOP",
         "NO_ZONE"
       ],
-      "distZone": 26
+      "distZone": 37
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
       "name": "Elite 3% DLL 25K Challenge",
       "sym": "NQ",
       "side": "long",
-      "size": 3,
-      "entry": 25851.9,
+      "size": 3.5,
+      "entry": 25872.81428571,
       "openedAt": 1795630611178,
       "hadStop": false,
       "flags": [
         "NO_STOP",
         "NO_ZONE"
       ],
-      "distZone": 37
+      "distZone": 39
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
