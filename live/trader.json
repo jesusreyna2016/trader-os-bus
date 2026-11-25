@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T08:30:41.189Z",
+  "asOf": "2026-11-25T08:45:30.563Z",
   "state": "OK",
   "disciplineStreak": 0,
   "todayViolations": 0,
@@ -24,8 +24,8 @@
     "maxLossStreak": 0
   },
   "offZone": {
-    "count": 1,
-    "pnl": 1008.78,
+    "count": 0,
+    "pnl": 0,
     "ofTrades": 1
   },
   "dataHealth": {
@@ -35,14 +35,7 @@
     "failed": [],
     "partial": false
   },
-  "openFlags": [
-    {
-      "rule": "zona",
-      "at": 1795582912738,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (35 pts al nivel mas cercano)"
-    }
-  ],
+  "openFlags": [],
   "todayTrades": [
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -56,10 +49,8 @@
       "r": 20.18,
       "openedAt": 1795582912738,
       "closedAt": 1795591251408,
-      "flags": [
-        "NO_ZONE"
-      ],
-      "distZone": 35
+      "flags": [],
+      "distZone": 14
     }
   ],
   "openPositions": [],
