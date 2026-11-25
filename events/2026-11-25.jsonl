@@ -1,0 +1,1 @@
+{"t":1795564804599,"src":"tdl_rev","sym":"ES","tf":"5","event":"SWEEP_LONG","kind":"SWEEP","data":{"src":"TDL_REV","signal":"SWEEP_LONG","type":"SWEEP","detail":"Sell-side swept: VAL","ticker":"CME_MINI:ES1!","tf":"5","price":7199.25,"bias":"BULL","kz":"Outside Zone","trigger":"CLOSED_BAR"},"receivedAt":"2026-11-25T00:00:04.599Z"}
