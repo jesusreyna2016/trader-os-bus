@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T02:30:39.270Z",
-  "state": "TILT",
+  "asOf": "2026-11-25T02:45:30.706Z",
+  "state": "OK",
   "disciplineStreak": 0,
-  "todayViolations": 1,
+  "todayViolations": 0,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 1,
+    "used": 2,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 519.2,
-    "pnlR": 10.38,
-    "maxLossStreak": 0
+    "pnl": 512.68,
+    "pnlR": 10.25,
+    "maxLossStreak": 1
   },
   "offZone": {
-    "count": 0,
-    "pnl": 0,
-    "ofTrades": 1
+    "count": 1,
+    "pnl": -6.52,
+    "ofTrades": 2
   },
   "dataHealth": {
     "scanned": 1,
@@ -37,10 +37,10 @@
   },
   "openFlags": [
     {
-      "rule": "stop",
+      "rule": "zona",
       "at": 1795573303121,
       "sym": "NQ",
-      "note": "posicion abierta sin stop"
+      "note": "entrada en tierra de nadie (25 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -57,10 +57,8 @@
       "openedAt": 1795570735062,
       "closedAt": 1795573182086,
       "flags": [],
-      "distZone": 5
-    }
-  ],
-  "openPositions": [
+      "distZone": 11
+    },
     {
       "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
       "name": "Elite 3% DLL 10K Challenge",
@@ -68,13 +66,31 @@
       "side": "long",
       "size": 1,
       "entry": 25936,
+      "exit": 25930,
+      "pnl": -6.52,
+      "r": -0.13,
       "openedAt": 1795573303121,
-      "hadStop": false,
+      "closedAt": 1795574531431,
       "flags": [
-        "NO_STOP",
         "NO_ZONE"
       ],
-      "distZone": 29
+      "distZone": 25
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
+      "name": "Elite 3% DLL 10K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 4,
+      "entry": 25929,
+      "openedAt": 1795574533943,
+      "hadStop": true,
+      "flags": [
+        "NO_ZONE"
+      ],
+      "distZone": 32
     }
   ],
   "captures": [
