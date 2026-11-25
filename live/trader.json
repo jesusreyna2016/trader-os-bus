@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T19:15:48.069Z",
+  "asOf": "2026-11-25T19:30:45.730Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 18,
@@ -391,7 +391,7 @@
         "NO_STOP",
         "NO_ZONE"
       ],
-      "distZone": 24
+      "distZone": 46
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -403,9 +403,10 @@
       "openedAt": 1795630611178,
       "hadStop": false,
       "flags": [
-        "NO_STOP"
+        "NO_STOP",
+        "NO_ZONE"
       ],
-      "distZone": 13
+      "distZone": 57
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
