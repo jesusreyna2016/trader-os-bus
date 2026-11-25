@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T05:30:40.919Z",
+  "asOf": "2026-11-25T05:45:28.902Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 8,
@@ -24,8 +24,8 @@
     "maxLossStreak": 3
   },
   "offZone": {
-    "count": 2,
-    "pnl": -17.96,
+    "count": 0,
+    "pnl": 0,
     "ofTrades": 9
   },
   "dataHealth": {
@@ -59,18 +59,6 @@
       "at": 1795581300295,
       "sym": "NQ",
       "note": "entrada dentro de la pausa tras un SL"
-    },
-    {
-      "rule": "zona",
-      "at": 1795573303121,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (24 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795581300295,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (24 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -101,10 +89,8 @@
       "r": -0.13,
       "openedAt": 1795573303121,
       "closedAt": 1795574531431,
-      "flags": [
-        "NO_ZONE"
-      ],
-      "distZone": 24
+      "flags": [],
+      "distZone": 14
     },
     {
       "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
@@ -136,7 +122,7 @@
       "openedAt": 1795575938060,
       "closedAt": 1795576324915,
       "flags": [],
-      "distZone": 15
+      "distZone": 9
     },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -169,7 +155,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 1
+      "distZone": 14
     },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -220,10 +206,9 @@
       "closedAt": 1795582827867,
       "flags": [
         "R1_REVENGE",
-        "OVER_MAX_TRADES",
-        "NO_ZONE"
+        "OVER_MAX_TRADES"
       ],
-      "distZone": 24
+      "distZone": 6
     }
   ],
   "openPositions": [
