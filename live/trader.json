@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T04:45:26.891Z",
-  "state": "TILT",
+  "asOf": "2026-11-25T05:00:47.846Z",
+  "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 6,
+  "todayViolations": 8,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 7,
+    "used": 9,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 865.17,
-    "pnlR": 17.3,
-    "maxLossStreak": 1
+    "pnl": 737.41,
+    "pnlR": 14.75,
+    "maxLossStreak": 3
   },
   "offZone": {
-    "count": 3,
-    "pnl": 484.03,
-    "ofTrades": 7
+    "count": 2,
+    "pnl": 490.55,
+    "ofTrades": 9
   },
   "dataHealth": {
     "scanned": 2,
@@ -49,28 +49,22 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
+      "rule": "R1",
       "at": 1795581131012,
       "sym": "ETH",
-      "note": "posicion abierta sin stop"
+      "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
+      "rule": "R1",
       "at": 1795581300295,
       "sym": "NQ",
-      "note": "posicion abierta sin stop"
-    },
-    {
-      "rule": "zona",
-      "at": 1795573303121,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (32 pts al nivel mas cercano)"
+      "note": "entrada dentro de la pausa tras un SL"
     },
     {
       "rule": "zona",
       "at": 1795574533943,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (25 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (22 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
@@ -107,10 +101,8 @@
       "r": -0.13,
       "openedAt": 1795573303121,
       "closedAt": 1795574531431,
-      "flags": [
-        "NO_ZONE"
-      ],
-      "distZone": 32
+      "flags": [],
+      "distZone": 15
     },
     {
       "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
@@ -128,7 +120,7 @@
         "R1_REVENGE",
         "NO_ZONE"
       ],
-      "distZone": 25
+      "distZone": 22
     },
     {
       "acct": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y",
@@ -160,7 +152,7 @@
       "openedAt": 1795576394092,
       "closedAt": 1795578492209,
       "flags": [],
-      "distZone": 9
+      "distZone": 14
     },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -178,7 +170,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 4
+      "distZone": 16
     },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -196,20 +188,22 @@
         "OVER_MAX_TRADES"
       ],
       "distZone": 2
-    }
-  ],
-  "openPositions": [
+    },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
       "name": "Funded 10K",
       "sym": "ETH",
       "side": "short",
-      "size": 23.815,
-      "entry": 1658.93,
+      "size": 27.846,
+      "entry": 1659.04363697,
+      "exit": 1662.20371434,
+      "pnl": -116.32,
+      "r": -2.33,
       "openedAt": 1795581131012,
-      "hadStop": false,
+      "closedAt": 1795582826645,
       "flags": [
-        "NO_STOP"
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
       ],
       "distZone": 1
     },
@@ -220,15 +214,19 @@
       "side": "short",
       "size": 1.0069,
       "entry": 25944.1,
+      "exit": 25954,
+      "pnl": -11.44,
+      "r": -0.23,
       "openedAt": 1795581300295,
-      "hadStop": false,
+      "closedAt": 1795582827867,
       "flags": [
-        "NO_STOP",
-        "NO_ZONE"
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
       ],
-      "distZone": 27
+      "distZone": 7
     }
   ],
+  "openPositions": [],
   "captures": [
     {
       "key": "jh7bpdk7gd0zpvbwd3a1hcez4x8jwv7y:1795570735062",
