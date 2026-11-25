@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T16:45:35.274Z",
-  "state": "LOCKOUT",
+  "asOf": "2026-11-25T17:00:48.995Z",
+  "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 6,
+  "todayViolations": 10,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,22 +16,22 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 7,
+    "used": 8,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 481.66,
-    "pnlR": 9.63,
+    "pnl": 580.9,
+    "pnlR": 11.62,
     "maxLossStreak": 4
   },
   "offZone": {
-    "count": 4,
-    "pnl": -665.43,
-    "ofTrades": 7
+    "count": 5,
+    "pnl": -566.19,
+    "ofTrades": 8
   },
   "dataHealth": {
-    "scanned": 2,
-    "total": 254,
-    "ok": 2,
+    "scanned": 3,
+    "total": 255,
+    "ok": 3,
     "failed": [],
     "partial": false
   },
@@ -55,16 +55,34 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
+      "rule": "R1",
       "at": 1795624265093,
       "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "stop",
+      "at": 1795625329526,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
+    },
+    {
+      "rule": "stop",
+      "at": 1795625479906,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
+    },
+    {
+      "rule": "stop",
+      "at": 1795625603204,
+      "sym": "SP500",
       "note": "posicion abierta sin stop"
     },
     {
       "rule": "zona",
       "at": 1795619662546,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (51 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (43 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
@@ -83,6 +101,12 @@
       "at": 1795623755373,
       "sym": "NQ",
       "note": "entrada en tierra de nadie (23 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
+      "at": 1795624265093,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (35 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -116,7 +140,7 @@
       "flags": [
         "NO_ZONE"
       ],
-      "distZone": 51
+      "distZone": 43
     },
     {
       "acct": "jh75t57xetv2q4w3hz61b2ap018jx2vz",
@@ -204,9 +228,7 @@
         "NO_ZONE"
       ],
       "distZone": 23
-    }
-  ],
-  "openPositions": [
+    },
     {
       "acct": "jh70qet243gxtmtn8yw4v1pxp58jwky0",
       "name": "Select 25K Challenge",
@@ -214,13 +236,62 @@
       "side": "short",
       "size": 5.824,
       "entry": 25125.7,
+      "exit": 25108.03308469,
+      "pnl": 99.24,
+      "r": 1.98,
       "openedAt": 1795624265093,
+      "closedAt": 1795625285901,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES",
+        "NO_ZONE"
+      ],
+      "distZone": 35
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh70qet243gxtmtn8yw4v1pxp58jwky0",
+      "name": "Select 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 1,
+      "entry": 25090.4,
+      "openedAt": 1795625329526,
       "hadStop": false,
       "flags": [
         "NO_STOP",
         "NO_ZONE"
       ],
-      "distZone": 35
+      "distZone": 37
+    },
+    {
+      "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 0.5,
+      "entry": 25127.8,
+      "openedAt": 1795625479906,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP",
+        "NO_ZONE"
+      ],
+      "distZone": 33
+    },
+    {
+      "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "SP500",
+      "side": "long",
+      "size": 1,
+      "entry": 7007.3,
+      "openedAt": 1795625603204,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ]
     }
   ],
   "captures": [
