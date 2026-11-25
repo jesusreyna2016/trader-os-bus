@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-25",
-  "asOf": "2026-11-25T04:15:30.648Z",
+  "asOf": "2026-11-25T04:30:43.170Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 4,
@@ -181,14 +181,14 @@
       "name": "Funded 10K",
       "sym": "ETH",
       "side": "long",
-      "size": 15,
-      "entry": 1662.08,
+      "size": 23.815,
+      "entry": 1663.17562881,
       "openedAt": 1795579963821,
       "hadStop": false,
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 1
+      "distZone": 2
     }
   ],
   "captures": [
