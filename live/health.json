@@ -1,6 +1,6 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-26T15:15:26.871Z",
+ "checkedAt": "2026-11-26T15:30:36.320Z",
  "status": "ok",
  "marketOpen": true,
  "issues": [],
@@ -10,8 +10,8 @@
    "label": "Datos crudos (feeds)",
    "writer": "TradingView -> tos-bus-snapshot",
    "status": "ok",
-   "ageMin": 14,
-   "at": "2026-11-26T15:00:57.406Z",
+   "ageMin": 15,
+   "at": "2026-11-26T15:15:30.187Z",
    "note": "al dia"
   },
   {
@@ -19,8 +19,8 @@
    "label": "Estado del mercado",
    "writer": "tos-market",
    "status": "ok",
-   "ageMin": 14,
-   "at": "2026-11-26T15:01:01.148Z",
+   "ageMin": 15,
+   "at": "2026-11-26T15:15:34.158Z",
    "note": "al dia"
   },
   {
@@ -28,8 +28,8 @@
    "label": "Edge medido",
    "writer": "lente Edge",
    "status": "ok",
-   "ageMin": 14,
-   "at": "2026-11-26T15:01:06.839Z",
+   "ageMin": 15,
+   "at": "2026-11-26T15:15:39.407Z",
    "note": "al dia"
   },
   {
@@ -37,7 +37,7 @@
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
    "status": "ok",
-   "ageMin": 6,
+   "ageMin": 21,
    "at": "2026-11-26T15:09:09.172Z",
    "note": "al dia"
   },
@@ -46,8 +46,8 @@
    "label": "Estado del trader (Coach)",
    "writer": "tos-coach",
    "status": "ok",
-   "ageMin": 14,
-   "at": "2026-11-26T15:01:02.602Z",
+   "ageMin": 15,
+   "at": "2026-11-26T15:15:35.479Z",
    "note": "al dia"
   },
   {
@@ -55,7 +55,7 @@
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
    "status": "ok",
-   "ageMin": 59,
+   "ageMin": 74,
    "at": "2026-11-26T14:16:34.000Z",
    "note": "espera la corrida de hoy"
   },
@@ -64,7 +64,7 @@
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 23,
+   "ageMin": 39,
    "at": "2026-11-26T14:52:00.000Z",
    "note": "al dia"
   },
@@ -73,7 +73,7 @@
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
    "status": "ok",
-   "ageMin": 934,
+   "ageMin": 949,
    "at": "2026-11-25T23:41:15.949Z",
    "note": "espera la corrida de hoy"
   }
