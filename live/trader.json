@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-26",
-  "asOf": "2026-11-26T14:45:38.013Z",
+  "asOf": "2026-11-26T15:00:50.665Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 35,
+  "todayViolations": 41,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 21,
+    "used": 23,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": -1077.92,
-    "pnlR": -21.56,
-    "maxLossStreak": 11
+    "pnl": -1133.6,
+    "pnlR": -22.67,
+    "maxLossStreak": 10
   },
   "offZone": {
     "count": 0,
     "pnl": 0,
-    "ofTrades": 21
+    "ofTrades": 23
   },
   "dataHealth": {
     "scanned": 3,
@@ -146,9 +146,33 @@
     },
     {
       "rule": "R1",
+      "at": 1795671721561,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
       "at": 1795671733044,
       "sym": "NQ",
       "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
+      "at": 1795704155664,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "stop",
+      "at": 1795704996160,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
+    },
+    {
+      "rule": "stop",
+      "at": 1795705006607,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
     }
   ],
   "todayTrades": [
@@ -346,7 +370,7 @@
       "flags": [
         "OVER_MAX_TRADES"
       ],
-      "distZone": 8
+      "distZone": 10
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -364,7 +388,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 13
+      "distZone": 15
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -418,7 +442,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 6
+      "distZone": 4
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -437,7 +461,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 2
+      "distZone": 0
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -456,7 +480,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 6
+      "distZone": 8
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -475,7 +499,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 5
+      "distZone": 7
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -516,6 +540,25 @@
       "distZone": 6
     },
     {
+      "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
+      "name": "Funded 25K",
+      "sym": "NQ",
+      "side": "short",
+      "size": 9,
+      "entry": 26249.07470667,
+      "exit": 26226.13036444,
+      "pnl": 194.71,
+      "r": 3.89,
+      "openedAt": 1795671721561,
+      "closedAt": 1795705006607,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES",
+        "DAY_STOP_HIT"
+      ],
+      "distZone": 7
+    },
+    {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
       "name": "Elite 3% DLL 25K Challenge",
       "sym": "NQ",
@@ -533,6 +576,25 @@
         "DAY_STOP_HIT"
       ],
       "distZone": 7
+    },
+    {
+      "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 6,
+      "entry": 26188.85,
+      "exit": 26229.27067151,
+      "pnl": -250.39,
+      "r": -5.01,
+      "openedAt": 1795704155664,
+      "closedAt": 1795704996160,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES",
+        "DAY_STOP_HIT"
+      ],
+      "distZone": 17
     }
   ],
   "openPositions": [
@@ -540,25 +602,29 @@
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
       "name": "Elite 3% DLL 25K Challenge",
       "sym": "NQ",
-      "side": "short",
-      "size": 3,
-      "entry": 26171.9,
-      "openedAt": 1795704155664,
-      "hadStop": true,
-      "flags": [],
-      "distZone": 0
+      "side": "long",
+      "size": 6,
+      "entry": 26229.772715,
+      "openedAt": 1795704996160,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 6
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
       "name": "Funded 25K",
       "sym": "NQ",
-      "side": "short",
+      "side": "long",
       "size": 9,
-      "entry": 26249.07470667,
-      "openedAt": 1795671721561,
-      "hadStop": true,
-      "flags": [],
-      "distZone": 7
+      "entry": 26227.10457583,
+      "openedAt": 1795705006607,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 3
     }
   ],
   "captures": [],
