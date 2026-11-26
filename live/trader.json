@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-26",
-  "asOf": "2026-11-26T09:15:36.393Z",
+  "asOf": "2026-11-26T09:30:43.916Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 35,
@@ -160,13 +160,13 @@
       "rule": "zona",
       "at": 1795664267033,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (29 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (32 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795664275138,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (25 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (31 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -364,7 +364,7 @@
       "flags": [
         "OVER_MAX_TRADES"
       ],
-      "distZone": 6
+      "distZone": 12
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -382,7 +382,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 1
+      "distZone": 7
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -400,7 +400,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 4
+      "distZone": 2
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -418,7 +418,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 6
+      "distZone": 0
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -437,7 +437,7 @@
         "OVER_MAX_TRADES",
         "NO_ZONE"
       ],
-      "distZone": 29
+      "distZone": 32
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -457,7 +457,7 @@
         "DAY_STOP_HIT",
         "NO_ZONE"
       ],
-      "distZone": 25
+      "distZone": 31
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -476,7 +476,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 8
+      "distZone": 14
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -495,7 +495,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 9
+      "distZone": 15
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -549,7 +549,7 @@
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 11
+      "distZone": 3
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -563,7 +563,7 @@
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 5
+      "distZone": 1
     }
   ],
   "captures": [],
