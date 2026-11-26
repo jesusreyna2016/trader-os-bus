@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-26",
-  "asOf": "2026-11-26T03:30:42.171Z",
-  "state": "TILT",
+  "asOf": "2026-11-26T03:45:35.222Z",
+  "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 36,
+  "todayViolations": 39,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 23,
+    "used": 25,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 2169.39,
-    "pnlR": 43.39,
+    "pnl": 1793.57,
+    "pnlR": 35.87,
     "maxLossStreak": 5
   },
   "offZone": {
     "count": 5,
     "pnl": 830.61,
-    "ofTrades": 23
+    "ofTrades": 25
   },
   "dataHealth": {
     "scanned": 3,
@@ -133,14 +133,20 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
+      "rule": "R1",
+      "at": 1795661436990,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
       "at": 1795661444850,
       "sym": "NQ",
-      "note": "posicion abierta sin stop"
+      "note": "entrada dentro de la pausa tras un SL"
     },
     {
       "rule": "stop",
-      "at": 1795661436990,
+      "at": 1795664267033,
       "sym": "NQ",
       "note": "posicion abierta sin stop"
     },
@@ -578,6 +584,42 @@
         "OVER_MAX_TRADES"
       ],
       "distZone": 15
+    },
+    {
+      "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
+      "name": "Funded 25K",
+      "sym": "NQ",
+      "side": "short",
+      "size": 5,
+      "entry": 26247.824951,
+      "exit": 26283.9,
+      "pnl": -183.99,
+      "r": -3.68,
+      "openedAt": 1795661436990,
+      "closedAt": 1795664267033,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
+      ],
+      "distZone": 6
+    },
+    {
+      "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 6.0443,
+      "entry": 26249.83646245,
+      "exit": 26280.17850537,
+      "pnl": -191.83,
+      "r": -3.84,
+      "openedAt": 1795661444850,
+      "closedAt": 1795664275138,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
+      ],
+      "distZone": 8
     }
   ],
   "openPositions": [
@@ -585,29 +627,29 @@
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
       "name": "Elite 3% DLL 25K Challenge",
       "sym": "NQ",
-      "side": "short",
-      "size": 5.0443,
-      "entry": 26246.00787621,
-      "openedAt": 1795661444850,
-      "hadStop": false,
+      "side": "long",
+      "size": 16.5412,
+      "entry": 26281.10639105,
+      "openedAt": 1795664275138,
+      "hadStop": true,
       "flags": [
-        "NO_STOP"
+        "NO_ZONE"
       ],
-      "distZone": 4
+      "distZone": 21
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
       "name": "Funded 25K",
       "sym": "NQ",
-      "side": "short",
-      "size": 4,
-      "entry": 26242.18168875,
-      "openedAt": 1795661436990,
+      "side": "long",
+      "size": 5,
+      "entry": 26284.862184,
+      "openedAt": 1795664267033,
       "hadStop": false,
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 0
+      "distZone": 18
     }
   ],
   "captures": [],
