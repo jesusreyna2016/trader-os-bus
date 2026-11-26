@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-26",
-  "asOf": "2026-11-26T06:30:43.782Z",
+  "asOf": "2026-11-26T06:45:35.464Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 35,
@@ -24,8 +24,8 @@
     "maxLossStreak": 10
   },
   "offZone": {
-    "count": 5,
-    "pnl": -786.5,
+    "count": 3,
+    "pnl": -399.59,
     "ofTrades": 20
   },
   "dataHealth": {
@@ -161,18 +161,6 @@
       "at": 1795656714592,
       "sym": "NQ",
       "note": "entrada en tierra de nadie (20 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795664267033,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (27 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795664275138,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (31 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
@@ -453,10 +441,9 @@
       "closedAt": 1795665540097,
       "flags": [
         "R1_REVENGE",
-        "OVER_MAX_TRADES",
-        "NO_ZONE"
+        "OVER_MAX_TRADES"
       ],
-      "distZone": 27
+      "distZone": 6
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -473,10 +460,9 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT",
-        "NO_ZONE"
+        "DAY_STOP_HIT"
       ],
-      "distZone": 31
+      "distZone": 10
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -535,7 +521,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 11
+      "distZone": 2
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -554,7 +540,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 2
+      "distZone": 7
     }
   ],
   "openPositions": [
@@ -568,10 +554,9 @@
       "openedAt": 1795671733044,
       "hadStop": false,
       "flags": [
-        "NO_STOP",
-        "NO_ZONE"
+        "NO_STOP"
       ],
-      "distZone": 33
+      "distZone": 12
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -585,7 +570,7 @@
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 15
+      "distZone": 5
     }
   ],
   "captures": [],
