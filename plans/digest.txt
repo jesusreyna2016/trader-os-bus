@@ -1,10 +1,10 @@
-SA pre-london 2026-11-26 01:26 CT
->> ES B VAH/PDH fade 7214-24 · 02:00-05:00 CT
-NQ WAIT · corto · B retest 26250-82 · EM 347p
-ES WAIT · corto · B fade VAH 7214-24 · EM 62p
-GC WAIT · largo · B retest VAH 3590-97 · EM 44p chop!
-YM WAIT · corto · sin setup · EM 450p chop!
-CL WAIT · sin sesgo · sin setup · EM 1.43 chop!
-Limpio: ES. ya en VAH/PDH, sin GO, vigila el rechazo.
+SA pre-ny 2026-11-26 08:16 CT
+>> CL B pullback 84.18-58 · 08:00-12:15 CT
+NQ WAIT · largo · B pullback 26248-90 · EM 648p
+ES WAIT · largo · B pullback 7240-47 · EM 109p
+GC WAIT · sin sesgo · B retest VAH 3590-97 · EM 61p chop!
+YM WAIT · largo · B pullback 50387-429 · EM 753p
+CL WAIT · largo · B pullback 84.18-58 · EM 2.15p
+Limpio: CL. ya en el pullback 84.18-58, vigila confirmacion.
 Datos OK · Noticias NINGUNA · Cal feriado-accion-gracias
-Prec 20d: sesgo 52% · pred 55%
+Prec 20d: sesgo 49-59% · pred 49-59%
