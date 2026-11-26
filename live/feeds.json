@@ -1,5 +1,5 @@
 {
-  "_updatedAt": "2026-11-26T13:15:32.127Z",
+  "_updatedAt": "2026-11-26T13:15:49.332Z",
   "feed:BTC": {
     "src": "feed",
     "sym": "BTC",
@@ -598,7 +598,7 @@
     "dayType": "Aceptación al alza",
     "biasDir": "NEUTRAL",
     "weeklyDir": "LONG",
-    "price": 50439,
+    "price": 50437,
     "levels": {
       "vah": 49993.07,
       "poc": 49408.09,
@@ -606,7 +606,7 @@
       "dvah": 50474.44,
       "dpoc": 50407.14,
       "dval": 50320.61,
-      "vwap": 50384.6,
+      "vwap": 50384.81,
       "pdh": 50435,
       "pdl": 48942,
       "dayOpen": 50236,
@@ -615,9 +615,9 @@
       "pwh": 52559,
       "pwl": 48054,
       "tdo": 50401,
-      "ema20": 50412.6,
-      "ema20_15m": 50393.62,
-      "ema50": 50394.91
+      "ema20": 50414.93,
+      "ema20_15m": 50393.43,
+      "ema50": 50396.57
     },
     "noTradeZone": [
       49416.09,
@@ -633,9 +633,9 @@
     "htf2": "Alcista",
     "rs": "YM1! rezaga",
     "inNtz": false,
-    "updatedAt": "2026-11-26T13:10:11.378Z",
+    "updatedAt": "2026-11-26T13:15:30.940Z",
     "src": "orb",
-    "receivedAt": "2026-11-26T13:10:11.378Z",
+    "receivedAt": "2026-11-26T13:15:30.940Z",
     "_bridged": "cc"
   },
   "regime:CL": {
