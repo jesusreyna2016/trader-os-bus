@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-26",
-  "asOf": "2026-11-26T06:45:35.464Z",
+  "asOf": "2026-11-26T07:00:47.838Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 35,
@@ -24,8 +24,8 @@
     "maxLossStreak": 10
   },
   "offZone": {
-    "count": 3,
-    "pnl": -399.59,
+    "count": 0,
+    "pnl": 0,
     "ofTrades": 20
   },
   "dataHealth": {
@@ -155,24 +155,6 @@
       "at": 1795671721561,
       "sym": "NQ",
       "note": "posicion abierta sin stop"
-    },
-    {
-      "rule": "zona",
-      "at": 1795656714592,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (20 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795665536209,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (23 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795665540097,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (23 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -368,10 +350,9 @@
       "openedAt": 1795656714592,
       "closedAt": 1795661444850,
       "flags": [
-        "OVER_MAX_TRADES",
-        "NO_ZONE"
+        "OVER_MAX_TRADES"
       ],
-      "distZone": 20
+      "distZone": 10
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -443,7 +424,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 6
+      "distZone": 8
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -462,7 +443,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 10
+      "distZone": 9
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -479,10 +460,9 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT",
-        "NO_ZONE"
+        "DAY_STOP_HIT"
       ],
-      "distZone": 23
+      "distZone": 8
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -499,10 +479,9 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT",
-        "NO_ZONE"
+        "DAY_STOP_HIT"
       ],
-      "distZone": 23
+      "distZone": 7
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -521,7 +500,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 2
+      "distZone": 8
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -540,7 +519,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 7
+      "distZone": 17
     }
   ],
   "openPositions": [
@@ -556,7 +535,7 @@
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 12
+      "distZone": 6
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -570,7 +549,7 @@
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 5
+      "distZone": 4
     }
   ],
   "captures": [],
