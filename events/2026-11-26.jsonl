@@ -1,0 +1,1 @@
+{"t":1795651209723,"src":"tdl_rev","sym":"YM","tf":"5","event":"SWEEP_SHORT","kind":"SWEEP","data":{"src":"TDL_REV","signal":"SWEEP_SHORT","type":"SWEEP","detail":"Buy-side swept: VAH","ticker":"CBOT_MINI:YM1!","tf":"5","price":50413,"bias":"BULL","kz":"Outside Zone","trigger":"CLOSED_BAR"},"receivedAt":"2026-11-26T00:00:09.723Z"}
