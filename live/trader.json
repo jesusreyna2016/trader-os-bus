@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-26",
-  "asOf": "2026-11-26T04:00:44.984Z",
+  "asOf": "2026-11-26T04:15:38.322Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 45,
+  "todayViolations": 46,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 28,
+    "used": 29,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 1215.58,
-    "pnlR": 24.31,
-    "maxLossStreak": 7
+    "pnl": 1074.51,
+    "pnlR": 21.49,
+    "maxLossStreak": 8
   },
   "offZone": {
-    "count": 6,
-    "pnl": 511.14,
-    "ofTrades": 28
+    "count": 5,
+    "pnl": 799.51,
+    "ofTrades": 29
   },
   "dataHealth": {
     "scanned": 3,
@@ -163,10 +163,10 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
+      "rule": "R1",
       "at": 1795665540097,
       "sym": "NQ",
-      "note": "posicion abierta sin stop"
+      "note": "entrada dentro de la pausa tras un SL"
     },
     {
       "rule": "zona",
@@ -196,13 +196,7 @@
       "rule": "zona",
       "at": 1795664267033,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (26 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795664275138,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (30 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (21 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -553,7 +547,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 12
+      "distZone": 2
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -571,7 +565,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 7
+      "distZone": 0
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -588,7 +582,7 @@
       "flags": [
         "OVER_MAX_TRADES"
       ],
-      "distZone": 12
+      "distZone": 2
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -624,7 +618,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 2
+      "distZone": 6
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -642,7 +636,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 0
+      "distZone": 8
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -661,7 +655,7 @@
         "OVER_MAX_TRADES",
         "NO_ZONE"
       ],
-      "distZone": 26
+      "distZone": 21
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -677,10 +671,9 @@
       "closedAt": 1795665536209,
       "flags": [
         "R1_REVENGE",
-        "OVER_MAX_TRADES",
-        "NO_ZONE"
+        "OVER_MAX_TRADES"
       ],
-      "distZone": 30
+      "distZone": 17
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -698,10 +691,8 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 14
-    }
-  ],
-  "openPositions": [
+      "distZone": 0
+    },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
       "name": "Funded 25K",
@@ -709,12 +700,46 @@
       "side": "short",
       "size": 5,
       "entry": 26265.199582,
+      "exit": 26292.674984,
+      "pnl": -141.07,
+      "r": -2.82,
       "openedAt": 1795665540097,
-      "hadStop": false,
+      "closedAt": 1795665646290,
       "flags": [
-        "NO_STOP"
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
       ],
-      "distZone": 15
+      "distZone": 1
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 1.5,
+      "entry": 26293.83524,
+      "openedAt": 1795665669926,
+      "hadStop": true,
+      "flags": [
+        "NO_ZONE"
+      ],
+      "distZone": 30
+    },
+    {
+      "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
+      "name": "Funded 25K",
+      "sym": "NQ",
+      "side": "long",
+      "size": 5,
+      "entry": 26294.0903,
+      "openedAt": 1795665646290,
+      "hadStop": true,
+      "flags": [
+        "NO_ZONE"
+      ],
+      "distZone": 30
     }
   ],
   "captures": [],
