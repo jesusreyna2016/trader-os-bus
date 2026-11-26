@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-26",
-  "asOf": "2026-11-26T02:15:36.513Z",
+  "asOf": "2026-11-26T02:30:45.244Z",
   "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 33,
+  "todayViolations": 31,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -24,8 +24,8 @@
     "maxLossStreak": 5
   },
   "offZone": {
-    "count": 4,
-    "pnl": 898.05,
+    "count": 6,
+    "pnl": 3569.01,
     "ofTrades": 21
   },
   "dataHealth": {
@@ -127,18 +127,6 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
-      "at": 1795656714592,
-      "sym": "NQ",
-      "note": "posicion abierta sin stop"
-    },
-    {
-      "rule": "stop",
-      "at": 1795656719292,
-      "sym": "NQ",
-      "note": "posicion abierta sin stop"
-    },
-    {
       "rule": "zona",
       "at": 1795623755373,
       "sym": "NQ",
@@ -161,6 +149,18 @@
       "at": 1795625479906,
       "sym": "NQ",
       "note": "entrada en tierra de nadie (100 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
+      "at": 1795650918659,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (25 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
+      "at": 1795650931559,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (20 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -509,9 +509,10 @@
       "closedAt": 1795656341979,
       "flags": [
         "R1_REVENGE",
-        "OVER_MAX_TRADES"
+        "OVER_MAX_TRADES",
+        "NO_ZONE"
       ],
-      "distZone": 15
+      "distZone": 25
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -527,7 +528,8 @@
       "closedAt": 1795656010105,
       "flags": [
         "R1_REVENGE",
-        "OVER_MAX_TRADES"
+        "OVER_MAX_TRADES",
+        "NO_ZONE"
       ],
       "distZone": 20
     }
@@ -538,28 +540,24 @@
       "name": "Elite 3% DLL 25K Challenge",
       "sym": "NQ",
       "side": "long",
-      "size": 1.0443,
-      "entry": 26258.3,
+      "size": 3.0443,
+      "entry": 26262.18422626,
       "openedAt": 1795656714592,
-      "hadStop": false,
-      "flags": [
-        "NO_STOP"
-      ],
-      "distZone": 16
+      "hadStop": true,
+      "flags": [],
+      "distZone": 7
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
       "name": "Funded 25K",
       "sym": "NQ",
       "side": "long",
-      "size": 1,
-      "entry": 26255.15,
+      "size": 4,
+      "entry": 26256.95725418,
       "openedAt": 1795656719292,
-      "hadStop": false,
-      "flags": [
-        "NO_STOP"
-      ],
-      "distZone": 13
+      "hadStop": true,
+      "flags": [],
+      "distZone": 1
     }
   ],
   "captures": [],
