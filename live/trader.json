@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-26",
-  "asOf": "2026-11-26T06:15:36.825Z",
+  "asOf": "2026-11-26T06:30:43.782Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 35,
@@ -166,13 +166,13 @@
       "rule": "zona",
       "at": 1795664267033,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (36 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (27 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795664275138,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (39 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (31 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
@@ -456,7 +456,7 @@
         "OVER_MAX_TRADES",
         "NO_ZONE"
       ],
-      "distZone": 36
+      "distZone": 27
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -476,7 +476,7 @@
         "DAY_STOP_HIT",
         "NO_ZONE"
       ],
-      "distZone": 39
+      "distZone": 31
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -535,7 +535,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 20
+      "distZone": 11
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -554,7 +554,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 11
+      "distZone": 2
     }
   ],
   "openPositions": [
@@ -571,7 +571,7 @@
         "NO_STOP",
         "NO_ZONE"
       ],
-      "distZone": 37
+      "distZone": 33
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -583,10 +583,9 @@
       "openedAt": 1795671721561,
       "hadStop": false,
       "flags": [
-        "NO_STOP",
-        "NO_ZONE"
+        "NO_STOP"
       ],
-      "distZone": 23
+      "distZone": 15
     }
   ],
   "captures": [],
