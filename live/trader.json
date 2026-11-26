@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-26",
-  "asOf": "2026-11-26T10:00:45.608Z",
+  "asOf": "2026-11-26T10:15:37.424Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 35,
@@ -382,7 +382,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 10
+      "distZone": 9
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -400,7 +400,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 1
+      "distZone": 0
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -418,7 +418,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 3
+      "distZone": 2
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -549,7 +549,7 @@
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 4
+      "distZone": 8
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
