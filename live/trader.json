@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-26",
-  "asOf": "2026-11-26T01:30:44.096Z",
+  "asOf": "2026-11-26T01:45:34.747Z",
   "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 31,
+  "todayViolations": 33,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -125,6 +125,18 @@
       "at": 1795650931559,
       "sym": "NQ",
       "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "stop",
+      "at": 1795656714592,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
+    },
+    {
+      "rule": "stop",
+      "at": 1795656719292,
+      "sym": "NQ",
+      "note": "posicion abierta sin stop"
     },
     {
       "rule": "zona",
@@ -534,7 +546,36 @@
       "distZone": 20
     }
   ],
-  "openPositions": [],
+  "openPositions": [
+    {
+      "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 1.0443,
+      "entry": 26258.3,
+      "openedAt": 1795656714592,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 13
+    },
+    {
+      "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
+      "name": "Funded 25K",
+      "sym": "NQ",
+      "side": "long",
+      "size": 1,
+      "entry": 26255.15,
+      "openedAt": 1795656719292,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 13
+    }
+  ],
   "captures": [],
   "lastReview": {
     "date": "2026-11-25",
