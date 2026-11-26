@@ -1,0 +1,280 @@
+{
+ "date": "2026-11-26",
+ "kind": "futures",
+ "gradedAt": "2026-11-26T23:23:49.758288+00:00",
+ "runs": [
+  {
+   "run": "pre-asia",
+   "session": "asia",
+   "from": 1795650000.0,
+   "to": 1795680000.0,
+   "instruments": {
+    "NQ": {
+     "bars": 71,
+     "dir24h": "SHORT",
+     "bias": {
+      "call": "LONG",
+      "movePts": 296.25,
+      "outcome": "hit"
+     },
+     "scenA": {
+      "outcome": "miss",
+      "target": 25997.0
+     },
+     "zones": [],
+     "em": {
+      "low": 170.0,
+      "base": 285,
+      "high": 362.0,
+      "realPts": 375,
+      "outcome": "over"
+     }
+    },
+    "ES": {
+     "bars": 71,
+     "dir24h": "FLAT",
+     "bias": {
+      "call": "LONG",
+      "movePts": 43.75,
+      "outcome": "hit"
+     },
+     "scenA": {
+      "outcome": "miss",
+      "target": 7195.0
+     },
+     "zones": [
+      {
+       "range": [
+        7214.0,
+        7224.0
+       ],
+       "dir": "SHORT",
+       "type": "fade_vah",
+       "grade": null,
+       "tcl": null,
+       "touched": true,
+       "entry": 7207.25,
+       "stop": 7215.25,
+       "target": 7164.25,
+       "outcome": "failed",
+       "family": "reversion",
+       "vs24h": "flat",
+       "r": -1.0
+      }
+     ],
+     "em": {
+      "low": 32.0,
+      "base": 42,
+      "high": 55.0,
+      "realPts": 51.0,
+      "outcome": "hit"
+     }
+    },
+    "GC": {
+     "bars": 70,
+     "dir24h": "LONG",
+     "bias": {
+      "call": "SHORT",
+      "movePts": 18.0,
+      "outcome": "miss"
+     },
+     "scenA": {
+      "outcome": "hit",
+      "target": 3584.0
+     },
+     "zones": [
+      {
+       "range": [
+        3610.0,
+        3620.0
+       ],
+       "dir": "SHORT",
+       "type": "sweep_pdh",
+       "grade": null,
+       "tcl": null,
+       "touched": true,
+       "entry": 3607.2,
+       "stop": 3616.2,
+       "target": 3576.2,
+       "outcome": "failed",
+       "family": "sweep",
+       "vs24h": "against",
+       "r": -1.0
+      }
+     ],
+     "em": {
+      "low": 22.0,
+      "base": 31,
+      "high": 40.0,
+      "realPts": 55.9,
+      "outcome": "over"
+     }
+    },
+    "YM": {
+     "bars": 70,
+     "dir24h": "LONG",
+     "bias": {
+      "call": "SHORT",
+      "movePts": 83,
+      "outcome": "miss"
+     },
+     "scenA": {
+      "outcome": "untriggered",
+      "target": 50236.0
+     },
+     "zones": [],
+     "em": {
+      "low": 186.0,
+      "base": 217,
+      "high": 315.0,
+      "realPts": 181,
+      "outcome": "under"
+     }
+    },
+    "CL": {
+     "bars": 70,
+     "dir24h": "LONG",
+     "bias": {
+      "call": "SHORT",
+      "movePts": 0.41,
+      "outcome": "miss"
+     },
+     "scenA": {
+      "outcome": "hit",
+      "target": 83.88
+     },
+     "zones": [],
+     "em": {
+      "low": 0.56,
+      "base": 0.8,
+      "high": 1.07,
+      "realPts": 0.68,
+      "outcome": "hit"
+     }
+    }
+   }
+  },
+  {
+   "run": "pre-london",
+   "session": "london",
+   "from": 1795680000.0,
+   "to": 1795703400.0,
+   "instruments": {
+    "NQ": {
+     "error": "no bars"
+    },
+    "ES": {
+     "error": "no bars"
+    },
+    "GC": {
+     "error": "no bars"
+    },
+    "YM": {
+     "error": "no bars"
+    },
+    "CL": {
+     "error": "no bars"
+    }
+   }
+  },
+  {
+   "run": "pre-ny",
+   "session": "ny",
+   "from": 1795703400.0,
+   "to": 1795730400.0,
+   "instruments": {
+    "NQ": {
+     "error": "no bars"
+    },
+    "ES": {
+     "error": "no bars"
+    },
+    "GC": {
+     "error": "no bars"
+    },
+    "YM": {
+     "error": "no bars"
+    },
+    "CL": {
+     "error": "no bars"
+    }
+   }
+  }
+ ],
+ "hitLog": {
+  "NQ": {
+   "bias": [
+    1,
+    1
+   ],
+   "scenA": [
+    0,
+    1
+   ],
+   "em": [
+    0,
+    1
+   ]
+  },
+  "ES": {
+   "bias": [
+    1,
+    1
+   ],
+   "scenA": [
+    0,
+    1
+   ],
+   "zone": [
+    0,
+    1
+   ],
+   "em": [
+    1,
+    1
+   ]
+  },
+  "GC": {
+   "bias": [
+    0,
+    1
+   ],
+   "scenA": [
+    1,
+    1
+   ],
+   "zone": [
+    0,
+    1
+   ],
+   "em": [
+    0,
+    1
+   ]
+  },
+  "YM": {
+   "bias": [
+    0,
+    1
+   ],
+   "em": [
+    0,
+    1
+   ]
+  },
+  "CL": {
+   "bias": [
+    0,
+    1
+   ],
+   "scenA": [
+    1,
+    1
+   ],
+   "em": [
+    1,
+    1
+   ]
+  }
+ }
+}
