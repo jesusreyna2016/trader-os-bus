@@ -1,7 +1,7 @@
 {
   "_writer": "contexto-composer",
   "_schema": 1,
-  "asOf": "2026-11-26T06:00:47.355Z",
+  "asOf": "2026-11-26T06:01:01.951Z",
   "symbols": {
     "BTC": {
       "verdict": null,
@@ -92,8 +92,8 @@
           "h2": 1,
           "h3": 1
         },
-        "po3": "MANIPULATION",
-        "po3Dir": "up",
+        "po3": "EXPANSION",
+        "po3Dir": "down",
         "lastLevelEvent": {
           "level": "MNO",
           "event": "TOUCH",
