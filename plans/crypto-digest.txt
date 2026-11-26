@@ -1,7 +1,8 @@
-Contexto crypto-close 2026-11-26 00:26 UTC
-ETH: LONG, WAIT. Barrida del maximo del dia/Asia (1,712.25) con rechazo bajo 1,710, contraria a las 24h pero es sweep (tapa en B, nunca GO). Precio 1,709.17 (+1.34% 24h), tras el viaje de ida y vuelta de ayer (minimo 1,612.66, maximo 1,703.33)
-BTC: LONG, WAIT. Misma barrida del maximo del dia/Asia (61,230.0), sweep tapado en B. Precio 61,144.1 (+1.74% 24h), mismo viaje de ida y vuelta (minimo 57,500.0, maximo 60,790.3)
-foco: ETH, sin zona A+ viva en ninguna; vigilando el rechazo en el maximo del dia o la continuacion hacia la primera extension
-sin riskWindow hoy: jueves UTC, Thanksgiving en EE.UU. (liquidez de acciones reducida), sin dato USD nuevo en el feed
+Contexto crypto-ny 2026-11-26 08:52 CT
+ETH: LONG, AVOID. La barrida corta del maximo del dia/Asia se invalido de madrugada (corrio hasta 1,733.95, stop 1,714 superado sin rechazo, zona broken). Precio 1,704.68 (+5.12% 24h), por encima del PDH de ayer (1,703.33)
+BTC: LONG, AVOID. Misma invalidacion (corrio hasta 61,840.0, stop 61,270 superado sin rechazo, zona broken). Precio 60,965.5 (+5.68% 24h), por encima del PDH de ayer (60,790.3)
+foco: ETH, sin zona a tiro tras la invalidacion; vigilando un reclamo del PDH/VWAP o un nuevo toque del techo de Londres (1,716.08)
+apertura NY: NQ y ES abrieron fuertes en sesion fina de Thanksgiving (NQ +1.04%, ES rompiendo su maximo de ayer) pero ETH/BTC no acompañan por ahora
+sin riskWindow hoy; noticias y macro sin refrescar (mismo snapshot de antes de ayer)
 calificacion de ayer (2026-11-25 close+ny): la zona de rebote PDL/VAL rompio sin reclamo en las dos monedas, stop superado
 precision: 4/4 predicciones, 0/4 zonas
