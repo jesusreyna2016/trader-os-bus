@@ -1,9 +1,11 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-26T23:15:24.932Z",
- "status": "ok",
+ "checkedAt": "2026-11-26T23:30:34.897Z",
+ "status": "warn",
  "marketOpen": true,
- "issues": [],
+ "issues": [
+  "Plan de futuros (pre-asia): no corrio hoy (esperado 17.5h CT) (9h)"
+ ],
  "items": [
   {
    "key": "feeds",
@@ -11,7 +13,7 @@
    "writer": "TradingView -> tos-bus-snapshot",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-26T23:00:39.126Z",
+   "at": "2026-11-26T23:15:26.959Z",
    "note": "al dia"
   },
   {
@@ -20,7 +22,7 @@
    "writer": "tos-market",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-26T23:00:42.844Z",
+   "at": "2026-11-26T23:15:30.875Z",
    "note": "al dia"
   },
   {
@@ -29,7 +31,7 @@
    "writer": "lente Edge",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-26T23:00:47.148Z",
+   "at": "2026-11-26T23:15:35.259Z",
    "note": "al dia"
   },
   {
@@ -37,7 +39,7 @@
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
    "status": "ok",
-   "ageMin": 6,
+   "ageMin": 21,
    "at": "2026-11-26T23:09:09.447Z",
    "note": "al dia"
   },
@@ -47,24 +49,24 @@
    "writer": "tos-coach",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-26T23:00:44.070Z",
+   "at": "2026-11-26T23:15:32.225Z",
    "note": "al dia"
   },
   {
    "key": "plan",
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
-   "status": "ok",
-   "ageMin": 539,
+   "status": "warn",
+   "ageMin": 554,
    "at": "2026-11-26T14:16:34.000Z",
-   "note": "espera la corrida de hoy"
+   "note": "no corrio hoy (esperado 17.5h CT)"
   },
   {
    "key": "crypto",
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 503,
+   "ageMin": 519,
    "at": "2026-11-26T14:52:00.000Z",
    "note": "al dia"
   },
@@ -73,7 +75,7 @@
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
    "status": "ok",
-   "ageMin": 1414,
+   "ageMin": 1429,
    "at": "2026-11-25T23:41:15.949Z",
    "note": "espera la corrida de hoy"
   }
