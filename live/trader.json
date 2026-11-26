@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-26",
-  "asOf": "2026-11-26T03:01:00.128Z",
+  "asOf": "2026-11-26T03:15:36.849Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 36,
@@ -586,14 +586,14 @@
       "name": "Elite 3% DLL 25K Challenge",
       "sym": "NQ",
       "side": "short",
-      "size": 3.0443,
-      "entry": 26240.66436619,
+      "size": 5.0443,
+      "entry": 26246.00787621,
       "openedAt": 1795661444850,
       "hadStop": false,
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 1
+      "distZone": 4
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
