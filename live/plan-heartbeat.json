@@ -1,6 +1,6 @@
 {
- "lastRun": "2026-11-25T23:40:00.000Z",
- "runType": "pre-asia",
+ "lastRun": "2026-11-26T07:26:15.000Z",
+ "runType": "pre-london",
  "ok": true,
- "note": "plan 2026-11-26 Asia: 5 WAIT, round-trip de ayer en los 5 (extreme_range_unresolved), feriado Accion de Gracias manana, sin zona de calidad excepto B en ES/GC"
+ "note": "plan Londres: 5 WAIT, fase adaptador sin move24h -> techo B en todos; ES ya en VAH/PDH, GC/YM/CL con conflicto de marcos activo"
 }
