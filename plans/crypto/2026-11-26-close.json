@@ -1,0 +1,258 @@
+{
+ "schema": "crypto-plan-1",
+ "runType": "crypto-close",
+ "builtAt": "2026-11-26T00:26:00Z",
+ "date": "2026-11-26",
+ "slot": "close",
+ "validUntil": "2026-11-26T14:45:00Z",
+ "dataHealth": {
+  "snapshotAgeMin": 11,
+  "stale": [],
+  "missing": [],
+  "notes": [
+   "live/shock.json no existe: sin ventana de shock que chequear esta corrida.",
+   "macro.crypto y news.json llegan con ~21h de antiguedad (builtAt 2026-11-25T03:15 UTC, sin refrescar desde antes de la corrida ny de ayer): se usan igual (unico snapshot disponible) pero con cautela; fondeo, miedo y DVOL pueden estar desactualizados, y no hay forma de confirmar un titular cripto mas fresco que esa ventana.",
+   "hoy (jueves UTC) es Thanksgiving en EE.UU.: liquidez de acciones reducida / NYSE cerrado; el calendario visible en el feed es el de ayer (miercoles), ya resuelto, sin evento USD nuevo dentro de esta ventana: riskWindow queda en null.",
+   "macro.crypto.cmeGap no aplica hoy (jueves UTC, fuera de la ventana viernes a lunes): cmeGap va null en el plan de hoy.",
+   "orb de ambos simbolos difiere algo de feed.raw en pdh/pdl (ETH 1,698.72/1,608.86 vs 1,703.33/1,612.66, bajo el 0.3%; BTC 60,568.01/57,300.38 vs 60,790.3/57,500.0, por encima del 0.3%): uso feed.raw (la fuente de niveles del metodo) en los dos simbolos, BTC posiblemente congelado.",
+   "live/edge.json es el edge de scalp de futuros (NQ/ES, segmentos de retest), sin segmento cripto propio; overall.expRnet -0.06 (la senal cruda pierde net) en gate shadow (readyForLive false): queda como aviso de fondo, no bloquea, y hoy no hay GO de todas formas.",
+   "la unica confluencia a tiro en las dos monedas es una barrida del maximo del dia/Asia (tipo sweep_*): el metodo tapa siempre los sweeps en B (nunca A+, nunca GO, 8e), asi que hoy no hay zona A+ del metodo en ninguna de las dos aunque el score sea alto.",
+   "prioris de hoy (scorecard actualizado tras calificar ayer, seccion 4): fondeo neutral 25.0% n=64, miedo extremo 23.6% n=144, DVOL subiendo 23.5% n=34, sin hueco de CME 25.9% n=108, sin titular 14.3% n=35, simbolo ETH 22.0% n=82, simbolo BTC 23.5% n=68; todos n>=8 y muy por debajo de 40%: conviccion baja en las dos monedas."
+  ]
+ },
+ "summary": {
+  "es": "ETH y BTC hicieron un viaje de ida y vuelta completo ayer: barrieron a nuevos minimos del dia (ETH 1,612.66, BTC 57,500.0, rompiendo el piso del dia anterior) y despues revirtieron con fuerza hasta nuevos maximos de recuperacion (ETH 1,703.33, BTC 60,790.3) antes del corte de dia. La vela de hoy sigue empujando arriba: ETH y BTC ya marcaron un maximo nuevo en la primera media hora (ETH 1,712.25, BTC 61,230.0), justo donde coincide el techo de la sesion de Asia con el overnight. La unica zona a tiro en cada moneda es una barrida de ese maximo con rechazo, contraria a las 24h, pero el metodo tapa los sweeps en B (nunca A+, nunca GO): sin zona A+ y con todos los prioris de hoy muy por debajo de 40%, la conviccion se queda baja. Hoy es Thanksgiving en EE.UU. (liquidez de acciones reducida, sin dato USD nuevo en el feed). Veredicto: WAIT en ETH y BTC, vigilando el rechazo en el maximo del dia o la continuacion hacia la primera extension.",
+  "en": "ETH and BTC made a full round trip yesterday: they swept to fresh day lows (ETH 1,612.66, BTC 57,500.0, breaking the prior day's floor) and then reversed hard into fresh recovery highs (ETH 1,703.33, BTC 60,790.3) before the day cut. Today's candle keeps pushing up: ETH and BTC already tagged a new high in the first half hour (ETH 1,712.25, BTC 61,230.0), right where the Asia session top lines up with the overnight high. The only zone in reach on each coin is a sweep-and-reject at that high, against the 24h move, but the method caps sweeps at B (never A+, never GO): with no A+ zone and every prior today measuring well under 40%, conviction stays low. Today is Thanksgiving in the US (reduced stock liquidity, no fresh USD data in the feed). Verdict: WAIT on ETH and BTC, watching for the rejection at the day's high or continuation into the first extension."
+ },
+ "focus": {
+  "sym": "ETHUSDT",
+  "setup": {
+   "es": "ETH en 1,709.17, a 3 puntos del maximo del dia/Asia (1,712.25, coincide con el overnight) tras el viaje de ida y vuelta de ayer: vigilancia de una barrida con rechazo de vuelta bajo 1,710 (contraria a las 24h, score 7, pero capada en B por ser sweep), nada de GO.",
+   "en": "ETH at 1,709.17, 3 points from the day/Asia high (1,712.25, matches the overnight high) after yesterday's full round trip: watching for a sweep with a reject back under 1,710 (against the 24h move, score 7, but capped at B since it is a sweep), no GO."
+  }
+ },
+ "riskWindow": null,
+ "cryptoContext": {
+  "risk": "MEDIO",
+  "deriv": {
+   "es": "ETH con fondeo neutral (+0.0075% cada 8h, dato de ayer) y OI -0.35% en 24h (casi plano, cierres); cuentas largas 3.11 a 1, sobre el corte de 3 (retail cargado de largos, contrario). BTC con fondeo neutral (+0.0032%) y OI -0.03% (plano); cuentas largas 2.64 a 1.",
+   "en": "ETH funding is neutral (+0.0075% per 8h, yesterday's reading) with OI -0.35% in 24h (near flat, closings); long accounts 3.11 to 1, over the 3-to-1 cutoff (retail crowded long, contrarian). BTC funding is neutral (+0.0032%) with OI -0.03% (flat); long accounts 2.64 to 1."
+  },
+  "dvol": 66.28,
+  "fearGreed": 13,
+  "cmeGap": null,
+  "ethBtc24hPct": 0.2,
+  "drivers": [],
+  "note": {
+   "es": "Miedo extremo (13, dato de ayer, sin caida nueva de panico) con DVOL alto (66.28, tambien de ayer). El propio DVOL de ETH en el feed de hoy viene mas moderado (65.89, rango 59 de 100 en el ultimo año): ni caro ni barato. Sin hueco del CME hoy (jueves, fuera de ventana). Sin titular cripto fresco verificable (news.json con ~21h de antiguedad). Cuentas largas de ETH ya sobre el corte de 3 a 1: retail cargado de largos, riesgo de barrida si el rebote de ayer se revierte.",
+   "en": "Extreme fear (13, yesterday's reading, no fresh panic drop) with DVOL high (66.28, also from yesterday). ETH's own DVOL in today's feed reads more moderate (65.89, rank 59 of 100 over the past year): neither cheap nor expensive. No CME gap today (Thursday, outside the window). No verifiable fresh crypto headline (news.json is about 21h old). ETH long accounts are already over the 3-to-1 cutoff: retail crowded long, a sweep risk if yesterday's bounce reverses."
+  }
+ },
+ "personal": {
+  "patternId": "revenge-after-sl",
+  "note": {
+   "es": "Ayer el stop del rebote en PDL/VAL salto en las dos monedas justo antes de que el precio revirtiera con fuerza hacia arriba: si hoy busca el largo otra vez, que sea por una zona nueva con su propio gatillo, no por recuperar la perdida de ayer.",
+   "en": "Yesterday the stop on the PDL/VAL bounce got taken out on both coins right before price reversed hard to the upside: if you look for the long again today, make it a new zone with its own trigger, not an attempt to recover yesterday's loss."
+  },
+  "capLine": {
+   "es": "Stop puesto en el libro al entrar . tamaño definido por el riesgo antes de entrar . no añadir a una posicion perdedora",
+   "en": "Resting stop in the book at entry . size set by risk before entry . no adding to a losing position"
+  }
+ },
+ "instruments": {
+  "ETHUSDT": {
+   "price": 1709.17,
+   "biasDay": "LONG",
+   "biasSession": "NEUTRAL",
+   "conviction": "baja",
+   "move24h": {
+    "dir": "LONG",
+    "pct": 1.34
+   },
+   "regime": "NEUTRAL",
+   "tcl": {
+    "v": 0,
+    "flip": 1671.22
+   },
+   "context": {
+    "es": "Precio en 1,709.17, justo bajo el maximo del dia/Asia (1,712.25, mismo nivel que el overnight) tras barrer el minimo de ayer (1,612.66) y revertir hasta el maximo de ayer (1,703.33). Sube 1.34% en 24h. El regimen paso de bajista a neutral en el corte de dia (cambio esta vela); el checklist de tendencia se quedo sin veredicto (v=0, diario y 4h en contra, 1h a favor): lecturas mixtas.",
+    "en": "Price at 1,709.17, just under the day/Asia high (1,712.25, same level as the overnight high) after sweeping yesterday's low (1,612.66) and reversing all the way to yesterday's high (1,703.33). Up 1.34% in 24h. The regime flipped from bearish to neutral at the day cut (changed this candle); the trend checklist has no verdict (v=0, daily and 4h against, 1h for): mixed reads."
+   },
+   "levels": {
+    "vah": 1671.27,
+    "poc": 1650.19,
+    "val": 1635.76,
+    "pdh": 1703.33,
+    "pdl": 1612.66,
+    "dayOpen": 1697.29,
+    "vwap": 1705.03,
+    "pwh": 1876.45,
+    "pwl": 1542.52
+   },
+   "zones": [
+    {
+     "range": [
+      1709.0,
+      1716.0
+     ],
+     "dir": "SHORT",
+     "type": "sweep_asiaH",
+     "confluence": 7,
+     "grade": "B",
+     "tcl": null,
+     "vs24h": "against",
+     "why": {
+      "es": "contraria a las 24h (+2), maximo del dia/Asia 1,712.25 (coincide con el overnight, +1), FVG bajista de 15m 1,714.59-1,721.18 y el iFVG de 15m 1,716.28-1,720.76 justo encima, TF mayor al de 5m (+2), barrida de liquidez en el maximo del dia (+1), encaja con Asia fade de extremos (+1) = 7. El metodo tapa los sweeps en B (nunca A+, nunca GO, regla 8e) aunque el score sea alto.",
+      "en": "against the 24h move (+2), day/Asia high 1,712.25 (matches the overnight high, +1), 15m bearish FVG 1,714.59-1,721.18 and the 15m iFVG 1,716.28-1,720.76 right above, a TF above the 5m chart (+2), liquidity sweep at the day's high (+1), fits Asia fading extremes (+1) = 7. The method caps sweeps at B (never A+, never GO, rule 8e) no matter how high the score."
+     },
+     "play": {
+      "trigger": {
+       "es": "barrida sobre 1,712.25 (maximo del dia/Asia, coincide con el overnight) y cierre de 5m de vuelta bajo 1,710.00",
+       "en": "sweep above 1,712.25 (day/Asia high, matches the overnight high) and a 5m close back below 1,710.00"
+      },
+      "stop": 1714.0,
+      "tp1": 1703.33,
+      "tp2": 1671.27,
+      "maxNotionalUsd": 50000,
+      "qtyNote": {
+       "es": "riesgo $50: con stop a 4 puntos del gatillo (~1,710), qty ~12.5 ETH (~$21,375 nocional); parcial 1/2 en TP1 (PDH de ayer, 1,703.33) y BE SOLO despues de cobrarlo, resto a TP2 (VAH de ayer, 1,671.27). Ajusta a tu precio real de entrada.",
+       "en": "risk $50: with the stop 4 points from the trigger (~1,710), qty ~12.5 ETH (~$21,375 notional); half off at TP1 (yesterday's PDH, 1,703.33) and move to BE ONLY after banking it, the rest to TP2 (yesterday's VAH, 1,671.27). Adjust to your real entry price."
+      }
+     }
+    }
+   ],
+   "verdict": {
+    "signal": "WAIT",
+    "reason": {
+     "es": "la unica zona a tiro es una barrida del maximo del dia/Asia, score 7 y contraria a las 24h, pero es un sweep: el metodo lo tapa siempre en B, nunca A+ y nunca GO. Sin zona A+ no hay GO por regla dura, y la conviccion ademas se queda baja por los mismos prioris de fondo (fondeo neutral 25.0% n=64, miedo extremo 23.6% n=144, DVOL subiendo 23.5% n=34, sin hueco de CME 25.9% n=108, simbolo ETH 22.0% n=82). WAIT a la barrida y el rechazo.",
+     "en": "the only zone in reach is a sweep of the day/Asia high, score 7 and against the 24h move, but it is a sweep: the method always caps it at B, never A+ and never GO. No A+ zone, no GO by the hard rule, and conviction also stays low from the same background priors (neutral funding 25.0% n=64, extreme fear 23.6% n=144, DVOL rising 23.5% n=34, no CME gap 25.9% n=108, symbol ETH 22.0% n=82). WAIT for the sweep and the reject."
+    }
+   },
+   "counterCase": {
+    "es": "si el precio no barre 1,712.25 y en cambio sigue de corrido sin pausa, el dia de tendencia alcista se confirma y la primera extension (1,726.00, +25% del rango de ayer desde el PDH) es el siguiente objetivo, no el fade: perseguir el corto ahi es la fuga. El miedo extremo (13) tambien corta en las dos direcciones: si el rebote de ayer se revierte rapido (las mechas se recompran rapido en panico), el sweep de hoy puede no aguantar y solo dar una entrada corta antes de que el precio vuelva a subir.",
+    "en": "if price does not sweep 1,712.25 and instead keeps running with no pause, the bullish trend day is confirmed and the first extension (1,726.00, +25% of yesterday's range from the PDH) is the next target, not the fade: chasing the short there is the leak. Extreme fear (13) also cuts both ways: if yesterday's bounce reverses fast (wicks get bought back quickly in panic), today's sweep may not hold and could just hand a short entry before price turns back up."
+   },
+   "predictions": [
+    {
+     "id": "ETH-1",
+     "kind": "level",
+     "text": {
+      "es": "ETH no cierra ningun 5m sobre 1,726.00 (extension +25% de ayer desde el PDH) antes de las 08:45 CT.",
+      "en": "ETH does not close any 5m candle above 1,726.00 (yesterday's +25% extension from the PDH) before 08:45 CT."
+     },
+     "resolveAt": "2026-11-26T14:45:00Z"
+    },
+    {
+     "id": "ETH-2",
+     "kind": "level",
+     "text": {
+      "es": "ETH toca 1,703.33 (PDH de ayer) o mas abajo antes de las 08:45 CT.",
+      "en": "ETH touches 1,703.33 (yesterday's PDH) or lower before 08:45 CT."
+     },
+     "resolveAt": "2026-11-26T14:45:00Z"
+    }
+   ]
+  },
+  "BTCUSDT": {
+   "price": 61144.1,
+   "biasDay": "LONG",
+   "biasSession": "LONG",
+   "conviction": "baja",
+   "move24h": {
+    "dir": "LONG",
+    "pct": 1.74
+   },
+   "regime": "BULL",
+   "tcl": {
+    "v": 0,
+    "flip": 59643.84
+   },
+   "context": {
+    "es": "Precio en 61,144.1, bajando un poco desde el maximo del dia/Asia (61,230.0) tras barrer el minimo de ayer (57,500.0) y revertir hasta el maximo de ayer (60,790.3). Sube 1.74% en 24h. El regimen se mantiene alcista (sin cambio este corte); el checklist de tendencia se quedo sin veredicto (v=0, diario y 4h en contra, 1h a favor), igual que ETH.",
+    "en": "Price at 61,144.1, pulling back slightly from the day/Asia high (61,230.0) after sweeping yesterday's low (57,500.0) and reversing all the way to yesterday's high (60,790.3). Up 1.74% in 24h. The regime stays bullish (unchanged this candle); the trend checklist has no verdict (v=0, daily and 4h against, 1h for), same as ETH."
+   },
+   "levels": {
+    "vah": 59915.4,
+    "poc": 59392.5,
+    "val": 58193.0,
+    "pdh": 60790.3,
+    "pdl": 57500.0,
+    "dayOpen": 60639.9,
+    "vwap": 60945.8,
+    "pwh": 66099.2,
+    "pwl": 55242.2
+   },
+   "zones": [
+    {
+     "range": [
+      61100.0,
+      61270.0
+     ],
+     "dir": "SHORT",
+     "type": "sweep_asiaH",
+     "confluence": 7,
+     "grade": "B",
+     "tcl": null,
+     "vs24h": "against",
+     "why": {
+      "es": "contraria a las 24h (+2), maximo del dia/Asia 61,230.0 (coincide con el overnight, +1), FVG bajista solapado en 15m, 1h y 4h en 61,230.0-61,317.3, TF mayor al de 5m (+2), barrida de liquidez en el maximo del dia (+1), encaja con Asia fade de extremos (+1) = 7. El metodo tapa los sweeps en B (nunca A+, nunca GO, regla 8e) aunque el score sea alto.",
+      "en": "against the 24h move (+2), day/Asia high 61,230.0 (matches the overnight high, +1), overlapping bearish FVG on 15m, 1h and 4h at 61,230.0-61,317.3, a TF above the 5m chart (+2), liquidity sweep at the day's high (+1), fits Asia fading extremes (+1) = 7. The method caps sweeps at B (never A+, never GO, rule 8e) no matter how high the score."
+     },
+     "play": {
+      "trigger": {
+       "es": "barrida sobre 61,230.0 (maximo del dia/Asia, coincide con el overnight) y cierre de 5m de vuelta bajo 61,100.00",
+       "en": "sweep above 61,230.0 (day/Asia high, matches the overnight high) and a 5m close back below 61,100.00"
+      },
+      "stop": 61270.0,
+      "tp1": 60790.3,
+      "tp2": 59915.4,
+      "maxNotionalUsd": 50000,
+      "qtyNote": {
+       "es": "riesgo $50: con stop a 170 puntos del gatillo (~61,100), qty ~0.294 BTC (~$17,963 nocional); parcial 1/2 en TP1 (PDH de ayer, 60,790.3) y BE SOLO despues de cobrarlo, resto a TP2 (VAH de ayer, 59,915.4). Ajusta a tu precio real de entrada.",
+       "en": "risk $50: with the stop 170 points from the trigger (~61,100), qty ~0.294 BTC (~$17,963 notional); half off at TP1 (yesterday's PDH, 60,790.3) and move to BE ONLY after banking it, the rest to TP2 (yesterday's VAH, 59,915.4). Adjust to your real entry price."
+      }
+     }
+    }
+   ],
+   "verdict": {
+    "signal": "WAIT",
+    "reason": {
+     "es": "la unica zona a tiro es una barrida del maximo del dia/Asia, score 7 y contraria a las 24h, pero es un sweep: el metodo lo tapa siempre en B, nunca A+ y nunca GO. Sin zona A+ no hay GO por regla dura, y la conviccion ademas se queda baja por los mismos prioris de fondo (miedo extremo 23.6% n=144, DVOL subiendo 23.5% n=34, sin hueco de CME 25.9% n=108, simbolo BTC 23.5% n=68). WAIT a la barrida y el rechazo.",
+     "en": "the only zone in reach is a sweep of the day/Asia high, score 7 and against the 24h move, but it is a sweep: the method always caps it at B, never A+ and never GO. No A+ zone, no GO by the hard rule, and conviction also stays low from the same background priors (extreme fear 23.6% n=144, DVOL rising 23.5% n=34, no CME gap 25.9% n=108, symbol BTC 23.5% n=68). WAIT for the sweep and the reject."
+    }
+   },
+   "counterCase": {
+    "es": "si el precio no barre 61,230.0 y en cambio sigue de corrido sin pausa, el dia de tendencia alcista se confirma y la primera extension (61,612.9, +25% del rango de ayer desde el PDH) es el siguiente objetivo, no el fade: perseguir el corto ahi es la fuga. ETH viene un poco mas fuerte que BTC en las ultimas 24h (ethBtc +0.2%): si BTC rompe su propio maximo sin pausa mientras ETH todavia vigila su zona, resta conviccion al corto de BTC (divergencia).",
+    "en": "if price does not sweep 61,230.0 and instead keeps running with no pause, the bullish trend day is confirmed and the first extension (61,612.9, +25% of yesterday's range from the PDH) is the next target, not the fade: chasing the short there is the leak. ETH has been a touch stronger than BTC over the last 24h (ethBtc +0.2%): if BTC breaks its own high with no pause while ETH is still watching its zone, that subtracts conviction from the BTC short (divergence)."
+   },
+   "predictions": [
+    {
+     "id": "BTC-1",
+     "kind": "level",
+     "text": {
+      "es": "BTC no cierra ningun 5m sobre 61,612.9 (extension +25% de ayer desde el PDH) antes de las 08:45 CT.",
+      "en": "BTC does not close any 5m candle above 61,612.9 (yesterday's +25% extension from the PDH) before 08:45 CT."
+     },
+     "resolveAt": "2026-11-26T14:45:00Z"
+    },
+    {
+     "id": "BTC-2",
+     "kind": "level",
+     "text": {
+      "es": "BTC toca 60,790.3 (PDH de ayer) o mas abajo antes de las 08:45 CT.",
+      "en": "BTC touches 60,790.3 (yesterday's PDH) or lower before 08:45 CT."
+     },
+     "resolveAt": "2026-11-26T14:45:00Z"
+    }
+   ]
+  }
+ },
+ "graded": {
+  "plan": "2026-11-25",
+  "line": {
+   "es": "califique 2026-11-25 (close y ny, grade_plans.py --crypto 2026-11-25): la zona de rebote bounce_val del close rompio sin reclamo en las dos monedas (barrida directa del PDL/VAL, stop superado); las mismas zonas copiadas a la ny tambien quedan rotas (heredan el estado, no se recalifican). Predicciones 4/4: los dos PDL se tocaron y ninguna moneda cerro ningun 5m sobre su POC de ayer antes de las 08:45 CT.",
+   "en": "graded 2026-11-25 (close and ny, grade_plans.py --crypto 2026-11-25): the close's bounce_val zone broke with no reclaim on both coins (a straight sweep through the PDL/VAL, stop taken out); the same zones copied into the ny also read broken (they inherit the state, not re-graded). Predictions 4/4: both PDLs were touched and neither coin closed a single 5m candle above yesterday's POC before 08:45 CT."
+  }
+ },
+ "updated": null
+}

@@ -1,8 +1,7 @@
-Contexto crypto-ny 2026-11-25 08:49 CT
-ETH: SHORT, WAIT. Zona de rebote PDL/VAL rota (barrida sin reclamo, stop 1,664 superado). Precio 1,615.19 (-3.34% 24h), ya en la extension completa de ayer y un FVG alcista de 1h, sin calificar aun
-BTC: SHORT, WAIT. Zona de rebote PDL/VAL rota (stop 59,340 superado). Precio 57,566.10 (-3.48% 24h), en el borde de un FVG alcista de 1h y la extension 50-100% de ayer, sin calificar aun
-foco: ETH, sin zona A+ viva en ninguna; vigilando reaccion en la extension/FVG para el plan siguiente
-riskWindow cerrada: Core PCE/PIB (13:15-14:00 UTC) ya paso, sin otro evento de alto impacto hoy
-fondeo de ETH paso de cargado de cortos a neutral; miedo extremo sube un poco (13); sin titular ni shock nuevo
-calificacion de ayer (2026-11-24 close+ny) sigue igual: las dos zonas bounce_val del close funcionaron
-precision: 3/4 predicciones, 2/4 zonas
+Contexto crypto-close 2026-11-26 00:26 UTC
+ETH: LONG, WAIT. Barrida del maximo del dia/Asia (1,712.25) con rechazo bajo 1,710, contraria a las 24h pero es sweep (tapa en B, nunca GO). Precio 1,709.17 (+1.34% 24h), tras el viaje de ida y vuelta de ayer (minimo 1,612.66, maximo 1,703.33)
+BTC: LONG, WAIT. Misma barrida del maximo del dia/Asia (61,230.0), sweep tapado en B. Precio 61,144.1 (+1.74% 24h), mismo viaje de ida y vuelta (minimo 57,500.0, maximo 60,790.3)
+foco: ETH, sin zona A+ viva en ninguna; vigilando el rechazo en el maximo del dia o la continuacion hacia la primera extension
+sin riskWindow hoy: jueves UTC, Thanksgiving en EE.UU. (liquidez de acciones reducida), sin dato USD nuevo en el feed
+calificacion de ayer (2026-11-25 close+ny): la zona de rebote PDL/VAL rompio sin reclamo en las dos monedas, stop superado
+precision: 4/4 predicciones, 0/4 zonas

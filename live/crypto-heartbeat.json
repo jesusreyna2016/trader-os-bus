@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-11-25T14:49:45Z",
-  "runType": "crypto-ny",
+  "lastRun": "2026-11-26T00:26:00Z",
+  "runType": "crypto-close",
   "ok": true,
-  "note": "update ligero: zona de rebote PDL/VAL rota en ETH y BTC (barrida sin reclamo, stop superado en las dos), precio en la extension/FVG de 1h sin calificar aun. Fondeo ETH paso a neutral, sesgo de sesion ETH a corto. riskWindow de Core PCE/PIB cerrada tras pasar. WAIT en las dos, lint OK."
+  "note": "ETH y BTC WAIT; sweep del maximo del dia/Asia (tapado en B, nunca GO); calificacion de 2026-11-25 hecha (zona bounce_val rota las dos)"
 }
