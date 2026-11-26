@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-26",
-  "asOf": "2026-11-26T15:45:37.664Z",
+  "asOf": "2026-11-26T16:00:48.870Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 43,
@@ -370,7 +370,7 @@
       "flags": [
         "OVER_MAX_TRADES"
       ],
-      "distZone": 14
+      "distZone": 16
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -461,7 +461,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 2
+      "distZone": 3
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -480,7 +480,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 11
+      "distZone": 14
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -499,7 +499,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 11
+      "distZone": 13
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -518,7 +518,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 15
+      "distZone": 14
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
