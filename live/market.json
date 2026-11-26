@@ -1,7 +1,7 @@
 {
   "_writer": "contexto-composer",
   "_schema": 1,
-  "asOf": "2026-11-26T16:30:42.669Z",
+  "asOf": "2026-11-26T16:30:56.870Z",
   "symbols": {
     "BTC": {
       "verdict": null,
@@ -500,10 +500,10 @@
         "po3Dir": "down",
         "lastLevelEvent": {
           "level": "NYO",
-          "event": "TOUCH",
-          "t": 1795710000000,
+          "event": "CROSS",
+          "t": 1795710300000,
           "price": 3601.5,
-          "dist": 0,
+          "dist": -2.7,
           "touches": 4
         }
       }
