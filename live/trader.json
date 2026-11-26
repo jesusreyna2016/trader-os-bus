@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-26",
-  "asOf": "2026-11-26T04:15:49.636Z",
+  "asOf": "2026-11-26T04:30:45.477Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 46,
@@ -24,8 +24,8 @@
     "maxLossStreak": 8
   },
   "offZone": {
-    "count": 5,
-    "pnl": 799.51,
+    "count": 4,
+    "pnl": 898.05,
     "ofTrades": 29
   },
   "dataHealth": {
@@ -191,12 +191,6 @@
       "at": 1795625479906,
       "sym": "NQ",
       "note": "entrada en tierra de nadie (100 pts al nivel mas cercano)"
-    },
-    {
-      "rule": "zona",
-      "at": 1795664267033,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (21 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -547,7 +541,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 2
+      "distZone": 0
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -582,7 +576,7 @@
       "flags": [
         "OVER_MAX_TRADES"
       ],
-      "distZone": 2
+      "distZone": 16
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -600,7 +594,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 7
+      "distZone": 15
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -652,10 +646,9 @@
       "closedAt": 1795665540097,
       "flags": [
         "R1_REVENGE",
-        "OVER_MAX_TRADES",
-        "NO_ZONE"
+        "OVER_MAX_TRADES"
       ],
-      "distZone": 21
+      "distZone": 7
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -673,7 +666,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 17
+      "distZone": 3
     },
     {
       "acct": "jh7ejgvnk52j7q1p9xe52e72bn8jx272",
@@ -691,7 +684,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 0
+      "distZone": 14
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -709,7 +702,7 @@
         "R1_REVENGE",
         "OVER_MAX_TRADES"
       ],
-      "distZone": 1
+      "distZone": 13
     }
   ],
   "openPositions": [
@@ -722,10 +715,8 @@
       "entry": 26293.83524,
       "openedAt": 1795665669926,
       "hadStop": true,
-      "flags": [
-        "NO_ZONE"
-      ],
-      "distZone": 30
+      "flags": [],
+      "distZone": 16
     },
     {
       "acct": "jh787ft7kpk44bj49pc9q62ag18jzh23",
@@ -736,10 +727,8 @@
       "entry": 26294.0903,
       "openedAt": 1795665646290,
       "hadStop": true,
-      "flags": [
-        "NO_ZONE"
-      ],
-      "distZone": 30
+      "flags": [],
+      "distZone": 16
     }
   ],
   "captures": [],
