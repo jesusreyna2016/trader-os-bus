@@ -1,0 +1,183 @@
+{
+ "_doc": "Config del Lab de Trader OS. Horas en America/New_York. Ver lab/README.md.",
+ "symbols": [
+  "NQ",
+  "ES",
+  "GC",
+  "CL",
+  "ETH"
+ ],
+ "aliases": {
+  "MNQ": "NQ",
+  "MES": "ES",
+  "MGC": "GC",
+  "MCL": "CL",
+  "ETHUSDT": "ETH",
+  "ETHUSDT.P": "ETH"
+ },
+ "tick": {
+  "NQ": 0.25,
+  "ES": 0.25,
+  "GC": 0.1,
+  "CL": 0.01,
+  "ETH": 0.01,
+  "YM": 1,
+  "BTC": 0.1
+ },
+ "costTicks": 2,
+ "minDate": "2026-11-27",
+ "nyOpen": {
+  "default": "09:30"
+ },
+ "nyClose": {
+  "default": "16:00"
+ },
+ "minN": 10,
+ "orb": {
+  "windows": [
+   5,
+   15,
+   30
+  ],
+  "entries": [
+   "close",
+   "retest"
+  ],
+  "stops": [
+   "opp",
+   "mid",
+   "edge"
+  ],
+  "targets": [
+   "1R",
+   "2R",
+   "3R",
+   "ext1",
+   "eod"
+  ],
+  "retestBars": 6
+ },
+ "ib": {
+  "minutes": 60,
+  "entries": [
+   "close",
+   "retest"
+  ],
+  "stops": [
+   "opp",
+   "mid",
+   "edge"
+  ],
+  "targets": [
+   "1R",
+   "2R",
+   "ext0.5",
+   "ext1",
+   "eod"
+  ],
+  "levels": [
+   -50,
+   0,
+   25,
+   50,
+   75,
+   100,
+   150
+  ],
+  "controlLevels": [
+   12.5,
+   37.5,
+   62.5,
+   87.5
+  ],
+  "levelStops": [
+   0.1,
+   0.25
+  ],
+  "levelTargets": [
+   "1R",
+   "2R",
+   "next"
+  ],
+  "respectMove": 0.25,
+  "throughClose": 0.1
+ },
+ "sweep": {
+  "levels": [
+   "asH",
+   "asL",
+   "loH",
+   "loL",
+   "onh",
+   "onl",
+   "pdh",
+   "pdl"
+  ],
+  "reclaimBars": 3,
+  "revStops": [
+   "extreme",
+   "extreme+atr"
+  ],
+  "revTargets": [
+   "1R",
+   "2R",
+   "range",
+   "eod"
+  ],
+  "contCloses": 2,
+  "contTargets": [
+   "1R",
+   "2R",
+   "eod"
+  ]
+ },
+ "comboMinN": 20,
+ "va80": {
+  "closesInside": 2,
+  "entries": [
+   "close",
+   "retest"
+  ],
+  "retestBars": 6,
+  "stops": [
+   "edge",
+   "extreme"
+  ],
+  "targets": [
+   "poc",
+   "far",
+   "1R",
+   "2R"
+  ]
+ },
+ "pullback": {
+  "refs": [
+   "ema20",
+   "vwap"
+  ],
+  "minAway": 0.5,
+  "maxPerDay": 3,
+  "entries": [
+   "limit",
+   "confirm"
+  ],
+  "stops": [
+   "swing",
+   "atr"
+  ],
+  "targets": [
+   "1R",
+   "2R",
+   "hod"
+  ]
+ },
+ "walkForward": {
+  "inSampleFrac": 0.6,
+  "minDays": 20
+ },
+ "mgmt": [
+  "full",
+  "be1",
+  "half1"
+ ]
+}

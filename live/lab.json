@@ -1,0 +1,274 @@
+{
+ "_writer": "lab",
+ "_schema": 2,
+ "asOf": "2026-11-27T23:46:26Z",
+ "minDate": "2026-11-27",
+ "minN": 10,
+ "costTicks": 2,
+ "data": {
+  "tvbarDays": 0,
+  "bySym": {
+   "NQ": 0,
+   "ES": 0,
+   "GC": 0,
+   "CL": 0,
+   "ETH": 0
+  },
+  "trades": 0,
+  "source": "tdl_feed (TradingView)",
+  "collection": {
+   "NQ": {
+    "rows": 0,
+    "ohlc": 0,
+    "last": null,
+    "files": 0
+   },
+   "ES": {
+    "rows": 0,
+    "ohlc": 0,
+    "last": null,
+    "files": 0
+   },
+   "GC": {
+    "rows": 0,
+    "ohlc": 0,
+    "last": null,
+    "files": 0
+   },
+   "CL": {
+    "rows": 0,
+    "ohlc": 0,
+    "last": null,
+    "files": 0
+   },
+   "ETH": {
+    "rows": 0,
+    "ohlc": 0,
+    "last": null,
+    "files": 0
+   }
+  },
+  "walkForwardMinDays": 20
+ },
+ "lab": {},
+ "va80": {
+  "days": 0,
+  "openOutside": 0,
+  "reentryPct": null,
+  "afterReentry": {
+   "n": 0,
+   "reachedPocPct": null,
+   "reachedFarPct": null
+  },
+  "control": {
+   "insideDaysTouchBothPct": null,
+   "allDaysTouchBothPct": null
+  }
+ },
+ "ibLevels": {
+  "levels": {},
+  "controlAvg": null
+ },
+ "klLevels": {
+  "touches": 1207,
+  "all": {
+   "n": 1207,
+   "holdPct": 44.0,
+   "decidedPct": 65.7
+  },
+  "byLevel": {
+   "L3": {
+    "n": 71,
+    "holdPct": 63.0,
+    "decidedPct": 64.8
+   },
+   "R3": {
+    "n": 12,
+    "holdPct": 62.5,
+    "decidedPct": 66.7
+   },
+   "H3": {
+    "n": 35,
+    "holdPct": 57.7,
+    "decidedPct": 74.3
+   },
+   "WO": {
+    "n": 88,
+    "holdPct": 52.6,
+    "decidedPct": 64.8
+   },
+   "MNO": {
+    "n": 133,
+    "holdPct": 48.1,
+    "decidedPct": 60.9
+   },
+   "ONL": {
+    "n": 28,
+    "holdPct": 46.7,
+    "decidedPct": 53.6
+   },
+   "NYO": {
+    "n": 44,
+    "holdPct": 44.8,
+    "decidedPct": 65.9
+   },
+   "L4": {
+    "n": 37,
+    "holdPct": 44.8,
+    "decidedPct": 78.4
+   },
+   "H4": {
+    "n": 40,
+    "holdPct": 44.4,
+    "decidedPct": 67.5
+   },
+   "PP": {
+    "n": 50,
+    "holdPct": 44.1,
+    "decidedPct": 68.0
+   },
+   "PWL": {
+    "n": 29,
+    "holdPct": 44.0,
+    "decidedPct": 86.2
+   },
+   "PPOC": {
+    "n": 79,
+    "holdPct": 43.8,
+    "decidedPct": 60.8
+   },
+   "DO": {
+    "n": 106,
+    "holdPct": 42.7,
+    "decidedPct": 70.8
+   },
+   "L5": {
+    "n": 20,
+    "holdPct": 41.7,
+    "decidedPct": 60.0
+   },
+   "PVAH": {
+    "n": 94,
+    "holdPct": 39.7,
+    "decidedPct": 61.7
+   },
+   "PVAL": {
+    "n": 40,
+    "holdPct": 38.1,
+    "decidedPct": 52.5
+   },
+   "ONH": {
+    "n": 29,
+    "holdPct": 37.5,
+    "decidedPct": 55.2
+   },
+   "PDL": {
+    "n": 91,
+    "holdPct": 35.5,
+    "decidedPct": 68.1
+   },
+   "PDH": {
+    "n": 130,
+    "holdPct": 33.7,
+    "decidedPct": 70.8
+   },
+   "H5": {
+    "n": 41,
+    "holdPct": 32.0,
+    "decidedPct": 61.0
+   }
+  },
+  "byContext": {
+   "role": {
+    "resistance": {
+     "n": 557,
+     "holdPct": 43.3,
+     "decidedPct": 65.2
+    },
+    "support": {
+     "n": 607,
+     "holdPct": 44.1,
+     "decidedPct": 66.9
+    },
+    "None": {
+     "n": 43,
+     "holdPct": 54.2,
+     "decidedPct": 55.8
+    }
+   },
+   "regime": {
+    "mixed": {
+     "n": 671,
+     "holdPct": 45.1,
+     "decidedPct": 70.0
+    },
+    "chop": {
+     "n": 163,
+     "holdPct": 36.5,
+     "decidedPct": 58.9
+    },
+    "contra": {
+     "n": 192,
+     "holdPct": 46.9,
+     "decidedPct": 58.9
+    },
+    "favor": {
+     "n": 170,
+     "holdPct": 43.5,
+     "decidedPct": 63.5
+    }
+   },
+   "align": {
+    "mixed": {
+     "n": 344,
+     "holdPct": 47.6,
+     "decidedPct": 66.0
+    },
+    "favor": {
+     "n": 330,
+     "holdPct": 43.5,
+     "decidedPct": 70.3
+    },
+    "chop": {
+     "n": 162,
+     "holdPct": 35.8,
+     "decidedPct": 58.6
+    },
+    "contra": {
+     "n": 352,
+     "holdPct": 44.5,
+     "decidedPct": 64.5
+    }
+   },
+   "session": {
+    "ASIA": {
+     "n": 431,
+     "holdPct": 43.2,
+     "decidedPct": 64.5
+    },
+    "LONDON": {
+     "n": 329,
+     "holdPct": 42.7,
+     "decidedPct": 69.0
+    },
+    "NY": {
+     "n": 408,
+     "holdPct": 45.8,
+     "decidedPct": 63.7
+    },
+    "CLOSE": {
+     "n": 39,
+     "holdPct": 46.4,
+     "decidedPct": 71.8
+    }
+   }
+  },
+  "note": "Desenlace segun los eventos de TDL KL. En la medicion de nov-11 los niveles clave no aguantaron mas que niveles de control: comparar contra eso antes de concluir."
+ },
+ "parity": {
+  "compared": 0,
+  "agree": 0,
+  "diffs": []
+ },
+ "lastDays": {}
+}

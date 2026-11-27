@@ -1,0 +1,36 @@
+# Lab de Trader OS: recalcula live/lab.json con las velas del TDL Feed (tvbars/),
+# los eventos de TDL KL y los planes. Cada hora a :25 (despues del snapshot de :15) y a mano.
+name: lab
+on:
+  schedule:
+    - cron: '25 * * * *'
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: lab
+  cancel-in-progress: false
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Calcular y publicar (reintenta si el bus recibio commits mientras tanto)
+        run: |
+          git config user.name "lab-bot"
+          git config user.email "lab-bot@users.noreply.github.com"
+          for i in 1 2 3 4 5; do
+            git fetch --depth=1 origin main && git reset --hard origin/main
+            python3 lab/stats.py
+            git add live/lab.json state/lab-news.json
+            if git diff --cached --quiet; then echo "sin cambios"; exit 0; fi
+            git commit -m "tos: lab $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push origin HEAD:main && exit 0
+            sleep $((i * 7))
+          done
+          exit 1
