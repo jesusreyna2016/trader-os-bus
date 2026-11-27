@@ -1,0 +1,131 @@
+{
+ "date": "2026-11-26",
+ "kind": "crypto",
+ "gradedAt": "2026-11-27T00:18:02.019758+00:00",
+ "runs": [
+  {
+   "run": "2026-11-26-close",
+   "from": 1795652760.0,
+   "to": 1795704300.0,
+   "instruments": {
+    "ETHUSDT": {
+     "bars": 185,
+     "dir24h": "LONG",
+     "bias": null,
+     "zones": [
+      {
+       "range": [
+        1709.0,
+        1716.0
+       ],
+       "dir": "SHORT",
+       "type": "sweep_asiaH",
+       "grade": "B",
+       "tcl": null,
+       "touched": true,
+       "entry": 1705.52,
+       "stop": 1714.0,
+       "target": 1703.33,
+       "outcome": "worked",
+       "family": "sweep",
+       "vs24h": "against",
+       "r": 0.26
+      }
+     ]
+    },
+    "BTCUSDT": {
+     "bars": 185,
+     "dir24h": "LONG",
+     "bias": {
+      "call": "LONG",
+      "movePts": -31.2618,
+      "outcome": "miss"
+     },
+     "zones": [
+      {
+       "range": [
+        61100.0,
+        61270.0
+       ],
+       "dir": "SHORT",
+       "type": "sweep_asiaH",
+       "grade": "B",
+       "tcl": null,
+       "touched": false,
+       "outcome": "untouched",
+       "family": "sweep",
+       "vs24h": "against"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "run": "2026-11-26-ny",
+   "from": 1795704720.0,
+   "to": 1795737600.0,
+   "instruments": {
+    "ETHUSDT": {
+     "bars": 108,
+     "dir24h": "LONG",
+     "bias": null,
+     "zones": [
+      {
+       "range": [
+        1709.0,
+        1716.0
+       ],
+       "dir": "SHORT",
+       "type": "sweep_asiaH",
+       "grade": "B",
+       "tcl": null,
+       "touched": false,
+       "outcome": "untouched",
+       "family": "sweep",
+       "vs24h": "against"
+      }
+     ]
+    },
+    "BTCUSDT": {
+     "bars": 108,
+     "dir24h": "LONG",
+     "bias": {
+      "call": "LONG",
+      "movePts": -350.7812,
+      "outcome": "miss"
+     },
+     "zones": [
+      {
+       "range": [
+        61100.0,
+        61270.0
+       ],
+       "dir": "SHORT",
+       "type": "sweep_asiaH",
+       "grade": "B",
+       "tcl": null,
+       "touched": false,
+       "outcome": "untouched",
+       "family": "sweep",
+       "vs24h": "against"
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "hitLog": {
+  "ETHUSDT": {
+   "zone": [
+    1,
+    1
+   ]
+  },
+  "BTCUSDT": {
+   "bias": [
+    0,
+    2
+   ]
+  }
+ }
+}

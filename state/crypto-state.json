@@ -1,39 +1,7 @@
 {
   "schema": "crypto-state-1",
-  "updatedAt": "2026-11-26T00:30:00Z",
+  "updatedAt": "2026-11-27T00:30:00Z",
   "runs": [
-    {
-      "plan": "2026-11-01-ny",
-      "graded": {
-        "predictions": {
-          "hit": 0,
-          "miss": 0,
-          "unresolved": 0
-        },
-        "zones": {
-          "worked": 3,
-          "failed": 0,
-          "untouched": 1,
-          "unresolved": 0
-        }
-      }
-    },
-    {
-      "plan": "2026-11-02-close",
-      "graded": {
-        "predictions": {
-          "hit": 1,
-          "miss": 3,
-          "unresolved": 0
-        },
-        "zones": {
-          "worked": 1,
-          "failed": 3,
-          "untouched": 0,
-          "unresolved": 0
-        }
-      }
-    },
     {
       "plan": "2026-11-02-ny",
       "graded": {
@@ -641,16 +609,48 @@
           "unresolved": 0
         }
       }
+    },
+    {
+      "plan": "2026-11-26-close",
+      "graded": {
+        "predictions": {
+          "hit": 4,
+          "miss": 0,
+          "unresolved": 0
+        },
+        "zones": {
+          "worked": 1,
+          "failed": 0,
+          "untouched": 1,
+          "unresolved": 0
+        }
+      }
+    },
+    {
+      "plan": "2026-11-26-ny",
+      "graded": {
+        "predictions": {
+          "hit": 4,
+          "miss": 0,
+          "unresolved": 0
+        },
+        "zones": {
+          "worked": 0,
+          "failed": 0,
+          "untouched": 2,
+          "unresolved": 0
+        }
+      }
     }
   ],
   "scorecard": {
     "predictions": {
-      "n": 112,
-      "hit": 57
+      "n": 120,
+      "hit": 65
     },
     "zones": {
-      "n": 150,
-      "worked": 34
+      "n": 154,
+      "worked": 35
     },
     "byTcl": {
       "favor": {
@@ -664,11 +664,11 @@
     },
     "bySym": {
       "ETHUSDT": {
-        "n": 82,
-        "worked": 18
+        "n": 84,
+        "worked": 19
       },
       "BTCUSDT": {
-        "n": 68,
+        "n": 70,
         "worked": 16
       }
     },
@@ -682,12 +682,12 @@
         "worked": 18
       },
       "funding=neutral": {
-        "n": 64,
-        "worked": 16
+        "n": 68,
+        "worked": 17
       },
       "fg=fear": {
-        "n": 144,
-        "worked": 34
+        "n": 148,
+        "worked": 35
       },
       "fg=neutral": {
         "n": 2,
@@ -698,8 +698,8 @@
         "worked": 0
       },
       "dvol=up": {
-        "n": 34,
-        "worked": 8
+        "n": 38,
+        "worked": 9
       },
       "dvol=down": {
         "n": 38,
@@ -714,8 +714,8 @@
         "worked": 4
       },
       "gap=none": {
-        "n": 108,
-        "worked": 28
+        "n": 112,
+        "worked": 29
       },
       "headline=hack": {
         "n": 87,
@@ -730,12 +730,13 @@
         "worked": 0
       },
       "headline=none": {
-        "n": 35,
-        "worked": 5
+        "n": 39,
+        "worked": 6
       }
     }
   },
   "notes": [
+    "2026-11-27 califique (grade_plans.py --crypto 2026-11-26, close y ny). Dia de viaje de ida y vuelta en las dos monedas otra vez: la venta B del close (barrida del maximo del dia/Asia, score 7 las dos) si llego a su primer objetivo dentro de la ventana del close (r chico 0.26 en ETH; BTC nunca se toco), pero el precio siguio de corrido sin pausa y rompio la misma zona mas tarde sin el cierre de rechazo (hasta 1,733.95 ETH y 61,840.0 BTC), asi que la copia en la ny ya no tenia nada que tocar y quedo marcada rota (broken). Zonas 1/4 tocadas-ganadoras. Predicciones de texto 8/8 (contadas por cada aparicion en close y ny, convencion de este bus): los cuatro techos citados (+25% de extension) no se cerraron en ningun 5m y los cuatro PDH de ayer se tocaron o se superaron a la baja. Contexto sumado (igual en las dos corridas, el snapshot de news.json/macro.crypto llevaba entonces ~21h sin refrescar, hoy ya son ~45h): fondeo neutral de ETH (BTC igual), miedo extremo (13), DVOL alto (sin lectura fiable de chg24h por el snapshot viejo, uso 'subiendo' como aproximacion), sin hueco de CME (jueves, fuera de ventana), sin titular cripto fresco confirmable. Priores que aplican hoy siguen todos muy por debajo de 40%: fondeo neutral ahora 17/68=25.0%, miedo extremo 35/148=23.6%, DVOL subiendo 9/38=23.7%, sin hueco 29/112=25.9%, sin titular 6/39=15.4%, ETH 19/84=22.6%, BTC 16/70=22.9% (checklist a favor/en contra sin dato nuevo, las dos zonas de ayer llegaron con tcl null). Hoy (viernes UTC, aun jueves de Thanksgiving en EE.UU. por CT) las dos monedas cayeron de vuelta hasta el VAL/POC de ayer y barrieron el minimo de Londres con reclamo ya confirmado: hay una zona A+ del metodo en las dos (rebote/reversion contraria a las 24h, score 9), pero la conviccion se queda baja por los mismos prioris de arriba, todos n>=8 y debajo de 40%, asi que no hay GO pese al A+.",
     "2026-11-26 califique (grade_plans.py --crypto 2026-11-25, close y ny). Dia de viaje de ida y vuelta completo en las dos monedas: barrieron a nuevos minimos del dia tras el close (ETH 1,612.66, BTC 57,500.0, rompiendo el piso del dia anterior) sin el reclamo que pedia la zona de rebote bounce_val en PDL/VAL (score 8 las dos), estop superado en las dos, y despues revirtieron con fuerza hasta nuevos maximos de recuperacion (ETH 1,703.33, BTC 60,790.3) antes del corte de dia. Zonas 0/4 (0/2 en el close, 0/2 en la ny que hereda el mismo estado roto, sin recalificar). Predicciones de texto 4/4: los dos PDL se tocaron y ninguna moneda cerro ningun 5m sobre su POC de ayer antes de las 08:45 CT. Contexto sumado (igual en las dos corridas del close; el fondeo de ETH paso de cargado de cortos a neutral hacia la ny): miedo extremo (11 a 13), DVOL alto bajando en el close y subiendo un poco hacia la ny, sin hueco de CME (fuera de ventana, miercoles), sin titular cripto fresco de las ultimas 24h. Priores que aplican hoy siguen todos muy por debajo de 40%: fondeo cargado de cortos de ETH 18/86=20.9% (ya no aplica hoy, el fondeo volvio a neutral), fondeo neutral 16/64=25.0%, miedo extremo 34/144=23.6%, DVOL bajando 4/38=10.5% (la peor lectura hasta ahora), DVOL subiendo 8/34=23.5%, sin hueco 28/108=25.9%, sin titular 5/35=14.3% (la peor lectura de las de titular), ETH 18/82=22.0%, BTC 16/68=23.5%, checklist en contra 9/46=19.6% (favor se queda en 7/40=17.5%, sin dato nuevo). Hoy (jueves UTC, Thanksgiving en EE.UU.) ETH y BTC siguen empujando al alza desde la reversion de ayer, ya con un maximo nuevo del dia/Asia (ETH 1,712.25, BTC 61,230.0) a los 15 minutos del corte: la unica zona a tiro en las dos monedas es una barrida de ese maximo (sweep_asiaH, score 7 las dos, contraria a las 24h) pero el metodo tapa siempre los sweeps en B, nunca A+ ni GO (regla 8e), asi que hoy no hay zona A+ en ninguna de las dos ademas de la conviccion baja por los mismos prioris de arriba.",
     "2026-11-25 califique (grade_plans.py --crypto 2026-11-24, close y ny). Dia de balance con vuelta a la baja despues del viaje de ida y vuelta de antes de ayer: ETH y BTC abrieron pegados al cierre de ayer, dentro del VAL, y la zona de rebote bounce_val en PDL/VAL (score 9 ETH, 8 BTC, contraria a las 24h) funciono en las dos monedas en el close (r chico, 0.16 y 0.07); las mismas zonas copiadas a la ny no se volvieron a tocar (ya habian resuelto). Predicciones de texto 3/4 (contadas una vez por cada aparicion en close y ny, convencion de este bus): los dos PDL se tocaron y ETH se mantuvo bajo su POC, pero BTC cerro un 5m en 61,498.7, apenas 9 puntos sobre su POC de 61,489.6 (miss). Contexto sumado (igual en las dos corridas): fondeo cargado de cortos en ETH (BTC neutral), miedo extremo (11), DVOL alto bajando, sin hueco de CME (fuera de ventana), titular de hackeo (eco viejo del caso Binance/Norcorea, sin hackeo nuevo). Priores que aplican hoy siguen todos muy debajo de 40%: fondeo shorts-crowded ahora 18/85=21.2%, miedo extremo 34/140=24.3%, DVOL bajando 4/36=11.1% (sigue siendo de las peores lecturas), sin hueco 28/104=26.9%, titular de hackeo 24/87=27.6%, ETH 18/80=22.5%, BTC 16/66=24.2%, checklist en contra 9/42=21.4% (favor se queda en 7/40=17.5%, sin dato nuevo). Hoy (miercoles UTC) el hueco del CME sigue sin aplicar. Las dos monedas rompieron a minimos nuevos del dia cripto, regimen BEAR recien confirmado en las dos (BTC alineado diario/4h/1h, ETH mas mixto, 4h en cero); la zona de rebote en PDL/VAL de ayer vuelve a calificar A+ del metodo en las dos (score 8 en las dos) pero la conviccion sigue baja por los mismos prioris de arriba, todos n>=8 y debajo de 40%. Core PCE y PIB preliminar de EE.UU. (alto impacto) a las 13:30 UTC hoy: riskWindow 13:15-14:00 UTC, primera vez que un evento de calendario USD cae dentro de la ventana de un plan cripto desde que arranco esta corrida en el bus unificado.",
     "2026-11-24 califique (grade_plans.py --crypto 2026-11-23, close y ny). Dia de viaje de ida y vuelta completo en las dos monedas: rompieron a maximos nuevos (ETH 1,849, BTC 64,811.8) con la apertura de NY empujando al alza, y devolvieron casi todo antes del cierre del dia cripto (ETH 1,713.45, BTC 61,456.9, practicamente el mismo nivel del dia anterior). Las dos zonas vigiladas (sweep_pdh del techo de ayer, score 7 las dos) rompieron sin el cierre de reclamo que pedia el gatillo, en las dos corridas: 0/4 zonas, 0/8 predicciones de texto (los cuatro techos citados y los cuatro rangos se rompieron al alza). El driver de fondo fue ajeno a cripto: una cascada de liquidaciones (~$500M) seguida de un rebote fuerte por el regreso de Jensen Huang a Nvidia, contagio de acciones hacia cripto, no algo propio de ETH/BTC. Contexto sumado (igual en las dos corridas, el ny no refresco macro): fondeo cargado de cortos en ETH (BTC neutral), miedo extremo (11), DVOL bajando, hueco del CME de ETH todavia en ventana (gap=above, ultima vez antes del martes). Priores que aplican hoy siguen todos muy debajo de 40%: fondeo shorts-crowded ahora 16/81=19.8%, miedo extremo 32/136=23.5%, DVOL bajando 2/32=6.3% (la peor lectura hasta ahora), hueco por arriba (gap=above) 2/12=16.7%, titular de hackeo 22/83=26.5%, ETH 17/78=21.8%, BTC 15/64=23.4%, checklist a favor 7/40=17.5% y en contra 8/40=20% (los dos muy debiles, sigue sin ayudar). Hoy (martes UTC) el hueco del CME deja de aplicar (la ventana viernes a lunes se cerro anoche). Las dos monedas abren el dia nuevo pegadas al cierre de ayer, dentro del VAL: la zona de rebote en VAL/PDL de ayer con FVG de 1h califica A+ del metodo en las dos (score 9 ETH, 8 BTC) pero la conviccion sigue baja por los mismos prioris de arriba, todos n>=8 y debajo de 40%.",
@@ -744,7 +745,6 @@
     "2026-11-18 califique (grade_plans.py --crypto 2026-11-17, close y ny). Dia de rango estrecho en las dos monedas con una mecha fuerte de Londres hacia arriba que se rechazo: ETH toco un maximo de 1,840.11 en cierres de 15m (sobre el VAH/IBH citado, techo invalidado en las dos corridas) antes de volver a 1,786.92 por abajo (bajo el IBL citado tambien); BTC igual, maximo en cierres 65,212.93 (sobre el VAH citado) y minimo 64,029.37 (bajo el IBL citado). Sesgo corto fallo en el close de las dos monedas (ETH +5.28pts, BTC +517.27pts en contra) y en el ny de ETH (+12.88pts), solo acerto en el ny de BTC (-47.25pts). Predicciones de texto 0/8: los cuatro techos citados (VAH/IBH) se rompieron en cierres de 15m y los cuatro rangos tambien, en las dos corridas y en las dos monedas: otra vez el mismo patron, mis rangos de 15m no aguantan dias con mecha fuerte aunque el dia termine casi plano. Zonas 6/8: la venta B en VAH/IBH funciono las dos veces en ETH (close y ny) y las dos veces en BTC; la compra B dorada de BTC tambien funciono las dos veces; solo la compra B dorada de ETH rompio antes de confirmar las dos veces (mismo patron del 17: la zona dorada de ETH sigue siendo la mas floja). Contexto sumado: close fondeo shorts-crowded (ETH, BTC neutral), miedo extremo, DVOL subiendo, sin hueco CME (fuera de ventana), titular de hackeo (Lighter, aun sin aclarar); ny fondeo shorts-crowded en las dos (cambio desde el close), mismo miedo, DVOL subiendo, sin hueco, titular de hackeo aclarado (fuga de API, no protocolo) mas etf. Priores que aplican hoy siguen todos muy debajo de 40%: fondeo shorts-crowded ahora 16/73=22%, miedo extremo 31/124=25%, DVOL subiendo 8/32=25% (mejora un poco, sigue muy debil), sin hueco/gap=none 25/92=27%, titular de hackeo 21/75=28%, ETH 17/72=24%, BTC 14/58=24%. El checklist de tendencia sigue sin direccion confirmada en las dos monedas (v=0) asi que no aporta hoy. Hoy (martes) el movimiento de 24h viene PLANO en las dos monedas (ETH -0.02%, BTC +0.04%): sin direccion neta, ninguna zona puede ser A+ del metodo (8e: A+ exige vs24h en contra, y sin movimiento neto no hay 'en contra'), asi que el plan de hoy queda en B en las dos zonas de cada moneda, conviccion baja. FOMC Meeting Minutes hoy 19:00 UTC (13:00 CT) es riesgo de noticias alto: riskWindow 12:45-13:30 CT, nada de GO en esa ventana (aunque hoy no hay A+ para empezar).",
     "2026-11-17 califique (grade_plans.py --crypto 2026-11-16, close y ny). Dia de continuacion del rebote iniciado el sabado: ETH toco un maximo de 1,863.72 en mecha (justo bajo el PDH de 1,866.89) antes de enfriarse a 1,814 al cierre del dia cripto; BTC se quedo mas contenido, maximo 65,225 dentro de su propio rango. Sesgo corto fallo en el close de las dos monedas (ETH +41.97pts, BTC +471.05pts en contra) pero acerto en el ny de ETH (-16.06pts) y sigue fallando en BTC (+116.11pts). Predicciones de texto 1/4: solo el techo de BTC (65,675.80, VAH de ayer) aguanto toda la ventana; el techo de ETH (1,838.50) se rompio con fuerza a las 14:30 UTC (cierre 1,851.17) y los dos rangos PDL-VAH tambien se rompieron (ETH hasta 1,785.48 por abajo y 1,851.17 por arriba, BTC hasta 63,835.65 por abajo). Zonas 1/8: en el close, la venta A+ de ETH en VAH/PDH se rompio al alza antes de confirmar (broken); en el ny la misma zona si funciono (r=0.03, barrida y reclamo); las otras 6 (las dos compras B doradas y las dos ventas B de BTC, en las dos corridas) no se tocaron. Contexto sumado: close fondeo shorts-crowded (de ETH, BTC igual esta vez), miedo extremo, DVOL bajando, hueco CME por debajo (ultima vez en ventana, viernes a lunes), titular de hackeo (Coinone, brecha de datos); ny mismo fondeo (BTC pasa a neutral) y miedo, DVOL subiendo, mismo hueco, titular de hackeo nuevo (Lighter, DEX de perpetuos, ~$10M). Priores que aplican hoy siguen todos muy debajo de 40%: fondeo shorts-crowded 10/65=15%, miedo 25/116=22%, DVOL subiendo 2/24=8% y bajando 2/24=8% (las dos peores lecturas hasta ahora, empatadas), hueco por debajo 4/30=13%, titular de hackeo 18/71=25%, ETH 15/68=22%, BTC 10/54=19%. El hueco del CME de ETH deja de aplicar desde hoy (martes): el cierre del viernes (1,949) no vuelve a contar como iman hasta la proxima ventana viernes-lunes. Esta corrida (martes) llega con el snapshot del bus viejo (~42 min, pasa el umbral de 35) y el TDL Feed de las dos monedas tambien viejo (~42 min): conviccion tope baja y nada de GO en ninguna de las dos aunque hubiera zona A+ a tiro (la venta de ETH en VAH, score 6, se queda en WAIT solo por esto). El hackeo de Lighter sigue dentro de su ventana de 24h hasta ~14:20 UTC de hoy; Retail Sales de EE.UU. a las 13:30 UTC de hoy es riesgo de noticias ALTA con ventana 13:15-14:00 UTC.",
     "2026-11-16 califique (grade_plans.py --crypto 2026-11-15, close y ny). Dia de reversa violenta: la cascada del sabado se dio vuelta con fuerza, ETH +4.2% y BTC +3.0% en 24 h al momento de esta corrida (desde los minimos de 1,714.35 y 62,568). Predicciones de texto del close 0/4: los dos techos citados (apertura del dia) se rompieron por mucho (ETH hasta 1,837.71, BTC hasta 65,926.31). Zonas 1/8: close 3 rotas (compra B de ETH en la barrida del PDL y venta B de continuacion, venta B de BTC en VWAP/FVG, las tres cerraron primero al lado equivocado antes de confirmar la entrada) y 1 funciono (compra B de BTC en la primera extension, r=0.61); ny 4 sin tocar (ya habian resuelto o roto antes de esa ventana). Contexto sumado: close fondeo shorts-crowded, miedo extremo, DVOL subiendo, hueco CME por debajo, titular de hackeo (Kava Lend); ny mismo fondeo y miedo, DVOL bajando, mismo hueco y titular. Hoy cierra la semana cripto (revision semanal en reviews/crypto/): zonas de la semana 7/60 tocadas-ganadoras, predicciones 16/28; el patron mas claro sigue siendo que las zonas de la corrida ny casi nunca se tocan (25/28 esta semana, el close ya resolvio o rompio la zona antes). Priores que aplican hoy siguen todos bajo 40%: fondeo shorts-crowded 9/57=16%, miedo 24/108=22%, DVOL subiendo 1/20=5% (sigue siendo el peor), DVOL bajando 2/20=10%, hueco por debajo 3/22=14%, titular de hackeo 17/63=27%, ETH 14/64=22%, BTC 10/50=20%. Conviccion baja en las dos, ademas el TDL Feed de las dos quedo viejo (~37 min) en esta corrida: bloquea GO aunque el score sea A+ (la venta de ETH en VAH/PDH, score 7, se queda en WAIT solo por eso).",
-    "2026-11-15 califique (grade_plans.py --crypto 2026-11-14, close y ny). Dia que siguio cayendo tras la cascada del viernes: ETH -10.1% en 24h (de 1,927.58 a 1,732.30), BTC -7.65% (de 68,209 a 62,990). Sesgo corto acertado 4/4 (close y ny, las dos monedas). Predicciones de texto del close 2/4: techos aguantaron (ETH y BTC bajo su VAH de ayer en cierres de 15m), pero los dos rompieron su rango PDL-VAH a la baja (ETH bajo 1,895.95, BTC bajo 67,568). Zonas 0/12: close 4 fallaron (las dos ventas de continuacion rotas o al stop, las dos compras contra el checklist tambien rotas o al stop) y 2 sin tocar; ny 6 sin tocar (las zonas ya habian roto antes de que empezara su ventana). Contexto sumado: close fondeo neutral, miedo, DVOL bajando, sin hueco CME, sin titular; ny fondeo shorts-crowded (ETH), miedo, DVOL subiendo, hueco CME por debajo (gap=below), sin titular. Priores que aplican hoy siguen todos bajo 40%: fondeo shorts-crowded 8/49=16%, fondeo neutral 15/57=26%, miedo 23/100=23%, DVOL subiendo 0/16=0% (la peor lectura hasta ahora), DVOL bajando 2/16=13%, hueco por debajo 2/14=14%, sin hueco 19/84=23%, sin titular 5/31=16%, ETH 14/60=23%, BTC 9/46=20%. Checklist a favor 5/32=16% vs en contra 5/28=18%: sigue sin ayudar, los dos muy debiles. Conviccion baja en las dos monedas, con mas margen que nunca: casi todo el contexto de hoy cae en priores historicamente debiles a la vez. El hueco del CME de ETH (1,949, viernes) sigue como iman hacia arriba, lejos del precio: no cambia el plan de hoy, solo el objetivo si rebota.",
-    "2026-11-14 califique (grade_plans.py --crypto 2026-11-13, close y ny). Dia de caida fuerte con cascada de liquidaciones (ETH min 1,897, BTC 67,627). Sesgo corto acertado 4/4 (close y ny, las dos monedas). Predicciones de texto del close 2/4: techos aguantaron, rangos rotos a la baja (otra vez el mismo patron: mis rangos de 15m no aguantan dias de tendencia). Zonas 0/10: close 2 fallaron (las dos compras en barridas contra el checklist, una rota y una al stop -1R) y 3 sin tocar (ventas lejos); ny 5 sin tocar. Contexto sumado: close fondeo neutral, DVOL subiendo, titular ETF; ny fondeo shorts-crowded, DVOL bajando; los dos miedo y sin hueco. Hoy aplican fondeo neutral 15/51, miedo 23/88, DVOL bajando 2/10, sin hueco 19/78, ETH 14/54, BTC 9/40: conviccion baja. Checklist a favor 5/28 vs en contra 5/20: sigue sin ayudar. Hoy pongo zonas en los bordes de la caja (cerca del precio) en vez de ventas lejanas."
+    "2026-11-15 califique (grade_plans.py --crypto 2026-11-14, close y ny). Dia que siguio cayendo tras la cascada del viernes: ETH -10.1% en 24h (de 1,927.58 a 1,732.30), BTC -7.65% (de 68,209 a 62,990). Sesgo corto acertado 4/4 (close y ny, las dos monedas). Predicciones de texto del close 2/4: techos aguantaron (ETH y BTC bajo su VAH de ayer en cierres de 15m), pero los dos rompieron su rango PDL-VAH a la baja (ETH bajo 1,895.95, BTC bajo 67,568). Zonas 0/12: close 4 fallaron (las dos ventas de continuacion rotas o al stop, las dos compras contra el checklist tambien rotas o al stop) y 2 sin tocar; ny 6 sin tocar (las zonas ya habian roto antes de que empezara su ventana). Contexto sumado: close fondeo neutral, miedo, DVOL bajando, sin hueco CME, sin titular; ny fondeo shorts-crowded (ETH), miedo, DVOL subiendo, hueco CME por debajo (gap=below), sin titular. Priores que aplican hoy siguen todos bajo 40%: fondeo shorts-crowded 8/49=16%, fondeo neutral 15/57=26%, miedo 23/100=23%, DVOL subiendo 0/16=0% (la peor lectura hasta ahora), DVOL bajando 2/16=13%, hueco por debajo 2/14=14%, sin hueco 19/84=23%, sin titular 5/31=16%, ETH 14/60=23%, BTC 9/46=20%. Checklist a favor 5/32=16% vs en contra 5/28=18%: sigue sin ayudar, los dos muy debiles. Conviccion baja en las dos monedas, con mas margen que nunca: casi todo el contexto de hoy cae en priores historicamente debiles a la vez. El hueco del CME de ETH (1,949, viernes) sigue como iman hacia arriba, lejos del precio: no cambia el plan de hoy, solo el objetivo si rebota."
   ]
 }

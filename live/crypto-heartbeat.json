@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-11-26T14:52:00Z",
-  "runType": "crypto-ny",
+  "lastRun": "2026-11-27T00:28:00Z",
+  "runType": "crypto-close",
   "ok": true,
-  "note": "ETH y BTC AVOID; la zona sweep_asiaH del close se invalido de madrugada (stop superado sin rechazo, broken en las dos); NQ/ES abrieron fuertes en Thanksgiving, cripto no acompaña"
+  "note": "ETH y BTC WAIT; A+ del metodo en las dos (rebote VAL/POC + zona dorada, score 9, barrida y reclamo del minimo de Londres) pero conviccion baja por los prioris de fondo; news.json/macro.crypto sin refrescar en ~45h"
 }
