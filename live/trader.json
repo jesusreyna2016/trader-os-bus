@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-27",
-  "asOf": "2026-11-27T22:30:46.405Z",
+  "asOf": "2026-11-27T22:45:40.263Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 27,
@@ -489,8 +489,8 @@
   "openPositions": [],
   "captures": [],
   "lastReview": {
-    "date": "2026-11-26",
-    "path": "reviews/2026-11-26.md",
-    "headline": "Veredicto: ROTO** (por reglas, no por P&L)"
+    "date": "2026-11-27",
+    "path": "reviews/2026-11-27.md",
+    "headline": "Veredicto: ROTO** (por reglas, no por P&L; aunque el P&L tambien fue el peor dato: -1653.97, -33.08R)"
   }
 }
