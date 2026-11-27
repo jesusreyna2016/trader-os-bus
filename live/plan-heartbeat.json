@@ -1,6 +1,6 @@
 {
- "lastRun": "2026-11-27T07:26:00.000Z",
- "runType": "pre-london",
+ "lastRun": "2026-11-27T13:58:00.000Z",
+ "runType": "pre-ny",
  "ok": true,
- "note": "4 AVOID (estiramiento extremo 7-12 ATR, subida sincronizada en Asia) + 1 WAIT (YM). GC reinstala el largo tras cierre 1h sobre 3620.2, nuevo maximo 3693.9."
+ "note": "pre-ny OK: retroceso general tras subida extrema, 1 AVOID (GC, dia 125% ADR) + 4 WAIT, ninguna A+ (fase adaptador sin move24h), viernes corto Black Friday"
 }

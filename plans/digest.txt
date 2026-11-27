@@ -1,11 +1,11 @@
-SA pre-london 2026-11-27 01:26 CT
-!! subida extrema 7-12A en los 5; GC reinstala el largo
->> YM B retest EMA20/50 50691-702 · 01:30-05:00 CT
-NQ AVOID · largo · B fade tactico 26740-94 · EM 347p
-ES AVOID · largo · B fade tactico 7313-20 · EM 62p
-GC AVOID · largo · B fade tactico max 3678-94 · EM 44p
-YM WAIT · largo · B retest EMA20/50 · EM 450p
-CL AVOID · largo · B fade tactico max 85.95-86.1 · EM 1.43p
-Limpio: YM. Esperar retest y reclaim, no perseguir maximo.
+SA pre-ny 2026-11-27 07:58 CT
+>> YM B pullback EMA20/50 50870-897 · 08:30-12:00 CT
+NQ WAIT · largo · B fade tactico 26740-76 · EM 450p
+ES WAIT · largo · B fade tactico 7312-20 · EM 78p
+GC AVOID · sin sesgo · B fade max 3678-94 · EM 48p
+YM WAIT · largo · B pullback EMA20/50 · EM 465p chop!
+CL WAIT · sin sesgo · B fade 84.94-85.25 · EM 1.94p
+Limpio: YM. Espera reclaim, no compres solo por el nivel.
 Datos OK · Noticias NINGUNA · Cal black-friday
-Prec 46d: sesgo ~52% · pred sin datos aun
+Prec 46d: sesgo ~52% · pred ~58%
+Ejec 45d: journal sin clasificar
