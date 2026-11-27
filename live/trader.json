@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-27",
-  "asOf": "2026-11-27T15:15:32.873Z",
-  "state": "TILT",
+  "asOf": "2026-11-27T15:30:42.514Z",
+  "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 6,
+  "todayViolations": 9,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 6,
+    "used": 8,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": -310.95,
-    "pnlR": -6.22,
-    "maxLossStreak": 3
+    "pnl": -826.74,
+    "pnlR": -16.53,
+    "maxLossStreak": 4
   },
   "offZone": {
-    "count": 2,
-    "pnl": -170.01,
-    "ofTrades": 6
+    "count": 3,
+    "pnl": -314.18,
+    "ofTrades": 8
   },
   "dataHealth": {
     "scanned": 2,
@@ -55,14 +55,20 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
+      "rule": "R1",
       "at": 1795792366595,
       "sym": "NQ",
-      "note": "posicion abierta sin stop"
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
+      "at": 1795792448554,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
     },
     {
       "rule": "stop",
-      "at": 1795792448554,
+      "at": 1795793169952,
       "sym": "NQ",
       "note": "posicion abierta sin stop"
     },
@@ -70,13 +76,19 @@
       "rule": "zona",
       "at": 1795754442651,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (31 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (51 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
+      "at": 1795785485236,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (30 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795785590876,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (34 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (54 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -95,7 +107,7 @@
       "flags": [
         "NO_ZONE"
       ],
-      "distZone": 31
+      "distZone": 51
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -110,9 +122,10 @@
       "openedAt": 1795785485236,
       "closedAt": 1795785587994,
       "flags": [
-        "R1_REVENGE"
+        "R1_REVENGE",
+        "NO_ZONE"
       ],
-      "distZone": 10
+      "distZone": 30
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -130,7 +143,7 @@
         "R1_REVENGE",
         "NO_ZONE"
       ],
-      "distZone": 34
+      "distZone": 54
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -179,20 +192,22 @@
         "OVER_MAX_TRADES"
       ],
       "distZone": 0
-    }
-  ],
-  "openPositions": [
+    },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
       "name": "Elite 3% DLL 10K Challenge",
       "sym": "NQ",
       "side": "short",
-      "size": 0.1,
-      "entry": 26320.1,
+      "size": 0.2,
+      "entry": 26336.2,
+      "exit": 26392.3,
+      "pnl": -11.48,
+      "r": -0.23,
       "openedAt": 1795792366595,
-      "hadStop": false,
+      "closedAt": 1795792704395,
       "flags": [
-        "NO_STOP"
+        "R1_REVENGE",
+        "OVER_MAX_TRADES"
       ],
       "distZone": 0
     },
@@ -201,9 +216,30 @@
       "name": "Elite 3% DLL 25K Challenge",
       "sym": "NQ",
       "side": "short",
-      "size": 1,
-      "entry": 26339.1,
+      "size": 7,
+      "entry": 26324.99125571,
+      "exit": 26395.71718142,
+      "pnl": -504.31,
+      "r": -10.09,
       "openedAt": 1795792448554,
+      "closedAt": 1795793035339,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES",
+        "DAY_STOP_HIT"
+      ],
+      "distZone": 0
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh78sxh81psmmc05jqsesbkh6n8k04x1",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 2,
+      "entry": 26377.7,
+      "openedAt": 1795793169952,
       "hadStop": false,
       "flags": [
         "NO_STOP"
