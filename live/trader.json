@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-27",
-  "asOf": "2026-11-27T16:46:04.103Z",
+  "asOf": "2026-11-27T17:00:47.513Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 15,
@@ -24,8 +24,8 @@
     "maxLossStreak": 8
   },
   "offZone": {
-    "count": 4,
-    "pnl": -512.06,
+    "count": 5,
+    "pnl": -535.69,
     "ofTrades": 12
   },
   "dataHealth": {
@@ -88,25 +88,31 @@
       "rule": "zona",
       "at": 1795754442651,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (91 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (71 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795785485236,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (70 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (50 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795785590876,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (94 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (74 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795794519999,
       "sym": "NQ",
       "note": "entrada en tierra de nadie (30 pts al nivel mas cercano)"
+    },
+    {
+      "rule": "zona",
+      "at": 1795797603473,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (33 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -125,7 +131,7 @@
       "flags": [
         "NO_ZONE"
       ],
-      "distZone": 91
+      "distZone": 71
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -143,7 +149,7 @@
         "R1_REVENGE",
         "NO_ZONE"
       ],
-      "distZone": 70
+      "distZone": 50
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -161,7 +167,7 @@
         "R1_REVENGE",
         "NO_ZONE"
       ],
-      "distZone": 94
+      "distZone": 74
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -303,7 +309,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 1
+      "distZone": 3
     },
     {
       "acct": "jh7bjc9eedds9fv7f2kkfg0wkd8k1m43",
@@ -320,9 +326,10 @@
       "flags": [
         "R1_REVENGE",
         "OVER_MAX_TRADES",
-        "DAY_STOP_HIT"
+        "DAY_STOP_HIT",
+        "NO_ZONE"
       ],
-      "distZone": 6
+      "distZone": 33
     }
   ],
   "openPositions": [
