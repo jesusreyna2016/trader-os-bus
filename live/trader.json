@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-27",
-  "asOf": "2026-11-27T17:15:33.929Z",
+  "asOf": "2026-11-27T17:30:45.570Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 17,
@@ -94,19 +94,19 @@
       "rule": "zona",
       "at": 1795754442651,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (71 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (51 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795785485236,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (50 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (30 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795785590876,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (74 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (54 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
@@ -118,7 +118,7 @@
       "rule": "zona",
       "at": 1795797603473,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (40 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (47 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -137,7 +137,7 @@
       "flags": [
         "NO_ZONE"
       ],
-      "distZone": 71
+      "distZone": 51
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -155,7 +155,7 @@
         "R1_REVENGE",
         "NO_ZONE"
       ],
-      "distZone": 50
+      "distZone": 30
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -173,7 +173,7 @@
         "R1_REVENGE",
         "NO_ZONE"
       ],
-      "distZone": 74
+      "distZone": 54
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -335,7 +335,7 @@
         "DAY_STOP_HIT",
         "NO_ZONE"
       ],
-      "distZone": 40
+      "distZone": 47
     },
     {
       "acct": "jh78sxh81psmmc05jqsesbkh6n8k04x1",
