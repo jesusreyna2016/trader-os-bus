@@ -1,7 +1,7 @@
 # Coach · freno en vivo (ejecutor MFP)
 
 Spec para evaluar y construir. Escrito el 2026-11-22 a partir de la nota de revision (seccion 8) y el
-analisis de paridad/conducta. **Nada de esto esta construido aun.** Antes de escribir codigo hay que
+analisis de paridad/conducta. **Etapa Sombra construida el 2026-11-27** (tradedadlog `netlify/functions/_brake.mjs`, enganchado en `_live.mjs`, cada minuto): R1, DAY_STOP, SIZE y NO_STOP (30 s, `brakeNoStopSec` opcional en coach-config) se registran en `events/<dia>.jsonl` con `src: brake`, `kind: BRAKE_SHADOW` y la accion que habria tomado (`close`, `close_all`, `reduce`, `set_stop`). No hay ninguna llamada de escritura a MFP. Apagar: env `BRAKE_MODE=off` en Netlify. Suave y Duro siguen sin construir. Antes de escribir codigo hay que
 cerrar las 3 decisiones del final.
 
 ## Por que
