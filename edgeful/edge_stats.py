@@ -17,6 +17,10 @@ Familias (cada una con su rejilla de variantes, ver config.json):
         stop 0.1 / 0.25 IB · 1R, 2R o el siguiente nivel; con niveles de control (12.5, 37.5...)
   SWR   barrida de Asia / Londres / ON / PDH-PDL y reclaim → reversa
   SWC   barrida aceptada (2 cierres fuera) → continuación
+  VA80  regla del 80 %: abre fuera del value area de ayer, vuelve a entrar → hacia el otro lado;
+        control = % de días que tocan los dos bordes del VA de todos modos
+  PB    retroceso a EMA20 / VWAP de 5m · límite o cierre de rechazo · stop swing / 0.5 ATR ·
+        1R, 2R o máximo del día; trendTest compara tendencia 1h a favor frente a en contra
 
 Cada operación lleva su foto de confluencias en la vela de la señal, relativa a la dirección
 (favor / contra): VWAP, EMAs, EMA200, HTF 1h, régimen y alineación de TDL KL, plan pre-NY, chop,
@@ -402,6 +406,140 @@ def fam_sweep(bars, sess, pre_b, date, t_open, cfg, cost, mk, day_rep):
     return out
 
 
+def fam_va80(bars, rth, pre_b, cfg, cost, mk, day_rep):
+    """Regla del 80 %: abre fuera del value area de ayer y vuelve a entrar con N cierres
+    seguidos dentro → hacia el otro lado. Control: % de días que recorren todo el VA igual."""
+    c = cfg["va80"]
+    vah, val, poc = num(pre_b.get("vah")), num(pre_b.get("val")), num(pre_b.get("poc"))
+    if None in (vah, val) or vah <= val:
+        return []
+    poc = poc if poc is not None and val < poc < vah else (vah + val) / 2
+    end_t = bars[rth[-1]]["t"] + BAR
+    o = bars[rth[0]]["o"]
+    side = "above" if o > vah else "below" if o < val else "inside"
+    both = any(bars[i]["h"] >= vah for i in rth) and any(bars[i]["l"] <= val for i in rth)
+    rep = {"open": side, "touchedBoth": both}
+    day_rep["va80"] = rep
+    if side == "inside":
+        return []
+    d = -1 if side == "above" else 1
+    edge, far = (vah, val) if d < 0 else (val, vah)
+    n, k = 0, None
+    for i in rth:
+        n = n + 1 if val <= bars[i]["c"] <= vah else 0
+        if n >= c["closesInside"]:
+            k = i
+            break
+    rep["reentry"] = k is not None
+    if k is None:
+        return []
+    after = [i for i in rth if i > k]
+    rep["reachedPoc"] = any(((bars[i]["l"] <= poc) if d < 0 else (bars[i]["h"] >= poc)) for i in after)
+    rep["reachedFar"] = any(((bars[i]["l"] <= far) if d < 0 else (bars[i]["h"] >= far)) for i in after)
+    atr = num(bars[k].get("atr5")) or num(pre_b.get("atr5"))
+    sess_ext = (max if d < 0 else min)(bars[i]["h"] if d < 0 else bars[i]["l"] for i in rth if i <= k)
+    feats = {**mk(k, d), "open": side}
+    out = []
+    for ent in c["entries"]:
+        if ent == "close":
+            ek, entry, lim = k, bars[k]["c"], False
+        else:
+            ek = next((i for i in after if i <= k + c["retestBars"]
+                       and ((bars[i]["h"] >= edge) if d < 0 else (bars[i]["l"] <= edge))), None)
+            entry, lim = edge, True
+        for st in c["stops"]:
+            if st == "edge" and not atr:
+                continue
+            stop = edge - 0.25 * atr * d if st == "edge" else sess_ext
+            for tg in c["targets"]:
+                var = f"{ent}|{st}|{tg}"
+                if ek is None:
+                    out.append({"fam": "VA80", "var": var, "dir": d, "res": "nofill", "feat": feats})
+                    continue
+                tp = poc if tg == "poc" else far if tg == "far" else target_px(tg, entry, stop, d)
+                t = trade(bars, ek, end_t, d, entry, stop, tp, cost, lim)
+                if t:
+                    out.append({"fam": "VA80", "var": var, "dir": d, **t, "feat": feats})
+    return out
+
+
+def fam_pullback(bars, rth, cfg, cost, mk):
+    """Retroceso a EMA20 / VWAP: el precio venía del mismo lado (minAway ATR5 de separación) y la
+    vela toca la referencia de la vela anterior (sin mirar al futuro). La dirección la da el lado
+    de llegada; la tendencia (htf, klRegime...) queda como confluencia, así 'contra' es el control."""
+    c = cfg["pullback"]
+    end_t = bars[rth[-1]]["t"] + BAR
+    out = []
+    for ref in c["refs"]:
+        side, away, taken = 0, False, 0
+        for i in rth:
+            if i == 0 or taken >= c["maxPerDay"]:
+                continue
+            lvl = num(bars[i - 1].get(ref))
+            atr = num(bars[i - 1].get("atr5"))
+            b = bars[i]
+            if lvl is None or not atr:
+                continue
+            pc = bars[i - 1]["c"]
+            s = 1 if pc > lvl else -1 if pc < lvl else 0
+            if s != side:
+                side, away = s, False
+            if side and (pc - lvl) * side >= c["minAway"] * atr:
+                away = True
+            touch = side and away and ((b["l"] <= lvl) if side > 0 else (b["h"] >= lvl))
+            if not touch:
+                continue
+            d = side
+            taken += 1
+            away = False
+            feats = mk(i - 1, d)   # contexto de la vela previa al toque: el límite se pone antes
+            prior = [j for j in rth if j < i]
+            hod = (max(bars[j]["h"] for j in prior) if d > 0 else min(bars[j]["l"] for j in prior)) if prior else None
+            # confirmación: cierre de vuelta del lado de llegada en la vela del toque o la siguiente
+            ck = next((j for j in (i, i + 1) if j in rth and ((bars[j]["c"] > lvl) if d > 0 else (bars[j]["c"] < lvl))), None)
+            for ent in c["entries"]:
+                if ent == "limit":
+                    ek, entry, lim = i, lvl, True
+                else:
+                    ek, entry, lim = ck, (bars[ck]["c"] if ck is not None else None), False
+                for st in c["stops"]:
+                    for tg in c["targets"]:
+                        var = f"{ref}|{ent}|{st}|{tg}"
+                        if ek is None:
+                            out.append({"fam": "PB", "var": var, "dir": d, "res": "nofill", "feat": feats})
+                            continue
+                        if st == "swing":
+                            if ent == "limit":
+                                continue   # el mínimo del toque aún no existe al poner el límite
+                            stop = (min if d > 0 else max)(bars[j]["l"] if d > 0 else bars[j]["h"] for j in range(i, ek + 1))
+                        else:
+                            stop = entry - 0.5 * atr * d
+                        if tg == "hod" and hod is None:
+                            continue
+                        tp = hod if tg == "hod" else target_px(tg, entry, stop, d)
+                        t = trade(bars, ek, end_t, d, entry, stop, tp, cost, lim)
+                        if t:
+                            out.append({"fam": "PB", "var": var, "dir": d, **t, "feat": feats})
+    return out
+
+
+def trend_split(recs, minN):
+    """Pullback: cada variante con la tendencia 1h a favor frente a en contra (el control)."""
+    by = defaultdict(lambda: {"favor": [], "contra": []})
+    for r in recs:
+        h = r["feat"].get("htf")
+        if h in ("favor", "contra"):
+            by[r["var"]][h].append(r)
+    out = []
+    for v, g in by.items():
+        a, b = stats(g["favor"]), stats(g["contra"])
+        if a["n"] >= minN and b["n"] >= minN:
+            out.append({"var": v, "favor": {k: a.get(k) for k in ("n", "expR", "winPct")},
+                        "contra": {k: b.get(k) for k in ("n", "expR", "winPct")},
+                        "diffR": round(a["expR"] - b["expR"], 3)})
+    return sorted(out, key=lambda x: -x["diffR"])[:20]
+
+
 # ================================================================ agregados
 
 def stats(rows):
@@ -587,6 +725,9 @@ def main():
             if pre_b:
                 recs += [dict(r, sym=sym, date=str(date)) for r in
                          fam_sweep(bars, rth, pre_b, date, t_open, cfg, cost, mk, rep)]
+                recs += [dict(r, sym=sym, date=str(date)) for r in
+                         fam_va80(bars, rth, pre_b, cfg, cost, mk, rep)]
+            recs += [dict(r, sym=sym, date=str(date)) for r in fam_pullback(bars, rth, cfg, cost, mk)]
             days[f"{sym}|{date}"] = rep
             tv = edg.get(("ORB", sym, str(date)))
             if tv:
@@ -600,7 +741,7 @@ def main():
                             parity["diffs"].append(f"ORB|{sym}|{date}|{w}m")
 
     lab = {}
-    for fam in ("ORB", "IBB", "IBL", "SWR", "SWC"):
+    for fam in ("ORB", "IBB", "IBL", "SWR", "SWC", "VA80", "PB"):
         fr = [r for r in recs if r["fam"] == fam]
         if fr:
             lab[fam] = {**rank(fr, minN, cfg.get("comboMinN", 2 * minN)), "confluence": feature_effect(fr, minN),
@@ -611,6 +752,16 @@ def main():
         rows = [r for r in ibr if r["var"] == name]
         ib_levels[name] = {**respect_stats(rows), "control": rows[0].get("ctrl", False)}
     ctrl_rows = [r for r in ibr if r.get("ctrl")]
+    va = [v["va80"] for v in days.values() if "va80" in v]
+    outside = [v for v in va if v["open"] != "inside"]
+    sig = [v for v in outside if v.get("reentry")]
+    pctf = lambda xs, k: round(100 * sum(bool(x.get(k)) for x in xs) / len(xs), 1) if xs else None
+    va80 = {"days": len(va), "openOutside": len(outside), "reentryPct": pctf(outside, "reentry"),
+            "afterReentry": {"n": len(sig), "reachedPocPct": pctf(sig, "reachedPoc"), "reachedFarPct": pctf(sig, "reachedFar")},
+            "control": {"insideDaysTouchBothPct": pctf([v for v in va if v["open"] == "inside"], "touchedBoth"),
+                        "allDaysTouchBothPct": pctf(va, "touchedBoth")}}
+    if "PB" in lab:
+        lab["PB"]["trendTest"] = trend_split([r for r in recs if r["fam"] == "PB"], minN)
     out = {
         "_writer": "edgeful", "_schema": 2,
         "asOf": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
@@ -618,6 +769,7 @@ def main():
         "data": {"tvbarDays": len(days), "bySym": {s: sum(k.startswith(s + "|") for k in days) for s in cfg["symbols"]},
                  "trades": sum(1 for r in recs if "r" in r), "source": "tdl_feed (TradingView)"},
         "lab": lab,
+        "va80": va80,
         "ibLevels": {"levels": ib_levels, "controlAvg": respect_stats(ctrl_rows) if ctrl_rows else None},
         "klLevels": kl_lab(kl_ev, minN),
         "parity": {**parity, "diffs": parity["diffs"][-20:]},

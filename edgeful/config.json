@@ -131,5 +131,44 @@
    "eod"
   ]
  },
- "comboMinN": 20
+ "comboMinN": 20,
+ "va80": {
+  "closesInside": 2,
+  "entries": [
+   "close",
+   "retest"
+  ],
+  "retestBars": 6,
+  "stops": [
+   "edge",
+   "extreme"
+  ],
+  "targets": [
+   "poc",
+   "far",
+   "1R",
+   "2R"
+  ]
+ },
+ "pullback": {
+  "refs": [
+   "ema20",
+   "vwap"
+  ],
+  "minAway": 0.5,
+  "maxPerDay": 3,
+  "entries": [
+   "limit",
+   "confirm"
+  ],
+  "stops": [
+   "swing",
+   "atr"
+  ],
+  "targets": [
+   "1R",
+   "2R",
+   "hod"
+  ]
+ }
 }
