@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-27",
-  "asOf": "2026-11-27T18:45:34.956Z",
+  "asOf": "2026-11-27T19:00:46.211Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 17,
+  "todayViolations": 20,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 13,
+    "used": 15,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": -1345.21,
-    "pnlR": -26.9,
-    "maxLossStreak": 9
+    "pnl": -1363.65,
+    "pnlR": -27.27,
+    "maxLossStreak": 11
   },
   "offZone": {
     "count": 4,
     "pnl": -391.52,
-    "ofTrades": 13
+    "ofTrades": 15
   },
   "dataHealth": {
     "scanned": 3,
@@ -88,6 +88,12 @@
       "rule": "R1",
       "at": 1795797886661,
       "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
+      "at": 1795804249593,
+      "sym": "ETH",
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
@@ -348,9 +354,7 @@
         "DAY_STOP_HIT"
       ],
       "distZone": 5
-    }
-  ],
-  "openPositions": [
+    },
     {
       "acct": "jh78sxh81psmmc05jqsesbkh6n8k04x1",
       "name": "Elite 3% DLL 25K Challenge",
@@ -358,9 +362,15 @@
       "side": "short",
       "size": 2,
       "entry": 1666.51,
+      "exit": 1670.49,
+      "pnl": -9.96,
+      "r": -0.2,
       "openedAt": 1795804180888,
-      "hadStop": true,
-      "flags": [],
+      "closedAt": 1795805584557,
+      "flags": [
+        "OVER_MAX_TRADES",
+        "DAY_STOP_HIT"
+      ],
       "distZone": 0
     },
     {
@@ -370,12 +380,20 @@
       "side": "short",
       "size": 2,
       "entry": 1667.76,
+      "exit": 1671,
+      "pnl": -8.48,
+      "r": -0.17,
       "openedAt": 1795804249593,
-      "hadStop": true,
-      "flags": [],
+      "closedAt": 1795805658564,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES",
+        "DAY_STOP_HIT"
+      ],
       "distZone": 0
     }
   ],
+  "openPositions": [],
   "captures": [],
   "lastReview": {
     "date": "2026-11-26",
