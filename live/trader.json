@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-27",
-  "asOf": "2026-11-27T14:15:35.837Z",
+  "asOf": "2026-11-27T14:30:43.926Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 2,
@@ -24,8 +24,8 @@
     "maxLossStreak": 3
   },
   "offZone": {
-    "count": 1,
-    "pnl": -144.17,
+    "count": 0,
+    "pnl": 0,
     "ofTrades": 3
   },
   "dataHealth": {
@@ -47,12 +47,6 @@
       "at": 1795785590876,
       "sym": "NQ",
       "note": "entrada dentro de la pausa tras un SL"
-    },
-    {
-      "rule": "zona",
-      "at": 1795785485236,
-      "sym": "NQ",
-      "note": "entrada en tierra de nadie (22 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -69,7 +63,7 @@
       "openedAt": 1795754442651,
       "closedAt": 1795785485236,
       "flags": [],
-      "distZone": 0
+      "distZone": 7
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -84,10 +78,9 @@
       "openedAt": 1795785485236,
       "closedAt": 1795785587994,
       "flags": [
-        "R1_REVENGE",
-        "NO_ZONE"
+        "R1_REVENGE"
       ],
-      "distZone": 22
+      "distZone": 1
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -107,7 +100,20 @@
       "distZone": 3
     }
   ],
-  "openPositions": [],
+  "openPositions": [
+    {
+      "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
+      "name": "Elite 3% DLL 10K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 0.2,
+      "entry": 26594.9,
+      "openedAt": 1795789106734,
+      "hadStop": true,
+      "flags": [],
+      "distZone": 18
+    }
+  ],
   "captures": [],
   "lastReview": {
     "date": "2026-11-26",
