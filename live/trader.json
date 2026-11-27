@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-27",
-  "asOf": "2026-11-27T18:15:35.408Z",
+  "asOf": "2026-11-27T18:30:47.921Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 17,
+  "todayViolations": 18,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -91,16 +91,22 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
+      "rule": "stop",
+      "at": 1795804180888,
+      "sym": "ETH",
+      "note": "posicion abierta sin stop"
+    },
+    {
       "rule": "zona",
       "at": 1795754442651,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (35 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (25 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795785590876,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (39 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (28 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
@@ -131,7 +137,7 @@
       "flags": [
         "NO_ZONE"
       ],
-      "distZone": 35
+      "distZone": 25
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -148,7 +154,7 @@
       "flags": [
         "R1_REVENGE"
       ],
-      "distZone": 14
+      "distZone": 4
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -166,7 +172,7 @@
         "R1_REVENGE",
         "NO_ZONE"
       ],
-      "distZone": 39
+      "distZone": 28
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -350,7 +356,22 @@
       "distZone": 5
     }
   ],
-  "openPositions": [],
+  "openPositions": [
+    {
+      "acct": "jh78sxh81psmmc05jqsesbkh6n8k04x1",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "ETH",
+      "side": "short",
+      "size": 2,
+      "entry": 1666.51,
+      "openedAt": 1795804180888,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 0
+    }
+  ],
   "captures": [],
   "lastReview": {
     "date": "2026-11-26",
