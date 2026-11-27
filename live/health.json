@@ -1,10 +1,11 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-27T23:30:37.499Z",
+ "checkedAt": "2026-11-27T23:45:26.585Z",
  "status": "warn",
  "marketOpen": false,
  "issues": [
-  "Plan de futuros (pre-asia): no corrio hoy (esperado 17.5h CT) (10h)"
+  "Plan de futuros (pre-asia): no corrio hoy (esperado 17.5h CT) (10h)",
+  "Paridad (Paso 4): no corrio hoy (esperado 17.7h CT) (24h)"
  ],
  "items": [
   {
@@ -13,7 +14,7 @@
    "writer": "TradingView -> tos-bus-snapshot",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-27T23:15:30.430Z",
+   "at": "2026-11-27T23:30:40.639Z",
    "note": "mercado cerrado"
   },
   {
@@ -22,7 +23,7 @@
    "writer": "tos-market",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-27T23:15:34.235Z",
+   "at": "2026-11-27T23:30:44.656Z",
    "note": "mercado cerrado"
   },
   {
@@ -31,7 +32,7 @@
    "writer": "lente Edge",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-27T23:15:39.693Z",
+   "at": "2026-11-27T23:30:50.001Z",
    "note": "mercado cerrado"
   },
   {
@@ -39,7 +40,7 @@
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
    "status": "off",
-   "ageMin": 21,
+   "ageMin": 36,
    "at": "2026-11-27T23:09:08.986Z",
    "note": "mercado cerrado"
   },
@@ -49,7 +50,7 @@
    "writer": "tos-coach",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-27T23:15:35.506Z",
+   "at": "2026-11-27T23:30:46.017Z",
    "note": "al dia"
   },
   {
@@ -57,7 +58,7 @@
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
    "status": "warn",
-   "ageMin": 573,
+   "ageMin": 587,
    "at": "2026-11-27T13:58:00.000Z",
    "note": "no corrio hoy (esperado 17.5h CT)"
   },
@@ -66,7 +67,7 @@
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 519,
+   "ageMin": 533,
    "at": "2026-11-27T14:52:00.000Z",
    "note": "al dia"
   },
@@ -74,10 +75,10 @@
    "key": "parity",
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
-   "status": "ok",
-   "ageMin": 1428,
+   "status": "warn",
+   "ageMin": 1443,
    "at": "2026-11-26T23:42:34.022Z",
-   "note": "espera la corrida de hoy"
+   "note": "no corrio hoy (esperado 17.7h CT)"
   }
  ]
 }
