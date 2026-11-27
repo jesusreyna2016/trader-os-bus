@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-27",
-  "asOf": "2026-11-27T16:15:46.118Z",
+  "asOf": "2026-11-27T16:30:43.597Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 11,
+  "todayViolations": 10,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -73,28 +73,22 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
-      "rule": "stop",
-      "at": 1795794519999,
-      "sym": "NQ",
-      "note": "posicion abierta sin stop"
-    },
-    {
       "rule": "zona",
       "at": 1795754442651,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (71 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (91 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795785485236,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (50 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (70 pts al nivel mas cercano)"
     },
     {
       "rule": "zona",
       "at": 1795785590876,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (74 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (94 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -113,7 +107,7 @@
       "flags": [
         "NO_ZONE"
       ],
-      "distZone": 71
+      "distZone": 91
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -131,7 +125,7 @@
         "R1_REVENGE",
         "NO_ZONE"
       ],
-      "distZone": 50
+      "distZone": 70
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -149,7 +143,7 @@
         "R1_REVENGE",
         "NO_ZONE"
       ],
-      "distZone": 74
+      "distZone": 94
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -265,10 +259,8 @@
       "size": 4,
       "entry": 26505.13833891,
       "openedAt": 1795794519999,
-      "hadStop": false,
-      "flags": [
-        "NO_STOP"
-      ],
+      "hadStop": true,
+      "flags": [],
       "distZone": 6
     }
   ],
