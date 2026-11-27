@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-27",
-  "asOf": "2026-11-27T17:00:47.513Z",
+  "asOf": "2026-11-27T17:15:33.929Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
-  "todayViolations": 15,
+  "todayViolations": 17,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 12,
+    "used": 13,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": -1309.72,
-    "pnlR": -26.19,
-    "maxLossStreak": 8
+    "pnl": -1345.21,
+    "pnlR": -26.9,
+    "maxLossStreak": 9
   },
   "offZone": {
     "count": 5,
     "pnl": -535.69,
-    "ofTrades": 12
+    "ofTrades": 13
   },
   "dataHealth": {
     "scanned": 3,
@@ -85,6 +85,12 @@
       "note": "entrada dentro de la pausa tras un SL"
     },
     {
+      "rule": "R1",
+      "at": 1795797886661,
+      "sym": "NQ",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
       "rule": "zona",
       "at": 1795754442651,
       "sym": "NQ",
@@ -112,7 +118,7 @@
       "rule": "zona",
       "at": 1795797603473,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (33 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (40 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -329,10 +335,8 @@
         "DAY_STOP_HIT",
         "NO_ZONE"
       ],
-      "distZone": 33
-    }
-  ],
-  "openPositions": [
+      "distZone": 40
+    },
     {
       "acct": "jh78sxh81psmmc05jqsesbkh6n8k04x1",
       "name": "Elite 3% DLL 25K Challenge",
@@ -340,12 +344,20 @@
       "side": "long",
       "size": 1,
       "entry": 26581.3,
+      "exit": 26547.3,
+      "pnl": -35.49,
+      "r": -0.71,
       "openedAt": 1795797886661,
-      "hadStop": true,
-      "flags": [],
+      "closedAt": 1795798978469,
+      "flags": [
+        "R1_REVENGE",
+        "OVER_MAX_TRADES",
+        "DAY_STOP_HIT"
+      ],
       "distZone": 5
     }
   ],
+  "openPositions": [],
   "captures": [],
   "lastReview": {
     "date": "2026-11-26",
