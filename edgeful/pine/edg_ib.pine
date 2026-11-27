@@ -1,0 +1,111 @@
+//@version=6
+// EDG IB · Trader OS · Initial Balance (primera hora NY) con data fresca
+// Misma lógica que edgeful/edge_stats.py (calc_ib). Usar en gráfico de 5m.
+// Ruptura = toque (high > IBH / low < IBL). Extensión en múltiplos del rango del IB.
+// Niveles internos 25 / 50 / 75 % y extensiones -50 / 150 %: el lab mide cuál respeta más
+// (edgeful/edge_stats.py, familia IBR / IBL, con niveles de control a 12.5 / 37.5 / 62.5 / 87.5 %).
+indicator("EDG IB · Trader OS", shorttitle="EDG IB", overlay=true)
+
+tz      = "America/New_York"
+iOpen   = input.string("09:30", "Apertura NY (HH:MM)")
+iMin    = input.int(60, "Minutos del IB", minval=1)
+iClose  = input.string("16:00", "Cierre NY (HH:MM)")
+iE1     = input.float(0.5, "Extensión 1 (x rango)")
+iE2     = input.float(1.0, "Extensión 2 (x rango)")
+iE3     = input.float(1.5, "Extensión 3 (x rango)")
+iE4     = input.float(2.0, "Extensión 4 (x rango)")
+iSym    = input.string("", "Símbolo para el bus (vacío = auto)")
+iLive   = input.bool(true, "Enviar eventos intermedios (IB_SET, BREAK)")
+iLvls   = input.bool(true, "Dibujar niveles 25 / 50 / 75 % y extensiones -50 / 150 %")
+
+toMin(string s) => int(str.tonumber(str.substring(s, 0, 2))) * 60 + int(str.tonumber(str.substring(s, 3, 5)))
+jb(bool b) => b ? "true" : "false"
+jn(float x) => na(x) ? "null" : str.tostring(x)
+js(string s) => s == "" ? "null" : "\"" + s + "\""
+
+openM  = toMin(iOpen)
+closeM = toMin(iClose)
+tfMin  = timeframe.in_seconds() / 60
+mod    = hour(time, tz) * 60 + minute(time, tz)
+dow    = dayofweek(time, tz)
+wkday  = dow != dayofweek.saturday and dow != dayofweek.sunday
+inIB   = wkday and mod >= openM and mod < openM + iMin
+inSess = wkday and mod >= openM + iMin and mod < closeM
+lastB  = inSess and mod + tfMin >= closeM
+sym    = iSym == "" ? syminfo.root : iSym
+dStr   = str.format_time(time, "yyyy-MM-dd", tz)
+
+var int    state  = 0
+var float  ibH    = na
+var float  ibL    = na
+var bool   bH     = false
+var bool   bL     = false
+var string first  = "NONE"
+var string firstT = ""
+var float  sHi    = na
+var float  sLo    = na
+
+head(string ev) =>
+    "{\"src\":\"EDG_IB\",\"ticker\":\"" + sym + "\",\"tf\":\"" + timeframe.period + "\",\"event\":\"" + ev + "\",\"date\":\"" + dStr + "\",\"time\":" + str.tostring(time)
+
+if barstate.isconfirmed and timeframe.isintraday and tfMin <= iMin
+    if inIB and state != 1
+        state  := 1
+        ibH    := high
+        ibL    := low
+        bH     := false
+        bL     := false
+        first  := "NONE"
+        firstT := ""
+        sHi    := na
+        sLo    := na
+    else if inIB and state == 1
+        ibH := math.max(ibH, high)
+        ibL := math.min(ibL, low)
+
+    if inSess and state == 1
+        state := 2
+        if iLive
+            alert(head("IB_SET") + ",\"ibH\":" + jn(ibH) + ",\"ibL\":" + jn(ibL) + "}", alert.freq_once_per_bar_close)
+
+    if inSess and state == 2
+        rng = ibH - ibL
+        sHi := na(sHi) ? high : math.max(sHi, high)
+        sLo := na(sLo) ? low : math.min(sLo, low)
+        nH = not bH and high > ibH
+        nL = not bL and low < ibL
+        if first == "NONE" and (nH or nL)
+            first  := nH and nL ? "BOTH_BAR" : nH ? "H" : "L"
+            firstT := str.format_time(time, "HH:mm", tz)
+        if nH
+            bH := true
+            if iLive
+                alert(head("BREAK_H") + ",\"side\":\"H\",\"price\":" + jn(ibH) + "}", alert.freq_once_per_bar_close)
+        if nL
+            bL := true
+            if iLive
+                alert(head("BREAK_L") + ",\"side\":\"L\",\"price\":" + jn(ibL) + "}", alert.freq_once_per_bar_close)
+        if lastB and rng > 0
+            extH = math.max(0.0, sHi - ibH) / rng
+            extL = math.max(0.0, ibL - sLo) / rng
+            extF = first == "H" ? extH : first == "L" ? extL : math.max(extH, extL)
+            br   = first != "NONE"
+            pos  = close > ibH ? "ABOVE" : close < ibL ? "BELOW" : "INSIDE"
+            eh   = "{\"" + str.tostring(iE1, "0.0") + "\":" + jb(br and extF >= iE1) + ",\"" + str.tostring(iE2, "0.0") + "\":" + jb(br and extF >= iE2) + ",\"" + str.tostring(iE3, "0.0") + "\":" + jb(br and extF >= iE3) + ",\"" + str.tostring(iE4, "0.0") + "\":" + jb(br and extF >= iE4) + "}"
+            rec  = "{\"ibH\":" + jn(ibH) + ",\"ibL\":" + jn(ibL) + ",\"range\":" + jn(rng) + ",\"brokeH\":" + jb(bH) + ",\"brokeL\":" + jb(bL) + ",\"both\":" + jb(bH and bL) + ",\"first\":\"" + first + "\",\"firstTime\":" + js(firstT) + ",\"extH\":" + str.tostring(math.round(extH, 3)) + ",\"extL\":" + str.tostring(math.round(extL, 3)) + ",\"extHit\":" + eh + ",\"close\":\"" + pos + "\"}"
+            alert(head("SUMMARY") + ",\"rec\":" + rec + "}", alert.freq_once_per_bar_close)
+            state := 3
+
+showIB = state >= 1 and (inIB or inSess)
+rngP   = ibH - ibL
+plot(showIB ? ibH : na, "IB High", color.new(color.blue, 0), 2, plot.style_linebr)
+plot(showIB ? ibL : na, "IB Low", color.new(color.orange, 0), 2, plot.style_linebr)
+plot(showIB and state >= 2 ? ibH + iE2 * rngP : na, "IBH +1x", color.new(color.blue, 70), 1, plot.style_linebr)
+plot(showIB and state >= 2 ? ibL - iE2 * rngP : na, "IBL -1x", color.new(color.orange, 70), 1, plot.style_linebr)
+bgcolor(inIB ? color.new(color.blue, 92) : na, title="Ventana IB")
+lvOn = showIB and state >= 2 and iLvls
+plot(lvOn ? ibL + 0.25 * rngP : na, "IB 25%", color.new(color.gray, 40), 1, plot.style_linebr)
+plot(lvOn ? ibL + 0.50 * rngP : na, "IB 50%", color.new(color.yellow, 30), 1, plot.style_linebr)
+plot(lvOn ? ibL + 0.75 * rngP : na, "IB 75%", color.new(color.gray, 40), 1, plot.style_linebr)
+plot(lvOn ? ibH + 0.50 * rngP : na, "IB 150%", color.new(color.blue, 80), 1, plot.style_linebr)
+plot(lvOn ? ibL - 0.50 * rngP : na, "IB -50%", color.new(color.orange, 80), 1, plot.style_linebr)

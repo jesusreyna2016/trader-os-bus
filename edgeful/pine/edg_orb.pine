@@ -1,0 +1,102 @@
+//@version=6
+// EDG ORB · Trader OS · Opening Range Breakout en 3 ventanas a la vez (5 / 15 / 30 min)
+// Visual + alertas en vivo. Las estadísticas (entradas, stops y salidas) las calcula
+// edgeful/edge_stats.py con las velas del TDL Feed; el SUMMARY de aquí sirve de paridad.
+// Gráfico de 5m. Alerta: "Cualquier llamada a la función alert()" → https://tradedadlog.com/api/tos-ingest?key=...
+indicator("EDG ORB · Trader OS", shorttitle="EDG ORB", overlay=true)
+
+tz     = "America/New_York"
+iOpen  = input.string("09:30", "Apertura NY (HH:MM)")
+iClose = input.string("16:00", "Cierre NY (HH:MM)")
+iW1    = input.int(5, "Ventana 1 (min)", minval=1)
+iW2    = input.int(15, "Ventana 2 (min)", minval=1)
+iW3    = input.int(30, "Ventana 3 (min)", minval=1)
+iShow  = input.int(2, "Ventana dibujada (1, 2 o 3)", minval=1, maxval=3)
+iSym   = input.string("", "Símbolo para el bus (vacío = auto)")
+iLive  = input.bool(true, "Enviar eventos en vivo (BREAK, FAILED)")
+
+toMin(string s) => int(str.tonumber(str.substring(s, 0, 2))) * 60 + int(str.tonumber(str.substring(s, 3, 5)))
+jb(bool b) => b ? "true" : "false"
+jn(float x) => na(x) ? "null" : str.tostring(x)
+
+type Win
+    int    mins
+    float  hi     = na
+    float  lo     = na
+    int    st     = 0
+    string first  = "NONE"
+    string brkT   = ""
+    bool   both   = false
+    float  maxExt = 0.0
+
+openM  = toMin(iOpen)
+closeM = toMin(iClose)
+tfMin  = timeframe.in_seconds() / 60
+mod    = hour(time, tz) * 60 + minute(time, tz)
+dow    = dayofweek(time, tz)
+wkday  = dow != dayofweek.saturday and dow != dayofweek.sunday
+inDay  = wkday and mod >= openM and mod < closeM
+lastB  = inDay and mod + tfMin >= closeM
+sym    = iSym == "" ? syminfo.root : iSym
+dStr   = str.format_time(time, "yyyy-MM-dd", tz)
+
+var Win w1 = Win.new(iW1)
+var Win w2 = Win.new(iW2)
+var Win w3 = Win.new(iW3)
+
+head(string ev) =>
+    "{\"src\":\"EDG_ORB\",\"ticker\":\"" + sym + "\",\"tf\":\"" + timeframe.period + "\",\"event\":\"" + ev + "\",\"date\":\"" + dStr + "\",\"time\":" + str.tostring(time)
+
+method run(Win w) =>
+    bool inOR = inDay and mod < openM + w.mins
+    if inOR and w.st != 1
+        w.hi     := high
+        w.lo     := low
+        w.st     := 1
+        w.first  := "NONE"
+        w.brkT   := ""
+        w.both   := false
+        w.maxExt := 0.0
+    else if inOR
+        w.hi := math.max(w.hi, high)
+        w.lo := math.min(w.lo, low)
+    else if inDay and w.st >= 1 and w.hi > w.lo
+        w.st := 2
+        rng = w.hi - w.lo
+        if w.first == "NONE"
+            w.first := close > w.hi ? "UP" : close < w.lo ? "DOWN" : "NONE"
+            if w.first != "NONE"
+                w.brkT := str.format_time(time, "HH:mm", tz)
+                if iLive
+                    alert(head("BREAK_" + str.tostring(w.mins)) + ",\"win\":" + str.tostring(w.mins) + ",\"dir\":\"" + w.first + "\",\"orH\":" + jn(w.hi) + ",\"orL\":" + jn(w.lo) + ",\"price\":" + jn(close) + "}", alert.freq_once_per_bar_close)
+        if w.first != "NONE"
+            up = w.first == "UP"
+            w.maxExt := math.max(w.maxExt, up ? (high - w.hi) / rng : (w.lo - low) / rng)
+            if not w.both and (up ? close < w.lo : close > w.hi)
+                w.both := true
+                if iLive
+                    alert(head("FAILED_" + str.tostring(w.mins)) + ",\"win\":" + str.tostring(w.mins) + ",\"dir\":\"" + w.first + "\",\"price\":" + jn(close) + "}", alert.freq_once_per_bar_close)
+
+method toJson(Win w) =>
+    pos = close > w.hi ? "ABOVE" : close < w.lo ? "BELOW" : "INSIDE"
+    "\"" + str.tostring(w.mins) + "\":{\"orH\":" + jn(w.hi) + ",\"orL\":" + jn(w.lo) + ",\"range\":" + jn(w.hi - w.lo) + ",\"first\":\"" + w.first + "\",\"breakTime\":" + (w.brkT == "" ? "null" : "\"" + w.brkT + "\"") + ",\"failed\":" + jb(w.both) + ",\"maxExt\":" + str.tostring(math.round(w.maxExt, 3)) + ",\"close\":\"" + pos + "\"}"
+
+if barstate.isconfirmed and timeframe.isintraday and tfMin <= math.min(iW1, iW2, iW3)
+    w1.run()
+    w2.run()
+    w3.run()
+    if lastB and w1.st == 2 and w2.st == 2 and w3.st == 2
+        alert(head("SUMMARY") + ",\"rec\":{\"windows\":{" + w1.toJson() + "," + w2.toJson() + "," + w3.toJson() + "}}}", alert.freq_once_per_bar_close)
+        w1.st := 3
+        w2.st := 3
+        w3.st := 3
+
+W     = iShow == 1 ? w1 : iShow == 3 ? w3 : w2
+showW = inDay and W.st >= 1
+rngW  = W.hi - W.lo
+plot(showW ? W.hi : na, "OR High", color.new(color.teal, 0), 2, plot.style_linebr)
+plot(showW ? W.lo : na, "OR Low", color.new(color.maroon, 0), 2, plot.style_linebr)
+plot(showW ? (W.hi + W.lo) / 2 : na, "OR Medio", color.new(color.gray, 50), 1, plot.style_linebr)
+plot(showW and W.first == "UP" ? W.hi + rngW : na, "OR +1x", color.new(color.teal, 60), 1, plot.style_linebr)
+plot(showW and W.first == "DOWN" ? W.lo - rngW : na, "OR -1x", color.new(color.maroon, 60), 1, plot.style_linebr)
+bgcolor(inDay and mod < openM + W.mins ? color.new(color.gray, 88) : na, title="Ventana OR")
