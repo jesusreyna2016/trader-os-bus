@@ -1,5 +1,5 @@
 {
-  "_updatedAt": "2026-11-27T15:00:40.650Z",
+  "_updatedAt": "2026-11-27T15:00:55.403Z",
   "feed:BTC": {
     "src": "feed",
     "sym": "BTC",
@@ -705,7 +705,7 @@
     "dayType": "Balance",
     "biasDir": "NEUTRAL",
     "weeklyDir": "SHORT",
-    "price": 83.97,
+    "price": 84.01,
     "levels": {
       "vah": 84.18,
       "poc": 83.52,
@@ -722,9 +722,9 @@
       "pwh": 88.27,
       "pwl": 80.78,
       "tdo": 85.74,
-      "ema20": 84.37,
-      "ema20_15m": 84.86,
-      "ema50": 84.81
+      "ema20": 84.34,
+      "ema20_15m": 84.87,
+      "ema50": 84.78
     },
     "noTradeZone": [
       83.6,
@@ -740,9 +740,9 @@
     "htf2": "Alcista",
     "rs": "CL1! rezaga",
     "inNtz": true,
-    "updatedAt": "2026-11-27T14:55:08.805Z",
+    "updatedAt": "2026-11-27T15:00:39.273Z",
     "src": "orb",
-    "receivedAt": "2026-11-27T14:55:08.805Z",
+    "receivedAt": "2026-11-27T15:00:39.273Z",
     "_bridged": "cc"
   },
   "regime:ETH": {
