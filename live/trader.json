@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-27",
-  "asOf": "2026-11-27T13:45:34.195Z",
+  "asOf": "2026-11-27T14:00:47.151Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 2,
@@ -52,7 +52,7 @@
       "rule": "zona",
       "at": 1795785485236,
       "sym": "NQ",
-      "note": "entrada en tierra de nadie (34 pts al nivel mas cercano)"
+      "note": "entrada en tierra de nadie (33 pts al nivel mas cercano)"
     }
   ],
   "todayTrades": [
@@ -69,7 +69,7 @@
       "openedAt": 1795754442651,
       "closedAt": 1795785485236,
       "flags": [],
-      "distZone": 13
+      "distZone": 12
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -87,7 +87,7 @@
         "R1_REVENGE",
         "NO_ZONE"
       ],
-      "distZone": 34
+      "distZone": 33
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
