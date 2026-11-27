@@ -1,6 +1,6 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-27T12:15:23.559Z",
+ "checkedAt": "2026-11-27T12:30:35.355Z",
  "status": "ok",
  "marketOpen": true,
  "issues": [],
@@ -10,8 +10,8 @@
    "label": "Datos crudos (feeds)",
    "writer": "TradingView -> tos-bus-snapshot",
    "status": "ok",
-   "ageMin": 14,
-   "at": "2026-11-27T12:00:54.704Z",
+   "ageMin": 15,
+   "at": "2026-11-27T12:15:27.044Z",
    "note": "al dia"
   },
   {
@@ -19,8 +19,8 @@
    "label": "Estado del mercado",
    "writer": "tos-market",
    "status": "ok",
-   "ageMin": 14,
-   "at": "2026-11-27T12:00:59.568Z",
+   "ageMin": 15,
+   "at": "2026-11-27T12:15:30.659Z",
    "note": "al dia"
   },
   {
@@ -28,8 +28,8 @@
    "label": "Edge medido",
    "writer": "lente Edge",
    "status": "ok",
-   "ageMin": 14,
-   "at": "2026-11-27T12:01:05.146Z",
+   "ageMin": 15,
+   "at": "2026-11-27T12:15:35.860Z",
    "note": "al dia"
   },
   {
@@ -37,7 +37,7 @@
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
    "status": "ok",
-   "ageMin": 6,
+   "ageMin": 21,
    "at": "2026-11-27T12:09:10.471Z",
    "note": "al dia"
   },
@@ -46,8 +46,8 @@
    "label": "Estado del trader (Coach)",
    "writer": "tos-coach",
    "status": "ok",
-   "ageMin": 14,
-   "at": "2026-11-27T12:01:01.236Z",
+   "ageMin": 15,
+   "at": "2026-11-27T12:15:32.346Z",
    "note": "al dia"
   },
   {
@@ -55,7 +55,7 @@
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
    "status": "ok",
-   "ageMin": 289,
+   "ageMin": 305,
    "at": "2026-11-27T07:26:00.000Z",
    "note": "espera la corrida de hoy"
   },
@@ -64,7 +64,7 @@
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 707,
+   "ageMin": 723,
    "at": "2026-11-27T00:28:00.000Z",
    "note": "al dia"
   },
@@ -73,7 +73,7 @@
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
    "status": "ok",
-   "ageMin": 753,
+   "ageMin": 768,
    "at": "2026-11-26T23:42:34.022Z",
    "note": "espera la corrida de hoy"
   }
