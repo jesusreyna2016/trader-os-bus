@@ -1,0 +1,164 @@
+//@version=6
+// LAB SWEEP · Trader OS · Barrida de High/Low de Asia y Londres en la sesión NY
+// Misma lógica que lab/stats.py (calc_sweep). Usar en gráfico de 5m.
+//   preNY   = el nivel ya se tomó entre el fin de su sesión y la apertura NY
+//   swept   = NY lo toma (wick: high > H / low < L)
+//   reclaim = en las N velas desde la barrida (incluida) cierra de vuelta del otro lado
+//   cont    = después de barrer, extiende X veces el rango de esa sesión
+//   firstNY = primer nivel (no tomado pre-NY) que barre NY
+indicator("LAB SWEEP · Trader OS", shorttitle="LAB SWEEP", overlay=true)
+
+tz      = "America/New_York"
+iAsiaS  = input.string("18:00", "Asia inicio (día anterior)", group="Sesiones")
+iAsiaE  = input.string("03:00", "Asia fin", group="Sesiones")
+iLonS   = input.string("03:00", "Londres inicio", group="Sesiones")
+iLonE   = input.string("09:30", "Londres fin", group="Sesiones")
+iOpen   = input.string("09:30", "NY apertura", group="Sesiones")
+iClose  = input.string("16:00", "NY cierre", group="Sesiones")
+iRecl   = input.int(3, "Velas para reclaim", minval=1)
+iCont   = input.float(0.5, "Continuación (x rango de la sesión)")
+iSym    = input.string("", "Símbolo para el bus (vacío = auto)")
+iLive   = input.bool(true, "Enviar evento SWEEP en vivo")
+
+toMin(string s) => int(str.tonumber(str.substring(s, 0, 2))) * 60 + int(str.tonumber(str.substring(s, 3, 5)))
+inWin(int m, int s, int e) => s < e ? (m >= s and m < e) : (m >= s or m < e)
+jb(bool b) => b ? "true" : "false"
+jn(float x) => na(x) ? "null" : str.tostring(x)
+js(string s) => s == "" ? "null" : "\"" + s + "\""
+
+type Lvl
+    string name
+    bool   up
+    float  price  = na
+    float  rng    = na
+    bool   ok     = false
+    bool   pre    = false
+    bool   swept  = false
+    string t      = ""
+    int    k      = 0
+    bool   recl   = false
+    bool   cont   = false
+
+aS = toMin(iAsiaS), aE = toMin(iAsiaE), lS = toMin(iLonS), lE = toMin(iLonE)
+openM  = toMin(iOpen)
+closeM = toMin(iClose)
+tfMin  = timeframe.in_seconds() / 60
+mod    = hour(time, tz) * 60 + minute(time, tz)
+dow    = dayofweek(time, tz)
+wkday  = dow != dayofweek.saturday and dow != dayofweek.sunday
+inAsia = inWin(mod, aS, aE)
+inLon  = inWin(mod, lS, lE)
+inNY   = wkday and mod >= openM and mod < closeM
+lastB  = inNY and mod + tfMin >= closeM
+sym    = iSym == "" ? syminfo.root : iSym
+dStr   = str.format_time(time, "yyyy-MM-dd", tz)
+
+var Lvl aH = Lvl.new("asiaH", true)
+var Lvl aL = Lvl.new("asiaL", false)
+var Lvl lH = Lvl.new("londonH", true)
+var Lvl lL = Lvl.new("londonL", false)
+var float  wHi = na
+var float  wLo = na
+var float  xHi = na
+var float  xLo = na
+var string firstNY = "NONE"
+
+head(string ev) =>
+    "{\"src\":\"LAB_SWEEP\",\"ticker\":\"" + sym + "\",\"tf\":\"" + timeframe.period + "\",\"event\":\"" + ev + "\",\"date\":\"" + dStr + "\",\"time\":" + str.tostring(time)
+
+method arm(Lvl l, float p, float r) =>
+    l.price := p
+    l.rng   := r
+    l.ok    := true
+    l.pre   := false
+    l.swept := false
+    l.t     := ""
+    l.k     := 0
+    l.recl  := false
+    l.cont  := false
+
+method step(Lvl l, int endM) =>
+    bool fresh = false
+    if l.ok
+        hitNow = l.up ? high > l.price : low < l.price
+        if not inNY and mod < openM and mod >= endM and hitNow
+            l.pre := true
+        if inNY
+            if not l.swept and hitNow
+                l.swept := true
+                l.t     := str.format_time(time, "HH:mm", tz)
+                l.k     := 0
+                fresh   := true
+            else if l.swept
+                l.k += 1
+            if l.swept
+                if l.k < iRecl and (l.up ? close < l.price : close > l.price)
+                    l.recl := true
+                tgt = l.up ? l.price + iCont * l.rng : l.price - iCont * l.rng
+                if l.up ? high >= tgt : low <= tgt
+                    l.cont := true
+    fresh
+
+method toJson(Lvl l) =>
+    "\"" + l.name + "\":{\"level\":" + jn(l.price) + ",\"range\":" + jn(l.rng) + ",\"preNY\":" + jb(l.pre) + ",\"swept\":" + jb(l.swept) + ",\"time\":" + js(l.t) + ",\"reclaim\":" + jb(l.recl) + ",\"cont\":" + jb(l.cont) + "}"
+
+if barstate.isconfirmed and timeframe.isintraday and tfMin <= 60
+    // ---- construir rangos de sesión
+    if inAsia and not inAsia[1]
+        wHi := high
+        wLo := low
+        aH.ok := false
+        aL.ok := false
+    else if inAsia
+        wHi := math.max(wHi, high)
+        wLo := math.min(wLo, low)
+    if not inAsia and inAsia[1] and not na(wHi)
+        aH.arm(wHi, wHi - wLo)
+        aL.arm(wLo, wHi - wLo)
+    if inLon and not inLon[1]
+        xHi := high
+        xLo := low
+        lH.ok := false
+        lL.ok := false
+    else if inLon
+        xHi := math.max(xHi, high)
+        xLo := math.min(xLo, low)
+    if not inLon and inLon[1] and not na(xHi)
+        lH.arm(xHi, xHi - xLo)
+        lL.arm(xLo, xHi - xLo)
+
+    if inNY and not inNY[1]
+        firstNY := "NONE"
+
+    // ---- seguimiento (orden fijo = desempate igual que Python)
+    f1 = aH.step(aE)
+    f2 = aL.step(aE)
+    f3 = lH.step(lE)
+    f4 = lL.step(lE)
+    if firstNY == "NONE"
+        firstNY := f1 and not aH.pre ? "asiaH" : f2 and not aL.pre ? "asiaL" : f3 and not lH.pre ? "londonH" : f4 and not lL.pre ? "londonL" : "NONE"
+    if iLive and (f1 or f2 or f3 or f4)
+        names = (f1 ? "asiaH," : "") + (f2 ? "asiaL," : "") + (f3 ? "londonH," : "") + (f4 ? "londonL," : "")
+        alert(head("SWEEP") + ",\"levels\":\"" + str.substring(names, 0, str.length(names) - 1) + "\",\"price\":" + jn(close) + "}", alert.freq_once_per_bar_close)
+
+    // ---- resumen al cierre NY
+    if lastB and (aH.ok or lH.ok)
+        parts = array.new<string>()
+        if aH.ok
+            parts.push(aH.toJson())
+            parts.push(aL.toJson())
+        if lH.ok
+            parts.push(lH.toJson())
+            parts.push(lL.toJson())
+        rec = "{" + array.join(parts, ",") + ",\"firstNY\":\"" + firstNY + "\"}"
+        alert(head("SUMMARY") + ",\"rec\":" + rec + "}", alert.freq_once_per_bar_close)
+        aH.ok := false
+        aL.ok := false
+        lH.ok := false
+        lL.ok := false
+
+plot(aH.ok ? aH.price : na, "Asia H", color.new(color.purple, 0), 1, plot.style_linebr)
+plot(aL.ok ? aL.price : na, "Asia L", color.new(color.purple, 0), 1, plot.style_linebr)
+plot(lH.ok ? lH.price : na, "Londres H", color.new(color.aqua, 0), 1, plot.style_linebr)
+plot(lL.ok ? lL.price : na, "Londres L", color.new(color.aqua, 0), 1, plot.style_linebr)
+bgcolor(inAsia ? color.new(color.purple, 94) : inLon ? color.new(color.aqua, 94) : na, title="Sesiones")
