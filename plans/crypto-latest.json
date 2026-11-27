@@ -1,32 +1,33 @@
 {
   "schema": "crypto-plan-1",
-  "runType": "crypto-close",
-  "builtAt": "2026-11-27T00:28:00Z",
+  "runType": "crypto-ny",
+  "builtAt": "2026-11-27T14:52:00Z",
   "date": "2026-11-27",
-  "slot": "close",
-  "validUntil": "2026-11-27T14:45:00Z",
+  "slot": "ny",
+  "validUntil": "2026-11-28T00:00:00Z",
   "dataHealth": {
-    "snapshotAgeMin": 13,
+    "snapshotAgeMin": 7,
     "stale": [],
     "missing": [],
     "notes": [
-      "live/shock.json no existe: sin ventana de shock que chequear esta corrida.",
-      "live/news.json y macro.crypto siguen sin refrescar: builtAt 2026-11-25T03:15 UTC, ya ~45h de antiguedad (peor que las ~21h de la corrida anterior, dos dias sin actualizarse). Fondeo, longShortAccounts, miedo extremo (13) y DVOL (66.28) salen de ese snapshot viejo; ningun titular del feed cae en realidad dentro de las ultimas 24h reales (los 'recientes' del feed ya tienen 45-55h). Se usan con cautela y headline queda en 'none' por falta de confirmacion fresca.",
-      "orb difiere de feed.raw en pdh/pdl: ETH 1,730/1,667.94 vs 1,733.95/1,672.49 (dentro del 0.3%); BTC 61,622.38/59,915 vs 61,840/60,150 (~0.35%, sobre el corte, el orb de BTC posiblemente algo congelado). Uso feed.raw (la fuente de niveles del metodo) en las dos monedas.",
-      "hoy es Thanksgiving en EE.UU.: NQ cerca de su maximo de ayer (26,259.5, +1.95% en 24h, CME con liquidez de acciones reducida) mientras ETH y BTC bajan en las ultimas 24h: divergencia tipica de festivo de acciones, resta algo de peso a la correlacion NQ/ETH de entre semana hoy.",
-      "live/edge.json es el edge de scalp de futuros (NQ/ES, segmentos de retest), sin segmento cripto propio; overall.expRnet -0.06 en gate shadow (readyForLive false): aviso de fondo, no bloquea, y hoy no hay GO de todas formas.",
-      "prioris de hoy (scorecard actualizado tras calificar ayer, seccion 4): fondeo neutral 25.0% n=68, miedo extremo 23.6% n=148, DVOL subiendo 23.7% n=38, sin hueco de CME 25.9% n=112, sin titular 15.4% n=39, simbolo ETH 22.6% n=84, simbolo BTC 22.9% n=70; todos n>=8 y muy por debajo de 40%: conviccion baja en las dos monedas aunque haya zona A+ del metodo a tiro en cada una."
+      "live/shock.json sigue sin existir: sin ventana de shock que chequear esta corrida.",
+      "live/news.json y macro.crypto siguen sin refrescar: builtAt 2026-11-25T03:15 UTC, ya ~59.5h de antiguedad (peor que las ~45h del close de esta madrugada). Fondeo, longShortAccounts, miedo extremo (13) y DVOL (66.28) del snapshot siguen igual de viejos; ningun titular nuevo de crypto, hack, etf o regulation. Se usan con la misma cautela que en el close.",
+      "bars/2026-11-27.json (fuente de move24h.py) llega solo hasta las 14:08 UTC, ~40 min por detras del feed en vivo (14:45 UTC): el barrido que llevo a BTC bajo el PDL (60,150) y a ETH bajo el minimo asiatico (1,687.82) en los ultimos 40 min no esta reflejado en move24h; usa price (feed, en vivo) para el nivel actual de cada moneda.",
+      "hoy es Thanksgiving en EEUU: NYSE/Nasdaq cerrados todo el dia (no es dia de media sesion, eso es manana), asi que no hay apertura de cash NY a las 08:30 CT que mirar ni dato de las 07:30 CT; NQ (26,347.5) y ES (7,254) siguen en Globex con liquidez de festivo. Sin ese punto de dato, la conviccion de ETH/BTC no se mueve un escalon por la apertura, queda igual que en el close.",
+      "cambio material desde el close: BTC rompio su zona A+ (cerro bajo la invalidacion 60,450, ahora en 60,382.8) tras barrer el PDL de ayer con el regimen pasando a BEAR con breakout grado A; ETH se mantuvo dentro de su zona (nunca cerro un 5m bajo 1,690.00, verificado en bars/2026-11-27.json) tras un viaje de ida hasta ~1,726 (paso POC y VAH) y vuelta al mismo nivel.",
+      "prioris de fondo sin cambio (mismo scorecard del close, section 4): fondeo neutral 25.0% n=68, miedo extremo 23.6% n=148, DVOL subiendo 23.7% n=38, sin hueco de CME 25.9% n=112, sin titular 15.4% n=39, simbolo ETH 22.6% n=84, simbolo BTC 22.9% n=70; todos n>=8 y muy por debajo de 40%: conviccion se mantiene baja en las dos monedas.",
+      "WARN lint (esperado en crypto-ny, seccion 7): vs24h de las dos zonas LONG quedo 'against' pero el move24h recalculado (bars con 40 min de retraso) ya lee LONG; no se re-puntua vs24h en el update ligero, el numero correcto para el nivel actual es price (feed en vivo), no move24h."
     ]
   },
   "summary": {
-    "es": "ETH y BTC hicieron ayer el mismo viaje de ida y vuelta: barrieron el maximo del dia/Asia sin el cierre de rechazo que pedia la venta B del close (la zona termino rota, el precio siguio hasta 1,733.95 ETH y 61,840.0 BTC) y ahora, ya entrada la noche, cayeron de vuelta hasta el VAL/POC de ayer. Las dos monedas acaban de barrer el minimo de Londres (1,692.08 ETH, 60,692.3 BTC) y ya reclamaron de vuelta arriba, justo donde coincide el VAL/POC de ayer con la zona dorada y las EMA20/EMA50: hay una zona A+ del metodo en las dos (rebote contrario a las 24h, score 9), pero la conviccion se queda baja por los prioris de fondo (todos muy por debajo de 40%, n>=8), asi que no hay GO. Hoy es Thanksgiving en EE.UU. (liquidez de acciones reducida, sin dato USD nuevo). Veredicto: WAIT en ETH y BTC, vigilando el rebote en VAL/POC o la perdida de ese piso.",
-    "en": "ETH and BTC made the same round trip yesterday: they swept the day/Asia high with no reject close for the close's B sell (the zone ended up broken, price kept running to 1,733.95 ETH and 61,840.0 BTC), and now, later at night, fell back to yesterday's VAL/POC. Both coins just swept the London low (1,692.08 ETH, 60,692.3 BTC) and have already reclaimed back above it, right where yesterday's VAL/POC lines up with the golden pocket and the EMA20/EMA50: there is an A+ zone of the method on both (a bounce against the 24h move, score 9), but conviction stays low from the background priors (all well under 40%, n>=8), so there is no GO. Today is Thanksgiving in the US (reduced stock liquidity, no fresh USD data). Verdict: WAIT on ETH and BTC, watching the bounce at VAL/POC or a loss of that floor."
+    "es": "Desde el close, BTC rompio su zona A+ de rebote: barrio el PDL de ayer (60,150) con el regimen pasando a BEAR (breakout grado A) y cerro bajo la invalidacion de 60,450, ahora en 60,382.8 rumbo a la primera extension de ayer (59,727.5); zona marcada rota. ETH hizo un viaje de ida y vuelta pero su zona aguanto: subio hasta pasar POC y VAH (~1,726) y luego barrio el minimo asiatico (1,687.82) con reclamo confirmado, ahora en 1,694.03, de vuelta dentro de la misma zona VAL/dorada sin haber cerrado ningun 5m bajo 1,690.00. Hoy es Thanksgiving: NYSE y Nasdaq cerrados, sin apertura de cash ni dato de las 07:30 CT que chequear; la conviccion se queda baja en las dos por los mismos prioris de fondo del close. Veredicto: WAIT en ETH (vigilando que no pierda 1,683.00) y WAIT en BTC (vigilando un reclamo de vuelta sobre 60,450 o la continuacion hacia 59,727.5).",
+    "en": "Since the close, BTC broke its A+ bounce zone: it swept yesterday's PDL (60,150) with the regime flipping to BEAR (grade-A breakout) and closed below the 60,450 invalidation, now at 60,382.8 heading toward yesterday's first extension (59,727.5); the zone is marked broken. ETH made a round trip but its zone held: it rose past POC and VAH (~1,726) and then swept the Asian low (1,687.82) with the reclaim confirmed, now at 1,694.03, back inside the same VAL/golden-pocket zone without ever closing a 5m candle below 1,690.00. Today is Thanksgiving in the US: NYSE and Nasdaq are closed, so there is no cash open or 7:30am CT data to check; conviction stays low on both from the same background priors as the close. Verdict: WAIT on ETH (watching that it does not lose 1,683.00) and WAIT on BTC (watching for a reclaim back above 60,450 or continuation toward 59,727.5)."
   },
   "focus": {
     "sym": "ETHUSDT",
     "setup": {
-      "es": "ETH en 1,692.87, dentro de la zona A+ de rebote en VAL/zona dorada (1,685.64-1,695.97, score 9) tras barrer y reclamar el minimo de Londres (1,692.08): vigilancia del rebote hacia el POC de ayer (1,700.91), pero sin GO por conviccion baja.",
-      "en": "ETH at 1,692.87, inside the A+ VAL/golden-pocket bounce zone (1,685.64-1,695.97, score 9) after sweeping and reclaiming the London low (1,692.08): watching for the bounce toward yesterday's POC (1,700.91), but no GO since conviction is low."
+      "es": "ETH en 1,694.03, de vuelta dentro de la zona A+ VAL/dorada (1,685.64-1,695.97, score 9) tras un viaje de ida hasta ~1,726 (paso POC y VAH) y una barrida con reclamo confirmado del minimo asiatico (1,687.82): sigue sin GO por conviccion baja, vigilando que no pierda 1,683.00.",
+      "en": "ETH at 1,694.03, back inside the A+ VAL/golden-pocket zone (1,685.64-1,695.97, score 9) after a round trip up to ~1,726 (past POC and VAH) and a confirmed sweep-and-reclaim of the Asian low (1,687.82): still no GO since conviction is low, watching that it does not lose 1,683.00."
     }
   },
   "riskWindow": null,
@@ -42,8 +43,8 @@
     "ethBtc24hPct": 0.2,
     "drivers": [],
     "note": {
-      "es": "Miedo extremo (13) y DVOL alto (66.28) son del mismo snapshot de ~45h sin refrescar: se usan con cautela. El DVOL propio de ETH en el feed de hoy es mas moderado (rango 59 de 100 en el ultimo año), el de BTC tambien (rango 55): ni caros ni baratos. Sin hueco del CME hoy (jueves, fuera de ventana). Sin titular cripto fresco confirmable (el feed de noticias no se ha refrescado en ~45h). Cuentas largas de ETH ya sobre el corte de 3 a 1: retail cargado de largos, riesgo de barrida si el rebote de hoy falla.",
-      "en": "Extreme fear (13) and high DVOL (66.28) come from the same ~45h-old snapshot that has not refreshed: use with caution. ETH's own DVOL in today's feed reads more moderate (rank 59 of 100 over the past year), BTC's too (rank 55): neither cheap nor expensive. No CME gap today (Thursday, outside the window). No fresh confirmable crypto headline (the news feed has not refreshed in ~45h). ETH long accounts are already over the 3-to-1 cutoff: retail crowded long, a sweep risk if today's bounce fails."
+      "es": "Miedo extremo (13) y DVOL alto (66.28) siguen del mismo snapshot, ahora ~59.5h sin refrescar (era ~45h en el close): se usan con la misma cautela. El DVOL propio de ETH y BTC en el feed de hoy sigue moderado (rango 59-60 y 55 de 100). Sin hueco del CME hoy (no es viernes). Sin titular cripto fresco confirmable. Cuentas largas de ETH ya sobre el corte de 3 a 1 desde el close, sin dato mas reciente: retail cargado de largos, riesgo de barrida si el rebote de ETH falla; BTC ya tuvo su barrida (bajo el PDL) desde el close.",
+      "en": "Extreme fear (13) and high DVOL (66.28) are from the same snapshot, now ~59.5h without a refresh (it was ~45h at the close): used with the same caution. ETH's and BTC's own DVOL in today's feed stay moderate (rank 59-60 and 55 of 100). No CME gap today (not a Friday). No fresh confirmable crypto headline. ETH long accounts are still over the 3-to-1 cutoff from the close, no newer reading: retail crowded long, a sweep risk if ETH's bounce fails; BTC already had its sweep (below the PDL) since the close."
     }
   },
   "personal": {
@@ -59,22 +60,22 @@
   },
   "instruments": {
     "ETHUSDT": {
-      "price": 1692.87,
+      "price": 1694.03,
       "biasDay": "LONG",
       "biasSession": "SHORT",
       "conviction": "baja",
       "move24h": {
-        "dir": "SHORT",
-        "pct": -1.21
+        "dir": "LONG",
+        "pct": 1.56
       },
       "regime": "BEAR",
       "tcl": {
-        "v": 0,
-        "flip": 1695.7
+        "v": 1,
+        "flip": 1716.37
       },
       "context": {
-        "es": "Precio en 1,692.87, dentro de la zona de VAL/zona dorada tras barrer el minimo de Londres (1,692.08) y reclamar de vuelta arriba hace ~30 min. Baja 1.21% en 24h. El regimen esta en bajista (fresco); el checklist de tendencia se queda sin veredicto (v=0): diario en contra (-1), 4h plano, 1h plano. El marco de sesion (1h y 4h bajista) esta en conflicto con el sesgo diario LONG del indicador.",
-        "en": "Price at 1,692.87, inside the VAL/golden-pocket zone after sweeping the London low (1,692.08) and reclaiming back above it about ~30 min ago. Down 1.21% in 24h. The regime reads bearish (fresh); the trend checklist has no verdict (v=0): daily against (-1), 4h flat, 1h flat. The session frame (1h and 4h bearish) conflicts with the indicator's LONG day bias."
+        "es": "Precio en 1,694.03. Desde el close subio pasando POC (1,700.91) y VAH (1,710.76) hasta cerca de 1,726 durante la noche, luego giro y barrio el minimo asiatico (1,687.82, touchlog ASL 1 toque, reclamo confirmado) sin cerrar ningun 5m bajo la invalidacion de la zona (1,690.00); ahora de vuelta dentro de la misma zona VAL/dorada. Baja 1.56% desde el close de ayer vs 24h de bars (que van hasta las 14:08 UTC, antes del ultimo tramo). El regimen sigue en bajista, con un nuevo evento de ruptura a la baja (BREAKOUT_DN grado A) ya absorbido por el reclamo. El marco de sesion (1h y 4h bajista) sigue en conflicto con el sesgo diario LONG del indicador, sin cambio desde el close.",
+        "en": "Price at 1,694.03. Since the close it rose past POC (1,700.91) and VAH (1,710.76) to near 1,726 overnight, then turned and swept the Asian low (1,687.82, touchlog ASL 1 touch, reclaim confirmed) without ever closing a 5m candle below the zone's 1,690.00 invalidation; now back inside the same VAL/golden-pocket zone. Down 1.56% from the bars-based 24h window reads (bars run through 14:08 UTC, before the latest leg). The regime is still bearish, with a new breakdown event (BREAKOUT_DN grade A) already absorbed by the reclaim. The session frame (1h and 4h bearish) is still in conflict with the indicator's LONG day bias, unchanged from the close."
       },
       "levels": {
         "vah": 1710.76,
@@ -152,22 +153,22 @@
       ]
     },
     "BTCUSDT": {
-      "price": 60729.8,
+      "price": 60382.8,
       "biasDay": "LONG",
-      "biasSession": "NEUTRAL",
+      "biasSession": "SHORT",
       "conviction": "baja",
       "move24h": {
-        "dir": "SHORT",
-        "pct": -0.9
+        "dir": "LONG",
+        "pct": 1.13
       },
-      "regime": "NEUTRAL",
+      "regime": "BEAR",
       "tcl": {
-        "v": 0,
-        "flip": 60572.32
+        "v": 1,
+        "flip": 61303.44
       },
       "context": {
-        "es": "Precio en 60,729.8, dentro de la zona de POC/zona dorada tras barrer el minimo de Londres (60,692.3) y reclamar de vuelta arriba en la misma vela hace ~20 min. Baja 0.9% en 24h. El regimen acaba de pasar a neutral en el corte de dia (DAY_CUT); el checklist de tendencia se queda sin veredicto (v=0): diario en contra (-1), 4h plano, 1h a favor (+1). El marco de sesion es mixto (1h alcista alineado, 4h bajista en contra).",
-        "en": "Price at 60,729.8, inside the POC/golden-pocket zone after sweeping the London low (60,692.3) and reclaiming back above it on the same candle about ~20 min ago. Down 0.9% in 24h. The regime just flipped to neutral at the day cut (DAY_CUT); the trend checklist has no verdict (v=0): daily against (-1), 4h flat, 1h for (+1). The session frame is mixed (1h bullish aligned, 4h bearish against)."
+        "es": "Precio en 60,382.8. Desde el close subio hasta cerca de 61,416 durante la noche, pero giro con fuerza: el regimen paso a BEAR con un breakout grado A, barrio el PDL de ayer (60,150, touchlog PDL 1 toque, reclamo confirmado) y cerro un 5m bajo la invalidacion de la zona (60,450) antes de reclamar de vuelta sobre el PDL. La zona POC/dorada del close queda rota (no se borra). El marco de sesion (1h y 4h) ya esta alineado a la baja (antes mixto): biasSession pasa de NEUTRAL a SHORT.",
+        "en": "Price at 60,382.8. Since the close it rose to near 61,416 overnight, but then turned hard: the regime flipped to BEAR with a grade-A breakout, swept yesterday's PDL (60,150, touchlog PDL 1 touch, reclaim confirmed) and closed a 5m candle below the zone's 60,450 invalidation before reclaiming back above the PDL. The close's POC/golden-pocket zone is now broken (not removed). The session frame (1h and 4h) is now aligned bearish (it was mixed): biasSession moves from NEUTRAL to SHORT."
       },
       "levels": {
         "vah": 61141.2,
@@ -209,14 +210,15 @@
               "es": "riesgo $50: con stop a ~280 puntos del precio (~60,729.8), qty ~0.18 BTC (~$10,850 nocional); parcial 1/2 en TP1 (maximo del dia/Asia, 60,914.1) y BE SOLO despues de cobrarlo, resto a TP2 (VAH de ayer, 61,141.2). Ajusta a tu precio real de entrada.",
               "en": "risk $50: with the stop ~280 points from price (~60,729.8), qty ~0.18 BTC (~$10,850 notional); half off at TP1 (the day/Asia high, 60,914.1) and move to BE ONLY after banking it, the rest to TP2 (yesterday's VAH, 61,141.2). Adjust to your real entry price."
             }
-          }
+          },
+          "broken": true
         }
       ],
       "verdict": {
         "signal": "WAIT",
         "reason": {
-          "es": "hay una zona A+ del metodo (reversion en POC/zona dorada, score 9, contraria a las 24h, con barrida y reclamo del minimo de Londres ya confirmados), pero la conviccion se queda baja por los mismos prioris de fondo (miedo extremo 23.6% n=148, DVOL subiendo 23.7% n=38, sin hueco de CME 25.9% n=112, simbolo BTC 22.9% n=70), todos n>=8 y muy por debajo de 40%: sin conviccion alta no hay GO por regla dura, aunque la zona sea A+. El marco de sesion (1h alcista, 4h bajista, mixto) tampoco da un voto claro. WAIT al rebote, vigilando que no pierda 60,450.",
-          "en": "there is an A+ zone of the method (a POC/golden-pocket reversal, score 9, against the 24h move, with the London-low sweep and reclaim already confirmed), but conviction stays low from the same background priors (extreme fear 23.6% n=148, DVOL rising 23.7% n=38, no CME gap 25.9% n=112, symbol BTC 22.9% n=70), all n>=8 and well under 40%: no GO by the hard rule without high conviction, even with an A+ zone. The session frame (1h bullish, 4h bearish, mixed) does not give a clean vote either. WAIT on the bounce, watching that it does not lose 60,450."
+          "es": "la zona A+ del close (reversion en POC/zona dorada) quedo rota: cerro un 5m bajo la invalidacion de 60,450 tras barrer el PDL de ayer, con el regimen ya en BEAR (breakout grado A). Sin zona A+ viva y con conviccion baja de por si (mismos prioris de fondo del close, todos n>=8 y <40%), no hay base para GO. WAIT, vigilando un reclamo de vuelta sobre 60,450 (fallo de ruptura) o la continuacion hacia la primera extension de ayer (59,727.5).",
+          "en": "the close's A+ zone (POC/golden-pocket reversal) is now broken: it closed a 5m candle below the 60,450 invalidation after sweeping yesterday's PDL, with the regime already flipped to BEAR (grade-A breakout). With no live A+ zone and conviction already low (same background priors as the close, all n>=8 and under 40%), there is no basis for a GO. WAIT, watching for a reclaim back above 60,450 (failed breakdown) or continuation toward yesterday's first extension (59,727.5)."
         }
       },
       "counterCase": {
@@ -252,5 +254,8 @@
       "en": "graded 2026-11-26 (close and ny, grade_plans.py --crypto 2026-11-26): the close's B sell (a sweep of the day/Asia high) did reach its first target within the close's own window (a small 0.26R on ETH; BTC was never touched), but the same zone copied into the ny had nothing new to touch and later read broken once price kept running with no pause (up to 1,733.95 ETH and 61,840.0 BTC). Zones 1/4 touched-and-won. Predictions 8/8 (counted once per appearance in close and ny): all four cited tops (the +25% extension) never closed a single 5m candle above them, and all four of yesterday's PDH levels were touched or taken out to the downside."
     }
   },
-  "updated": null
+  "updated": {
+    "es": "Hoy es Thanksgiving: NYSE/Nasdaq cerrados, sin apertura de cash NY ni dato de las 07:30 CT que chequear (la conviccion no se mueve por eso, igual que en el close). Cambio real desde el close: BTC rompio su zona A+ (cerro bajo 60,450 tras barrer el PDL, regimen a BEAR grado A), zona marcada rota y biasSession pasa de NEUTRAL a SHORT; ETH se mantuvo dentro de su zona tras un viaje de ida (hasta ~1,726, paso POC/VAH) y vuelta, sin romper 1,690.00, biasSession sigue SHORT. Sin shock, sin titular cripto nuevo, sin hueco de CME hoy; macro/deriv/sentimiento siguen en el mismo snapshot de ~59.5h sin refrescar.",
+    "en": "Today is Thanksgiving: NYSE/Nasdaq are closed, no cash NY open or 7:30am CT data to check (conviction does not move for that reason, same as at the close). Real change since the close: BTC broke its A+ zone (closed below 60,450 after sweeping the PDL, regime now BEAR grade A), the zone is marked broken and biasSession moves from NEUTRAL to SHORT; ETH held inside its zone after a round trip (up to ~1,726, past POC/VAH) and back, never breaking 1,690.00, biasSession stays SHORT. No shock, no new crypto headline, no CME gap today; macro/deriv/sentiment are still on the same ~59.5h-stale snapshot."
+  }
 }

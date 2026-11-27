@@ -1,7 +1,7 @@
-Contexto crypto-close 2026-11-27 18:30 CT
-ETH: LONG, WAIT. A+ rebote en VAL/zona dorada 1,685.64-1,695.97 (score 9), barrida y reclamo del minimo de Londres confirmados. Precio 1,692.87 (-1.21% 24h), conviccion baja
-BTC: LONG, WAIT. A+ reversion en POC/zona dorada 60,511.7-60,795.6 (score 9), mismo patron de barrida y reclamo. Precio 60,729.8 (-0.9% 24h), conviccion baja
-foco: ETH, vigilando el rebote hacia el POC de ayer (1,700.91) o la perdida de 1,683.00
-sin riskWindow hoy; Thanksgiving en EE.UU., noticias y macro sin refrescar en ~45h
-calificacion de ayer (2026-11-26 close+ny): la venta B del maximo del dia si llego a su objetivo en el close (r 0.26 ETH), la misma zona termino rota mas tarde cuando el precio sigio de corrido
-precision: 8/8 predicciones, 1/4 zonas
+Contexto crypto-ny 2026-11-27 08:52 CT
+ETH: SHORT sesion, WAIT. Zona A+ VAL/dorada 1,685.64-1,695.97 (score 9) aguanto: viaje de ida hasta ~1,726 (paso POC/VAH) y vuelta tras barrer y reclamar el minimo asiatico (1,687.82), sin cerrar bajo 1,690.00. Precio 1,694.03, conviccion baja
+BTC: SHORT sesion (antes NEUTRAL), WAIT. Zona A+ POC/dorada 60,511.7-60,795.6 rota: cerro bajo la invalidacion 60,450 tras barrer el PDL (60,150), regimen a BEAR grado A. Precio 60,382.8, conviccion baja
+foco: ETH, vigilando que no pierda 1,683.00 (BTC vigilando reclamo sobre 60,450 o continuacion a 59,727.5)
+sin riskWindow; hoy Thanksgiving (NYSE/Nasdaq cerrados, sin apertura de cash ni dato de las 07:30 CT); noticias y macro sin refrescar en ~59.5h
+sin calificacion esta corrida (crypto-ny no califica, seccion 7); calificacion de ayer sigue siendo la de 2026-11-26 (close+ny)
+precision: predicciones y zonas de HOY aun por resolver (resuelven a las 14:45 UTC)
