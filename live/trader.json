@@ -2,8 +2,8 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-27",
-  "asOf": "2026-11-27T14:45:33.927Z",
-  "state": "LOCKOUT",
+  "asOf": "2026-11-27T15:00:47.871Z",
+  "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 2,
   "rulesActive": [
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 3,
+    "used": 5,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": -314.18,
-    "pnlR": -6.28,
+    "pnl": -253.42,
+    "pnlR": -5.07,
     "maxLossStreak": 3
   },
   "offZone": {
     "count": 0,
     "pnl": 0,
-    "ofTrades": 3
+    "ofTrades": 5
   },
   "dataHealth": {
     "scanned": 1,
@@ -63,7 +63,7 @@
       "openedAt": 1795754442651,
       "closedAt": 1795785485236,
       "flags": [],
-      "distZone": 9
+      "distZone": 11
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -80,7 +80,7 @@
       "flags": [
         "R1_REVENGE"
       ],
-      "distZone": 12
+      "distZone": 10
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -97,7 +97,37 @@
       "flags": [
         "R1_REVENGE"
       ],
-      "distZone": 6
+      "distZone": 14
+    },
+    {
+      "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
+      "name": "Elite 3% DLL 10K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 1,
+      "entry": 26381.6234,
+      "exit": 26295.40710633,
+      "pnl": 84.9,
+      "r": 1.7,
+      "openedAt": 1795789106734,
+      "closedAt": 1795791049084,
+      "flags": [],
+      "distZone": 0
+    },
+    {
+      "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
+      "name": "Elite 3% DLL 10K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 1,
+      "entry": 26295.42200875,
+      "exit": 26272.6,
+      "pnl": -24.14,
+      "r": -0.48,
+      "openedAt": 1795791049084,
+      "closedAt": 1795791119089,
+      "flags": [],
+      "distZone": 0
     }
   ],
   "openPositions": [
@@ -106,9 +136,9 @@
       "name": "Elite 3% DLL 10K Challenge",
       "sym": "NQ",
       "side": "short",
-      "size": 0.7,
-      "entry": 26443.09057143,
-      "openedAt": 1795789106734,
+      "size": 1,
+      "entry": 26272.24493,
+      "openedAt": 1795791119089,
       "hadStop": true,
       "flags": [],
       "distZone": 0
