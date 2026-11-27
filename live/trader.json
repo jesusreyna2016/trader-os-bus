@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-27",
-  "asOf": "2026-11-27T07:30:43.014Z",
+  "asOf": "2026-11-27T07:45:33.685Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 1,
@@ -50,15 +50,15 @@
       "name": "Elite 3% DLL 10K Challenge",
       "sym": "NQ",
       "side": "long",
-      "size": 1.5,
-      "entry": 26715.98933333,
+      "size": 2,
+      "entry": 26696.852,
       "openedAt": 1795754442651,
       "hadStop": false,
       "flags": [
         "NO_STOP",
         "NO_ZONE"
       ],
-      "distZone": 27
+      "distZone": 39
     }
   ],
   "captures": [],
