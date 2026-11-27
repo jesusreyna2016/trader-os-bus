@@ -1,11 +1,11 @@
-SA pre-asia 2026-11-27 17:21 CT
-!! GC rompe tesis larga <24h, semanal a corto
->> GC A+ fade VAH 3594-3620 · 20:00-02:00 CT
-NQ WAIT · corto · sin setup limpio · EM 330p
-ES WAIT · corto · B rechazo IB 7243-56 · EM 50p
-GC WAIT · corto · A+ fade VAH 3594-20 · EM 37p
-YM WAIT · sin sesgo · sin setup limpio · EM 241p chop!
-CL AVOID · sin sesgo · estirado+conflicto · EM 0.9p chop!
-Limpio: GC. Esperar rebote a 3594-3620 y rechazo.
-Datos OK · Noticias MEDIA · Cal black-friday
-Prec 20d: sesgo 52% · pred sin datos aun
+SA pre-london 2026-11-27 01:26 CT
+!! subida extrema 7-12A en los 5; GC reinstala el largo
+>> YM B retest EMA20/50 50691-702 · 01:30-05:00 CT
+NQ AVOID · largo · B fade tactico 26740-94 · EM 347p
+ES AVOID · largo · B fade tactico 7313-20 · EM 62p
+GC AVOID · largo · B fade tactico max 3678-94 · EM 44p
+YM WAIT · largo · B retest EMA20/50 · EM 450p
+CL AVOID · largo · B fade tactico max 85.95-86.1 · EM 1.43p
+Limpio: YM. Esperar retest y reclaim, no perseguir maximo.
+Datos OK · Noticias NINGUNA · Cal black-friday
+Prec 46d: sesgo ~52% · pred sin datos aun
