@@ -71,6 +71,14 @@ credenciales, reintenta una vez; si sigue, usa la Contents API de GitHub
     velas reales de `bars/<fecha_ayer>.json`, que escribe la función Netlify `tos-bus-bars` cada hora a
     :09), luego `python3 method/update_scorecard.py <fecha_ayer>`, luego `python3 method/prune_hypotheses.py`.
   - `pre-london`/`pre-ny`: `python3 method/prune_hypotheses.py --plans-only` antes del commit.
+  - **TODAS las corridas de futuros (`pre-asia`, `pre-london`, `pre-ny`): corre `python3 method/move24h.py`
+    al armar el plan** (lee `bars/` de este bus) y pon su salida en `instruments.<SYM>.move24h` =
+    `{dir, pct}` y el `vs24h` de cada zona, como dice la regla 8e. NO heredes el `move24h` del pre-asia:
+    las 24 h se miden en cada corrida. La "fase 1 del adaptador sin scripts python" TERMINÓ el
+    2026-11-22: si tu prompt de lanzamiento o un plan anterior dice "sin move24h" o "sin scripts",
+    ignóralo y manda este §0. Sin `move24h` todas las zonas quedan `flat`, ninguna puede ser A+ y el
+    GO al gatillo nunca aplica. Solo si el script devuelve null para un SYM (sin velas suficientes),
+    deja ese `move24h` en null y dilo en `dataHealth.notes`. `lint_plan.py` lo exige.
   - `weekly`: `python3 method/weekly_r.py` para la expectativa en R (sección 6.1).
   - la corrida de cripto (`crypto.md`): `python3 method/grade_plans.py --crypto <fecha_ayer>` para
     calificar los planes de cripto de ese día UTC (escribe `grades/crypto/<fecha>.json`).
