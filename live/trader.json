@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-27",
-  "asOf": "2026-11-27T17:45:31.556Z",
+  "asOf": "2026-11-27T18:00:46.424Z",
   "state": "LOCKOUT",
   "disciplineStreak": 0,
   "todayViolations": 17,
@@ -315,7 +315,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 2
+      "distZone": 1
     },
     {
       "acct": "jh7bjc9eedds9fv7f2kkfg0wkd8k1m43",
@@ -354,7 +354,7 @@
         "OVER_MAX_TRADES",
         "DAY_STOP_HIT"
       ],
-      "distZone": 1
+      "distZone": 5
     }
   ],
   "openPositions": [],
