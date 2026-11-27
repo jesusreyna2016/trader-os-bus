@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-27",
-  "asOf": "2026-11-27T13:15:46.003Z",
+  "asOf": "2026-11-27T13:30:44.193Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 1,
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 0,
+    "used": 2,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 0,
-    "pnlR": 0,
-    "maxLossStreak": 0
+    "pnl": -269.34,
+    "pnlR": -5.39,
+    "maxLossStreak": 2
   },
   "offZone": {
-    "count": 0,
-    "pnl": 0,
-    "ofTrades": 0
+    "count": 1,
+    "pnl": -144.17,
+    "ofTrades": 2
   },
   "dataHealth": {
     "scanned": 1,
@@ -37,14 +37,19 @@
   },
   "openFlags": [
     {
-      "rule": "stop",
-      "at": 1795754442651,
+      "rule": "R1",
+      "at": 1795785485236,
       "sym": "NQ",
-      "note": "posicion abierta sin stop"
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "zona",
+      "at": 1795785485236,
+      "sym": "NQ",
+      "note": "entrada en tierra de nadie (34 pts al nivel mas cercano)"
     }
   ],
-  "todayTrades": [],
-  "openPositions": [
+  "todayTrades": [
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
       "name": "Elite 3% DLL 10K Challenge",
@@ -52,12 +57,45 @@
       "side": "long",
       "size": 5.5,
       "entry": 26682.54826545,
+      "exit": 26661.7,
+      "pnl": -125.17,
+      "r": -2.5,
       "openedAt": 1795754442651,
-      "hadStop": false,
+      "closedAt": 1795785485236,
+      "flags": [],
+      "distZone": 13
+    },
+    {
+      "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
+      "name": "Elite 3% DLL 10K Challenge",
+      "sym": "NQ",
+      "side": "short",
+      "size": 5.5,
+      "entry": 26661.46108909,
+      "exit": 26686.34061136,
+      "pnl": -144.17,
+      "r": -2.88,
+      "openedAt": 1795785485236,
+      "closedAt": 1795785587994,
       "flags": [
-        "NO_STOP"
+        "R1_REVENGE",
+        "NO_ZONE"
       ],
-      "distZone": 12
+      "distZone": 34
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
+      "name": "Elite 3% DLL 10K Challenge",
+      "sym": "NQ",
+      "side": "long",
+      "size": 1,
+      "entry": 26686.00296,
+      "openedAt": 1795785590876,
+      "hadStop": true,
+      "flags": [],
+      "distZone": 9
     }
   ],
   "captures": [],
