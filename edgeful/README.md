@@ -44,6 +44,23 @@ SMT, gap vs cierre previo, hora desde la apertura, día de la semana, y en barri
 El ranking ordena por `lb` = expR − 1 error típico, con mínimo `minN` (10) por variante y `comboMinN`
 (20) por combinación, para no premiar rachas de pocos casos.
 
+## Qué tan confiable es cada número
+
+| Campo | Qué dice | Para qué |
+|---|---|---|
+| `days`, `se`, `lb` | días distintos, error típico **agrupado por día**, expR − 1 error | NQ y ES el mismo día, o 90 variantes de una ruptura, no son pruebas independientes |
+| `ctrlExpR`, `edgeVsCtrl` | misma fecha, mismo riesgo y recompensa, pero vela y dirección **al azar** | si `edgeVsCtrl` ≈ 0 la señal no aporta: el resultado es del horario o del tamaño del stop |
+| `walkForward` | elige con el 60 % más viejo de los días y mide en el 40 % nuevo; `survivors` = lo que siguió positivo | la defensa principal contra elegir por suerte entre cientos de combinaciones (desde 20 días) |
+| `mfe`, `mae` (p50, p75) | cuánto fue a favor / en contra, en R, antes de salir | dónde poner stop y target sin multiplicar variantes |
+| `ambPct`, `expROpt` | % de operaciones con stop y target en la misma vela de 5m; expR si todas esas hubieran ganado | el resultado real está entre `expR` y `expROpt`; si la brecha es grande, hace falta 1m |
+| `nMore95` | operaciones que faltan para que la ventaja sea significativa al 95 % si se mantiene | no actuar antes |
+
+Confluencias nuevas: `news` (high / medium / none, días con noticias USD de 07:00 a 16:00 ET; se acumulan en
+`state/edgeful-news.json` porque `live/news.json` solo trae la semana), `pdClose` (dónde cerró ayer, relativo a
+la dirección). Por estrategia, en terciles low / mid / high de la familia: `rangeAtr` (OR / IB contra el ATR
+diario), `depth` (barrida en ATR5), `openDist` y `vaWidth` (VA80), `trendStr` (EMA20 − EMA50 en ATR5);
+y `ibVsVA` (IB dentro / fuera / cruzando el VA de ayer), `nth` (1º, 2º o 3º pullback del día).
+
 ## Qué hay en `live/edgeful.json`
 
 - `lab.<familia>.variants`: cada variante con n, % ganadoras, expR, pf, lb (y % de llenado en retest).

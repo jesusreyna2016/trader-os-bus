@@ -170,5 +170,9 @@
    "2R",
    "hod"
   ]
+ },
+ "walkForward": {
+  "inSampleFrac": 0.6,
+  "minDays": 20
  }
 }

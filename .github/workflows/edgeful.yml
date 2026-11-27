@@ -27,7 +27,7 @@ jobs:
           for i in 1 2 3 4 5; do
             git fetch --depth=1 origin main && git reset --hard origin/main
             python3 edgeful/edge_stats.py
-            git add live/edgeful.json
+            git add live/edgeful.json state/edgeful-news.json
             if git diff --cached --quiet; then echo "sin cambios"; exit 0; fi
             git commit -m "tos: edgeful $(date -u +%Y-%m-%dT%H:%MZ)"
             git push origin HEAD:main && exit 0

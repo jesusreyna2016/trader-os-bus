@@ -38,6 +38,8 @@ import glob
 import json
 import math
 import os
+import random
+import zlib
 import sys
 from collections import defaultdict
 from zoneinfo import ZoneInfo
@@ -132,6 +134,38 @@ def load_events(cfg):
     return kl, kl_ev, edg
 
 
+def load_news(dry):
+    """Días con noticias USD de impacto alto / medio entre 07:00 y 16:00 ET. live/news.json solo
+    trae la semana en curso, así que se acumula en state/edgeful-news.json."""
+    path = os.path.join(ROOT, "state", "edgeful-news.json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            days = json.load(f)
+    except (OSError, ValueError):
+        days = {}
+    try:
+        with open(os.path.join(ROOT, "live", "news.json"), encoding="utf-8") as f:
+            ev = (json.load(f).get("news") or {}).get("events") or []
+    except (OSError, ValueError):
+        ev = []
+    rank_ = {"high": 2, "medium": 1}
+    for e in ev:
+        imp = str(e.get("impact") or "").lower()
+        if e.get("currency") != "USD" or imp not in rank_ or not e.get("ts"):
+            continue
+        t = dt.datetime.fromtimestamp(e["ts"] / 1000, NY)
+        if not 7 <= t.hour < 16:
+            continue
+        k = str(t.date())
+        if rank_.get(days.get(k), 0) < rank_[imp]:
+            days[k] = imp
+    if not dry:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(dict(sorted(days.items())), f, indent=0)
+            f.write("\n")
+    return days
+
+
 def load_plans(cfg):
     out = {}
     for path in glob.glob(os.path.join(ROOT, "plans", "*-pre-ny.json")) + \
@@ -167,31 +201,59 @@ def complete(ix, t0, t1, pct=0.8):
 
 
 def sim(bars, start, end_t, d, entry, stop, tgt):
-    """Recorre desde bars[start]. Devuelve (res, r_bruto)."""
+    """Recorre desde bars[start]. Devuelve (res, r_bruto, mfe, mae, ambiguo).
+    mfe / mae = máxima excursión a favor / en contra en R hasta la salida (la vela del stop
+    no suma a favor: no se sabe el orden). ambiguo = stop y target en la misma vela."""
     R = (entry - stop) * d
-    last = entry
+    last, mfe, mae = entry, 0.0, 0.0
     for b in bars[start:]:
         if b["t"] >= end_t:
             break
-        if (b["l"] <= stop) if d > 0 else (b["h"] >= stop):
-            return "loss", -1.0
-        if tgt is not None and ((b["h"] >= tgt) if d > 0 else (b["l"] <= tgt)):
-            return "win", (tgt - entry) * d / R
+        fav = ((b["h"] - entry) if d > 0 else (entry - b["l"])) / R
+        adv = ((entry - b["l"]) if d > 0 else (b["h"] - entry)) / R
+        hit_s = (b["l"] <= stop) if d > 0 else (b["h"] >= stop)
+        hit_t = tgt is not None and ((b["h"] >= tgt) if d > 0 else (b["l"] <= tgt))
+        if hit_s:
+            return "loss", -1.0, mfe, 1.0, hit_t
+        mfe, mae = max(mfe, fav), max(mae, adv)
+        if hit_t:
+            return "win", (tgt - entry) * d / R, mfe, mae, False
         last = b["c"]
-    return "eod", (last - entry) * d / R
+    return "eod", (last - entry) * d / R, mfe, mae, False
 
 
 def trade(bars, k, end_t, d, entry, stop, tgt, cost, limit_fill_bar=False):
-    """Simula y descuenta costo. Con limit_fill_bar, en la vela k (llenado) solo cuenta el stop."""
+    """Simula y descuenta costo. Con limit_fill_bar, en la vela k (llenado) solo cuenta el stop.
+    Guarda riesgo y recompensa en precio (Rpx, rw) para el control de entrada al azar."""
     R = (entry - stop) * d
     if R <= 0 or (tgt is not None and (tgt - entry) * d <= 0):
         return None
+    base = {"Rpx": R, "rw": None if tgt is None else (tgt - entry) * d, "ek": k, "endT": end_t, "cost": cost}
     if limit_fill_bar:
         b = bars[k]
         if (b["l"] <= stop) if d > 0 else (b["h"] >= stop):
-            return {"res": "loss", "r": round(-1.0 - cost / R, 3)}
-    res, r = sim(bars, k + 1, end_t, d, entry, stop, tgt)
-    return {"res": res, "r": round(r - cost / R, 3)}
+            return {**base, "res": "loss", "r": round(-1.0 - cost / R, 3), "mfe": 0.0, "mae": 1.0, "amb": False}
+    res, r, mfe, mae, amb = sim(bars, k + 1, end_t, d, entry, stop, tgt)
+    out = {**base, "res": res, "r": round(r - cost / R, 3), "mfe": round(mfe, 2), "mae": round(mae, 2), "amb": amb}
+    if amb:
+        out["rOpt"] = round((tgt - entry) * d / R - cost / R, 3)
+    return out
+
+
+def control(bars, rth, rec, key):
+    """Misma fecha, mismo riesgo y recompensa en precio, pero vela y dirección al azar
+    (semilla fija por operación, reproducible). Devuelve el R neto del control."""
+    rnd = random.Random(zlib.crc32(key.encode()))
+    cand = rth[:-1]
+    if not cand:
+        return None
+    j = rnd.choice(cand)
+    d = rnd.choice((1, -1))
+    entry = bars[j]["c"]
+    stop = entry - rec["Rpx"] * d
+    tgt = None if rec["rw"] is None else entry + rec["rw"] * d
+    _, r, _, _, _ = sim(bars, j + 1, rec["endT"], d, entry, stop, tgt)
+    return round(r - rec["cost"] / rec["Rpx"], 3)
 
 
 def target_px(spec, entry, stop, d, edge=None, rng=None):
@@ -255,6 +317,11 @@ def features(b, d, sym, date, t_open, ctx):
     if o930 is not None and pdc:
         gap = o930 - pdc
         f["gap"] = "none" if abs(gap) < pdc * 0.0005 else fav(gap, d)
+    pdh, pdl = g("pdh"), g("pdl")
+    if pdh and pdl and pdc and pdh > pdl:
+        cp = (pdc - pdl) / (pdh - pdl)
+        f["pdClose"] = "mid" if 0.33 <= cp <= 0.66 else ("favor" if (cp > 0.66) == (d > 0) else "contra")
+    f["news"] = ctx["news"].get(str(date), "none")
     mins = (b["t"] - t_open) // 60
     f["time"] = "0-30" if mins < 30 else "30-60" if mins < 60 else "60-120" if mins < 120 else "120+"
     f["dow"] = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][date.weekday()]
@@ -281,6 +348,13 @@ def fam_breakout(fam, bars, sess, rng_ix, cfgx, cost, mk, day_rep, key):
     rep["first"] = "UP" if d > 0 else "DOWN"
     rep["failed"] = any((bars[i]["c"] < lo) if d > 0 else (bars[i]["c"] > hi) for i in sess if i >= k)
     feats = mk(k, d)
+    atrD = num(bars[k].get("atrD"))
+    if atrD:
+        feats["#rangeAtr"] = rng / atrD          # numérico: se pasa a terciles por familia
+    if fam == "IBB":
+        vah, val = num(bars[k].get("vah")), num(bars[k].get("val"))
+        if vah and val:
+            feats["ibVsVA"] = "inside" if hi <= vah and lo >= val else "outside" if lo > vah or hi < val else "overlap"
     out = []
     for ent in cfgx["entries"]:
         if ent == "close":
@@ -335,6 +409,9 @@ def fam_ib_levels(bars, sess, ib_ix, cfg, cost, mk, day_rep, prev_close_ix):
                 break
         rep[name] = res
         feats = mk(j, d)
+        atrD = num(bars[j].get("atrD"))
+        if atrD:
+            feats["#rangeAtr"] = rng / atrD
         out.append({"fam": "IBR", "var": name, "ctrl": ctrl, "dir": d, "res": res, "feat": feats})
         for s in c["levelStops"]:
             stop = P - s * rng * d
@@ -375,6 +452,8 @@ def fam_sweep(bars, sess, pre_b, date, t_open, cfg, cost, mk, day_rep):
             d = -1 if up else 1
             ext = max(bars[i]["h"] for i in range(k, rk + 1)) if up else min(bars[i]["l"] for i in range(k, rk + 1))
             feats = {**mk(rk, d), "preNY": "yes" if pre else "no"}
+            if atr:
+                feats["#depth"] = abs(ext - L) / atr   # cuánto barrió, en ATR5
             entry = bars[rk]["c"]
             for st in c["revStops"]:
                 if st == "extreme+atr" and not atr:
@@ -439,6 +518,10 @@ def fam_va80(bars, rth, pre_b, cfg, cost, mk, day_rep):
     atr = num(bars[k].get("atr5")) or num(pre_b.get("atr5"))
     sess_ext = (max if d < 0 else min)(bars[i]["h"] if d < 0 else bars[i]["l"] for i in rth if i <= k)
     feats = {**mk(k, d), "open": side}
+    atrD = num(bars[k].get("atrD")) or num(pre_b.get("atrD"))
+    if atrD:
+        feats["#openDist"] = abs(o - edge) / atrD
+        feats["#vaWidth"] = (vah - val) / atrD
     out = []
     for ent in c["entries"]:
         if ent == "close":
@@ -493,6 +576,10 @@ def fam_pullback(bars, rth, cfg, cost, mk):
             taken += 1
             away = False
             feats = mk(i - 1, d)   # contexto de la vela previa al toque: el límite se pone antes
+            feats["nth"] = str(taken)
+            e20, e50 = num(bars[i - 1].get("ema20")), num(bars[i - 1].get("ema50"))
+            if e20 and e50:
+                feats["#trendStr"] = abs(e20 - e50) / atr
             prior = [j for j in rth if j < i]
             hod = (max(bars[j]["h"] for j in prior) if d > 0 else min(bars[j]["l"] for j in prior)) if prior else None
             # confirmación: cierre de vuelta del lado de llegada en la vela del toque o la siguiente
@@ -552,13 +639,36 @@ def stats(rows):
         return s
     rs = [r["r"] for r in fills]
     m = sum(rs) / n
-    sd = math.sqrt(sum((x - m) ** 2 for x in rs) / (n - 1)) if n > 1 else 0.0
+    # error típico agrupado por día: las operaciones del mismo día (otros símbolos, otras
+    # variantes de la misma señal) no son pruebas independientes
+    cl = defaultdict(float)
+    for r in fills:
+        cl[r.get("date")] += r["r"] - m
+    G = len(cl)
+    se = math.sqrt(G / (G - 1) * sum(v * v for v in cl.values())) / n if G > 1 else None
     gw = sum(x for x in rs if x > 0)
     gl = -sum(x for x in rs if x < 0)
-    s.update({"winPct": round(100 * sum(x > 0 for x in rs) / n, 1), "expR": round(m, 3),
-              "se": round(sd / math.sqrt(n), 3) if n > 1 else None,
-              "lb": round(m - (sd / math.sqrt(n) if n > 1 else abs(m)), 3),
+    s.update({"days": G, "winPct": round(100 * sum(x > 0 for x in rs) / n, 1), "expR": round(m, 3),
+              "se": round(se, 3) if se is not None else None,
+              "lb": round(m - se, 3) if se is not None else round(m - abs(m), 3),
               "pf": round(gw / gl, 2) if gl else None, "sumR": round(sum(rs), 2)})
+    cr = [r["cr"] for r in fills if r.get("cr") is not None]
+    if cr:
+        s["ctrlExpR"] = round(sum(cr) / len(cr), 3)
+        s["edgeVsCtrl"] = round(m - s["ctrlExpR"], 3)
+    if any("mfe" in r for r in fills):
+        mf = sorted(r.get("mfe", 0) for r in fills)
+        ma = sorted(r.get("mae", 0) for r in fills)
+        q = lambda xs, p: xs[min(len(xs) - 1, int(p * len(xs)))]
+        s["mfe"] = {"p50": q(mf, .5), "p75": q(mf, .75)}
+        s["mae"] = {"p50": q(ma, .5), "p75": q(ma, .75)}
+        amb = [r for r in fills if r.get("amb")]
+        if amb:
+            s["ambPct"] = round(100 * len(amb) / n, 1)
+            s["expROpt"] = round(sum(r.get("rOpt", r["r"]) for r in fills) / n, 3)
+    if se is not None and m > 0:
+        need = math.ceil((1.96 * se * math.sqrt(n) / m) ** 2)
+        s["nMore95"] = max(0, need - n)   # operaciones que faltan para que lb95 > 0 si se mantiene
     return s
 
 
@@ -603,11 +713,54 @@ def rank(recs, minN, comboN):
     return {"variants": variants[:40], "best": combos[:20], "worst": combos[::-1][:10], "nVariants": len(variants)}
 
 
+def match(r, when):
+    return all(r["feat"].get(k) == v for k, v in when.items())
+
+
+def walk_forward(recs, minN, comboN, frac, min_days):
+    """Elige con los días viejos (in-sample) y mide en los nuevos (out-of-sample)."""
+    dates = sorted({r["date"] for r in recs})
+    if len(dates) < min_days:
+        return {"skipped": f"faltan dias ({len(dates)} de {min_days})"}
+    cut = dates[int(len(dates) * frac)]
+    ins = [r for r in recs if r["date"] < cut]
+    oos = [r for r in recs if r["date"] >= cut]
+    rk = rank(ins, minN, comboN)
+    pick = lambda s: {k: s.get(k) for k in ("n", "days", "expR", "lb")}
+    vs = []
+    for v in [x for x in rk["variants"] if x["n"] >= minN][:10]:
+        o = stats([r for r in oos if r["var"] == v["var"]])
+        vs.append({"var": v["var"], "in": pick(v), "out": pick(o), "holds": (o.get("expR") or 0) > 0})
+    cs = []
+    for c in rk["best"][:10]:
+        o = stats([r for r in oos if r["var"] == c["var"] and match(r, c["when"]) and r["res"] != "nofill"])
+        cs.append({"var": c["var"], "when": c["when"], "in": pick(c), "out": pick(o), "holds": (o.get("expR") or 0) > 0})
+    return {"splitAt": cut, "inDays": len({r["date"] for r in ins}), "outDays": len({r["date"] for r in oos}),
+            "variants": vs, "combos": cs,
+            "survivors": [x["var"] for x in vs if x["holds"]] + [f'{x["var"]} {x["when"]}' for x in cs if x["holds"]]}
+
+
+def bucketize(recs):
+    """Confluencias numéricas (#clave) → low / mid / high por terciles de la familia."""
+    keys = {k for r in recs for k in r["feat"] if k.startswith("#")}
+    for k in keys:
+        vals = sorted(r["feat"][k] for r in recs if k in r["feat"])
+        if len(vals) < 3:
+            continue
+        a, b = vals[len(vals) // 3], vals[2 * len(vals) // 3]
+        name = k[1:]
+        for r in recs:
+            if k in r["feat"]:
+                x = r["feat"].pop(k)
+                r["feat"][name] = "low" if x < a else "high" if x > b else "mid"
+    return recs
+
+
 def feature_effect(recs, minN):
     """Para la familia: expR por valor de cada confluencia, sobre todas sus variantes."""
     out = {}
     fills = [r for r in recs if r["res"] != "nofill" and "r" in r]
-    for f in FEATS + ["preNY"]:
+    for f in sorted({k for r in fills for k in r["feat"]}):
         vals = defaultdict(list)
         for r in fills:
             if f in r["feat"]:
@@ -677,6 +830,7 @@ def main():
     bars_by = load_tvbars(cfg)
     kl, kl_ev, edg = load_events(cfg)
     plans = load_plans(cfg)
+    news = load_news(dry)
     min_date = dt.date.fromisoformat(cfg["minDate"])
     minN = cfg["minN"]
 
@@ -704,7 +858,8 @@ def main():
                 continue
             pre = [i for i, b in enumerate(bars) if b["t"] < t_open]
             pre_b = bars[pre[-1]] if pre else {}
-            ctx = {"kl": kl_at, "plans": plans, "dayOpen": bars[rth[0]]["o"]}
+            ctx = {"kl": kl_at, "plans": plans, "news": news, "dayOpen": bars[rth[0]]["o"]}
+            n0 = len(recs)
             mk = lambda k, d, _s=sym, _dt=date, _to=t_open, _c=ctx: features(bars[k], d, _s, _dt, _to, _c)
             rep = {}
             for w in cfg["orb"]["windows"]:
@@ -729,6 +884,9 @@ def main():
                          fam_va80(bars, rth, pre_b, cfg, cost, mk, rep)]
             recs += [dict(r, sym=sym, date=str(date)) for r in fam_pullback(bars, rth, cfg, cost, mk)]
             days[f"{sym}|{date}"] = rep
+            for r in recs[n0:]:
+                if "Rpx" in r:
+                    r["cr"] = control(bars, rth, r, f'{sym}|{date}|{r["fam"]}|{r["var"]}|{r["ek"]}')
             tv = edg.get(("ORB", sym, str(date)))
             if tv:
                 for w, wr in (tv.get("windows") or {"15": tv}).items():
@@ -741,10 +899,15 @@ def main():
                             parity["diffs"].append(f"ORB|{sym}|{date}|{w}m")
 
     lab = {}
+    comboN = cfg.get("comboMinN", 2 * minN)
+    wf = cfg.get("walkForward", {})
+    for fam in ("ORB", "IBB", "IBL", "IBR", "SWR", "SWC", "VA80", "PB"):
+        bucketize([r for r in recs if r["fam"] == fam])
     for fam in ("ORB", "IBB", "IBL", "SWR", "SWC", "VA80", "PB"):
         fr = [r for r in recs if r["fam"] == fam]
         if fr:
-            lab[fam] = {**rank(fr, minN, cfg.get("comboMinN", 2 * minN)), "confluence": feature_effect(fr, minN),
+            lab[fam] = {**rank(fr, minN, comboN), "confluence": feature_effect(fr, minN),
+                        "walkForward": walk_forward(fr, minN, comboN, wf.get("inSampleFrac", 0.6), wf.get("minDays", 20)),
                         "bySym": {s: stats([r for r in fr if r["sym"] == s]) for s in sorted({r["sym"] for r in fr})}}
     ibr = [r for r in recs if r["fam"] == "IBR"]
     ib_levels = {}
