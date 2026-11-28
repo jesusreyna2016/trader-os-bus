@@ -30,6 +30,19 @@ Ruta: FEED1 → `tos-ingest` (blob `tvbar:<día>:<SYM>`) → `tos-bus-snapshot` 
 | **RBO** | la misma ruptura sin exigir iFVG (comparación) | al cierre de la ruptura · retest del borde | otro lado · medio · swing | igual |
 | **ZON** | zonas del indicador de Mi Mesa (eventos `tocada` / `armada` de `session-analyst-bus/zones/events`) | **límite en la entrada de toda zona tocada** (sin el filtro de armada, que se conoce después; se cancela si la zona se resuelve antes) · al cierre del gatillo · gatillo + límite si regresa | el stop de la zona | TP1 de la zona · 1R · 2R · fin de ventana |
 | **PB** | retroceso a **EMA20** o **VWAP** de 5m (venía ≥ 0.5 ATR5 del mismo lado; nivel de la vela anterior) | límite en la referencia · cierre de rechazo (vela del toque o la siguiente) | swing del toque · 0.5 ATR5 | 1R · 2R · máximo / mínimo del día |
+| **VAO** | apertura frente al valor de cada perfil: dentro del VA (solo se mide si toca los dos bordes) · fuera del VA pero dentro del rango → vuelta al POC · fuera del rango → runner a favor | al cierre de la 3ª vela (15 min) | extremo de los 15 min + 0.1 ATR5 · 1 ATR5 (vuelta) · borde del rango − 0.25 ATR5 (runner) | POC · 1R · 2R · cierre del día |
+| **VAE** | primera prueba de VAH o VAL viniendo de dentro: **rechazo** (cierra de vuelta dentro en ≤ 3 velas) o **aceptación** (2 cierres fuera) | al cierre · retest del borde (aceptación) | extremo + 0.1 ATR5 (rechazo) · 0.5 ATR5 dentro del borde · POC (aceptación) | POC · otro borde · 1R · 2R · cierre |
+| **NPOC** | POC diario que el precio no ha vuelto a tocar: el de ayer (D1), el más cercano de los 10 días previos (Dn) y el de la semana anterior (W), a ≤ 1 ATR diario en la apertura | al cierre de la 1ª vela | a media distancia · a la misma distancia del otro lado | el POC |
+
+**Volume profile:** VAO y VAE se corren sobre **cuatro perfiles** y la variante lleva el perfil delante
+(`PD|...`): PD = el del día anterior que manda el TDL Feed (TradingView), PW = semana anterior, C3 =
+compuesto de los 3 días previos, ON = overnight (inicio del día hasta la apertura de NY). PW, C3, ON y los
+POC diarios de NPOC los arma el Lab con el volumen de las velas de 5 m (repartido por igual entre las filas
+de su rango, filas = ATR diario / 50, value area 70 % como TradingView); un perfil solo cuenta con ≥ 80 % de
+sus velas. `volumeProfile.compare` pone lado a lado, con la misma variante de referencia, el acierto y el
+E[R] de cada perfil; `ownVsFeed` dice cuántos ticks difiere el perfil propio del día anterior del del Feed
+(si sale grande, PW / C3 / ON no son comparables). NPOC tiene su propio control: un nivel espejo a la misma
+distancia del otro lado de la apertura (`naked.*.mirrorPct`).
 
 **Base de control:** IBL/IBR incluyen niveles a 12.5 / 37.5 / 62.5 / 87.5 % del IB. Si 25/50/75
 no superan al control, el nivel no aporta (mismo criterio que la medición de TDL KL del 11-nov).

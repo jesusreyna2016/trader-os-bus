@@ -248,5 +248,17 @@
    "2R",
    "hold"
   ]
+ },
+ "volumeProfile": {
+  "rows": 50,
+  "completePct": 0.8,
+  "openBars": 3,
+  "stopAtr": 1.0,
+  "decideBars": 6,
+  "rejectBars": 3,
+  "acceptCloses": 2,
+  "retestBars": 6,
+  "nakedDays": 10,
+  "maxDist": 1.0
  }
 }
