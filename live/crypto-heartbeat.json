@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-11-27T14:52:00Z",
-  "runType": "crypto-ny",
+  "lastRun": "2026-11-28T00:26:00Z",
+  "runType": "crypto-close",
   "ok": true,
-  "note": "ETH WAIT, zona A+ aguanto tras viaje de ida y vuelta (hasta ~1,726 y de regreso); BTC WAIT, zona A+ rota (cerro bajo 60,450 tras barrer el PDL, regimen a BEAR grado A), biasSession a SHORT; conviccion baja en las dos; Thanksgiving, sin apertura NY; news.json/macro.crypto sin refrescar en ~59.5h"
+  "note": "califique 2026-11-27 (zonas 2/4, predicciones 6/8); plan nuevo ETH y BTC WAIT, zona A+ en las dos (VAL/POC + zona dorada, score 9) pero conviccion baja por scorecard (todos los priores <40%, n>=8); checklist de tendencia alineado bajista en los tres marcos; news.json/macro.crypto sin refrescar ~69h"
 }

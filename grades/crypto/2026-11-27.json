@@ -1,0 +1,147 @@
+{
+ "date": "2026-11-27",
+ "kind": "crypto",
+ "gradedAt": "2026-11-28T00:16:51.584140+00:00",
+ "runs": [
+  {
+   "run": "2026-11-27-close",
+   "from": 1795739280.0,
+   "to": 1795790700.0,
+   "instruments": {
+    "ETHUSDT": {
+     "bars": 185,
+     "dir24h": "SHORT",
+     "bias": {
+      "call": "SHORT",
+      "movePts": -0.2999,
+      "outcome": "hit"
+     },
+     "zones": [
+      {
+       "range": [
+        1685.64,
+        1695.97
+       ],
+       "dir": "LONG",
+       "type": "bounce_val",
+       "grade": "A+",
+       "tcl": null,
+       "touched": true,
+       "entry": 1696.41,
+       "stop": 1683.0,
+       "target": 1700.91,
+       "outcome": "worked",
+       "family": "reversion",
+       "vs24h": "against",
+       "r": 0.34
+      }
+     ]
+    },
+    "BTCUSDT": {
+     "bars": 185,
+     "dir24h": "SHORT",
+     "bias": null,
+     "zones": [
+      {
+       "range": [
+        60511.7,
+        60795.6
+       ],
+       "dir": "LONG",
+       "type": "poc_reversion",
+       "grade": "A+",
+       "tcl": null,
+       "touched": true,
+       "entry": 61362.7305,
+       "stop": 60450.0,
+       "target": 60914.1,
+       "outcome": "worked",
+       "family": "reversion",
+       "vs24h": "against",
+       "r": 0.49
+      }
+     ]
+    }
+   }
+  },
+  {
+   "run": "2026-11-27-ny",
+   "from": 1795791120.0,
+   "to": 1795824000.0,
+   "instruments": {
+    "ETHUSDT": {
+     "bars": 108,
+     "dir24h": "SHORT",
+     "bias": {
+      "call": "SHORT",
+      "movePts": 0.39,
+      "outcome": "miss"
+     },
+     "zones": [
+      {
+       "range": [
+        1685.64,
+        1695.97
+       ],
+       "dir": "LONG",
+       "type": "bounce_val",
+       "grade": "A+",
+       "tcl": null,
+       "touched": false,
+       "outcome": "untouched",
+       "family": "reversion",
+       "vs24h": "against"
+      }
+     ]
+    },
+    "BTCUSDT": {
+     "bars": 108,
+     "dir24h": "SHORT",
+     "bias": {
+      "call": "SHORT",
+      "movePts": 568.211,
+      "outcome": "miss"
+     },
+     "zones": [
+      {
+       "range": [
+        60511.7,
+        60795.6
+       ],
+       "dir": "LONG",
+       "type": "poc_reversion",
+       "grade": "A+",
+       "tcl": null,
+       "touched": false,
+       "outcome": "untouched",
+       "family": "reversion",
+       "vs24h": "against"
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "hitLog": {
+  "ETHUSDT": {
+   "bias": [
+    1,
+    2
+   ],
+   "zone": [
+    1,
+    1
+   ]
+  },
+  "BTCUSDT": {
+   "bias": [
+    0,
+    1
+   ],
+   "zone": [
+    1,
+    1
+   ]
+  }
+ }
+}

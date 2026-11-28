@@ -1,7 +1,7 @@
-Contexto crypto-ny 2026-11-27 08:52 CT
-ETH: SHORT sesion, WAIT. Zona A+ VAL/dorada 1,685.64-1,695.97 (score 9) aguanto: viaje de ida hasta ~1,726 (paso POC/VAH) y vuelta tras barrer y reclamar el minimo asiatico (1,687.82), sin cerrar bajo 1,690.00. Precio 1,694.03, conviccion baja
-BTC: SHORT sesion (antes NEUTRAL), WAIT. Zona A+ POC/dorada 60,511.7-60,795.6 rota: cerro bajo la invalidacion 60,450 tras barrer el PDL (60,150), regimen a BEAR grado A. Precio 60,382.8, conviccion baja
-foco: ETH, vigilando que no pierda 1,683.00 (BTC vigilando reclamo sobre 60,450 o continuacion a 59,727.5)
-sin riskWindow; hoy Thanksgiving (NYSE/Nasdaq cerrados, sin apertura de cash ni dato de las 07:30 CT); noticias y macro sin refrescar en ~59.5h
-sin calificacion esta corrida (crypto-ny no califica, seccion 7); calificacion de ayer sigue siendo la de 2026-11-26 (close+ny)
-precision: predicciones y zonas de HOY aun por resolver (resuelven a las 14:45 UTC)
+Contexto crypto-close 2026-11-28 18:26 CT
+ETH: sesion SHORT, dia LONG (lectura orb), WAIT. Zona A+ VAL/dorada 1,663.70-1,674.11 (score 9), FVG 5m/15m dentro. Precio 1,668.05, baja 1.51% 24h, conviccion baja
+BTC: sesion SHORT, dia LONG (lectura orb), WAIT. Zona A+ POC/dorada 59,990.0-60,194.1 (score 9), iFVG 15m dentro. Precio 60,192.6, baja 1.01% 24h, conviccion baja
+foco: ETH, vigilando que no pierda 1,659.50 (BTC vigilando que no pierda 59,940.0)
+sin riskWindow; checklist de tendencia alineado bajista en los tres marcos en las dos monedas (diario/4h/1h); noticias y macro sin refrescar ~69h
+califique 2026-11-27 (close+ny): zonas 2/4 tocadas-ganadoras, predicciones 6/8
+precision acumulada: 71/128 predicciones (55.5%) . zonas 37/158 (23.4%)
