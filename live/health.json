@@ -1,12 +1,11 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-28T04:00:40.442Z",
+ "checkedAt": "2026-11-28T04:15:28.792Z",
  "status": "warn",
  "marketOpen": false,
  "issues": [
   "Plan de futuros (pre-asia): no corrio hoy (esperado 17.5h CT) (14h)",
-  "Paridad (Paso 4): no corrio hoy (esperado 17.7h CT) (28h)",
-  "Velas para el Lab: ETH FEED1 sin o/h/l: actualizar TDL Feed · BTC FEED1 sin o/h/l: actualizar TDL Feed"
+  "Paridad (Paso 4): no corrio hoy (esperado 17.7h CT) (29h)"
  ],
  "items": [
   {
@@ -15,7 +14,7 @@
    "writer": "TradingView -> tos-bus-snapshot",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-28T03:45:31.278Z",
+   "at": "2026-11-28T04:00:42.735Z",
    "note": "mercado cerrado"
   },
   {
@@ -24,7 +23,7 @@
    "writer": "tos-market",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-28T03:45:36.650Z",
+   "at": "2026-11-28T04:00:47.522Z",
    "note": "mercado cerrado"
   },
   {
@@ -33,7 +32,7 @@
    "writer": "lente Edge",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-28T03:45:41.774Z",
+   "at": "2026-11-28T04:00:52.917Z",
    "note": "mercado cerrado"
   },
   {
@@ -41,8 +40,8 @@
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
    "status": "off",
-   "ageMin": 52,
-   "at": "2026-11-28T03:09:09.617Z",
+   "ageMin": 6,
+   "at": "2026-11-28T04:09:09.474Z",
    "note": "mercado cerrado"
   },
   {
@@ -51,7 +50,7 @@
    "writer": "tos-coach",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-28T03:45:37.785Z",
+   "at": "2026-11-28T04:00:48.818Z",
    "note": "al dia"
   },
   {
@@ -59,7 +58,7 @@
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
    "status": "warn",
-   "ageMin": 843,
+   "ageMin": 857,
    "at": "2026-11-27T13:58:00.000Z",
    "note": "no corrio hoy (esperado 17.5h CT)"
   },
@@ -68,7 +67,7 @@
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 215,
+   "ageMin": 229,
    "at": "2026-11-28T00:26:00.000Z",
    "note": "al dia"
   },
@@ -77,7 +76,7 @@
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
    "status": "warn",
-   "ageMin": 1698,
+   "ageMin": 1713,
    "at": "2026-11-26T23:42:34.022Z",
    "note": "no corrio hoy (esperado 17.7h CT)"
   },
@@ -85,10 +84,10 @@
    "key": "tvbars",
    "label": "Velas para el Lab",
    "writer": "TDL Feed -> tos-ingest -> snapshot",
-   "status": "warn",
-   "ageMin": 21,
+   "status": "ok",
+   "ageMin": 20,
    "at": null,
-   "note": "ETH FEED1 sin o/h/l: actualizar TDL Feed · BTC FEED1 sin o/h/l: actualizar TDL Feed"
+   "note": "futuros cerrados · crypto al dia"
   }
  ]
 }
