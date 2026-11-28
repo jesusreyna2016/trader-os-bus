@@ -991,7 +991,7 @@ def profile_compare(recs, minN):
 # La puntuación de dirección (precio frente a aperturas, EMAs, EMA 20 multi-TF y VWAP) va por
 # vela como confluencia de todas las familias (mapDir / mapRaw) y con su propia prueba.
 
-MAP_KINDS = {1: "ifvg", 2: "fvg", 3: "sweep", 4: "failed", 5: "wick", 6: "closes"}
+MAP_KINDS = {1: "iFVG", 2: "FVG", 3: "barrida", 4: "fallida", 5: "mecha", 6: "cierres"}
 DOW_ES = ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"]
 
 
