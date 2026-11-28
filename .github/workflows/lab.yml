@@ -17,6 +17,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
+      - name: Eventos de zonas de Mi Mesa (solo lectura)
+        uses: actions/checkout@v4
+        with:
+          repository: jesusreyna2016/session-analyst-bus
+          path: _sa
+          fetch-depth: 1
+          sparse-checkout: zones/events
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -26,7 +33,7 @@ jobs:
           git config user.email "lab-bot@users.noreply.github.com"
           for i in 1 2 3 4 5; do
             git fetch --depth=1 origin main && git reset --hard origin/main
-            python3 lab/stats.py
+            ZONES_DIR=_sa/zones/events python3 lab/stats.py
             git add live/lab.json state/lab-news.json
             if git diff --cached --quiet; then echo "sin cambios"; exit 0; fi
             git commit -m "tos: lab $(date -u +%Y-%m-%dT%H:%MZ)"
