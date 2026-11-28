@@ -1,7 +1,7 @@
 {
   "_writer": "contexto-composer",
   "_schema": 1,
-  "asOf": "2026-11-27T23:45:34.539Z",
+  "asOf": "2026-11-28T00:00:49.955Z",
   "symbols": {
     "BTC": {
       "verdict": null,
@@ -11,16 +11,16 @@
       "dayType": null,
       "newsRisk": null,
       "geo": {
-        "close": 60004,
-        "vwap": 60839.2,
-        "vwapUp": 61762.4,
-        "vwapDn": 59916.1,
+        "close": 60100.9,
+        "vwap": 60829.8,
+        "vwapUp": 61750.7,
+        "vwapDn": 59908.8,
         "vah": 61141.2,
         "poc": 60739.4,
         "val": 60646.7,
-        "dvah": 62272.4,
-        "dpoc": 61644.3,
-        "dval": 60059,
+        "dvah": 61674.2,
+        "dpoc": 60148.8,
+        "dval": 58982.3,
         "pdh": 61840,
         "pdl": 60150,
         "pdc": 60786.3,
@@ -33,24 +33,24 @@
         "mOpen": 78148.7,
         "pmh": 88303.4,
         "pml": 76865,
-        "onh": 60081.4,
+        "onh": 60130.2,
         "onl": 59990,
         "ibh": 61613.7,
         "ibl": 58982.8,
         "ibBrk": "none",
-        "asH": 60081.4,
+        "asH": 60130.2,
         "asL": 59990,
         "loH": 62412.1,
         "loL": 61426.7,
         "exU": "62262.5,62685.0,63530.0",
         "exD": "59727.5,59305.0,58460.0",
-        "ema20": 60006.3,
-        "ema50": 60037,
-        "ema200": 60557.8,
+        "ema20": 60022.7,
+        "ema50": 60040.5,
+        "ema200": 60543.3,
         "ema20h": 60623.3,
         "ema50h": 60735.5,
         "sh5": 60081.4,
-        "sl5": 59990,
+        "sl5": 60004,
         "sh1h": 62412.1,
         "sl1h": 58982.8,
         "sh4h": 61840,
@@ -62,9 +62,9 @@
         "rangePct": 115,
         "remPts": -438.3,
         "emRegime": "AGOTADO",
-        "atr5": 58.6,
-        "stretchAtr": 14.25,
-        "chopIdx": 56.5,
+        "atr5": 55.5,
+        "stretchAtr": 13.14,
+        "chopIdx": 52.8,
         "rngHi": 62412.1,
         "rngLo": 58982.8,
         "eq": 60697.4,
@@ -72,36 +72,29 @@
         "prem75": 61554.8,
         "gzLong": "59716.7:60292.8",
         "gzShort": "61102.1:61678.2",
-        "dPos": 0.3,
+        "dPos": 0.33,
         "vix": 23.81,
         "vixRank": 39,
         "dvol": 51.7,
         "dvolRank": 53,
         "smt": "none",
         "sweep": "PDL:dn",
-        "sweepAgo": 56,
-        "fvg": "5m bull:59824.1:59870.4;5m ibull:59726.1:59935.8;5m bear:60249.7:60336.0;15m bear:60084.5:60151.1;15m bear:60724.1:61426.7;15m bull:58791.9:58982.8;1h bull:59169.8:59272.6;1h ibear:60939.8:61009.3;1h bear:60724.1:61480.3;4h bull:59091.0:59272.6;4h bear:60724.1:61620.0;4h ibear:61219.4:61426.7",
-        "touchlog": "VAH:2:5578:1~POC:3:4681:0~VAL:2:3754:1~PDH:14:2554:1~PDL:9:5587:1~DO:3:5005:1~TDO:5:4897:1~ONH:10:0:0~ONL:4:3307:0~IBH:2:5223:1~IBL:2:0:0~ASH:10:1877:0~ASL:4:3307:0~LOH:3:4106:0~LOL:8:6189:1"
+        "sweepAgo": 59,
+        "fvg": "5m bear:60249.7:60336.0;5m ibear:60336.0:60353.4;5m bull:59824.1:59870.4;15m bear:60130.2:60151.1;15m bear:60724.1:61426.7;15m ibear:60953.6:61414.6;1h ibear:60939.8:61009.3;1h bull:59169.8:59272.6;1h bear:60724.1:61480.3;4h bull:59091.0:59272.6;4h bear:60724.1:61620.0;4h ibear:61219.4:61426.7",
+        "touchlog": "VAH:2:5578:1~POC:3:4681:0~VAL:2:3754:1~PDH:14:2554:1~PDL:9:5587:1~DO:3:5005:1~TDO:5:4897:1~ONH:11:0:0~ONL:4:3307:0~IBH:2:5223:1~IBL:2:0:0~ASH:11:1877:0~ASL:4:3307:0~LOH:3:4106:0~LOL:8:6189:1"
       },
       "struct": {
         "regime": "MIXED",
-        "align": "MIXED",
+        "align": "CISD_UP",
         "cisd": {
-          "chart": -1,
+          "chart": 1,
           "h1": 1,
           "h2": 1,
           "h3": -1
         },
-        "po3": "MANIPULATION",
-        "po3Dir": "down",
-        "lastLevelEvent": {
-          "level": "L4",
-          "event": "SWEEP",
-          "t": 1795817700000,
-          "price": 59856.8,
-          "dist": 71,
-          "touches": 5
-        }
+        "po3": null,
+        "po3Dir": null,
+        "lastLevelEvent": null
       }
     },
     "ETH": {
@@ -112,10 +105,10 @@
       "dayType": null,
       "newsRisk": null,
       "geo": {
-        "close": 1664.15,
-        "vwap": 1701.38,
-        "vwapUp": 1734.41,
-        "vwapDn": 1668.34,
+        "close": 1666.02,
+        "vwap": 1701.32,
+        "vwapUp": 1734.36,
+        "vwapDn": 1668.29,
         "vah": 1710.76,
         "poc": 1700.91,
         "val": 1693.24,
@@ -134,20 +127,20 @@
         "mOpen": 2267.08,
         "pmh": 2804.02,
         "pml": 2185.77,
-        "onh": 1664.32,
+        "onh": 1666.47,
         "onl": 1660.3,
         "ibh": 1727.06,
         "ibl": 1637.68,
         "ibBrk": "none",
-        "asH": 1664.32,
+        "asH": 1666.47,
         "asL": 1660.3,
         "loH": 1747.3,
         "loL": 1719.33,
         "exU": "1749.32,1764.68,1795.41",
         "exD": "1657.13,1641.76,1611.03",
-        "ema20": 1663.35,
-        "ema50": 1667.02,
-        "ema200": 1688.17,
+        "ema20": 1663.81,
+        "ema50": 1666.8,
+        "ema200": 1687.48,
         "ema20h": 1691.68,
         "ema50h": 1698.07,
         "sh5": 1663.72,
@@ -163,9 +156,9 @@
         "rangePct": 115,
         "remPts": -15.48,
         "emRegime": "AGOTADO",
-        "atr5": 1.98,
-        "stretchAtr": 18.83,
-        "chopIdx": 53.2,
+        "atr5": 1.88,
+        "stretchAtr": 18.77,
+        "chopIdx": 46.8,
         "rngHi": 1759.25,
         "rngLo": 1637.68,
         "eq": 1698.47,
@@ -173,36 +166,29 @@
         "prem75": 1728.86,
         "gzLong": "1663.70:1684.12",
         "gzShort": "1712.81:1733.23",
-        "dPos": 0.22,
+        "dPos": 0.23,
         "vix": 23.81,
         "vixRank": 39,
-        "dvol": 64.76,
-        "dvolRank": 56,
+        "dvol": 64.61,
+        "dvolRank": 55,
         "smt": "none",
         "sweep": "PDL:dn",
-        "sweepAgo": 32,
-        "fvg": "5m bear:1664.72:1667.20;5m ibear:1665.98:1667.20;5m ibear:1672.26:1673.34;15m bear:1664.32:1667.20;15m ibear:1696.81:1698.78;15m bear:1695.55:1719.33;1h ibear:1696.97:1698.78;1h bear:1690.70:1719.40;1h ibear:1708.00:1719.33;4h bear:1690.70:1721.11;4h ibear:1714.09:1719.33;4h bear:1876.45:1904.33",
-        "touchlog": "VAH:2:1621:1~POC:2:1080:1~VAL:3:2655:0~PDH:14:886:1~PDL:11:1009:1~DO:3:2686:0~TDO:11:1945:1~ONH:10:0:0~ONL:4:2113:1~IBH:2:2828:0~IBL:1:0:0~ASH:10:0:0~ASL:4:2113:1~LOH:3:1089:0~LOL:9:2055:1"
+        "sweepAgo": 35,
+        "fvg": "5m ibear:1665.98:1667.20;5m bear:1666.47:1667.20;5m ibear:1672.26:1673.34;15m bear:1666.47:1667.20;15m ibear:1696.81:1698.78;15m bear:1695.55:1719.33;1h ibear:1696.97:1698.78;1h bear:1690.70:1719.40;1h ibear:1708.00:1719.33;4h bear:1690.70:1721.11;4h ibear:1714.09:1719.33;4h bear:1876.45:1904.33",
+        "touchlog": "VAH:2:1621:1~POC:2:1080:1~VAL:3:2655:0~PDH:14:886:1~PDL:11:1009:1~DO:3:2686:0~TDO:11:1945:1~ONH:11:0:0~ONL:4:2113:1~IBH:2:2828:0~IBL:1:0:0~ASH:11:0:0~ASL:4:2113:1~LOH:3:1089:0~LOL:9:2055:1"
       },
       "struct": {
-        "regime": "CHOP",
-        "align": "CHOP",
+        "regime": "MIXED",
+        "align": "CISD_UP",
         "cisd": {
           "chart": 1,
           "h1": 1,
           "h2": 1,
           "h3": -1
         },
-        "po3": "MANIPULATION",
-        "po3Dir": "down",
-        "lastLevelEvent": {
-          "level": "L4",
-          "event": "REJECT",
-          "t": 1795820400000,
-          "price": 1660.047,
-          "dist": 3.013,
-          "touches": 5
-        }
+        "po3": null,
+        "po3Dir": null,
+        "lastLevelEvent": null
       }
     },
     "NQ": {
@@ -294,16 +280,9 @@
           "h2": 1,
           "h3": 1
         },
-        "po3": "DISTRIBUTION",
-        "po3Dir": "up",
-        "lastLevelEvent": {
-          "level": "H5",
-          "event": "ACCEPT_UP",
-          "t": 1795802400000,
-          "price": 26663.5239926916,
-          "dist": 125.2260073084,
-          "touches": 11
-        }
+        "po3": null,
+        "po3Dir": null,
+        "lastLevelEvent": null
       }
     },
     "ES": {
@@ -395,16 +374,9 @@
           "h2": 1,
           "h3": 1
         },
-        "po3": "ACCUMULATION",
-        "po3Dir": "up",
-        "lastLevelEvent": {
-          "level": "H5",
-          "event": "TOUCH",
-          "t": 1795802100000,
-          "price": 7304.2076840128,
-          "dist": 5.0423159872,
-          "touches": 7
-        }
+        "po3": null,
+        "po3Dir": null,
+        "lastLevelEvent": null
       }
     },
     "GC": {
@@ -496,16 +468,9 @@
           "h2": 1,
           "h3": -1
         },
-        "po3": "MANIPULATION",
-        "po3Dir": "up",
-        "lastLevelEvent": {
-          "level": "H6",
-          "event": "TOUCH",
-          "t": 1795808400000,
-          "price": 3679.1754491651,
-          "dist": 1.9245508349,
-          "touches": 7
-        }
+        "po3": null,
+        "po3Dir": null,
+        "lastLevelEvent": null
       }
     },
     "YM": {
@@ -597,16 +562,9 @@
           "h2": -1,
           "h3": -1
         },
-        "po3": "DISTRIBUTION",
-        "po3Dir": "up",
-        "lastLevelEvent": {
-          "level": "H5",
-          "event": "ACCEPT_UP",
-          "t": 1795802400000,
-          "price": 50776.4543137606,
-          "dist": 54.5456862394,
-          "touches": 13
-        }
+        "po3": null,
+        "po3Dir": null,
+        "lastLevelEvent": null
       }
     },
     "CL": {
@@ -698,16 +656,9 @@
           "h2": 1,
           "h3": -1
         },
-        "po3": "EXPANSION",
-        "po3Dir": "up",
-        "lastLevelEvent": {
-          "level": "PDL",
-          "event": "TOUCH",
-          "t": 1795807800000,
-          "price": 83.16,
-          "dist": 0,
-          "touches": 3
-        }
+        "po3": null,
+        "po3Dir": null,
+        "lastLevelEvent": null
       }
     }
   }
