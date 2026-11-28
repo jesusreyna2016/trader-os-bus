@@ -380,6 +380,7 @@ def features(b, d, sym, date, t_open, ctx):
     mins = (b["t"] - t_open) // 60
     f["time"] = "0-30" if mins < 30 else "30-60" if mins < 60 else "60-120" if mins < 120 else "120+"
     f["dow"] = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][date.weekday()]
+    f.update(map_feats(b, d))
     return {k: v for k, v in f.items() if v is not None}
 
 
@@ -977,6 +978,354 @@ def profile_compare(recs, minN):
             if ok:
                 best[pid] = {k: ok[0].get(k) for k in ("var", "n", "winPct", "expR", "lb", "edgeVsCtrl")}
         out[fam] = {"ref": rows, "best": best}
+    return out
+
+
+# ================================================================ mapa de niveles (TDL Map)
+# Replica el motor de TDL Level Map con las velas del TDL Feed: niveles de tiempo (apertura,
+# máximo y mínimo del día anterior, días previos con nombre, semana, mes, vela de 4H) y un
+# evento cuando el precio los acepta o los rechaza, con el TIPO de evidencia: iFVG, FVG,
+# barrida, ruptura fallida, mecha de rechazo o cierres al otro lado. Cada evento abre una
+# operación hacia el lado que queda. Los mismos eventos sobre niveles de control (± 4 ATR del
+# nivel real) dicen si el nivel o la evidencia aportan algo o es solo el patrón de velas.
+# La puntuación de dirección (precio frente a aperturas, EMAs, EMA 20 multi-TF y VWAP) va por
+# vela como confluencia de todas las familias (mapDir / mapRaw) y con su propia prueba.
+
+MAP_KINDS = {1: "ifvg", 2: "fvg", 3: "sweep", 4: "failed", 5: "wick", 6: "closes"}
+DOW_ES = ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"]
+
+
+def _ema_cont(series_closed, alpha):
+    """EMA de las velas cerradas de un TF mayor (None hasta tener 20)."""
+    if len(series_closed) < 20:
+        return None
+    e = sum(series_closed[:20]) / 20
+    for x in series_closed[20:]:
+        e = e + alpha * (x - e)
+    return e
+
+
+def map_precompute(bars, sym, crypto, cfg):
+    """Marca cada vela con los niveles de tiempo vigentes (_lvl), la puntuación de dirección
+    agrupada (_map) y plana (_mapRaw) y la posición en el rango de día / semana / mes."""
+    if not bars:
+        return
+    c = cfg.get("map", {})
+    per_day = (24 * 60 if crypto else 23 * 60) // 5
+    td_of = [trading_day(b["t"], crypto) for b in bars]
+    day = {}
+    for b, td in zip(bars, td_of):
+        d = day.setdefault(td, {"o": b["o"], "h": b["h"], "l": b["l"], "n": 0, "c": b["c"]})
+        d["h"], d["l"], d["n"], d["c"] = max(d["h"], b["h"]), min(d["l"], b["l"]), d["n"] + 1, b["c"]
+    tds = sorted(day)
+    full = {td for td in tds if day[td]["n"] >= per_day * 0.8}
+    pos = {td: i for i, td in enumerate(tds)}
+    wk = lambda td: td - dt.timedelta(days=td.weekday())
+
+    lv_day = {}
+    for td in tds:
+        L = [("DO", "DO", day[td]["o"])]
+        k = pos[td]
+        prev = tds[max(0, k - 5):k][::-1]
+        for j, p in enumerate(prev):
+            if p not in full:
+                continue
+            if j == 0:
+                L += [("PDH", "D1", day[p]["h"]), ("PDL", "D1", day[p]["l"])]
+            else:
+                nm = DOW_ES[p.weekday()]
+                L += [(nm + " H", "Dn", day[p]["h"]), (nm + " L", "Dn", day[p]["l"])]
+        w0 = [x for x in tds if wk(x) == wk(td)]
+        if w0 and w0[0].weekday() == 0:
+            L.append(("WO", "WO", day[w0[0]]["o"]))
+        pw = [x for x in tds if wk(x) == wk(td) - dt.timedelta(days=7) and x in full]
+        if len(pw) >= (6 if crypto else 4):
+            L += [("PWH", "PW", max(day[x]["h"] for x in pw)), ("PWL", "PW", min(day[x]["l"] for x in pw))]
+        m0 = [x for x in tds if (x.year, x.month) == (td.year, td.month)]
+        if m0 and m0[0].day <= 3:
+            L.append(("MO", "MO", day[m0[0]]["o"]))
+        pm_key = (td.year - 1, 12) if td.month == 1 else (td.year, td.month - 1)
+        pm = [x for x in tds if (x.year, x.month) == pm_key and x in full]
+        if len(pm) >= (25 if crypto else 17):
+            L += [("PMH", "PM", max(day[x]["h"] for x in pm)), ("PML", "PM", min(day[x]["l"] for x in pm))]
+        lv_day[td] = L
+
+    def h4_key(b, td):
+        base = (int(dt.datetime(td.year, td.month, td.day, tzinfo=dt.timezone.utc).timestamp())
+                if crypto else at(td, "18:00", -1))
+        return (td, (b["t"] - base) // 14400)
+
+    alpha = 2.0 / (c.get("emaLen", 20) + 1)
+    tf_closed = {"15m": [], "1H": [], "4H": [], "1D": []}
+    tf_last = {"15m": None, "1H": None, "4H": None, "1D": None}
+    ema_prev = {k: None for k in tf_closed}
+    h4 = {"key": None, "o": None, "h": None, "l": None, "ph": None, "pl": None}
+    run_w = {}   # semana -> (h, l) con los dias cerrados
+    run_m = {}
+    for i, (b, td) in enumerate(zip(bars, td_of)):
+        keys = {"15m": b["t"] // 900, "1H": b["t"] // 3600, "4H": h4_key(b, td), "1D": td}
+        for tf, kk in keys.items():
+            if tf_last[tf] is not None and kk != tf_last[tf][0]:
+                tf_closed[tf].append(tf_last[tf][1])
+                ema_prev[tf] = _ema_cont(tf_closed[tf], alpha) if len(tf_closed[tf]) == 20 or ema_prev[tf] is None \
+                    else ema_prev[tf] + alpha * (tf_closed[tf][-1] - ema_prev[tf])
+            tf_last[tf] = (kk, b["c"])
+        k4 = keys["4H"]
+        if h4["key"] != k4:
+            if h4["key"] is not None:
+                h4["ph"], h4["pl"] = h4["h"], h4["l"]
+            h4.update(key=k4, o=b["o"], h=b["h"], l=b["l"])
+        else:
+            h4["h"], h4["l"] = max(h4["h"], b["h"]), min(h4["l"], b["l"])
+        lv = list(lv_day[td])
+        lv.append(("4H O", "4O", h4["o"]))
+        if h4["ph"] is not None:
+            lv += [("p4H H", "4H", h4["ph"]), ("p4H L", "4H", h4["pl"])]
+        b["_lvl"] = lv
+        # puntuación
+        cc = b["c"]
+        vote = lambda x: None if x is None else (1 if cc >= x else -1)
+        opens = [vote(x[2]) for x in lv if x[1] in ("DO", "WO", "MO", "4O")]
+        e20, e50, e200 = num(b.get("ema20")), num(b.get("ema50")), num(b.get("ema200"))
+        emas = [vote(e20), vote(e50), vote(e200), None if (e20 is None or e50 is None) else (1 if e20 >= e50 else -1)]
+        mtf = [vote(None if ema_prev[tf] is None else ema_prev[tf] + alpha * (cc - ema_prev[tf])) for tf in ("15m", "1H", "4H", "1D")]
+        vw = [vote(num(b.get("vwap")))]
+        groups = [[v for v in g if v is not None] for g in (opens, emas, mtf, vw)]
+        groups = [g for g in groups if g]
+        allv = [v for g in groups for v in g]
+        b["_map"] = round(sum(sum(g) / len(g) for g in groups) / len(groups), 3) if len(groups) >= 2 else None
+        b["_mapRaw"] = round(sum(allv) / len(allv), 3) if len(allv) >= 4 else None
+    # rangos corridos (segunda pasada, lineal)
+    cur = {}
+    for i, (b, td) in enumerate(zip(bars, td_of)):
+        w, m = wk(td), (td.year, td.month)
+        if cur.get("td") != td:
+            if cur.get("td") is not None:
+                ptd = cur["td"]
+                pw, pmk = wk(ptd), (ptd.year, ptd.month)
+                h, l = run_w.get(pw, (-1e18, 1e18))
+                run_w[pw] = (max(h, cur["h"]), min(l, cur["l"]))
+                h, l = run_m.get(pmk, (-1e18, 1e18))
+                run_m[pmk] = (max(h, cur["h"]), min(l, cur["l"]))
+            cur = {"td": td, "h": b["h"], "l": b["l"]}
+        else:
+            cur["h"], cur["l"] = max(cur["h"], b["h"]), min(cur["l"], b["l"])
+        rp = lambda h, l: None if h <= l else round((b["c"] - l) / (h - l), 3)
+        b["_rpD"] = rp(cur["h"], cur["l"])
+        wh, wl = run_w.get(w, (-1e18, 1e18))
+        b["_rpW"] = rp(max(wh, cur["h"]), min(wl, cur["l"])) if w in run_w else None
+        mh, ml = run_m.get(m, (-1e18, 1e18))
+        b["_rpM"] = rp(max(mh, cur["h"]), min(ml, cur["l"])) if m in run_m else None
+
+
+def map_feats(b, d):
+    f = {}
+    for key, src in (("mapDir", "_map"), ("mapRaw", "_mapRaw")):
+        s = b.get(src)
+        if s is not None:
+            f[key] = "favor" if s * d >= 0.35 else "contra" if s * d <= -0.35 else "flat"
+    for key, src in (("rpD", "_rpD"), ("rpW", "_rpW")):
+        r = b.get(src)
+        if r is not None:
+            lo, hi = r <= 0.33, r >= 0.67
+            f[key] = "mid" if not (lo or hi) else ("favor" if (lo and d > 0) or (hi and d < 0) else "contra")
+    return f
+
+
+def fam_map(bars, sym, crypto, cfg, cost, ctx_for):
+    """MAP: eventos de aceptado / rechazado en los niveles de tiempo (y en sus controles)."""
+    c = cfg["map"]
+    out, events = [], []
+    if len(bars) < 30:
+        return out, events
+    atr = atr_series(bars, 14)
+    gaps = []          # [top, bot, otop, obot, dir, bar, inv]
+    st = {}            # clave de nivel -> estado
+    ctrl_of = {}       # clave real -> lista de controles
+    tolK, zK, accN, wickMin = c["tolAtr"], c["zoneAtr"], c["accBars"], c["wickMin"]
+    for i in range(3, len(bars) - 1):
+        b, a = bars[i], atr[i]
+        if not a or "_lvl" not in b:
+            continue
+        if b["t"] - bars[i - 1]["t"] > 3 * BAR:      # hueco de sesión: estados frescos
+            st.clear()
+            gaps.clear()
+            continue
+        tol, zTol = a * tolK, a * zK
+        # FVG / iFVG del 5m (como el indicador)
+        newF, newI = [], []
+        for g in list(gaps):
+            kill = i - g[5] > c["fvgLife"]
+            if not g[6]:
+                if (b["c"] < g[1]) if g[4] == 1 else (b["c"] > g[0]):
+                    g[6], g[4], g[0], g[1], g[5], kill = True, -g[4], g[2], g[3], i, False
+                    newI.append((g[0], g[1], g[4]))
+                else:
+                    if g[4] == 1 and b["l"] < g[0]:
+                        g[0] = max(b["l"], g[1])
+                    if g[4] == -1 and b["h"] > g[1]:
+                        g[1] = min(b["h"], g[0])
+                    kill = kill or g[0] <= g[1]
+            elif (b["c"] < g[1]) if g[4] == 1 else (b["c"] > g[0]):
+                kill = True
+            if kill:
+                gaps.remove(g)
+        b2 = bars[i - 2]
+        if b["l"] > b2["h"] and b["l"] - b2["h"] >= a * c["fvgAtr"]:
+            gaps.append([b["l"], b2["h"], b["l"], b2["h"], 1, i, False]); newF.append((b["l"], b2["h"], 1))
+        if b["h"] < b2["l"] and b2["l"] - b["h"] >= a * c["fvgAtr"]:
+            gaps.append([b2["l"], b["h"], b2["l"], b["h"], -1, i, False]); newF.append((b2["l"], b["h"], -1))
+        del gaps[:-40]
+        loN = min(x["l"] for x in bars[i - 4:i + 1])
+        hiN = max(x["h"] for x in bars[i - 4:i + 1])
+        lvls = []
+        for nm, fam, p in b["_lvl"]:
+            if p is None:
+                continue
+            key = (nm, round(p, 6))
+            lvls.append((key, nm, fam, p, None))
+            if key not in ctrl_of:
+                ctrl_of[key] = [((nm + "~" + s, round(p + k * c["ctrlAtr"] * a, 6)), p + k * c["ctrlAtr"] * a) for s, k in (("+", 1), ("-", -1))]
+            for ck, cp in ctrl_of[key]:
+                lvls.append((ck, ck[0], "CTRL", cp, fam))
+        for key, nm, fam, p, base in lvls:
+            s = st.get(key)
+            if s is None:
+                st[key] = {"side": 1 if b["c"] >= p else -1, "pend": 0, "n": 0, "cool": -99, "ev": -99, "evDir": 0}
+                continue
+            ev = None
+            for gl, kk in ((newI, 1), (newF, 2)):
+                for zt, zb, d in gl:
+                    near = zb - zTol <= p <= zt + zTol
+                    crossed = kk == 2 and ((bars[i - 1]["o"] < p < bars[i - 1]["c"]) if d == 1 else (bars[i - 1]["o"] > p > bars[i - 1]["c"]))
+                    beyond = b["c"] > p if d == 1 else b["c"] < p
+                    tested = loN <= p + tol if d == 1 else hiN >= p - tol
+                    if (near or crossed) and beyond and tested:
+                        ev = (d, kk) if not (i - s["ev"] <= 3 and s["evDir"] == d) else ("skip", 0)
+                        break
+                if ev:
+                    break
+            if ev == ("skip", 0):
+                continue
+            if ev is None:
+                sd = s["side"]
+                cool = i - s["cool"] > c["coolBars"]
+                if s["pend"]:
+                    if (b["c"] > p) if s["pend"] == 1 else (b["c"] < p):
+                        s["n"] += 1
+                        if s["n"] >= accN:
+                            ev = (s["pend"], 6)
+                    else:
+                        ev = (sd, 4)
+                else:
+                    brk = b["c"] < p - tol if sd == 1 else b["c"] > p + tol
+                    swp = (b["l"] < p - tol and b["c"] > p) if sd == 1 else (b["h"] > p + tol and b["c"] < p)
+                    rng = b["h"] - b["l"]
+                    wk_ = (min(b["o"], b["c"]) - b["l"]) if sd == 1 else (b["h"] - max(b["o"], b["c"]))
+                    rej = rng > 0 and wk_ >= rng * wickMin and ((b["l"] <= p + tol and b["c"] > p + tol) if sd == 1 else (b["h"] >= p - tol and b["c"] < p - tol))
+                    if brk:
+                        if accN <= 1:
+                            ev = (-sd, 6)
+                        else:
+                            s["pend"], s["n"] = -sd, 1
+                    elif swp and cool:
+                        ev = (sd, 3)
+                    elif rej and cool:
+                        ev = (sd, 5)
+            if not ev:
+                continue
+            d, kk = ev
+            acc = d != s["side"]
+            s.update(side=d, pend=0, n=0, cool=i, ev=i, evDir=d)
+            kind = MAP_KINDS[kk]
+            t_in = b["t"] + BAR
+            end_t = end_of_hold(t_in, crypto, c["holdHours"])
+            if end_t - t_in < 2 * BAR:
+                continue
+            day = str(dt.datetime.fromtimestamp(b["t"], NY).date())
+            events.append({"fam": fam, "base": base, "kind": kind, "acc": acc, "dir": d, "date": day,
+                           "dist": abs(b["c"] - p) / a})
+            entry = b["c"]
+            stops = {"lvl": p - d * c["stopAtr"] * a,
+                     "ext": (min(x["l"] for x in bars[i - 2:i + 1]) if d > 0 else max(x["h"] for x in bars[i - 2:i + 1])) - d * 0.1 * a}
+            feats = {**ctx_for(i, d), "kind": kind, "acc": "accept" if acc else "reject", "lvlFam": base or fam,
+                     "#accDist": abs(b["c"] - p) / a}
+            for sn, stop in stops.items():
+                if (entry - stop) * d < 0.15 * a:
+                    stop = entry - d * 0.15 * a
+                for tn in c["targets"]:
+                    tp = None if tn == "hold" else target_px(tn, entry, stop, d)
+                    t = trade(bars, i, end_t, d, entry, stop, tp, cost)
+                    if t and fam == "CTRL":
+                        t.pop("alt", None)         # el control solo se compara con la variante base
+                    if t:
+                        out.append({"fam": "MAP", "var": f"{'CTRL|' if fam == 'CTRL' else ''}{'acc' if acc else 'rej'}|{kind}|{sn}|{tn}",
+                                    "prof": "CTRL" if fam == "CTRL" else fam, "ctrl": fam == "CTRL",
+                                    "dir": d, "sym": sym, "date": day, **t, "feat": feats})
+    return out, events
+
+
+MAP_REF = "lvl|2R"
+
+
+def map_summary(recs, events, minN):
+    """Evidencia (tipo de evento x aceptado / rechazado) y familia de nivel: real frente a control
+    con la misma variante; y conteo de eventos."""
+    mr = [r for r in recs if r["fam"] == "MAP"]
+    pick = lambda s: {k: s.get(k) for k in ("n", "days", "winPct", "expR", "lb", "edgeVsCtrl")}
+    by_ev = {}
+    for acc in ("acc", "rej"):
+        for kind in MAP_KINDS.values():
+            v = f"{acc}|{kind}|{MAP_REF}"
+            real = [r for r in mr if r["var"] == v]
+            ctrl = [r for r in mr if r["var"] == "CTRL|" + v]
+            if real or ctrl:
+                by_ev[f"{acc}|{kind}"] = {"real": pick(stats(real)), "ctrl": pick(stats(ctrl))}
+    by_fam = {}
+    for fam in sorted({r["prof"] for r in mr}):
+        rows = [r for r in mr if r["prof"] == fam and r["var"].endswith(MAP_REF)]
+        if rows:
+            by_fam[fam] = {"acc": pick(stats([r for r in rows if "acc|" in r["var"]])),
+                           "rej": pick(stats([r for r in rows if "rej|" in r["var"]]))}
+    cnt = defaultdict(int)
+    for e in events:
+        cnt[("CTRL" if e["fam"] == "CTRL" else "real", e["kind"], "acc" if e["acc"] else "rej")] += 1
+    return {"ref": MAP_REF, "byEvidence": by_ev, "byLevelFamily": by_fam,
+            "events": {f"{a}|{k}|{c}": n for (a, k, c), n in sorted(cnt.items())}}
+
+
+def map_score_test(bars_by):
+    """¿El signo de la puntuación acierta la dirección de la hora y de las 4 h siguientes?
+    Una muestra por hora en punto; retorno en ATR(14) de 5m; acierto = mismo signo."""
+    out = {}
+    for src in ("_map", "_mapRaw"):
+        buckets = defaultdict(lambda: {"n": 0, "h1": [], "h4": []})
+        for sym, bars in bars_by.items():
+            atr = atr_series(bars, 14)
+            for i, b in enumerate(bars):
+                s = b.get(src)
+                if s is None or not atr[i] or b["t"] % 3600:
+                    continue
+                bk = "≤-0.65" if s <= -0.65 else "-0.65/-0.35" if s <= -0.35 else "-0.35/0.35" if s < 0.35 else "0.35/0.65" if s < 0.65 else "≥0.65"
+                for h, nb in (("h1", 12), ("h4", 48)):
+                    j = i + nb
+                    if j < len(bars) and bars[j]["t"] - b["t"] == nb * BAR:
+                        buckets[bk][h].append((bars[j]["c"] - b["c"]) / atr[i])
+                buckets[bk]["n"] += 1
+        res = {}
+        for bk in ("≤-0.65", "-0.65/-0.35", "-0.35/0.35", "0.35/0.65", "≥0.65"):
+            x = buckets.get(bk)
+            if not x:
+                continue
+            sg = -1 if bk.startswith(("≤", "-0.65")) else 1 if bk.startswith(("0.35", "≥")) else 0
+            r = {"n": x["n"]}
+            for h in ("h1", "h4"):
+                v = x[h]
+                if v:
+                    r[h] = {"n": len(v), "meanAtr": round(sum(v) / len(v), 3),
+                            "hitPct": round(100 * sum((y > 0) == (sg > 0) for y in v if y != 0) / max(1, sum(1 for y in v if y != 0)), 1) if sg else None}
+            res[bk] = r
+        out["grouped" if src == "_map" else "raw"] = res
     return out
 
 
@@ -1588,6 +1937,9 @@ def main():
                 best = (reg, aln)
         return best or (None, None)
 
+    for _sym, _bars in bars_by.items():
+        map_precompute(_bars, _sym, _sym in cfg.get("crypto", []), cfg)
+    map_events = []
     recs, days, parity = [], {}, {"compared": 0, "agree": 0, "diffs": []}
     vp_cfg = cfg.get("volumeProfile", {})
     vp_par = []            # perfil propio del día anterior frente al del Feed (ticks)
@@ -1692,6 +2044,10 @@ def main():
             return features(_b[k], d, _s, date, at(date, "09:30"), ctx)
 
         rr, sm = fam_range_ifvg(bars, sym, crypto, cfg, cost, ctx_for)
+        if cfg.get("map"):
+            mr, me = fam_map(bars, sym, crypto, cfg, cost, ctx_for)
+            rr += mr
+            map_events += [e for e in me if dt.date.fromisoformat(e["date"]) >= min_date]
         for k in rif_sum:
             rif_sum[k] += sm[k]
         if zevs.get(sym):
@@ -1714,10 +2070,10 @@ def main():
     lab = {}
     comboN = cfg.get("comboMinN", 2 * minN)
     wf = cfg.get("walkForward", {})
-    for fam in ("ORB", "IBB", "IBL", "IBR", "SWR", "SWC", "VA80", "PB", "RIF", "RBO", "ZON", "VAO", "VAE", "NPOC"):
+    for fam in ("ORB", "IBB", "IBL", "IBR", "SWR", "SWC", "VA80", "PB", "RIF", "RBO", "ZON", "VAO", "VAE", "NPOC", "MAP"):
         bucketize([r for r in recs if r["fam"] == fam])
-    for fam in ("ORB", "IBB", "IBL", "SWR", "SWC", "VA80", "PB", "RIF", "RBO", "ZON", "VAO", "VAE", "NPOC"):
-        fr = [r for r in recs if r["fam"] == fam]
+    for fam in ("ORB", "IBB", "IBL", "SWR", "SWC", "VA80", "PB", "RIF", "RBO", "ZON", "VAO", "VAE", "NPOC", "MAP"):
+        fr = [r for r in recs if r["fam"] == fam and not (fam == "MAP" and r.get("ctrl"))]
         if fr:
             lab[fam] = {**rank(fr, minN, comboN), "confluence": feature_effect(fr, minN),
                         "walkForward": walk_forward(fr, minN, comboN, wf.get("inSampleFrac", 0.6), wf.get("minDays", 20)),
@@ -1780,6 +2136,7 @@ def main():
         "lab": lab,
         "va80": va80,
         "volumeProfile": volume_profile,
+        "levelMap": {**map_summary(recs, map_events, minN), "scoreTest": map_score_test(bars_by)} if cfg.get("map") else None,
         "zones": {**zon_sum, "byEntry": zone_entry_table(lab)},
         "rangeIfvg": {**rif_sum, "inversionPct": round(100 * rif_sum["withInversion"] / rif_sum["breaks"], 1) if rif_sum["breaks"] else None,
                       "vsBreakout": vs_rbo(lab)},
