@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-28",
-  "asOf": "2026-11-28T16:45:36.012Z",
+  "asOf": "2026-11-28T17:00:44.840Z",
   "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 1,
+  "todayViolations": 3,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 2,
+    "used": 3,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 323.54,
-    "pnlR": 6.47,
-    "maxLossStreak": 0
+    "pnl": 295.12,
+    "pnlR": 5.9,
+    "maxLossStreak": 1
   },
   "offZone": {
     "count": 0,
     "pnl": 0,
-    "ofTrades": 2
+    "ofTrades": 3
   },
   "dataHealth": {
     "scanned": 6,
@@ -37,13 +37,40 @@
   },
   "openFlags": [
     {
+      "rule": "R1",
+      "at": 1795843913488,
+      "sym": "ETH",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
+      "rule": "R1",
+      "at": 1795849747726,
+      "sym": "ETH",
+      "note": "entrada dentro de la pausa tras un SL"
+    },
+    {
       "rule": "stop",
-      "at": 1795842325311,
+      "at": 1795884397154,
       "sym": "ETH",
       "note": "posicion abierta sin stop"
     }
   ],
   "todayTrades": [
+    {
+      "acct": "jh78sxh81psmmc05jqsesbkh6n8k04x1",
+      "name": "Elite 3% DLL 25K Challenge",
+      "sym": "ETH",
+      "side": "short",
+      "size": 30,
+      "entry": 1651.72666666,
+      "exit": 1651.58,
+      "pnl": -28.42,
+      "r": -0.57,
+      "openedAt": 1795842325311,
+      "closedAt": 1795884397154,
+      "flags": [],
+      "distZone": 0
+    },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
       "name": "Elite 3% DLL 10K Challenge",
@@ -56,7 +83,9 @@
       "r": 4.12,
       "openedAt": 1795843913488,
       "closedAt": 1795849729000,
-      "flags": [],
+      "flags": [
+        "R1_REVENGE"
+      ],
       "distZone": 1
     },
     {
@@ -71,8 +100,10 @@
       "r": 2.35,
       "openedAt": 1795849747726,
       "closedAt": 1795877204965,
-      "flags": [],
-      "distZone": 2
+      "flags": [
+        "R1_REVENGE"
+      ],
+      "distZone": 0
     }
   ],
   "openPositions": [
@@ -80,15 +111,15 @@
       "acct": "jh78sxh81psmmc05jqsesbkh6n8k04x1",
       "name": "Elite 3% DLL 25K Challenge",
       "sym": "ETH",
-      "side": "short",
-      "size": 30,
-      "entry": 1651.72666666,
-      "openedAt": 1795842325311,
+      "side": "long",
+      "size": 42.479,
+      "entry": 1652.14697356,
+      "openedAt": 1795884397154,
       "hadStop": false,
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 2
+      "distZone": 1
     }
   ],
   "captures": [],
