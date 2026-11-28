@@ -5,7 +5,8 @@
   "ES",
   "GC",
   "CL",
-  "ETH"
+  "ETH",
+  "BTC"
  ],
  "aliases": {
   "MNQ": "NQ",
@@ -13,7 +14,9 @@
   "MGC": "GC",
   "MCL": "CL",
   "ETHUSDT": "ETH",
-  "ETHUSDT.P": "ETH"
+  "ETHUSDT.P": "ETH",
+  "BTCUSDT": "BTC",
+  "BTCUSDT.P": "BTC"
  },
  "tick": {
   "NQ": 0.25,

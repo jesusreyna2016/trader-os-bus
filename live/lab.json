@@ -1,7 +1,7 @@
 {
  "_writer": "lab",
  "_schema": 2,
- "asOf": "2026-11-28T03:26:32Z",
+ "asOf": "2026-11-28T03:31:04Z",
  "minDate": "2026-11-27",
  "minN": 10,
  "costTicks": 2,
@@ -12,7 +12,8 @@
    "ES": 0,
    "GC": 0,
    "CL": 0,
-   "ETH": 0
+   "ETH": 0,
+   "BTC": 0
   },
   "trades": 0,
   "source": "tdl_feed (TradingView)",
@@ -43,6 +44,12 @@
    },
    "ETH": {
     "rows": 39,
+    "ohlc": 0,
+    "last": "2026-11-28T03:05+00:00",
+    "files": 2
+   },
+   "BTC": {
+    "rows": 38,
     "ohlc": 0,
     "last": "2026-11-28T03:05+00:00",
     "files": 2
