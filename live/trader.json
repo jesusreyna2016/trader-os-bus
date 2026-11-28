@@ -2,10 +2,10 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-28",
-  "asOf": "2026-11-28T05:30:43.375Z",
+  "asOf": "2026-11-28T05:45:33.403Z",
   "state": "TILT",
   "disciplineStreak": 0,
-  "todayViolations": 1,
+  "todayViolations": 2,
   "rulesActive": [
     "R1 pausa post-SL",
     "R2 se-me-escapa = STOP",
@@ -38,6 +38,12 @@
   "openFlags": [
     {
       "rule": "stop",
+      "at": 1795843913488,
+      "sym": "ETH",
+      "note": "posicion abierta sin stop"
+    },
+    {
+      "rule": "stop",
       "at": 1795842325311,
       "sym": "ETH",
       "note": "posicion abierta sin stop"
@@ -45,6 +51,20 @@
   ],
   "todayTrades": [],
   "openPositions": [
+    {
+      "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
+      "name": "Elite 3% DLL 10K Challenge",
+      "sym": "ETH",
+      "side": "short",
+      "size": 15,
+      "entry": 1654.54,
+      "openedAt": 1795843913488,
+      "hadStop": false,
+      "flags": [
+        "NO_STOP"
+      ],
+      "distZone": 0
+    },
     {
       "acct": "jh78sxh81psmmc05jqsesbkh6n8k04x1",
       "name": "Elite 3% DLL 25K Challenge",
