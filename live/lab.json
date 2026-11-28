@@ -1,7 +1,7 @@
 {
  "_writer": "lab",
  "_schema": 2,
- "asOf": "2026-11-27T23:46:26Z",
+ "asOf": "2026-11-28T02:26:29Z",
  "minDate": "2026-11-27",
  "minN": 10,
  "costTicks": 2,
@@ -42,10 +42,10 @@
     "files": 0
    },
    "ETH": {
-    "rows": 0,
+    "rows": 27,
     "ohlc": 0,
-    "last": null,
-    "files": 0
+    "last": "2026-11-28T02:05+00:00",
+    "files": 2
    }
   },
   "walkForwardMinDays": 20
@@ -65,15 +65,21 @@
    "allDaysTouchBothPct": null
   }
  },
+ "rangeIfvg": {
+  "breaks": 0,
+  "withInversion": 0,
+  "inversionPct": null,
+  "vsBreakout": null
+ },
  "ibLevels": {
   "levels": {},
   "controlAvg": null
  },
  "klLevels": {
-  "touches": 1207,
+  "touches": 1211,
   "all": {
-   "n": 1207,
-   "holdPct": 44.0,
+   "n": 1211,
+   "holdPct": 44.1,
    "decidedPct": 65.7
   },
   "byLevel": {
@@ -127,35 +133,35 @@
     "holdPct": 44.1,
     "decidedPct": 68.0
    },
+   "PPOC": {
+    "n": 81,
+    "holdPct": 44.0,
+    "decidedPct": 61.7
+   },
    "PWL": {
     "n": 29,
     "holdPct": 44.0,
     "decidedPct": 86.2
    },
-   "PPOC": {
-    "n": 79,
-    "holdPct": 43.8,
-    "decidedPct": 60.8
-   },
    "DO": {
-    "n": 106,
+    "n": 107,
     "holdPct": 42.7,
-    "decidedPct": 70.8
+    "decidedPct": 70.1
    },
    "L5": {
     "n": 20,
     "holdPct": 41.7,
     "decidedPct": 60.0
    },
+   "PVAL": {
+    "n": 41,
+    "holdPct": 40.9,
+    "decidedPct": 53.7
+   },
    "PVAH": {
     "n": 94,
     "holdPct": 39.7,
     "decidedPct": 61.7
-   },
-   "PVAL": {
-    "n": 40,
-    "holdPct": 38.1,
-    "decidedPct": 52.5
    },
    "ONH": {
     "n": 29,
@@ -181,13 +187,13 @@
   "byContext": {
    "role": {
     "resistance": {
-     "n": 557,
-     "holdPct": 43.3,
+     "n": 558,
+     "holdPct": 43.1,
      "decidedPct": 65.2
     },
     "support": {
-     "n": 607,
-     "holdPct": 44.1,
+     "n": 610,
+     "holdPct": 44.4,
      "decidedPct": 66.9
     },
     "None": {
@@ -198,9 +204,9 @@
    },
    "regime": {
     "mixed": {
-     "n": 671,
-     "holdPct": 45.1,
-     "decidedPct": 70.0
+     "n": 673,
+     "holdPct": 45.3,
+     "decidedPct": 70.1
     },
     "chop": {
      "n": 163,
@@ -208,26 +214,26 @@
      "decidedPct": 58.9
     },
     "contra": {
-     "n": 192,
-     "holdPct": 46.9,
-     "decidedPct": 58.9
+     "n": 193,
+     "holdPct": 46.5,
+     "decidedPct": 59.1
     },
     "favor": {
-     "n": 170,
+     "n": 171,
      "holdPct": 43.5,
-     "decidedPct": 63.5
+     "decidedPct": 63.2
     }
    },
    "align": {
     "mixed": {
-     "n": 344,
-     "holdPct": 47.6,
-     "decidedPct": 66.0
+     "n": 346,
+     "holdPct": 47.8,
+     "decidedPct": 65.9
     },
     "favor": {
-     "n": 330,
-     "holdPct": 43.5,
-     "decidedPct": 70.3
+     "n": 331,
+     "holdPct": 43.8,
+     "decidedPct": 70.4
     },
     "chop": {
      "n": 162,
@@ -235,16 +241,16 @@
      "decidedPct": 58.6
     },
     "contra": {
-     "n": 352,
-     "holdPct": 44.5,
-     "decidedPct": 64.5
+     "n": 353,
+     "holdPct": 44.3,
+     "decidedPct": 64.6
     }
    },
    "session": {
     "ASIA": {
-     "n": 431,
-     "holdPct": 43.2,
-     "decidedPct": 64.5
+     "n": 435,
+     "holdPct": 43.4,
+     "decidedPct": 64.6
     },
     "LONDON": {
      "n": 329,
