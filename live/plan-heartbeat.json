@@ -1,6 +1,6 @@
 {
- "lastRun": "2026-11-27T13:58:00.000Z",
- "runType": "pre-ny",
+ "lastRun": "2026-11-28T16:10:00.000Z",
+ "runType": "weekly",
  "ok": true,
- "note": "pre-ny OK: retroceso general tras subida extrema, 1 AVOID (GC, dia 125% ADR) + 4 WAIT, ninguna A+ (fase adaptador sin move24h), viernes corto Black Friday"
+ "note": "weekly OK: plan -0.84R (n=16), zona 4% (1/27) el dato mas duro, journal ausente los 5 dias, sin cambios de overrides"
 }

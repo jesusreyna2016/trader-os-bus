@@ -1,7 +1,7 @@
 {
   "schema": "trader-profile-1",
   "note": "Shared profile of the trader, read by every agent (Session Analyst, Scalp CC, Plan Coach, Watchdog). Behavioral and rule data only: no balances, no P&L, no personal life, and no broker, firm or account details. Humans own `core`; the weekly run may only rewrite `observed`.",
-  "updatedAt": "2026-11-14T16:11:00Z",
+  "updatedAt": "2026-11-28T16:00:00Z",
   "core": {
     "instruments": [
       "NQ / NDX (Nasdaq 100)",
@@ -94,14 +94,14 @@
     }
   },
   "observed": {
-    "updatedBy": "weekly 2026-11-14",
-    "window": "2026-11-09..2026-11-13 (5 dias calendario, 0 con dato real en live/journal.json: el journal no ha agregado un solo byDay nuevo desde 2026-11-07, updatedAt sigue en 2026-11-08T03:19:02Z, 6+ dias calendario sin refrescar)",
+    "updatedBy": "weekly 2026-11-28",
+    "window": "2026-11-23..2026-11-27 (5 dias calendario, 0 con dato real en live/journal.json: el archivo no existe en el bus esta semana, ninguna de las 5 reviews diarias tuvo datos de ejecucion)",
     "disciplinedPct": null,
     "againstBiasRate": null,
     "outsideEdgeRate": null,
     "trend": {
-      "es": "Semana completamente ciega para ejecucion real: 0 de 5 dias con dato en live/journal.json (peor que el 3/5 parcial de la semana pasada), el journal lleva mas de 6 dias calendario sin agregar un solo byDay nuevo (el ultimo sigue siendo 2026-11-07). No hay disciplina, contra-sesgo, outsideEdgeRate ni calidad de salida que medir de esta semana especifica. El rollup de 45 dias (que no cambio porque no hay entrada nueva) sigue leyendo disciplinado 4%, contra-sesgo 32%, fuera de edge 27%, 28/45 dias de sobre-operar y 19/45 de revenge, partialRate 1%, fullStopRate 54% -- son los mismos numeros de hace una semana, no una lectura fresca. Si el journal no se reconecta, la siguiente semana tambien quedara sin dato.",
-      "en": "A week completely blind for real execution: 0 of 5 days with data in live/journal.json (worse than last week's partial 3/5), the journal has gone over 6 calendar days without adding a single new byDay (the latest is still 2026-11-07). There is no discipline, against-bias, outside-edge or exit-quality reading for this specific week. The 45-day rollup (unchanged since there is no new entry) still reads 4% disciplined, 32% against-bias, 27% outside-edge, 28/45 overtrade days and 19/45 revenge days, 1% partial rate, 54% full-stop rate -- the same numbers as a week ago, not a fresh read. If the journal does not reconnect, next week will also go without data."
+      "es": "Semana completamente ciega para ejecucion real: live/journal.json ausente los 5 dias (igual que la ultima ventana medida, 2026-11-09..13). No hay disciplina, contra-sesgo ni outsideEdgeRate que medir de esta semana especifica. El acumulado en scorecard.execution.ALL sigue fechado al 2026-11-18 (45 dias: disciplinado 0%, 341 de 341 trades clasificados fuera de edge, 42 de 45 dias con overtrade, 38 con revenge, partialRate 0.1%, fullStopRate 39.1%), numeros viejos, no una lectura fresca de esta ventana. Si el journal no se reconecta, la siguiente semana tambien quedara sin dato.",
+      "en": "A week completely blind for real execution: live/journal.json is absent all 5 days (same as the last measured window, 2026-11-09..13). There is no discipline, against-bias or outside-edge reading for this specific week. The accumulated scorecard.execution.ALL is still dated to 2026-11-18 (45 days: 0% disciplined, 341 of 341 classified trades outside edge, 42 of 45 overtrade days, 38 revenge days, 0.1% partial rate, 39.1% full-stop rate), old numbers, not a fresh read for this window. If the journal does not reconnect, next week will also go without data."
     },
     "exitQuality": null
   }
