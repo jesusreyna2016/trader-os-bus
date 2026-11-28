@@ -665,6 +665,321 @@ def fam_pullback(bars, rth, cfg, cost, mk):
     return out
 
 
+# ================================================================ volume profile
+# Perfiles propios a partir de las velas de 5 m del TDL Feed (volumen de cada vela repartido
+# por igual entre las filas de su rango). Sirven para comparar el perfil del día anterior
+# (el del Feed, calculado por TradingView) con otros: semana anterior, compuesto de 3 días y
+# overnight. Mismas estrategias sobre cada perfil, así se ve cuál acierta más.
+
+def trading_day(t, crypto):
+    """Día de trading de una vela: futuros 18:00 NY → 17:00 NY del día siguiente (el domingo
+    18:00 abre el lunes); crypto, día UTC."""
+    if crypto:
+        return dt.datetime.fromtimestamp(t, dt.timezone.utc).date()
+    x = dt.datetime.fromtimestamp(t, NY)
+    d = x.date() + dt.timedelta(days=1) if x.hour >= 18 else x.date()
+    while d.weekday() >= 5:      # sábado / domingo por la tarde → lunes
+        d += dt.timedelta(days=1)
+    return d
+
+
+def build_profile(bars, ix, tick, row, va_pct=0.70, need=None):
+    """VAH / POC / VAL / máximo / mínimo de las velas ix. None si faltan velas o volumen.
+    need = velas mínimas para darlo por completo."""
+    ok = [i for i in ix if num(bars[i].get("vol")) and bars[i]["h"] >= bars[i]["l"]]
+    if not ok or (need and len(ok) < need):
+        return None
+    row = max(tick, round(row / tick) * tick)
+    lo = min(bars[i]["l"] for i in ok)
+    hi = max(bars[i]["h"] for i in ok)
+    base = math.floor(lo / row)
+    n = int(math.floor(hi / row)) - base + 1
+    if n > 4000:
+        return None
+    vol = [0.0] * n
+    for i in ok:
+        b = bars[i]
+        a, z = int(math.floor(b["l"] / row)) - base, int(math.floor(b["h"] / row)) - base
+        v = num(b["vol"]) / (z - a + 1)
+        for k in range(a, z + 1):
+            vol[k] += v
+    tot = sum(vol)
+    if tot <= 0:
+        return None
+    p = max(range(n), key=lambda k: (vol[k], -abs(k - n / 2)))
+    up, dn, acc = p, p, vol[p]
+    while acc < va_pct * tot and (up < n - 1 or dn > 0):
+        # como TradingView: se compara el volumen de las dos filas siguientes por cada lado
+        au = sum(vol[up + 1:up + 3]) if up < n - 1 else -1
+        ad = sum(vol[max(0, dn - 2):dn]) if dn > 0 else -1
+        if au >= ad:
+            acc += au; up = min(n - 1, up + 2)
+        else:
+            acc += ad; dn = max(0, dn - 2)
+    mid = lambda k: (base + k) * row + row / 2
+    return {"vah": (base + up + 1) * row, "val": (base + dn) * row, "poc": mid(p), "hi": hi, "lo": lo}
+
+
+def profiles_for(bars, sym, crypto, cfg):
+    """{día de trading: ({PW, C3, _own1}, índices del día)} y los perfiles diarios propios.
+    PD (el del Feed) y ON (overnight hasta la apertura) se añaden en main."""
+    c = cfg.get("volumeProfile", {})
+    tick = cfg["tick"].get(sym, 0.01)
+    rows_n = c.get("rows", 50)
+    by_td = defaultdict(list)
+    for i, b in enumerate(bars):
+        by_td[trading_day(b["t"], crypto)].append(i)
+    tds = sorted(by_td)
+    per_day = (24 * 60 if crypto else 23 * 60) // 5
+    full = lambda ix: len(ix) >= per_day * c.get("completePct", 0.8)
+
+    def row_for(i):
+        a = num(bars[i].get("atrD"))
+        return (a / rows_n) if a else tick * 20
+
+    daily = {}
+    for td in tds:
+        ix = by_td[td]
+        if full(ix):
+            pr = build_profile(bars, ix, tick, row_for(ix[-1]))
+            if pr:
+                daily[td] = {**pr, "end": bars[ix[-1]]["t"] + BAR}
+    out = {}
+    for k, td in enumerate(tds):
+        ix = by_td[td]
+        prev = [d for d in tds[:k]][-3:]
+        res = {}
+        if prev and prev[-1] in daily:
+            res["_own1"] = daily[prev[-1]]
+        if len(prev) == 3 and all(d in daily for d in prev):
+            cix = [i for d in prev for i in by_td[d]]
+            pr = build_profile(bars, cix, tick, row_for(cix[-1]))
+            if pr:
+                res["C3"] = {**pr, "end": bars[cix[-1]]["t"] + BAR}
+        wk = td - dt.timedelta(days=td.weekday() + 7)          # lunes de la semana anterior
+        wdays = [d for d in tds if wk <= d < wk + dt.timedelta(days=7)]
+        if len(wdays) >= (6 if crypto else 4) and all(d in daily for d in wdays):
+            wix = [i for d in wdays for i in by_td[d]]
+            pr = build_profile(bars, wix, tick, row_for(wix[-1]))
+            if pr:
+                res["PW"] = {**pr, "end": bars[wix[-1]]["t"] + BAR}
+        out[td] = (res, ix)
+    return out, daily
+
+
+def feed_profile(pre_b):
+    vah, val, poc = num(pre_b.get("vah")), num(pre_b.get("val")), num(pre_b.get("poc"))
+    if None in (vah, val) or vah <= val:
+        return None
+    poc = poc if poc is not None and val <= poc <= vah else (vah + val) / 2
+    return {"vah": vah, "val": val, "poc": poc, "hi": num(pre_b.get("pdh")), "lo": num(pre_b.get("pdl"))}
+
+
+def fam_value_open(pid, P, bars, rth, cfg, cost, mk, rep):
+    """VAO · apertura frente al valor: dentro del VA (sin operación, se mide si rota),
+    fuera del VA pero dentro del rango (vuelta al POC) o fuera del rango (runner)."""
+    c = cfg["volumeProfile"]
+    vah, val, poc, hi, lo = P["vah"], P["val"], P["poc"], P.get("hi"), P.get("lo")
+    o = bars[rth[0]]["o"]
+    end_t = bars[rth[-1]]["t"] + BAR
+    if val <= o <= vah:
+        kind = "inside"
+    elif hi is not None and lo is not None and (o > hi or o < lo):
+        kind = "outRange"
+    else:
+        kind = "outVA"
+    d_out = 1 if o > vah else -1 if o < val else 0
+    r = {"open": kind}
+    if kind == "inside":
+        r["touchedBoth"] = any(bars[i]["h"] >= vah for i in rth) and any(bars[i]["l"] <= val for i in rth)
+    elif kind == "outVA":
+        r["reachedPoc"] = any((bars[i]["l"] <= poc) if d_out > 0 else (bars[i]["h"] >= poc) for i in rth)
+    else:
+        edge = hi if d_out > 0 else lo
+        r["heldOutside"] = ((bars[rth[-1]]["c"] > edge) if d_out > 0 else (bars[rth[-1]]["c"] < edge))
+    rep.setdefault("vp", {})[pid] = r
+    n0 = c.get("openBars", 3)
+    if kind == "inside" or len(rth) <= n0:
+        return []
+    k = rth[n0 - 1]
+    first = rth[:n0]
+    atr = num(bars[k].get("atr5"))
+    if not atr:
+        return []
+    out = []
+    if kind == "outVA":
+        d = -d_out                                   # hacia el POC
+        entry = bars[k]["c"]
+        if (entry - poc) * d >= 0:                   # ya llegó al POC en los primeros minutos
+            return []
+        ext = (max if d < 0 else min)(bars[i]["h"] if d < 0 else bars[i]["l"] for i in first)
+        stops = {"ext": ext - 0.1 * atr * d, "atr1": entry - c.get("stopAtr", 1.0) * atr * d}
+        tgts = {"poc": poc, "1R": None, "2R": None}
+        cls = "back"
+    else:
+        d = d_out                                    # runner: a favor de la apertura
+        edge = hi if d > 0 else lo
+        entry = bars[k]["c"]
+        if (entry - edge) * d <= 0:                  # ya volvió al rango anterior
+            return []
+        ext = (min if d > 0 else max)(bars[i]["l"] if d > 0 else bars[i]["h"] for i in first)
+        stops = {"ext": ext - 0.1 * atr * d, "edge": edge - 0.25 * atr * d}
+        tgts = {"1R": None, "2R": None, "eod": None}
+        cls = "run"
+    feats = {**mk(k, d), "open": kind}
+    for sn, stop in stops.items():
+        for tn, tp in tgts.items():
+            tp = tp if tn == "poc" else target_px(tn, entry, stop, d)
+            t = trade(bars, k, end_t, d, entry, stop, tp, cost)
+            if t:
+                out.append({"fam": "VAO", "var": f"{pid}|{cls}|{sn}|{tn}", "prof": pid, "dir": d, **t, "feat": feats})
+    return out
+
+
+def fam_value_edge(pid, P, bars, rth, cfg, cost, mk, rep):
+    """VAE · primera prueba de VAH / VAL viniendo de dentro del valor: rechazo (vuelve a cerrar
+    dentro en N velas) contra aceptación (N cierres seguidos fuera). Cada borde, una vez al día."""
+    c = cfg["volumeProfile"]
+    vah, val, poc = P["vah"], P["val"], P["poc"]
+    end_t = bars[rth[-1]]["t"] + BAR
+    out, dec = [], {}
+    for edge, d_out in ((vah, 1), (val, -1)):
+        k0 = None
+        for j, i in enumerate(rth[1:], 1):
+            pc = bars[rth[j - 1]]["c"]
+            b = bars[i]
+            if val <= pc <= vah and ((b["h"] > edge) if d_out > 0 else (b["l"] < edge)):
+                k0 = j
+                break
+        if k0 is None:
+            continue
+        name = "VAH" if d_out > 0 else "VAL"
+        kind, kk, ext = None, None, None
+        n_out = 0
+        for j in range(k0, min(len(rth), k0 + c.get("decideBars", 6))):
+            b = bars[rth[j]]
+            x = b["h"] if d_out > 0 else b["l"]
+            ext = x if ext is None else (max(ext, x) if d_out > 0 else min(ext, x))
+            outside = (b["c"] > edge) if d_out > 0 else (b["c"] < edge)
+            n_out = n_out + 1 if outside else 0
+            if n_out >= c.get("acceptCloses", 2):
+                kind, kk = "accept", j
+                break
+            if not outside and j - k0 < c.get("rejectBars", 3):
+                kind, kk = "reject", j
+                break
+        dec[name] = kind or "undecided"
+        if not kind or kk >= len(rth) - 1:
+            continue
+        k = rth[kk]
+        atr = num(bars[k].get("atr5"))
+        if not atr:
+            continue
+        if kind == "reject":
+            d = -d_out
+            entry = bars[k]["c"]
+            stops = {"ext": ext - 0.1 * atr * d}
+            far = val if d < 0 else vah
+            tgts = {"poc": poc, "far": far, "1R": None, "2R": None}
+            entries = {"close": (k, entry, False)}
+        else:
+            d = d_out
+            stops = {"edge": edge - 0.5 * atr * d, "pocStop": poc - 0.1 * atr * d}
+            tgts = {"1R": None, "2R": None, "eod": None}
+            entries = {"close": (k, bars[k]["c"], False)}
+            rt = next((i for i in rth[kk + 1:kk + 1 + c.get("retestBars", 6)]
+                       if ((bars[i]["l"] <= edge) if d > 0 else (bars[i]["h"] >= edge))), None)
+            entries["retest"] = (rt, edge, True)
+        feats = {**mk(k, d), "edge": name}
+        for en, (ek, entry, lim) in entries.items():
+            for sn, stop in stops.items():
+                for tn, tp in tgts.items():
+                    var = f"{pid}|{kind}|{en}|{sn}|{tn}"
+                    if ek is None:
+                        out.append({"fam": "VAE", "var": var, "prof": pid, "dir": d, "res": "nofill", "feat": feats})
+                        continue
+                    tp2 = tp if tn in ("poc", "far") else target_px(tn, entry, stop, d)
+                    if tp2 is not None and (tp2 - entry) * d <= 0:
+                        continue
+                    t = trade(bars, ek, end_t, d, entry, stop, tp2, cost, lim)
+                    if t:
+                        out.append({"fam": "VAE", "var": var, "prof": pid, "dir": d, **t, "feat": feats})
+    rep.setdefault("vpEdge", {})[pid] = dec
+    return out
+
+
+def fam_naked_poc(bars, rth, daily, td, weekly, cfg, cost, mk, rep):
+    """NPOC · POC diarios que el precio no ha vuelto a tocar. En la apertura se toma el más
+    cercano de cada tipo (D1 = ayer, Dn = 2 a N días, W = semana anterior) si está a menos de
+    maxDist ATR diarios, y se opera hacia él. Control propio: un nivel espejo a la misma
+    distancia del otro lado (¿llega igual de seguido?)."""
+    c = cfg["volumeProfile"]
+    k = rth[0]
+    t0 = bars[k]["t"]
+    o = bars[k]["c"]
+    atrD = num(bars[k].get("atrD"))
+    atr = num(bars[k].get("atr5"))
+    if not atrD or not atr:
+        return []
+    end_t = bars[rth[-1]]["t"] + BAR
+    past = sorted(d for d in daily if d < td)[-c.get("nakedDays", 10):]
+    levels = [("D1" if j == 0 else "Dn", daily[d]) for j, d in enumerate(reversed(past))]
+    if weekly:
+        levels.append(("W", weekly))
+    cand = {}
+    for typ, p in levels:
+        poc = p["poc"]
+        touched = any(b["l"] <= poc <= b["h"] for b in bars if p["end"] <= b["t"] < t0)
+        if touched:
+            continue
+        dist = abs(poc - o)
+        if dist <= c.get("maxDist", 1.0) * atrD and dist >= 0.5 * atr and (typ not in cand or dist < cand[typ][1]):
+            cand[typ] = (poc, dist)
+    out = []
+    for typ, (poc, dist) in cand.items():
+        d = 1 if poc > o else -1
+        mirror = o - dist * d
+        reach = any(((bars[i]["h"] >= poc) if d > 0 else (bars[i]["l"] <= poc)) for i in rth[1:])
+        mreach = any(((bars[i]["l"] <= mirror) if d > 0 else (bars[i]["h"] >= mirror)) for i in rth[1:])
+        rep.setdefault("npoc", {})[typ] = {"dist": round(dist / atrD, 2), "reached": reach, "mirror": mreach}
+        feats = {**mk(k, d), "#npocDist": dist / atrD}
+        for sn, frac in (("half", 0.5), ("full", 1.0)):
+            stop = o - frac * dist * d
+            t = trade(bars, k, end_t, d, o, stop, poc, cost)
+            if t:
+                out.append({"fam": "NPOC", "var": f"{typ}|open|{sn}", "prof": typ, "dir": d, **t, "feat": feats})
+    return out
+
+
+VP_REF = {"VAO": ["back|ext|poc", "run|ext|2R"], "VAE": ["reject|close|ext|poc", "accept|close|edge|2R"],
+          "NPOC": ["open|half"]}
+
+
+def profile_compare(recs, minN):
+    """Para cada familia y variante de referencia: acierto y E[R] por tipo de perfil."""
+    out = {}
+    for fam, refs in VP_REF.items():
+        fr = [r for r in recs if r["fam"] == fam and r.get("prof")]
+        if not fr:
+            continue
+        rows = {}
+        for ref in refs:
+            rows[ref] = {}
+            for pid in sorted({r["prof"] for r in fr}):
+                sub = [r for r in fr if r["prof"] == pid and r["var"] == f"{pid}|{ref}"]
+                if sub:
+                    s = stats(sub)
+                    rows[ref][pid] = {k: s.get(k) for k in ("n", "winPct", "expR", "lb", "ctrlExpR", "edgeVsCtrl", "fillPct")}
+        best = {}
+        for pid in sorted({r["prof"] for r in fr}):
+            vs = rank([r for r in fr if r["prof"] == pid], minN, 10 ** 9)["variants"]
+            ok = [v for v in vs if v["n"] >= minN]
+            if ok:
+                best[pid] = {k: ok[0].get(k) for k in ("var", "n", "winPct", "expR", "lb", "edgeVsCtrl")}
+        out[fam] = {"ref": rows, "best": best}
+    return out
+
+
 def zone_entry_table(lab):
     """Zonas: las tres formas de entrar con la misma salida (límite honesto vs gatillo)."""
     z = lab.get("ZON")
@@ -1274,9 +1589,13 @@ def main():
         return best or (None, None)
 
     recs, days, parity = [], {}, {"compared": 0, "agree": 0, "diffs": []}
+    vp_cfg = cfg.get("volumeProfile", {})
+    vp_par = []            # perfil propio del día anterior frente al del Feed (ticks)
     for sym, bars in bars_by.items():
         tick = cfg["tick"].get(sym, 0.01)
         cost = cfg["costTicks"] * tick
+        crypto = sym in cfg.get("crypto", [])
+        vp, vp_daily = profiles_for(bars, sym, crypto, cfg) if vp_cfg else ({}, {})
         for date in sorted({dt.datetime.fromtimestamp(b["t"], NY).date() for b in bars}):
             if date < min_date or date.weekday() >= 5:
                 continue
@@ -1312,6 +1631,30 @@ def main():
                 recs += [dict(r, sym=sym, date=str(date)) for r in
                          fam_va80(bars, rth, pre_b, cfg, cost, mk, rep)]
             recs += [dict(r, sym=sym, date=str(date)) for r in fam_pullback(bars, rth, cfg, cost, mk)]
+            if vp_cfg and date in vp:
+                own, day_ix = vp[date]
+                profs = {}
+                fp = feed_profile(pre_b) if pre_b else None
+                if fp:
+                    profs["PD"] = fp
+                    o1 = own.get("_own1")
+                    if o1:
+                        vp_par.append({k: round((o1[k] - fp[k]) / tick) for k in ("vah", "poc", "val")})
+                for pid in ("PW", "C3"):
+                    if own.get(pid):
+                        profs[pid] = own[pid]
+                d0 = (int(dt.datetime(date.year, date.month, date.day, tzinfo=dt.timezone.utc).timestamp())
+                      if crypto else at(date, "18:00", -1))
+                on_ix = [i for i in day_ix if bars[i]["t"] < t_open]
+                pr = build_profile(bars, on_ix, tick, (num(bars[rth[0]].get("atrD")) or tick * 1000) / vp_cfg.get("rows", 50),
+                                   need=int((t_open - d0) / BAR * vp_cfg.get("completePct", 0.8)))
+                if pr:
+                    profs["ON"] = pr
+                for pid, P in profs.items():
+                    recs += [dict(r, sym=sym, date=str(date)) for r in fam_value_open(pid, P, bars, rth, cfg, cost, mk, rep)]
+                    recs += [dict(r, sym=sym, date=str(date)) for r in fam_value_edge(pid, P, bars, rth, cfg, cost, mk, rep)]
+                recs += [dict(r, sym=sym, date=str(date)) for r in
+                         fam_naked_poc(bars, rth, vp_daily, date, own.get("PW"), cfg, cost, mk, rep)]
             days[f"{sym}|{date}"] = rep
             extra = []
             for r in recs[n0:]:
@@ -1371,9 +1714,9 @@ def main():
     lab = {}
     comboN = cfg.get("comboMinN", 2 * minN)
     wf = cfg.get("walkForward", {})
-    for fam in ("ORB", "IBB", "IBL", "IBR", "SWR", "SWC", "VA80", "PB", "RIF", "RBO", "ZON"):
+    for fam in ("ORB", "IBB", "IBL", "IBR", "SWR", "SWC", "VA80", "PB", "RIF", "RBO", "ZON", "VAO", "VAE", "NPOC"):
         bucketize([r for r in recs if r["fam"] == fam])
-    for fam in ("ORB", "IBB", "IBL", "SWR", "SWC", "VA80", "PB", "RIF", "RBO", "ZON"):
+    for fam in ("ORB", "IBB", "IBL", "SWR", "SWC", "VA80", "PB", "RIF", "RBO", "ZON", "VAO", "VAE", "NPOC"):
         fr = [r for r in recs if r["fam"] == fam]
         if fr:
             lab[fam] = {**rank(fr, minN, comboN), "confluence": feature_effect(fr, minN),
@@ -1393,6 +1736,38 @@ def main():
             "afterReentry": {"n": len(sig), "reachedPocPct": pctf(sig, "reachedPoc"), "reachedFarPct": pctf(sig, "reachedFar")},
             "control": {"insideDaysTouchBothPct": pctf([v for v in va if v["open"] == "inside"], "touchedBoth"),
                         "allDaysTouchBothPct": pctf(va, "touchedBoth")}}
+    vp_days = [v for v in days.values() if v.get("vp") or v.get("npoc")]
+    open_stats, edge_stats, npoc_stats = {}, {}, {}
+    for v in vp_days:
+        for pid, x in (v.get("vp") or {}).items():
+            o = open_stats.setdefault(pid, {"days": 0, "inside": [], "outVA": [], "outRange": []})
+            o["days"] += 1
+            o[x["open"]].append(x)
+        for pid, x in (v.get("vpEdge") or {}).items():
+            e = edge_stats.setdefault(pid, {"tests": 0, "reject": 0, "accept": 0, "undecided": 0})
+            for k in x.values():
+                e["tests"] += 1
+                e[k] += 1
+        for typ, x in (v.get("npoc") or {}).items():
+            q = npoc_stats.setdefault(typ, [])
+            q.append(x)
+    volume_profile = {
+        "open": {pid: {"days": o["days"],
+                       "insidePct": round(100 * len(o["inside"]) / o["days"], 1),
+                       "insideTouchBothPct": pctf(o["inside"], "touchedBoth"),
+                       "outVAPct": round(100 * len(o["outVA"]) / o["days"], 1),
+                       "outVAReachedPocPct": pctf(o["outVA"], "reachedPoc"),
+                       "outRangePct": round(100 * len(o["outRange"]) / o["days"], 1),
+                       "outRangeHeldPct": pctf(o["outRange"], "heldOutside")} for pid, o in sorted(open_stats.items())},
+        "edges": {pid: {**e, "rejectPct": round(100 * e["reject"] / e["tests"], 1) if e["tests"] else None,
+                        "acceptPct": round(100 * e["accept"] / e["tests"], 1) if e["tests"] else None}
+                  for pid, e in sorted(edge_stats.items())},
+        "naked": {typ: {"n": len(q), "reachedPct": pctf(q, "reached"), "mirrorPct": pctf(q, "mirror"),
+                        "medDistAtrD": sorted(x["dist"] for x in q)[len(q) // 2]} for typ, q in sorted(npoc_stats.items())},
+        "compare": profile_compare(recs, minN),
+        "ownVsFeed": ({"n": len(vp_par), **{k: sorted(abs(x[k]) for x in vp_par)[len(vp_par) // 2] for k in ("vah", "poc", "val")}}
+                      if vp_par else None),
+    }
     if "PB" in lab:
         lab["PB"]["trendTest"] = trend_split([r for r in recs if r["fam"] == "PB"], minN)
     out = {
@@ -1404,6 +1779,7 @@ def main():
                  "collection": collection(cfg), "walkForwardMinDays": cfg.get("walkForward", {}).get("minDays", 20)},
         "lab": lab,
         "va80": va80,
+        "volumeProfile": volume_profile,
         "zones": {**zon_sum, "byEntry": zone_entry_table(lab)},
         "rangeIfvg": {**rif_sum, "inversionPct": round(100 * rif_sum["withInversion"] / rif_sum["breaks"], 1) if rif_sum["breaks"] else None,
                       "vsBreakout": vs_rbo(lab)},
