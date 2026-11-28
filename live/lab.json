@@ -1,7 +1,7 @@
 {
  "_writer": "lab",
  "_schema": 2,
- "asOf": "2026-11-28T11:15:47Z",
+ "asOf": "2026-11-28T12:15:44Z",
  "minDate": "2026-11-27",
  "minN": 10,
  "costTicks": 2,
@@ -15,7 +15,7 @@
    "ETH": 0,
    "BTC": 0
   },
-  "trades": 46,
+  "trades": 66,
   "source": "tdl_feed (TradingView)",
   "collection": {
    "NQ": {
@@ -43,15 +43,15 @@
     "files": 0
    },
    "ETH": {
-    "rows": 135,
-    "ohlc": 89,
-    "last": "2026-11-28T11:05+00:00",
+    "rows": 147,
+    "ohlc": 101,
+    "last": "2026-11-28T12:05+00:00",
     "files": 2
    },
    "BTC": {
-    "rows": 134,
-    "ohlc": 89,
-    "last": "2026-11-28T11:05+00:00",
+    "rows": 146,
+    "ohlc": 101,
+    "last": "2026-11-28T12:05+00:00",
     "files": 2
    }
   },
@@ -61,40 +61,17 @@
   "ZON": {
    "variants": [
     {
-     "n": 1,
-     "fillPct": 33.3,
-     "days": 1,
+     "n": 2,
+     "fillPct": 66.7,
+     "days": 2,
      "winPct": 100.0,
-     "expR": 0.832,
-     "se": null,
-     "lb": 0.0,
+     "expR": 0.994,
+     "se": 0.002,
+     "lb": 0.992,
      "pf": null,
-     "sumR": 0.83,
-     "ctrlExpR": 0.832,
-     "edgeVsCtrl": 0.0,
-     "mfe": {
-      "p50": 0.93,
-      "p75": 0.93
-     },
-     "mae": {
-      "p50": 0.69,
-      "p75": 0.69
-     },
-     "var": "limit|tp1",
-     "ctrl": false
-    },
-    {
-     "n": 1,
-     "fillPct": 33.3,
-     "days": 1,
-     "winPct": 100.0,
-     "expR": 0.992,
-     "se": null,
-     "lb": 0.0,
-     "pf": null,
-     "sumR": 0.99,
-     "ctrlExpR": 0.992,
-     "edgeVsCtrl": 0.0,
+     "sumR": 1.99,
+     "ctrlExpR": -0.006,
+     "edgeVsCtrl": 1.0,
      "mfe": {
       "p50": 1.93,
       "p75": 1.93
@@ -103,21 +80,21 @@
       "p50": 0.69,
       "p75": 0.69
      },
+     "nMore95": 0,
      "var": "limit|1R",
      "ctrl": false
     },
     {
-     "n": 1,
-     "fillPct": 33.3,
-     "days": 1,
+     "n": 2,
+     "days": 2,
      "winPct": 100.0,
-     "expR": 1.992,
-     "se": null,
-     "lb": 0.0,
+     "expR": 0.99,
+     "se": 0.497,
+     "lb": 0.493,
      "pf": null,
-     "sumR": 1.99,
-     "ctrlExpR": -1.008,
-     "edgeVsCtrl": 3.0,
+     "sumR": 1.98,
+     "ctrlExpR": 0.24,
+     "edgeVsCtrl": 0.75,
      "mfe": {
       "p50": 3.02,
       "p75": 3.02
@@ -126,87 +103,21 @@
       "p50": 0.69,
       "p75": 0.69
      },
-     "var": "limit|2R",
-     "ctrl": false
-    },
-    {
-     "n": 1,
-     "fillPct": 33.3,
-     "days": 1,
-     "winPct": 100.0,
-     "expR": 6.122,
-     "se": null,
-     "lb": 0.0,
-     "pf": null,
-     "sumR": 6.12,
-     "ctrlExpR": 5.605,
-     "edgeVsCtrl": 0.517,
-     "mfe": {
-      "p50": 11.01,
-      "p75": 11.01
-     },
-     "mae": {
-      "p50": 0.69,
-      "p75": 0.69
-     },
-     "var": "limit|hold",
-     "ctrl": false
-    },
-    {
-     "n": 1,
-     "days": 1,
-     "winPct": 100.0,
-     "expR": 1.992,
-     "se": null,
-     "lb": 0.0,
-     "pf": null,
-     "sumR": 1.99,
-     "ctrlExpR": 1.992,
-     "edgeVsCtrl": 0.0,
-     "mfe": {
-      "p50": 3.02,
-      "p75": 3.02
-     },
-     "mae": {
-      "p50": 0.69,
-      "p75": 0.69
-     },
-     "var": "limit|2R|be1",
-     "ctrl": false
-    },
-    {
-     "n": 1,
-     "days": 1,
-     "winPct": 100.0,
-     "expR": 1.487,
-     "se": null,
-     "lb": 0.0,
-     "pf": null,
-     "sumR": 1.49,
-     "ctrlExpR": 1.487,
-     "edgeVsCtrl": 0.0,
-     "mfe": {
-      "p50": 3.02,
-      "p75": 3.02
-     },
-     "mae": {
-      "p50": 0.69,
-      "p75": 0.69
-     },
+     "nMore95": 0,
      "var": "limit|2R|half1",
      "ctrl": false
     },
     {
-     "n": 1,
-     "days": 1,
+     "n": 2,
+     "days": 2,
      "winPct": 100.0,
-     "expR": 6.122,
-     "se": null,
-     "lb": 0.0,
+     "expR": 2.023,
+     "se": 1.53,
+     "lb": 0.493,
      "pf": null,
-     "sumR": 6.12,
-     "ctrlExpR": 6.109,
-     "edgeVsCtrl": 0.013,
+     "sumR": 4.05,
+     "ctrlExpR": -0.26,
+     "edgeVsCtrl": 2.283,
      "mfe": {
       "p50": 11.01,
       "p75": 11.01
@@ -215,51 +126,120 @@
       "p50": 0.69,
       "p75": 0.69
      },
+     "nMore95": 3,
+     "var": "limit|hold|half1",
+     "ctrl": false
+    },
+    {
+     "n": 1,
+     "days": 1,
+     "winPct": 100.0,
+     "expR": 0.493,
+     "se": null,
+     "lb": 0.0,
+     "pf": null,
+     "sumR": 0.49,
+     "ctrlExpR": 1.292,
+     "edgeVsCtrl": -0.799,
+     "mfe": {
+      "p50": 1.58,
+      "p75": 1.58
+     },
+     "mae": {
+      "p50": 0.17,
+      "p75": 0.17
+     },
+     "var": "limit|tp1|half1",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "days": 2,
+     "winPct": 50.0,
+     "expR": 0.994,
+     "se": 0.998,
+     "lb": -0.005,
+     "pf": 398.4,
+     "sumR": 1.99,
+     "ctrlExpR": 0.494,
+     "edgeVsCtrl": 0.5,
+     "mfe": {
+      "p50": 3.02,
+      "p75": 3.02
+     },
+     "mae": {
+      "p50": 0.69,
+      "p75": 0.69
+     },
+     "nMore95": 6,
+     "var": "limit|2R|be1",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "days": 2,
+     "winPct": 50.0,
+     "expR": 3.058,
+     "se": 3.063,
+     "lb": -0.005,
+     "pf": 1224.4,
+     "sumR": 6.12,
+     "ctrlExpR": 3.052,
+     "edgeVsCtrl": 0.006,
+     "mfe": {
+      "p50": 11.01,
+      "p75": 11.01
+     },
+     "mae": {
+      "p50": 0.69,
+      "p75": 0.69
+     },
+     "nMore95": 6,
      "var": "limit|hold|be1",
      "ctrl": false
     },
     {
      "n": 1,
      "days": 1,
-     "winPct": 100.0,
-     "expR": 3.553,
+     "winPct": 0.0,
+     "expR": -0.005,
      "se": null,
-     "lb": 0.0,
-     "pf": null,
-     "sumR": 3.55,
-     "ctrlExpR": -1.013,
-     "edgeVsCtrl": 4.566,
+     "lb": -0.01,
+     "pf": 0.0,
+     "sumR": -0.01,
+     "ctrlExpR": -0.005,
+     "edgeVsCtrl": 0.0,
      "mfe": {
-      "p50": 11.01,
-      "p75": 11.01
+      "p50": 1.58,
+      "p75": 1.58
      },
      "mae": {
-      "p50": 0.69,
-      "p75": 0.69
+      "p50": 0.17,
+      "p75": 0.17
      },
-     "var": "limit|hold|half1",
+     "var": "limit|tp1|be1",
      "ctrl": false
     },
     {
      "n": 3,
      "days": 2,
      "winPct": 33.3,
-     "expR": 0.766,
-     "se": 1.18,
-     "lb": -0.414,
-     "pf": 2.93,
-     "sumR": 2.3,
-     "ctrlExpR": -0.736,
-     "edgeVsCtrl": 1.502,
+     "expR": 0.316,
+     "se": 0.88,
+     "lb": -0.564,
+     "pf": 1.47,
+     "sumR": 0.95,
+     "ctrlExpR": -1.003,
+     "edgeVsCtrl": 1.319,
      "mfe": {
-      "p50": 0.23,
+      "p50": 0.48,
       "p75": 4.37
      },
      "mae": {
-      "p50": 0.35,
+      "p50": 1.0,
       "p75": 1.0
      },
-     "nMore95": 25,
+     "nMore95": 87,
      "var": "trigger|hold",
      "ctrl": false
     },
@@ -267,22 +247,21 @@
      "n": 3,
      "days": 2,
      "winPct": 33.3,
-     "expR": 0.27,
-     "se": 0.849,
-     "lb": -0.579,
-     "pf": 1.68,
-     "sumR": 0.81,
+     "expR": -0.003,
+     "se": 0.668,
+     "lb": -0.67,
+     "pf": 1.0,
+     "sumR": -0.01,
      "ctrlExpR": 1.997,
-     "edgeVsCtrl": -1.727,
+     "edgeVsCtrl": -2.0,
      "mfe": {
-      "p50": 0.23,
+      "p50": 0.48,
       "p75": 3.59
      },
      "mae": {
-      "p50": 0.35,
+      "p50": 1.0,
       "p75": 1.0
      },
-     "nMore95": 112,
      "var": "trigger|2R",
      "ctrl": false
     },
@@ -290,22 +269,21 @@
      "n": 3,
      "days": 2,
      "winPct": 33.3,
-     "expR": 0.27,
-     "se": 0.849,
-     "lb": -0.579,
-     "pf": 1.68,
-     "sumR": 0.81,
-     "ctrlExpR": 1.543,
-     "edgeVsCtrl": -1.273,
+     "expR": -0.003,
+     "se": 0.668,
+     "lb": -0.67,
+     "pf": 1.0,
+     "sumR": -0.01,
+     "ctrlExpR": 0.331,
+     "edgeVsCtrl": -0.334,
      "mfe": {
-      "p50": 0.23,
+      "p50": 0.48,
       "p75": 3.59
      },
      "mae": {
-      "p50": 0.35,
+      "p50": 1.0,
       "p75": 1.0
      },
-     "nMore95": 112,
      "var": "trigger|2R|be1",
      "ctrl": false
     },
@@ -313,22 +291,21 @@
      "n": 3,
      "days": 2,
      "winPct": 33.3,
-     "expR": 0.102,
-     "se": 0.739,
-     "lb": -0.637,
-     "pf": 1.26,
-     "sumR": 0.31,
-     "ctrlExpR": 0.197,
-     "edgeVsCtrl": -0.095,
+     "expR": -0.171,
+     "se": 0.557,
+     "lb": -0.728,
+     "pf": 0.75,
+     "sumR": -0.51,
+     "ctrlExpR": -0.171,
+     "edgeVsCtrl": 0.0,
      "mfe": {
-      "p50": 0.23,
+      "p50": 0.48,
       "p75": 3.59
      },
      "mae": {
-      "p50": 0.35,
+      "p50": 1.0,
       "p75": 1.0
      },
-     "nMore95": 602,
      "var": "trigger|2R|half1",
      "ctrl": false
     },
@@ -336,19 +313,19 @@
      "n": 3,
      "days": 2,
      "winPct": 33.3,
-     "expR": -0.05,
-     "se": 0.636,
-     "lb": -0.686,
-     "pf": 0.87,
-     "sumR": -0.15,
+     "expR": -0.323,
+     "se": 0.454,
+     "lb": -0.777,
+     "pf": 0.52,
+     "sumR": -0.97,
      "ctrlExpR": -0.504,
-     "edgeVsCtrl": 0.454,
+     "edgeVsCtrl": 0.181,
      "mfe": {
-      "p50": 0.23,
+      "p50": 0.48,
       "p75": 3.59
      },
      "mae": {
-      "p50": 0.35,
+      "p50": 1.0,
       "p75": 1.0
      },
      "var": "trigger|tp1",
@@ -358,19 +335,19 @@
      "n": 3,
      "days": 2,
      "winPct": 33.3,
-     "expR": -0.063,
-     "se": 0.627,
-     "lb": -0.69,
-     "pf": 0.84,
-     "sumR": -0.19,
-     "ctrlExpR": -0.171,
-     "edgeVsCtrl": 0.108,
+     "expR": -0.336,
+     "se": 0.445,
+     "lb": -0.781,
+     "pf": 0.5,
+     "sumR": -1.01,
+     "ctrlExpR": -0.336,
+     "edgeVsCtrl": 0.0,
      "mfe": {
-      "p50": 0.23,
+      "p50": 0.48,
       "p75": 3.59
      },
      "mae": {
-      "p50": 0.35,
+      "p50": 1.0,
       "p75": 1.0
      },
      "var": "trigger|1R",
@@ -380,19 +357,19 @@
      "n": 3,
      "days": 2,
      "winPct": 33.3,
-     "expR": -0.231,
-     "se": 0.516,
-     "lb": -0.748,
-     "pf": 0.42,
-     "sumR": -0.69,
+     "expR": -0.504,
+     "se": 0.335,
+     "lb": -0.839,
+     "pf": 0.25,
+     "sumR": -1.51,
      "ctrlExpR": -0.004,
-     "edgeVsCtrl": -0.227,
+     "edgeVsCtrl": -0.5,
      "mfe": {
-      "p50": 0.23,
+      "p50": 0.48,
       "p75": 3.59
      },
      "mae": {
-      "p50": 0.35,
+      "p50": 1.0,
       "p75": 1.0
      },
      "var": "trigger|hold|half1",
@@ -402,22 +379,114 @@
      "n": 3,
      "days": 2,
      "winPct": 0.0,
-     "expR": -0.397,
-     "se": 0.405,
-     "lb": -0.802,
+     "expR": -0.669,
+     "se": 0.223,
+     "lb": -0.892,
      "pf": 0.0,
-     "sumR": -1.19,
-     "ctrlExpR": -0.669,
-     "edgeVsCtrl": 0.272,
+     "sumR": -2.01,
+     "ctrlExpR": -0.26,
+     "edgeVsCtrl": -0.409,
      "mfe": {
-      "p50": 0.23,
+      "p50": 0.48,
       "p75": 3.59
      },
      "mae": {
-      "p50": 0.35,
+      "p50": 1.0,
       "p75": 1.0
      },
      "var": "trigger|hold|be1",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "fillPct": 66.7,
+     "days": 2,
+     "winPct": 0.0,
+     "expR": -1.004,
+     "se": 0.0,
+     "lb": -1.004,
+     "pf": 0.0,
+     "sumR": -2.01,
+     "ctrlExpR": 0.17,
+     "edgeVsCtrl": -1.174,
+     "mfe": {
+      "p50": 1.33,
+      "p75": 1.33
+     },
+     "mae": {
+      "p50": 1.0,
+      "p75": 1.0
+     },
+     "var": "trigRt|tp1",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "fillPct": 66.7,
+     "days": 2,
+     "winPct": 50.0,
+     "expR": -0.004,
+     "se": 1.0,
+     "lb": -1.004,
+     "pf": 0.99,
+     "sumR": -0.01,
+     "ctrlExpR": -0.004,
+     "edgeVsCtrl": -0.0,
+     "mfe": {
+      "p50": 1.33,
+      "p75": 1.33
+     },
+     "mae": {
+      "p50": 1.0,
+      "p75": 1.0
+     },
+     "var": "trigRt|1R",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "fillPct": 66.7,
+     "days": 2,
+     "winPct": 0.0,
+     "expR": -1.004,
+     "se": 0.0,
+     "lb": -1.004,
+     "pf": 0.0,
+     "sumR": -2.01,
+     "ctrlExpR": -1.004,
+     "edgeVsCtrl": 0.0,
+     "mfe": {
+      "p50": 1.33,
+      "p75": 1.33
+     },
+     "mae": {
+      "p50": 1.0,
+      "p75": 1.0
+     },
+     "var": "trigRt|2R",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "fillPct": 66.7,
+     "days": 2,
+     "winPct": 0.0,
+     "expR": -1.004,
+     "se": 0.0,
+     "lb": -1.004,
+     "pf": 0.0,
+     "sumR": -2.01,
+     "ctrlExpR": -1.004,
+     "edgeVsCtrl": 0.0,
+     "mfe": {
+      "p50": 1.33,
+      "p75": 1.33
+     },
+     "mae": {
+      "p50": 1.0,
+      "p75": 1.0
+     },
+     "var": "trigRt|hold",
      "ctrl": false
     },
     {
@@ -446,6 +515,209 @@
     {
      "n": 2,
      "days": 2,
+     "winPct": 0.0,
+     "expR": -0.504,
+     "se": 0.5,
+     "lb": -1.004,
+     "pf": 0.0,
+     "sumR": -1.01,
+     "ctrlExpR": -1.004,
+     "edgeVsCtrl": 0.5,
+     "mfe": {
+      "p50": 1.33,
+      "p75": 1.33
+     },
+     "mae": {
+      "p50": 1.0,
+      "p75": 1.0
+     },
+     "var": "trigRt|tp1|be1",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "days": 2,
+     "winPct": 0.0,
+     "expR": -0.504,
+     "se": 0.5,
+     "lb": -1.004,
+     "pf": 0.0,
+     "sumR": -1.01,
+     "ctrlExpR": -1.004,
+     "edgeVsCtrl": 0.5,
+     "mfe": {
+      "p50": 1.33,
+      "p75": 1.33
+     },
+     "mae": {
+      "p50": 1.0,
+      "p75": 1.0
+     },
+     "var": "trigRt|2R|be1",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "days": 2,
+     "winPct": 0.0,
+     "expR": -0.504,
+     "se": 0.5,
+     "lb": -1.004,
+     "pf": 0.0,
+     "sumR": -1.01,
+     "ctrlExpR": -0.004,
+     "edgeVsCtrl": -0.5,
+     "mfe": {
+      "p50": 1.33,
+      "p75": 1.33
+     },
+     "mae": {
+      "p50": 1.0,
+      "p75": 1.0
+     },
+     "var": "trigRt|hold|be1",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "fillPct": 66.7,
+     "days": 2,
+     "winPct": 50.0,
+     "expR": -0.086,
+     "se": 0.918,
+     "lb": -1.005,
+     "pf": 0.83,
+     "sumR": -0.17,
+     "ctrlExpR": -0.086,
+     "edgeVsCtrl": -0.0,
+     "mfe": {
+      "p50": 1.58,
+      "p75": 1.58
+     },
+     "mae": {
+      "p50": 1.0,
+      "p75": 1.0
+     },
+     "var": "limit|tp1",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "fillPct": 66.7,
+     "days": 2,
+     "winPct": 50.0,
+     "expR": 0.494,
+     "se": 1.498,
+     "lb": -1.005,
+     "pf": 1.98,
+     "sumR": 0.99,
+     "ctrlExpR": 0.494,
+     "edgeVsCtrl": -0.0,
+     "mfe": {
+      "p50": 3.02,
+      "p75": 3.02
+     },
+     "mae": {
+      "p50": 1.0,
+      "p75": 1.0
+     },
+     "nMore95": 69,
+     "var": "limit|2R",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "fillPct": 66.7,
+     "days": 2,
+     "winPct": 50.0,
+     "expR": 2.558,
+     "se": 3.563,
+     "lb": -1.005,
+     "pf": 6.09,
+     "sumR": 5.12,
+     "ctrlExpR": 2.3,
+     "edgeVsCtrl": 0.259,
+     "mfe": {
+      "p50": 11.01,
+      "p75": 11.01
+     },
+     "mae": {
+      "p50": 1.0,
+      "p75": 1.0
+     },
+     "nMore95": 13,
+     "var": "limit|hold",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "days": 2,
+     "winPct": 50.0,
+     "expR": -0.255,
+     "se": 0.749,
+     "lb": -1.005,
+     "pf": 0.49,
+     "sumR": -0.51,
+     "ctrlExpR": -1.006,
+     "edgeVsCtrl": 0.751,
+     "mfe": {
+      "p50": 1.33,
+      "p75": 1.33
+     },
+     "mae": {
+      "p50": 1.0,
+      "p75": 1.0
+     },
+     "var": "trigRt|tp1|half1",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "days": 2,
+     "winPct": 50.0,
+     "expR": -0.255,
+     "se": 0.749,
+     "lb": -1.005,
+     "pf": 0.49,
+     "sumR": -0.51,
+     "ctrlExpR": 0.245,
+     "edgeVsCtrl": -0.5,
+     "mfe": {
+      "p50": 1.33,
+      "p75": 1.33
+     },
+     "mae": {
+      "p50": 1.0,
+      "p75": 1.0
+     },
+     "var": "trigRt|2R|half1",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "days": 2,
+     "winPct": 50.0,
+     "expR": -0.255,
+     "se": 0.749,
+     "lb": -1.005,
+     "pf": 0.49,
+     "sumR": -0.51,
+     "ctrlExpR": -1.006,
+     "edgeVsCtrl": 0.751,
+     "mfe": {
+      "p50": 1.33,
+      "p75": 1.33
+     },
+     "mae": {
+      "p50": 1.0,
+      "p75": 1.0
+     },
+     "var": "trigRt|hold|half1",
+     "ctrl": false
+    },
+    {
+     "n": 2,
+     "days": 2,
      "winPct": 50.0,
      "expR": 0.006,
      "se": 1.012,
@@ -465,241 +737,17 @@
      "nMore95": 186424,
      "var": "trigger|tp1|half1",
      "ctrl": false
-    },
-    {
-     "n": 1,
-     "fillPct": 33.3,
-     "days": 1,
-     "winPct": 0.0,
-     "expR": -1.004,
-     "se": null,
-     "lb": -2.008,
-     "pf": 0.0,
-     "sumR": -1.0,
-     "ctrlExpR": -1.004,
-     "edgeVsCtrl": 0.0,
-     "mfe": {
-      "p50": 0.0,
-      "p75": 0.0
-     },
-     "mae": {
-      "p50": 1.0,
-      "p75": 1.0
-     },
-     "var": "trigRt|tp1",
-     "ctrl": false
-    },
-    {
-     "n": 1,
-     "fillPct": 33.3,
-     "days": 1,
-     "winPct": 0.0,
-     "expR": -1.004,
-     "se": null,
-     "lb": -2.008,
-     "pf": 0.0,
-     "sumR": -1.0,
-     "ctrlExpR": 0.996,
-     "edgeVsCtrl": -2.0,
-     "mfe": {
-      "p50": 0.0,
-      "p75": 0.0
-     },
-     "mae": {
-      "p50": 1.0,
-      "p75": 1.0
-     },
-     "var": "trigRt|1R",
-     "ctrl": false
-    },
-    {
-     "n": 1,
-     "fillPct": 33.3,
-     "days": 1,
-     "winPct": 0.0,
-     "expR": -1.004,
-     "se": null,
-     "lb": -2.008,
-     "pf": 0.0,
-     "sumR": -1.0,
-     "ctrlExpR": -1.004,
-     "edgeVsCtrl": 0.0,
-     "mfe": {
-      "p50": 0.0,
-      "p75": 0.0
-     },
-     "mae": {
-      "p50": 1.0,
-      "p75": 1.0
-     },
-     "var": "trigRt|2R",
-     "ctrl": false
-    },
-    {
-     "n": 1,
-     "fillPct": 33.3,
-     "days": 1,
-     "winPct": 0.0,
-     "expR": -1.004,
-     "se": null,
-     "lb": -2.008,
-     "pf": 0.0,
-     "sumR": -1.0,
-     "ctrlExpR": -1.004,
-     "edgeVsCtrl": 0.0,
-     "mfe": {
-      "p50": 0.0,
-      "p75": 0.0
-     },
-     "mae": {
-      "p50": 1.0,
-      "p75": 1.0
-     },
-     "var": "trigRt|hold",
-     "ctrl": false
-    },
-    {
-     "n": 1,
-     "days": 1,
-     "winPct": 0.0,
-     "expR": -1.004,
-     "se": null,
-     "lb": -2.008,
-     "pf": 0.0,
-     "sumR": -1.0,
-     "ctrlExpR": -1.004,
-     "edgeVsCtrl": 0.0,
-     "mfe": {
-      "p50": 0.0,
-      "p75": 0.0
-     },
-     "mae": {
-      "p50": 1.0,
-      "p75": 1.0
-     },
-     "var": "trigRt|tp1|be1",
-     "ctrl": false
-    },
-    {
-     "n": 1,
-     "days": 1,
-     "winPct": 0.0,
-     "expR": -1.004,
-     "se": null,
-     "lb": -2.008,
-     "pf": 0.0,
-     "sumR": -1.0,
-     "ctrlExpR": -1.004,
-     "edgeVsCtrl": 0.0,
-     "mfe": {
-      "p50": 0.0,
-      "p75": 0.0
-     },
-     "mae": {
-      "p50": 1.0,
-      "p75": 1.0
-     },
-     "var": "trigRt|2R|be1",
-     "ctrl": false
-    },
-    {
-     "n": 1,
-     "days": 1,
-     "winPct": 0.0,
-     "expR": -1.004,
-     "se": null,
-     "lb": -2.008,
-     "pf": 0.0,
-     "sumR": -1.0,
-     "ctrlExpR": -0.004,
-     "edgeVsCtrl": -1.0,
-     "mfe": {
-      "p50": 0.0,
-      "p75": 0.0
-     },
-     "mae": {
-      "p50": 1.0,
-      "p75": 1.0
-     },
-     "var": "trigRt|hold|be1",
-     "ctrl": false
-    },
-    {
-     "n": 1,
-     "days": 1,
-     "winPct": 0.0,
-     "expR": -1.005,
-     "se": null,
-     "lb": -2.01,
-     "pf": 0.0,
-     "sumR": -1.0,
-     "ctrlExpR": -1.005,
-     "edgeVsCtrl": 0.0,
-     "mfe": {
-      "p50": 0.0,
-      "p75": 0.0
-     },
-     "mae": {
-      "p50": 1.0,
-      "p75": 1.0
-     },
-     "var": "trigRt|tp1|half1",
-     "ctrl": false
-    },
-    {
-     "n": 1,
-     "days": 1,
-     "winPct": 0.0,
-     "expR": -1.005,
-     "se": null,
-     "lb": -2.01,
-     "pf": 0.0,
-     "sumR": -1.0,
-     "ctrlExpR": 1.495,
-     "edgeVsCtrl": -2.5,
-     "mfe": {
-      "p50": 0.0,
-      "p75": 0.0
-     },
-     "mae": {
-      "p50": 1.0,
-      "p75": 1.0
-     },
-     "var": "trigRt|2R|half1",
-     "ctrl": false
-    },
-    {
-     "n": 1,
-     "days": 1,
-     "winPct": 0.0,
-     "expR": -1.005,
-     "se": null,
-     "lb": -2.01,
-     "pf": 0.0,
-     "sumR": -1.0,
-     "ctrlExpR": -1.005,
-     "edgeVsCtrl": 0.0,
-     "mfe": {
-      "p50": 0.0,
-      "p75": 0.0
-     },
-     "mae": {
-      "p50": 1.0,
-      "p75": 1.0
-     },
-     "var": "trigRt|hold|half1",
-     "ctrl": false
     }
    ],
    "best": [],
    "worst": [],
-   "nVariants": 28,
+   "nVariants": 30,
    "confluence": {
     "chop": {
      "mid": {
-      "n": 46,
-      "expR": 0.328,
-      "winPct": 37.0
+      "n": 66,
+      "expR": 0.105,
+      "winPct": 37.9
      }
     },
     "dow": {
@@ -709,146 +757,146 @@
       "winPct": 28.6
      },
      "Sat": {
-      "n": 18,
-      "expR": 0.672,
-      "winPct": 50.0
+      "n": 38,
+      "expR": 0.103,
+      "winPct": 44.7
      }
     },
     "ema": {
      "favor": {
-      "n": 28,
-      "expR": -0.77,
-      "winPct": 0.0
+      "n": 48,
+      "expR": -0.609,
+      "winPct": 16.7
      },
      "mixed": {
       "n": 18,
-      "expR": 2.037,
+      "expR": 2.007,
       "winPct": 94.4
      }
     },
     "ema200": {
      "favor": {
-      "n": 46,
-      "expR": 0.328,
-      "winPct": 37.0
+      "n": 66,
+      "expR": 0.105,
+      "winPct": 37.9
      }
     },
     "grade": {
      "A": {
-      "n": 46,
-      "expR": 0.328,
-      "winPct": 37.0
+      "n": 66,
+      "expR": 0.105,
+      "winPct": 37.9
      }
     },
     "htf": {
      "favor": {
-      "n": 46,
-      "expR": 0.328,
-      "winPct": 37.0
+      "n": 66,
+      "expR": 0.105,
+      "winPct": 37.9
      }
     },
     "k_ema200": {
      "no": {
-      "n": 46,
-      "expR": 0.328,
-      "winPct": 37.0
+      "n": 66,
+      "expR": 0.105,
+      "winPct": 37.9
      }
     },
     "k_ibh": {
      "no": {
-      "n": 46,
-      "expR": 0.328,
-      "winPct": 37.0
+      "n": 66,
+      "expR": 0.105,
+      "winPct": 37.9
      }
     },
     "k_loH": {
      "no": {
-      "n": 46,
-      "expR": 0.328,
-      "winPct": 37.0
+      "n": 66,
+      "expR": 0.105,
+      "winPct": 37.9
      }
     },
     "k_pdh": {
      "no": {
-      "n": 46,
-      "expR": 0.328,
-      "winPct": 37.0
+      "n": 66,
+      "expR": 0.105,
+      "winPct": 37.9
      }
     },
     "k_sh4h": {
      "no": {
-      "n": 46,
-      "expR": 0.328,
-      "winPct": 37.0
+      "n": 66,
+      "expR": 0.105,
+      "winPct": 37.9
      }
     },
     "k_sh5": {
      "no": {
-      "n": 28,
-      "expR": -0.77,
-      "winPct": 0.0
+      "n": 48,
+      "expR": -0.609,
+      "winPct": 16.7
      },
      "yes": {
       "n": 18,
-      "expR": 2.037,
+      "expR": 2.007,
       "winPct": 94.4
      }
     },
     "klAlign": {
      "chop": {
-      "n": 28,
-      "expR": -0.77,
-      "winPct": 0.0
+      "n": 48,
+      "expR": -0.609,
+      "winPct": 16.7
      },
      "mixed": {
       "n": 18,
-      "expR": 2.037,
+      "expR": 2.007,
       "winPct": 94.4
      }
     },
     "klRegime": {
      "chop": {
-      "n": 28,
-      "expR": -0.77,
-      "winPct": 0.0
+      "n": 48,
+      "expR": -0.609,
+      "winPct": 16.7
      },
      "favor": {
       "n": 10,
-      "expR": 1.358,
+      "expR": 1.304,
       "winPct": 90.0
      }
     },
     "news": {
      "none": {
-      "n": 46,
-      "expR": 0.328,
-      "winPct": 37.0
+      "n": 66,
+      "expR": 0.105,
+      "winPct": 37.9
      }
     },
     "pdClose": {
      "favor": {
-      "n": 46,
-      "expR": 0.328,
-      "winPct": 37.0
+      "n": 66,
+      "expR": 0.105,
+      "winPct": 37.9
      }
     },
     "rrTp1": {
      "1.5-2.5": {
-      "n": 10,
-      "expR": 1.358,
-      "winPct": 90.0
+      "n": 20,
+      "expR": 0.624,
+      "winPct": 65.0
      },
      "<1.5": {
-      "n": 36,
-      "expR": 0.042,
-      "winPct": 22.2
+      "n": 46,
+      "expR": -0.121,
+      "winPct": 26.1
      }
     },
     "side": {
      "short": {
-      "n": 46,
-      "expR": 0.328,
-      "winPct": 37.0
+      "n": 66,
+      "expR": 0.105,
+      "winPct": 37.9
      }
     },
     "smt": {
@@ -857,74 +905,84 @@
       "expR": -1.004,
       "winPct": 0.0
      },
+     "favor": {
+      "n": 28,
+      "expR": -0.326,
+      "winPct": 28.6
+     },
      "none": {
       "n": 18,
-      "expR": 2.037,
+      "expR": 2.007,
       "winPct": 94.4
      }
     },
     "stretch": {
      "mid": {
-      "n": 30,
-      "expR": -0.217,
-      "winPct": 30.0
+      "n": 50,
+      "expR": -0.163,
+      "winPct": 34.0
      }
     },
     "stretchVwap": {
      "1-2": {
       "n": 10,
-      "expR": 1.358,
+      "expR": 1.304,
       "winPct": 90.0
      },
      ">=2": {
-      "n": 28,
-      "expR": -0.77,
-      "winPct": 0.0
+      "n": 48,
+      "expR": -0.609,
+      "winPct": 16.7
      }
     },
     "time": {
      "asia": {
       "n": 38,
-      "expR": 0.436,
+      "expR": 0.422,
       "winPct": 44.7
+     },
+     "london": {
+      "n": 28,
+      "expR": -0.326,
+      "winPct": 28.6
      }
     },
     "vwap": {
      "favor": {
-      "n": 46,
-      "expR": 0.328,
-      "winPct": 37.0
+      "n": 66,
+      "expR": 0.105,
+      "winPct": 37.9
      }
     },
     "zone": {
      "contra": {
-      "n": 18,
-      "expR": -0.64,
-      "winPct": 0.0
+      "n": 38,
+      "expR": -0.505,
+      "winPct": 21.1
      },
      "mid": {
       "n": 28,
-      "expR": 0.951,
+      "expR": 0.932,
       "winPct": 60.7
      }
     },
     "zoneBias": {
      "favor": {
-      "n": 46,
-      "expR": 0.328,
-      "winPct": 37.0
+      "n": 66,
+      "expR": 0.105,
+      "winPct": 37.9
      }
     },
     "zoneChop": {
      "50-61.8": {
       "n": 18,
-      "expR": 2.037,
+      "expR": 2.007,
       "winPct": 94.4
      },
      "<50": {
-      "n": 28,
-      "expR": -0.77,
-      "winPct": 0.0
+      "n": 48,
+      "expR": -0.609,
+      "winPct": 16.7
      }
     }
    },
@@ -937,13 +995,13 @@
      "fillPct": 78.9,
      "days": 2,
      "winPct": 30.0,
-     "expR": -0.217,
-     "se": 1.05,
-     "lb": -1.267,
-     "pf": 0.68,
-     "sumR": -6.51,
-     "ctrlExpR": 0.09,
-     "edgeVsCtrl": -0.307,
+     "expR": -0.235,
+     "se": 1.026,
+     "lb": -1.261,
+     "pf": 0.65,
+     "sumR": -7.05,
+     "ctrlExpR": -0.012,
+     "edgeVsCtrl": -0.223,
      "mfe": {
       "p50": 0.0,
       "p75": 3.59
@@ -954,26 +1012,25 @@
      }
     },
     "ETH": {
-     "n": 16,
-     "fillPct": 66.7,
+     "n": 36,
      "days": 2,
-     "winPct": 50.0,
-     "expR": 1.351,
-     "se": 1.536,
-     "lb": -0.185,
-     "pf": 15.58,
-     "sumR": 21.61,
-     "ctrlExpR": 0.95,
-     "edgeVsCtrl": 0.401,
+     "winPct": 44.4,
+     "expR": 0.388,
+     "se": 1.11,
+     "lb": -0.723,
+     "pf": 1.99,
+     "sumR": 13.96,
+     "ctrlExpR": 0.153,
+     "edgeVsCtrl": 0.235,
      "mfe": {
-      "p50": 0.93,
-      "p75": 3.02
+      "p50": 1.33,
+      "p75": 1.58
      },
      "mae": {
       "p50": 0.69,
-      "p75": 0.69
+      "p75": 1.0
      },
-     "nMore95": 64
+     "nMore95": 1098
     }
    }
   }
@@ -1007,32 +1064,40 @@
    {
     "exit": "tp1",
     "limit": {
-     "n": 1,
-     "expR": 0.832,
-     "winPct": 100.0,
-     "fillPct": 33.3,
-     "edgeVsCtrl": 0.0,
-     "lb": 0.0
+     "n": 2,
+     "expR": -0.086,
+     "winPct": 50.0,
+     "fillPct": 66.7,
+     "edgeVsCtrl": -0.0,
+     "lb": -1.005
     },
     "trigger": {
      "n": 3,
-     "expR": -0.05,
+     "expR": -0.323,
      "winPct": 33.3,
      "fillPct": null,
-     "edgeVsCtrl": 0.454,
-     "lb": -0.686
+     "edgeVsCtrl": 0.181,
+     "lb": -0.777
     },
     "trigRt": {
-     "n": 1,
+     "n": 2,
      "expR": -1.004,
      "winPct": 0.0,
-     "fillPct": 33.3,
-     "edgeVsCtrl": 0.0,
-     "lb": -2.008
+     "fillPct": 66.7,
+     "edgeVsCtrl": -1.174,
+     "lb": -1.004
     }
    },
    {
     "exit": "tp1|half1",
+    "limit": {
+     "n": 1,
+     "expR": 0.493,
+     "winPct": 100.0,
+     "fillPct": null,
+     "edgeVsCtrl": -0.799,
+     "lb": 0.0
+    },
     "trigger": {
      "n": 2,
      "expR": 0.006,
@@ -1042,16 +1107,24 @@
      "lb": -1.006
     },
     "trigRt": {
-     "n": 1,
-     "expR": -1.005,
-     "winPct": 0.0,
+     "n": 2,
+     "expR": -0.255,
+     "winPct": 50.0,
      "fillPct": null,
-     "edgeVsCtrl": 0.0,
-     "lb": -2.01
+     "edgeVsCtrl": 0.751,
+     "lb": -1.005
     }
    },
    {
     "exit": "tp1|be1",
+    "limit": {
+     "n": 1,
+     "expR": -0.005,
+     "winPct": 0.0,
+     "fillPct": null,
+     "edgeVsCtrl": 0.0,
+     "lb": -0.01
+    },
     "trigger": {
      "n": 2,
      "expR": 0.017,
@@ -1061,93 +1134,93 @@
      "lb": -1.004
     },
     "trigRt": {
-     "n": 1,
-     "expR": -1.004,
+     "n": 2,
+     "expR": -0.504,
      "winPct": 0.0,
      "fillPct": null,
-     "edgeVsCtrl": 0.0,
-     "lb": -2.008
+     "edgeVsCtrl": 0.5,
+     "lb": -1.004
     }
    },
    {
     "exit": "1R",
     "limit": {
-     "n": 1,
-     "expR": 0.992,
+     "n": 2,
+     "expR": 0.994,
      "winPct": 100.0,
-     "fillPct": 33.3,
-     "edgeVsCtrl": 0.0,
-     "lb": 0.0
+     "fillPct": 66.7,
+     "edgeVsCtrl": 1.0,
+     "lb": 0.992
     },
     "trigger": {
      "n": 3,
-     "expR": -0.063,
+     "expR": -0.336,
      "winPct": 33.3,
      "fillPct": null,
-     "edgeVsCtrl": 0.108,
-     "lb": -0.69
+     "edgeVsCtrl": 0.0,
+     "lb": -0.781
     },
     "trigRt": {
-     "n": 1,
-     "expR": -1.004,
-     "winPct": 0.0,
-     "fillPct": 33.3,
-     "edgeVsCtrl": -2.0,
-     "lb": -2.008
+     "n": 2,
+     "expR": -0.004,
+     "winPct": 50.0,
+     "fillPct": 66.7,
+     "edgeVsCtrl": -0.0,
+     "lb": -1.004
     }
    },
    {
     "exit": "2R",
     "limit": {
-     "n": 1,
-     "expR": 1.992,
-     "winPct": 100.0,
-     "fillPct": 33.3,
-     "edgeVsCtrl": 3.0,
-     "lb": 0.0
+     "n": 2,
+     "expR": 0.494,
+     "winPct": 50.0,
+     "fillPct": 66.7,
+     "edgeVsCtrl": -0.0,
+     "lb": -1.005
     },
     "trigger": {
      "n": 3,
-     "expR": 0.27,
+     "expR": -0.003,
      "winPct": 33.3,
      "fillPct": null,
-     "edgeVsCtrl": -1.727,
-     "lb": -0.579
+     "edgeVsCtrl": -2.0,
+     "lb": -0.67
     },
     "trigRt": {
-     "n": 1,
+     "n": 2,
      "expR": -1.004,
      "winPct": 0.0,
-     "fillPct": 33.3,
+     "fillPct": 66.7,
      "edgeVsCtrl": 0.0,
-     "lb": -2.008
+     "lb": -1.004
     }
    },
    {
     "exit": "hold",
     "limit": {
-     "n": 1,
-     "expR": 6.122,
-     "winPct": 100.0,
-     "fillPct": 33.3,
-     "edgeVsCtrl": 0.517,
-     "lb": 0.0
+     "n": 2,
+     "expR": 2.558,
+     "winPct": 50.0,
+     "fillPct": 66.7,
+     "edgeVsCtrl": 0.259,
+     "lb": -1.005
     },
     "trigger": {
      "n": 3,
-     "expR": 0.766,
+     "expR": 0.316,
      "winPct": 33.3,
      "fillPct": null,
-     "edgeVsCtrl": 1.502,
-     "lb": -0.414
+     "edgeVsCtrl": 1.319,
+     "lb": -0.564
     },
     "trigRt": {
-     "n": 1,
+     "n": 2,
      "expR": -1.004,
      "winPct": 0.0,
-     "fillPct": 33.3,
+     "fillPct": 66.7,
      "edgeVsCtrl": 0.0,
-     "lb": -2.008
+     "lb": -1.004
     }
    }
   ]
