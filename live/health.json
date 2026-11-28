@@ -1,6 +1,6 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-28T00:30:38.098Z",
+ "checkedAt": "2026-11-28T00:45:27.511Z",
  "status": "warn",
  "marketOpen": false,
  "issues": [
@@ -15,7 +15,7 @@
    "writer": "TradingView -> tos-bus-snapshot",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-28T00:15:45.311Z",
+   "at": "2026-11-28T00:30:39.944Z",
    "note": "mercado cerrado"
   },
   {
@@ -24,7 +24,7 @@
    "writer": "tos-market",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-28T00:15:48.607Z",
+   "at": "2026-11-28T00:30:45.269Z",
    "note": "mercado cerrado"
   },
   {
@@ -33,7 +33,7 @@
    "writer": "lente Edge",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-28T00:15:53.337Z",
+   "at": "2026-11-28T00:30:50.588Z",
    "note": "mercado cerrado"
   },
   {
@@ -41,7 +41,7 @@
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
    "status": "off",
-   "ageMin": 21,
+   "ageMin": 36,
    "at": "2026-11-28T00:09:08.857Z",
    "note": "mercado cerrado"
   },
@@ -51,7 +51,7 @@
    "writer": "tos-coach",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-28T00:15:49.881Z",
+   "at": "2026-11-28T00:30:46.566Z",
    "note": "al dia"
   },
   {
@@ -59,7 +59,7 @@
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
    "status": "warn",
-   "ageMin": 633,
+   "ageMin": 647,
    "at": "2026-11-27T13:58:00.000Z",
    "note": "no corrio hoy (esperado 17.5h CT)"
   },
@@ -68,7 +68,7 @@
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 5,
+   "ageMin": 19,
    "at": "2026-11-28T00:26:00.000Z",
    "note": "al dia"
   },
@@ -77,7 +77,7 @@
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
    "status": "warn",
-   "ageMin": 1488,
+   "ageMin": 1503,
    "at": "2026-11-26T23:42:34.022Z",
    "note": "no corrio hoy (esperado 17.7h CT)"
   },
@@ -86,7 +86,7 @@
    "label": "Velas para el Lab",
    "writer": "TDL Feed -> tos-ingest -> snapshot",
    "status": "warn",
-   "ageMin": 16,
+   "ageMin": 20,
    "at": null,
    "note": "ETH FEED1 sin o/h/l: actualizar TDL Feed"
   }
