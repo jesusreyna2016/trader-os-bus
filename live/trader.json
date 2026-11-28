@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-28",
-  "asOf": "2026-11-28T10:45:33.347Z",
+  "asOf": "2026-11-28T11:00:45.012Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 2,
@@ -63,7 +63,7 @@
       "openedAt": 1795843913488,
       "closedAt": 1795849729000,
       "flags": [],
-      "distZone": 1
+      "distZone": 2
     }
   ],
   "openPositions": [
