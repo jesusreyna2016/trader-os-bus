@@ -33,6 +33,15 @@ Ruta: FEED1 → `tos-ingest` (blob `tvbar:<día>:<SYM>`) → `tos-bus-snapshot` 
 | **VAO** | apertura frente al valor de cada perfil: dentro del VA (solo se mide si toca los dos bordes) · fuera del VA pero dentro del rango → vuelta al POC · fuera del rango → runner a favor | al cierre de la 3ª vela (15 min) | extremo de los 15 min + 0.1 ATR5 · 1 ATR5 (vuelta) · borde del rango − 0.25 ATR5 (runner) | POC · 1R · 2R · cierre del día |
 | **VAE** | primera prueba de VAH o VAL viniendo de dentro: **rechazo** (cierra de vuelta dentro en ≤ 3 velas) o **aceptación** (2 cierres fuera) | al cierre · retest del borde (aceptación) | extremo + 0.1 ATR5 (rechazo) · 0.5 ATR5 dentro del borde · POC (aceptación) | POC · otro borde · 1R · 2R · cierre |
 | **NPOC** | POC diario que el precio no ha vuelto a tocar: el de ayer (D1), el más cercano de los 10 días previos (Dn) y el de la semana anterior (W), a ≤ 1 ATR diario en la apertura | al cierre de la 1ª vela | a media distancia · a la misma distancia del otro lado | el POC |
+| **MAP** | evento de TDL Level Map en un nivel de tiempo (DO, PDH / PDL, días previos con nombre, WO, PWH / PWL, MO, PMH / PML, vela de 4H anterior y apertura de la actual): **aceptado** (iFVG, FVG o 2 cierres al otro lado) o **rechazado** (barrida, ruptura fallida, mecha) · a cualquier hora | al cierre de la vela del evento | 0.25 ATR tras el nivel · extremo de 3 velas | 1R · 2R · fin de ventana (4 h) |
+
+**Mapa de niveles:** MAP replica el motor de TDL Level Map con las velas del TDL Feed. Cada nivel real tiene dos
+de control a ± 4 ATR que pasan por el mismo motor (`CTRL|...`, fuera del ranking). `levelMap.byEvidence` compara,
+con la variante `lvl|2R`, cada tipo de evento real frente al de control; `byLevelFamily` hace lo mismo por familia de
+nivel (D1 = ayer, Dn = días previos con nombre, PW, PM, 4H...). La puntuación de dirección (precio frente a aperturas
+DO / WO / MO / 4H, EMAs 20 / 50 / 200 y su nube, EMA 20 de 15m / 1H / 4H / 1D, VWAP; `mapDir` agrupada por bloque,
+`mapRaw` voto a voto) y la posición en el rango de hoy y de la semana (`rpD`, `rpW`) son confluencias de todas las
+familias. `levelMap.scoreTest` mira si el signo de la puntuación acierta la hora y las 4 h siguientes.
 
 **Volume profile:** VAO y VAE se corren sobre **cuatro perfiles** y la variante lleva el perfil delante
 (`PD|...`): PD = el del día anterior que manda el TDL Feed (TradingView), PW = semana anterior, C3 =

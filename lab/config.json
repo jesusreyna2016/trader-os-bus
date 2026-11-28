@@ -260,5 +260,23 @@
   "retestBars": 6,
   "nakedDays": 10,
   "maxDist": 1.0
+ },
+ "map": {
+  "tolAtr": 0.1,
+  "zoneAtr": 0.25,
+  "accBars": 2,
+  "wickMin": 0.4,
+  "coolBars": 5,
+  "fvgAtr": 0.3,
+  "fvgLife": 150,
+  "ctrlAtr": 4.0,
+  "stopAtr": 0.25,
+  "holdHours": 4,
+  "targets": [
+   "1R",
+   "2R",
+   "hold"
+  ],
+  "emaLen": 20
  }
 }
