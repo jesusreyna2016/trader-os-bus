@@ -76,6 +76,7 @@ method run(Win w) =>
                 w.both := true
                 if iLive
                     alert(head("FAILED_" + str.tostring(w.mins)) + ",\"win\":" + str.tostring(w.mins) + ",\"dir\":\"" + w.first + "\",\"price\":" + jn(close) + "}", alert.freq_once_per_bar_close)
+    w   // retorno fijo: sin esto Pine toma el if como valor y sus ramas tienen tipos distintos (CE10235)
 
 method toJson(Win w) =>
     pos = close > w.hi ? "ABOVE" : close < w.lo ? "BELOW" : "INSIDE"
