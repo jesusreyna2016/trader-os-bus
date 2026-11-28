@@ -1,0 +1,262 @@
+{
+  "schema": "crypto-plan-1",
+  "runType": "crypto-ny",
+  "builtAt": "2026-11-28T14:50:30Z",
+  "date": "2026-11-28",
+  "slot": "ny",
+  "validUntil": "2026-11-29T00:00:00Z",
+  "dataHealth": {
+    "snapshotAgeMin": 5,
+    "stale": [],
+    "missing": [],
+    "notes": [
+      "live/shock.json no existe: sin ventana de shock que chequear esta corrida.",
+      "live/news.json y macro.crypto siguen sin refrescar: builtAt 2026-11-25T03:15 UTC, ya ~69h de antiguedad. Fondeo, longShortAccounts, miedo extremo (13) y DVOL (66.28) vienen de ese snapshot viejo; ningun titular cripto del feed cae dentro de las ultimas 24h reales (el mas reciente ya tiene ~69.5h). Se usan con cautela; headline queda en 'none' por falta de confirmacion fresca.",
+      "macro.crypto.cmeGap no aplica hoy: cmeCloseDate 2026-11-24 es martes, no viernes (dato viejo de ese snapshot sin refrescar); sin hueco del CME que usar como iman.",
+      "orb difiere algo de feed.raw en el precio puntual (ETH 1,665.58 vs 1,668.05, BTC 59,983.05 vs 60,192.6, ambos bajo el 0.35%); se usa feed.raw/feed.close como precio y niveles (la fuente de niveles del metodo).",
+      "priores de hoy (scorecard actualizado tras calificar ayer, seccion 4): fondeo neutral 19/72=26.4%, miedo extremo 37/152=24.3%, DVOL subiendo 11/42=26.2%, sin hueco de CME 31/116=26.7%, sin titular 8/43=18.6%, simbolo ETH 20/86=23.3%, simbolo BTC 17/72=23.6%; todos n>=8 y muy por debajo de 40%: conviccion baja en las dos monedas aunque haya zona A+ del metodo a tiro en cada una.",
+      "live/edge.json es el edge de scalp de futuros (NQ/ES, segmentos de retest), sin segmento cripto propio; overall.expRnet -0.06 en gate shadow (readyForLive false): aviso de fondo, no bloquea, y hoy no hay GO de todas formas.",
+      "crypto-ny 08:45 CT: ETH y BTC perdieron la invalidacion de su zona A+ del close durante la madrugada/Asia (ETH bajo 1,659.50, BTC bajo 59,940.0); ambas zonas quedan broken=true, sin zona A+ nueva que calificar en este update ligero (no se re-deriva, seccion 7). Noticias y macro.crypto siguen en el mismo snapshot de 2026-11-25T03:15 UTC, sin cambios; live/shock.json sigue sin existir."
+    ]
+  },
+  "summary": {
+    "es": "ETH y BTC perdieron de madrugada y en Asia la zona A+ del close (VAL/zona dorada en ETH, POC/zona dorada en BTC), cerrando bajo su invalidacion y barriendo el minimo de Asia en las dos: ETH sigue bajando sin reclamo (sweep ASL hace 55 min), BTC barrio su minimo de Asia y reclamo hacia arriba hace 20 min pero sigue muy por debajo de su zona rota. Checklist de tendencia confirmado bajista en los tres marcos en las dos monedas, sin cambio. Sin apertura de NY que mirar hoy sabado; sin shock ni titular nuevo. Veredicto: AVOID en ETH y BTC, zona del close rota y sin una zona A+ nueva que calificar en este update ligero; eso le toca al proximo crypto-close.",
+    "en": "ETH and BTC lost the close's A+ zone overnight and in Asia (ETH's VAL/golden pocket, BTC's POC/golden pocket), closing below their invalidation and sweeping the Asia low in both: ETH keeps sliding with no reclaim (ASL sweep 55 min ago), BTC swept its Asia low and reclaimed up 20 min ago but still sits well below its broken zone. Trend checklist confirmed bearish across all three frames in both coins, unchanged. No NY open to watch today, Saturday; no shock, no fresh headline. Verdict: AVOID on ETH and BTC, the close's zone is broken and there is no new A+ zone to call in this light update; that is for the next crypto-close."
+  },
+  "focus": {
+    "sym": "ETHUSDT",
+    "setup": {
+      "es": "ETH en 1,647.06, ya fuera y bajo la zona A+ del close (1,663.70-1,674.11, invalidacion 1,659.50 tocada): sin zona viva que operar ahora, vigilando un reclamo de vuelta sobre esa franja o la continuacion hacia el minimo de ayer (1,637.68) y su primera extension (1,607.29).",
+      "en": "ETH at 1,647.06, already outside and below the close's A+ zone (1,663.70-1,674.11, invalidation 1,659.50 hit): no live zone to trade right now, watching for a reclaim back above that band or continuation toward yesterday's low (1,637.68) and its first extension (1,607.29)."
+    }
+  },
+  "riskWindow": null,
+  "cryptoContext": {
+    "risk": "MEDIO",
+    "deriv": {
+      "es": "ETH con fondeo neutral (+0.0075% cada 8h, dato de ~69h) y OI -0.35% en 24h (casi plano, cierres); cuentas largas 3.11 a 1, sobre el corte de 3 (retail cargado de largos, contrario). BTC con fondeo neutral (+0.0032%) y OI -0.03% (plano); cuentas largas 2.64 a 1, sin cruzar el corte.",
+      "en": "ETH funding is neutral (+0.0075% per 8h, a ~69h-old reading) with OI -0.35% in 24h (near flat, closings); long accounts 3.11 to 1, over the 3-to-1 cutoff (retail crowded long, contrarian). BTC funding is neutral (+0.0032%) with OI -0.03% (flat); long accounts 2.64 to 1, under the cutoff."
+    },
+    "dvol": 66.28,
+    "fearGreed": 13,
+    "cmeGap": null,
+    "ethBtc24hPct": 0.2,
+    "drivers": [],
+    "note": {
+      "es": "Miedo extremo (13) y DVOL macro (66.28) vienen del mismo snapshot sin refrescar desde 2026-11-25T03:15 UTC (~69h): se usan con cautela. El DVOL propio de cada moneda en el feed de hoy es mas fiable y moderado (rango 55 ETH, 53 BTC de 100 en el ultimo año): ni caro ni barato. Sin hueco del CME hoy (el ultimo dato de ese snapshot es del martes, no viernes, no aplica). Sin titular cripto fresco confirmable (el mas reciente del feed ya tiene ~69.5h, y los dos con tag 'hack' son ecos viejos de una brecha a la CIA y un fallo de hardware de hace años, no un hackeo de exchange o protocolo de ETH). Cuentas largas de ETH ya sobre el corte de 3 a 1: retail cargado de largos, riesgo de barrida si el rebote de hoy falla.",
+      "en": "Extreme fear (13) and the macro DVOL reading (66.28) come from the same snapshot that has not refreshed since 2026-11-25T03:15 UTC (~69h): used with caution. Each coin's own DVOL in today's feed is more reliable and moderate (rank 55 ETH, 53 BTC out of 100 over the past year): neither cheap nor expensive. No CME gap today (that snapshot's latest reading is from Tuesday, not Friday, so it does not apply). No fresh confirmable crypto headline (the newest in the feed is already ~69.5h old, and the two tagged 'hack' are stale echoes of a CIA breach and a years-old hardware flaw, not an exchange or ETH-protocol hack). ETH long accounts remain over the 3-to-1 cutoff: retail crowded long, a sweep risk if today's bounce fails."
+    }
+  },
+  "personal": {
+    "patternId": "homerun-exit",
+    "note": {
+      "es": "El plan de hoy trae TP1 y TP2 escritos en las dos zonas: cobra el parcial en TP1 y mueve a BE SOLO despues, el runner va al TP2 fijo. Solo ~5% de las entradas llegan a TP2: no aguantes buscando todo el movimiento sin haber cobrado nada primero.",
+      "en": "Today's plan writes TP1 and TP2 on both zones: bank the partial at TP1 and move to BE only after, the runner goes to a fixed TP2. Only about ~5% of entries reach TP2: do not hold out for the whole move without banking something first."
+    },
+    "capLine": {
+      "es": "Stop puesto en el libro al entrar . tamaño definido por el riesgo antes de entrar . no añadir a una posicion perdedora",
+      "en": "Resting stop in the book at entry . size set by risk before entry . no adding to a losing position"
+    }
+  },
+  "instruments": {
+    "ETHUSDT": {
+      "price": 1647.06,
+      "biasDay": "LONG",
+      "biasSession": "SHORT",
+      "conviction": "baja",
+      "move24h": {
+        "dir": "SHORT",
+        "pct": -1.06
+      },
+      "regime": "NEUTRAL",
+      "tcl": {
+        "v": -2,
+        "flip": 1661.1
+      },
+      "context": {
+        "es": "Precio en 1,647.06, ya fuera y bajo la franja VAL/zona dorada de ayer (1,663.70-1,684.12): perdio la invalidacion 1,659.50 en la madrugada, barrio el minimo de Asia (1,640.00, touchlog ASL 4 toques, mecha 383 ticks) hace 55 min sin reclamo (sweep ASL:dn) y sigue bajando hasta el minimo de Londres (1,634.62), pegado ya a la EMA20/EMA50 de 5m (1,645.94/1,647.29) y a la VAL del dia en curso (~1,643). El checklist de tendencia sigue confirmado bajista en los tres marcos (diario -1, 4h -1, 1h -1), sin cambio desde el close.",
+        "en": "Price at 1,647.06, already outside and below yesterday's VAL/golden-pocket band (1,663.70-1,684.12): lost the 1,659.50 invalidation overnight, swept the Asia low (1,640.00, touchlog ASL 4 touches, 383-tick wick) 55 min ago with no reclaim (ASL:dn sweep) and kept sliding to the London low (1,634.62), now sitting right on the 5m EMA20/EMA50 (1,645.94/1,647.29) and today's developing VAL (~1,643). The trend checklist stays confirmed bearish across all three frames (daily -1, 4h -1, 1h -1), unchanged since the close."
+      },
+      "levels": {
+        "vah": 1761.11,
+        "poc": 1732.46,
+        "val": 1674.11,
+        "pdh": 1759.25,
+        "pdl": 1637.68,
+        "dayOpen": 1666.53,
+        "vwap": 1668.15,
+        "pwh": 1876.45,
+        "pwl": 1542.52
+      },
+      "zones": [
+        {
+          "range": [
+            1663.7,
+            1674.11
+          ],
+          "dir": "LONG",
+          "type": "bounce_val",
+          "confluence": 9,
+          "grade": "A+",
+          "tcl": null,
+          "vs24h": "against",
+          "why": {
+            "es": "contraria a las 24h (+2), VAL de ayer 1,674.11 (+1 nivel de perfil), apertura del dia 1,666.53 junto con el minimo overnight/Asia 1,660.30 (+1 pivote), EMA20 1,664.98 y EMA50 1h 1,666.97 dentro de la zona (+1 y +1), zona dorada 1,663.70-1,684.12 (+1), FVG de 5m y 15m (ibull) 1,666.47-1,667.20 coincidiendo dentro de la zona (+1 y +1 extra por ser tambien de 15m) = 9. Tipo rebote de VAL, si clasifica A+ del metodo (reversion contraria a las 24h, nunca un barrido ni zona dorada sueltos).",
+            "en": "against the 24h move (+2), yesterday's VAL 1,674.11 (+1 profile level), the day open 1,666.53 together with the overnight/Asia low 1,660.30 (+1 pivot), the 5m EMA20 1,664.98 and the 1h EMA50 1,666.97 both inside the zone (+1 and +1), the golden pocket 1,663.70-1,684.12 (+1), a 5m and 15m (ibull) FVG 1,666.47-1,667.20 overlapping inside the zone (+1 plus +1 extra for also being 15m) = 9. A VAL-bounce type, so it does qualify as A+ of the method (reversal against the 24h move, never a bare sweep or golden zone)."
+          },
+          "play": {
+            "trigger": {
+              "es": "cierre 5m dentro de la franja VAL/zona dorada manteniendo sobre la apertura del dia 1,666.53 y la EMA20 1,664.98 (sin perseguir el toque, el precio ya esta dentro); invalida con un cierre de 5m bajo 1,659.50 (bajo el minimo overnight/Asia 1,660.30).",
+              "en": "a 5m close inside the VAL/golden-pocket band holding above the day open 1,666.53 and the EMA20 1,664.98 (no chasing, price is already inside); invalidated by a 5m close below 1,659.50 (below the overnight/Asia low 1,660.30)."
+            },
+            "stop": 1659.5,
+            "tp1": 1698.47,
+            "tp2": 1732.46,
+            "maxNotionalUsd": 50000,
+            "qtyNote": {
+              "es": "riesgo $50: con stop a ~8.55 puntos del precio (~1,668.05), qty ~5.85 ETH (~$9,758 nocional); parcial 1/2 en TP1 (centro del rango de ayer, 1,698.47) y BE SOLO despues de cobrarlo, resto a TP2 (POC de ayer, 1,732.46). Ajusta a tu precio real de entrada.",
+              "en": "risk $50: with the stop ~8.55 points from price (~1,668.05), qty ~5.85 ETH (~$9,758 notional); half off at TP1 (yesterday's range midpoint, 1,698.47) and move to BE ONLY after banking it, the rest to TP2 (yesterday's POC, 1,732.46). Adjust to your real entry price."
+            }
+          },
+          "broken": true
+        }
+      ],
+      "verdict": {
+        "signal": "AVOID",
+        "reason": {
+          "es": "la zona A+ del close (rebote en VAL/zona dorada, score 9) quedo broken=true: perdio su invalidacion 1,659.50 en la madrugada y el precio sigue bajando sin reclamo. No se re-deriva ni se califica una zona nueva en este update ligero (seccion 7): sin zona A+ viva a tiro, el precio esta en tierra de nadie entre la franja rota y el minimo de ayer/su extension. AVOID hasta que el proximo crypto-close califique el dia y arme una zona nueva, o hasta un reclamo claro de vuelta sobre 1,659.50-1,674.11.",
+          "en": "the close's A+ zone (VAL/golden-pocket bounce, score 9) is now broken=true: it lost the 1,659.50 invalidation overnight and price keeps sliding with no reclaim. No new zone is re-derived or graded in this light update (section 7): with no live A+ zone in reach, price sits in no-man's-land between the broken band and yesterday's low/its extension. AVOID until the next crypto-close grades the day and builds a new zone, or until a clear reclaim back above 1,659.50-1,674.11."
+        }
+      },
+      "counterCase": {
+        "es": "si pierde 1,659.50 y no aguanta el rebote, la tendencia bajista de las 24h sigue hacia el minimo de ayer y la primera extension (1,607.29); el checklist de tendencia hoy si esta alineado en bajista en los tres marcos (diario, 4h, 1h), algo que no pasaba ayer, y las cuentas largas de ETH siguen sobre el corte de 3 a 1 (retail cargado de largos): leña para otra barrida si el rebote falla. El miedo extremo (13, dato de ~69h) corta en las dos direcciones: si de verdad hay panico fresco que el feed no capto, las mechas se recompran rapido, pero si el panico es real y nuevo, el rebote de hoy puede ser solo una pausa.",
+        "en": "if it loses 1,659.50 and the bounce does not hold, the 24h downtrend continues toward yesterday's low and its first extension (1,607.29); today's trend checklist is actually aligned bearish across all three frames (daily, 4h, 1h), unlike yesterday, and ETH's long accounts remain over the 3-to-1 cutoff (retail crowded long): fuel for another sweep if the bounce fails. Extreme fear (13, a ~69h-old reading) cuts both ways: if there really is fresh panic the feed missed, wicks get bought back fast, but if the panic is real and new, today's bounce could just be a pause."
+      },
+      "predictions": [
+        {
+          "id": "ETH-1",
+          "kind": "level",
+          "text": {
+            "es": "ETH cierra al menos un 5m sobre 1,698.47 (centro del rango de ayer) antes de las 08:45 CT.",
+            "en": "ETH closes at least one 5m candle above 1,698.47 (yesterday's range midpoint) before 08:45 CT."
+          },
+          "resolveAt": "2026-11-28T14:45:00Z"
+        },
+        {
+          "id": "ETH-2",
+          "kind": "level",
+          "text": {
+            "es": "ETH no cierra ningun 5m bajo 1,659.50 (invalidacion de la zona) antes de las 08:45 CT.",
+            "en": "ETH does not close any 5m candle below 1,659.50 (the zone's invalidation) before 08:45 CT."
+          },
+          "resolveAt": "2026-11-28T14:45:00Z"
+        }
+      ]
+    },
+    "BTCUSDT": {
+      "price": 59305.92,
+      "biasDay": "LONG",
+      "biasSession": "SHORT",
+      "conviction": "baja",
+      "move24h": {
+        "dir": "SHORT",
+        "pct": -0.28
+      },
+      "regime": "NEUTRAL",
+      "tcl": {
+        "v": -2,
+        "flip": 59746.28
+      },
+      "context": {
+        "es": "Precio en 59,305.92, ya fuera y bajo la franja POC/zona dorada de ayer (59,716.7-60,292.8): perdio la invalidacion 59,940.0 en la madrugada, barrio el minimo de Asia (59,188.34, touchlog ASL 12 toques, mecha 10,599 ticks) hace 20 min y reclamo de vuelta arriba (sweep ASL:up) pero sigue muy por debajo de su zona rota, pegado a la EMA20/EMA50 de 5m (59,231.16/59,272.87) y a la VAL del dia en curso (59,283.66). El checklist de tendencia sigue confirmado bajista en los tres marcos (diario -1, 4h -1, 1h -1), igual que ETH y sin cambio desde el close.",
+        "en": "Price at 59,305.92, already outside and below yesterday's POC/golden-pocket band (59,716.7-60,292.8): lost the 59,940.0 invalidation overnight, swept the Asia low (59,188.34, touchlog ASL 12 touches, 10,599-tick wick) 20 min ago and reclaimed back up (ASL:up sweep) but still sits well below its broken zone, right on the 5m EMA20/EMA50 (59,231.16/59,272.87) and today's developing VAL (59,283.66). The trend checklist stays confirmed bearish across all three frames (daily -1, 4h -1, 1h -1), same as ETH and unchanged since the close."
+      },
+      "levels": {
+        "vah": 61674.2,
+        "poc": 60148.8,
+        "val": 58982.3,
+        "pdh": 62412.1,
+        "pdl": 58982.8,
+        "dayOpen": 60153.8,
+        "vwap": 60165.8,
+        "pwh": 66099.2,
+        "pwl": 55242.2
+      },
+      "zones": [
+        {
+          "range": [
+            59990.0,
+            60194.1
+          ],
+          "dir": "LONG",
+          "type": "poc_reversion",
+          "confluence": 9,
+          "grade": "A+",
+          "tcl": null,
+          "vs24h": "against",
+          "why": {
+            "es": "contraria a las 24h (+2), POC de ayer 60,148.8 (+1 nivel de perfil), apertura del dia 60,153.8 junto con el maximo/minimo overnight 60,194.1/59,990.0 (+1 pivote), EMA20 60,057.6 y EMA50 1h 60,053.5 dentro de la zona (+1 y +1), zona dorada 59,716.7-60,292.8 (+1), iFVG de 15m (ibull) 60,130.2-60,151.1 dentro de la zona (+1 y +1 extra por ser de 15m) = 9. Tipo reversion en el POC, si clasifica A+ del metodo (reversion contraria a las 24h, nunca un barrido ni zona dorada sueltos).",
+            "en": "against the 24h move (+2), yesterday's POC 60,148.8 (+1 profile level), the day open 60,153.8 together with the overnight high/low 60,194.1/59,990.0 (+1 pivot), the 5m EMA20 60,057.6 and the 1h EMA50 60,053.5 both inside the zone (+1 and +1), the golden pocket 59,716.7-60,292.8 (+1), a 15m iFVG (ibull) 60,130.2-60,151.1 inside the zone (+1 plus +1 extra for being 15m) = 9. A POC-reversion type, so it does qualify as A+ of the method (reversal against the 24h move, never a bare sweep or golden zone)."
+          },
+          "play": {
+            "trigger": {
+              "es": "cierre 5m dentro de la franja POC/zona dorada manteniendo sobre la EMA20/EMA50 (60,053-60,058) y el minimo overnight 59,990.0 (sin perseguir el toque, el precio ya esta dentro); invalida con un cierre de 5m bajo 59,940.0.",
+              "en": "a 5m close inside the POC/golden-pocket band holding above the EMA20/EMA50 cluster (60,053-60,058) and the overnight low 59,990.0 (no chasing, price is already inside); invalidated by a 5m close below 59,940.0."
+            },
+            "stop": 59940.0,
+            "tp1": 60697.4,
+            "tp2": 61674.2,
+            "maxNotionalUsd": 50000,
+            "qtyNote": {
+              "es": "riesgo $50: con stop a ~252.6 puntos del precio (~60,192.6), qty ~0.198 BTC (~$11,918 nocional); parcial 1/2 en TP1 (centro del rango de ayer, 60,697.4) y BE SOLO despues de cobrarlo, resto a TP2 (VAH de ayer, 61,674.2). Ajusta a tu precio real de entrada.",
+              "en": "risk $50: with the stop ~252.6 points from price (~60,192.6), qty ~0.198 BTC (~$11,918 notional); half off at TP1 (yesterday's range midpoint, 60,697.4) and move to BE ONLY after banking it, the rest to TP2 (yesterday's VAH, 61,674.2). Adjust to your real entry price."
+            }
+          },
+          "broken": true
+        }
+      ],
+      "verdict": {
+        "signal": "AVOID",
+        "reason": {
+          "es": "la zona A+ del close (reversion en POC/zona dorada, score 9) quedo broken=true: perdio su invalidacion 59,940.0 en la madrugada; hubo un barrido con reclamo del minimo de Asia hace 20 min, pero el precio sigue muy por debajo de la franja rota. No se re-deriva ni se califica una zona nueva en este update ligero (seccion 7): sin zona A+ viva a tiro, tierra de nadie entre la franja rota y el minimo de ayer/su extension. AVOID hasta el proximo crypto-close o un reclamo claro de vuelta sobre 59,940.0-60,194.1.",
+          "en": "the close's A+ zone (POC/golden-pocket reversal, score 9) is now broken=true: it lost the 59,940.0 invalidation overnight; there was a sweep-and-reclaim of the Asia low 20 min ago, but price still sits well below the broken band. No new zone is re-derived or graded in this light update (section 7): with no live A+ zone in reach, no-man's-land between the broken band and yesterday's low/its extension. AVOID until the next crypto-close, or a clear reclaim back above 59,940.0-60,194.1."
+        }
+      },
+      "counterCase": {
+        "es": "si pierde 59,940.0 y no aguanta el rebote, la tendencia bajista de las 24h sigue hacia el minimo de ayer y su primera extension (58,125.5); el checklist de tendencia hoy esta alineado en bajista en los tres marcos, igual que ETH. Las cuentas largas de BTC (2.64 a 1) no cruzan el corte de 3, menos leña de liquidacion que en ETH. El miedo extremo (13, dato viejo) corta en las dos direcciones, igual que en ETH.",
+        "en": "if it loses 59,940.0 and the bounce does not hold, the 24h downtrend continues toward yesterday's low and its first extension (58,125.5); today's trend checklist is aligned bearish across all three frames, same as ETH. BTC's long accounts (2.64 to 1) stay under the 3-to-1 cutoff, less liquidation fuel than ETH. Extreme fear (13, a stale reading) cuts both ways here too, same as ETH."
+      },
+      "predictions": [
+        {
+          "id": "BTC-1",
+          "kind": "level",
+          "text": {
+            "es": "BTC cierra al menos un 5m sobre 60,697.4 (centro del rango de ayer) antes de las 08:45 CT.",
+            "en": "BTC closes at least one 5m candle above 60,697.4 (yesterday's range midpoint) before 08:45 CT."
+          },
+          "resolveAt": "2026-11-28T14:45:00Z"
+        },
+        {
+          "id": "BTC-2",
+          "kind": "level",
+          "text": {
+            "es": "BTC no cierra ningun 5m bajo 59,940.0 (invalidacion de la zona) antes de las 08:45 CT.",
+            "en": "BTC does not close any 5m candle below 59,940.0 (the zone's invalidation) before 08:45 CT."
+          },
+          "resolveAt": "2026-11-28T14:45:00Z"
+        }
+      ]
+    }
+  },
+  "graded": {
+    "plan": "2026-11-27",
+    "line": {
+      "es": "califique 2026-11-27 (close y ny, grade_plans.py --crypto 2026-11-27): la zona A+ de rebote en VAL/POC (score 9 las dos) si funciono dentro de la ventana del close (ETH r=0.34, BTC r=0.49); la copia en la ny ya no tenia nada nuevo que tocar (untouched en las dos). Zonas 2/4 tocadas-ganadoras. Predicciones 6/8 (contadas por cada aparicion en close y ny): ETH acerto las dos en las dos corridas (cerro sobre su POC de ayer y nunca bajo la invalidacion); BTC acerto solo el techo (cerro sobre su POC) pero rompio su invalidacion (60,450) cerca del final de la ventana del close, asi que la de 'no cierra bajo' fallo en las dos corridas.",
+      "en": "graded 2026-11-27 (close and ny, grade_plans.py --crypto 2026-11-27): the A+ VAL/POC bounce zone (score 9 on both) did work within the close's own window (ETH r=0.34, BTC r=0.49); the copy into the ny had nothing new to touch (untouched on both). Zones 2/4 touched-and-won. Predictions 6/8 (counted once per appearance in close and ny): ETH hit both in both runs (closed above yesterday's POC and never below the invalidation); BTC only hit the upside one (closed above its POC) but broke its invalidation (60,450) near the end of the close's window, so the 'does not close below' one missed in both runs."
+    }
+  },
+  "updated": {
+    "es": "ETH y BTC perdieron de madrugada la invalidacion de su zona A+ del close (ETH 1,659.50, BTC 59,940.0) y la barrieron hacia el minimo de Asia/Londres: las dos zonas quedan broken=true. Verdict bajo de WAIT a AVOID en las dos monedas por falta de zona A+ viva (no se re-deriva en este update ligero). biasSession, regimen y checklist de tendencia sin cambio (bajista confirmado en los tres marcos). Sin apertura de NY hoy sabado, sin shock ni titular nuevo, macro.crypto sin refrescar.",
+    "en": "ETH and BTC lost their close A+ zone's invalidation overnight (ETH 1,659.50, BTC 59,940.0) and swept toward the Asia/London low: both zones are now broken=true. Verdict dropped from WAIT to AVOID on both coins for lack of a live A+ zone (not re-derived in this light update). biasSession, regime and the trend checklist are unchanged (bearish confirmed across all three frames). No NY open today, Saturday, no shock, no fresh headline, macro.crypto still unrefreshed."
+  }
+}

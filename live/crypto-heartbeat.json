@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-11-28T00:26:00Z",
-  "runType": "crypto-close",
+  "lastRun": "2026-11-28T14:50:30Z",
+  "runType": "crypto-ny",
   "ok": true,
-  "note": "califique 2026-11-27 (zonas 2/4, predicciones 6/8); plan nuevo ETH y BTC WAIT, zona A+ en las dos (VAL/POC + zona dorada, score 9) pero conviccion baja por scorecard (todos los priores <40%, n>=8); checklist de tendencia alineado bajista en los tres marcos; news.json/macro.crypto sin refrescar ~69h"
+  "note": "update ligero: ETH y BTC perdieron la invalidacion de su zona A+ del close de madrugada (ETH 1,659.50, BTC 59,940.0), sweep del minimo de Asia en las dos (ETH sin reclamo, BTC con reclamo); zonas broken=true, verdict bajo de WAIT a AVOID sin zona nueva que calificar; sin apertura de NY hoy sabado, sin shock, news.json/macro.crypto sin refrescar ~74h"
 }
