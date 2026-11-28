@@ -1,7 +1,7 @@
 {
  "_writer": "lab",
  "_schema": 2,
- "asOf": "2026-11-28T09:00:59Z",
+ "asOf": "2026-11-28T09:20:10Z",
  "minDate": "2026-11-27",
  "minN": 10,
  "costTicks": 2,
@@ -43,15 +43,15 @@
     "files": 0
    },
    "ETH": {
-    "rows": 108,
-    "ohlc": 62,
-    "last": "2026-11-28T08:50+00:00",
+    "rows": 111,
+    "ohlc": 65,
+    "last": "2026-11-28T09:05+00:00",
     "files": 2
    },
    "BTC": {
-    "rows": 107,
-    "ohlc": 62,
-    "last": "2026-11-28T08:50+00:00",
+    "rows": 110,
+    "ohlc": 65,
+    "last": "2026-11-28T09:05+00:00",
     "files": 2
    }
   },
@@ -134,13 +134,13 @@
      "fillPct": 50.0,
      "days": 1,
      "winPct": 100.0,
-     "expR": 5.882,
+     "expR": 5.878,
      "se": null,
      "lb": 0.0,
      "pf": null,
      "sumR": 5.88,
-     "ctrlExpR": 5.366,
-     "edgeVsCtrl": 0.516,
+     "ctrlExpR": 5.361,
+     "edgeVsCtrl": 0.517,
      "mfe": {
       "p50": 11.01,
       "p75": 11.01
@@ -200,12 +200,12 @@
      "n": 1,
      "days": 1,
      "winPct": 100.0,
-     "expR": 5.882,
+     "expR": 5.878,
      "se": null,
      "lb": 0.0,
      "pf": null,
      "sumR": 5.88,
-     "ctrlExpR": 5.87,
+     "ctrlExpR": 5.866,
      "edgeVsCtrl": 0.012,
      "mfe": {
       "p50": 11.01,
@@ -222,13 +222,13 @@
      "n": 1,
      "days": 1,
      "winPct": 100.0,
-     "expR": 3.433,
+     "expR": 3.431,
      "se": null,
      "lb": 0.0,
      "pf": null,
      "sumR": 3.43,
      "ctrlExpR": -1.013,
-     "edgeVsCtrl": 4.446,
+     "edgeVsCtrl": 4.444,
      "mfe": {
       "p50": 11.01,
       "p75": 11.01
@@ -312,12 +312,12 @@
      "n": 2,
      "days": 2,
      "winPct": 50.0,
-     "expR": 0.3,
-     "se": 1.304,
+     "expR": 0.075,
+     "se": 1.079,
      "lb": -1.004,
-     "pf": 1.6,
-     "sumR": 0.6,
-     "ctrlExpR": 0.105,
+     "pf": 1.15,
+     "sumR": 0.15,
+     "ctrlExpR": -0.12,
      "edgeVsCtrl": 0.195,
      "mfe": {
       "p50": 3.59,
@@ -327,7 +327,7 @@
       "p50": 1.0,
       "p75": 1.0
      },
-     "nMore95": 144,
+     "nMore95": 1609,
      "var": "trigger|hold",
      "ctrl": false
     },
@@ -363,8 +363,8 @@
      "lb": -1.004,
      "pf": 1.99,
      "sumR": 1.0,
-     "ctrlExpR": 1.331,
-     "edgeVsCtrl": -0.833,
+     "ctrlExpR": 0.965,
+     "edgeVsCtrl": -0.467,
      "mfe": {
       "p50": 3.59,
       "p75": 3.59
@@ -699,19 +699,19 @@
     "chop": {
      "mid": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
     "dow": {
      "Fri": {
       "n": 28,
-      "expR": 0.086,
+      "expR": 0.085,
       "winPct": 28.6
      },
      "Sat": {
       "n": 10,
-      "expR": 1.169,
+      "expR": 1.124,
       "winPct": 90.0
      }
     },
@@ -723,63 +723,63 @@
      },
      "mixed": {
       "n": 18,
-      "expR": 1.899,
+      "expR": 1.874,
       "winPct": 94.4
      }
     },
     "ema200": {
      "favor": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
     "grade": {
      "A": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
     "htf": {
      "favor": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
     "k_ema200": {
      "no": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
     "k_ibh": {
      "no": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
     "k_loH": {
      "no": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
     "k_pdh": {
      "no": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
     "k_sh4h": {
      "no": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
@@ -791,7 +791,7 @@
      },
      "yes": {
       "n": 18,
-      "expR": 1.899,
+      "expR": 1.874,
       "winPct": 94.4
      }
     },
@@ -803,7 +803,7 @@
      },
      "mixed": {
       "n": 18,
-      "expR": 1.899,
+      "expR": 1.874,
       "winPct": 94.4
      }
     },
@@ -815,40 +815,40 @@
      },
      "favor": {
       "n": 10,
-      "expR": 1.169,
+      "expR": 1.124,
       "winPct": 90.0
      }
     },
     "news": {
      "none": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
     "pdClose": {
      "favor": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
     "rrTp1": {
      "1.5-2.5": {
       "n": 10,
-      "expR": 1.169,
+      "expR": 1.124,
       "winPct": 90.0
      },
      "<1.5": {
       "n": 28,
-      "expR": 0.086,
+      "expR": 0.085,
       "winPct": 28.6
      }
     },
     "side": {
      "short": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
@@ -860,21 +860,21 @@
      },
      "none": {
       "n": 18,
-      "expR": 1.899,
+      "expR": 1.874,
       "winPct": 94.4
      }
     },
     "stretch": {
      "mid": {
       "n": 30,
-      "expR": -0.28,
+      "expR": -0.295,
       "winPct": 30.0
      }
     },
     "stretchVwap": {
      "1-2": {
       "n": 10,
-      "expR": 1.169,
+      "expR": 1.124,
       "winPct": 90.0
      },
      ">=2": {
@@ -886,14 +886,14 @@
     "time": {
      "asia": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
     "vwap": {
      "favor": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
@@ -905,21 +905,21 @@
      },
      "mid": {
       "n": 28,
-      "expR": 0.862,
+      "expR": 0.846,
       "winPct": 60.7
      }
     },
     "zoneBias": {
      "favor": {
       "n": 38,
-      "expR": 0.371,
+      "expR": 0.359,
       "winPct": 44.7
      }
     },
     "zoneChop": {
      "50-61.8": {
       "n": 18,
-      "expR": 1.899,
+      "expR": 1.874,
       "winPct": 94.4
      },
      "<50": {
@@ -938,13 +938,13 @@
      "fillPct": 78.9,
      "days": 2,
      "winPct": 30.0,
-     "expR": -0.28,
-     "se": 0.966,
-     "lb": -1.246,
-     "pf": 0.58,
-     "sumR": -8.4,
-     "ctrlExpR": 0.144,
-     "edgeVsCtrl": -0.424,
+     "expR": -0.295,
+     "se": 0.946,
+     "lb": -1.241,
+     "pf": 0.56,
+     "sumR": -8.85,
+     "ctrlExpR": 0.104,
+     "edgeVsCtrl": -0.399,
      "mfe": {
       "p50": 0.0,
       "p75": 3.59
@@ -958,13 +958,13 @@
      "n": 8,
      "days": 1,
      "winPct": 100.0,
-     "expR": 2.812,
+     "expR": 2.81,
      "se": null,
      "lb": 0.0,
      "pf": null,
-     "sumR": 22.49,
-     "ctrlExpR": 1.815,
-     "edgeVsCtrl": 0.997,
+     "sumR": 22.48,
+     "ctrlExpR": 1.814,
+     "edgeVsCtrl": 0.996,
      "mfe": {
       "p50": 3.02,
       "p75": 11.01
@@ -990,6 +990,13 @@
    "insideDaysTouchBothPct": null,
    "allDaysTouchBothPct": null
   }
+ },
+ "volumeProfile": {
+  "open": {},
+  "edges": {},
+  "naked": {},
+  "compare": {},
+  "ownVsFeed": null
  },
  "zones": {
   "touched": 2,
@@ -1119,15 +1126,15 @@
     "exit": "hold",
     "limit": {
      "n": 1,
-     "expR": 5.882,
+     "expR": 5.878,
      "winPct": 100.0,
      "fillPct": 50.0,
-     "edgeVsCtrl": 0.516,
+     "edgeVsCtrl": 0.517,
      "lb": 0.0
     },
     "trigger": {
      "n": 2,
-     "expR": 0.3,
+     "expR": 0.075,
      "winPct": 50.0,
      "fillPct": null,
      "edgeVsCtrl": 0.195,
