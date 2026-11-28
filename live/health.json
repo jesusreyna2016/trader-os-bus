@@ -1,12 +1,9 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-28T05:15:30.616Z",
- "status": "warn",
+ "checkedAt": "2026-11-28T05:30:38.058Z",
+ "status": "ok",
  "marketOpen": false,
- "issues": [
-  "Plan de futuros (pre-asia): no corrio hoy (esperado 17.5h CT) (15h)",
-  "Paridad (Paso 4): no corrio hoy (esperado 17.7h CT) (30h)"
- ],
+ "issues": [],
  "items": [
   {
    "key": "feeds",
@@ -14,7 +11,7 @@
    "writer": "TradingView -> tos-bus-snapshot",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-28T05:00:42.502Z",
+   "at": "2026-11-28T05:15:30.886Z",
    "note": "mercado cerrado"
   },
   {
@@ -23,7 +20,7 @@
    "writer": "tos-market",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-28T05:00:47.459Z",
+   "at": "2026-11-28T05:15:32.362Z",
    "note": "mercado cerrado"
   },
   {
@@ -32,7 +29,7 @@
    "writer": "lente Edge",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-28T05:00:52.779Z",
+   "at": "2026-11-28T05:15:35.153Z",
    "note": "mercado cerrado"
   },
   {
@@ -40,7 +37,7 @@
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
    "status": "off",
-   "ageMin": 6,
+   "ageMin": 21,
    "at": "2026-11-28T05:09:09.829Z",
    "note": "mercado cerrado"
   },
@@ -50,24 +47,24 @@
    "writer": "tos-coach",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-28T05:00:48.733Z",
+   "at": "2026-11-28T05:15:32.590Z",
    "note": "al dia"
   },
   {
    "key": "plan",
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
-   "status": "warn",
-   "ageMin": 918,
+   "status": "ok",
+   "ageMin": 933,
    "at": "2026-11-27T13:58:00.000Z",
-   "note": "no corrio hoy (esperado 17.5h CT)"
+   "note": "hoy no toca"
   },
   {
    "key": "crypto",
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 290,
+   "ageMin": 305,
    "at": "2026-11-28T00:26:00.000Z",
    "note": "al dia"
   },
@@ -75,10 +72,10 @@
    "key": "parity",
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
-   "status": "warn",
-   "ageMin": 1773,
+   "status": "ok",
+   "ageMin": 1788,
    "at": "2026-11-26T23:42:34.022Z",
-   "note": "no corrio hoy (esperado 17.7h CT)"
+   "note": "hoy no toca"
   },
   {
    "key": "tvbars",
