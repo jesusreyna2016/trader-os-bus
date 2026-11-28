@@ -1,7 +1,7 @@
 {
  "_writer": "lab",
  "_schema": 2,
- "asOf": "2026-11-28T03:31:04Z",
+ "asOf": "2026-11-28T03:31:37Z",
  "minDate": "2026-11-27",
  "minN": 10,
  "costTicks": 2,
@@ -43,15 +43,15 @@
     "files": 0
    },
    "ETH": {
-    "rows": 39,
+    "rows": 42,
     "ohlc": 0,
-    "last": "2026-11-28T03:05+00:00",
+    "last": "2026-11-28T03:20+00:00",
     "files": 2
    },
    "BTC": {
-    "rows": 38,
+    "rows": 41,
     "ohlc": 0,
-    "last": "2026-11-28T03:05+00:00",
+    "last": "2026-11-28T03:20+00:00",
     "files": 2
    }
   },
@@ -89,11 +89,11 @@
   "controlAvg": null
  },
  "klLevels": {
-  "touches": 1213,
+  "touches": 1215,
   "all": {
-   "n": 1213,
+   "n": 1215,
    "holdPct": 44.2,
-   "decidedPct": 65.7
+   "decidedPct": 65.6
   },
   "byLevel": {
    "L3": {
@@ -147,9 +147,9 @@
     "decidedPct": 68.0
    },
    "PPOC": {
-    "n": 81,
+    "n": 82,
     "holdPct": 44.0,
-    "decidedPct": 61.7
+    "decidedPct": 61.0
    },
    "PWL": {
     "n": 29,
@@ -157,9 +157,9 @@
     "decidedPct": 86.2
    },
    "DO": {
-    "n": 108,
+    "n": 109,
     "holdPct": 43.4,
-    "decidedPct": 70.4
+    "decidedPct": 69.7
    },
    "L5": {
     "n": 20,
@@ -200,9 +200,9 @@
   "byContext": {
    "role": {
     "resistance": {
-     "n": 558,
+     "n": 560,
      "holdPct": 43.1,
-     "decidedPct": 65.2
+     "decidedPct": 65.0
     },
     "support": {
      "n": 612,
@@ -217,14 +217,14 @@
    },
    "regime": {
     "mixed": {
-     "n": 675,
+     "n": 676,
      "holdPct": 45.5,
-     "decidedPct": 70.1
+     "decidedPct": 70.0
     },
     "chop": {
-     "n": 163,
+     "n": 164,
      "holdPct": 36.5,
-     "decidedPct": 58.9
+     "decidedPct": 58.5
     },
     "contra": {
      "n": 193,
@@ -249,21 +249,21 @@
      "decidedPct": 70.4
     },
     "chop": {
-     "n": 162,
+     "n": 163,
      "holdPct": 35.8,
-     "decidedPct": 58.6
+     "decidedPct": 58.3
     },
     "contra": {
-     "n": 354,
+     "n": 355,
      "holdPct": 44.5,
-     "decidedPct": 64.7
+     "decidedPct": 64.5
     }
    },
    "session": {
     "ASIA": {
-     "n": 437,
+     "n": 439,
      "holdPct": 43.6,
-     "decidedPct": 64.5
+     "decidedPct": 64.2
     },
     "LONDON": {
      "n": 329,
