@@ -22,6 +22,8 @@ Familias (cada una con su rejilla de variantes, ver config.json):
   RIF   rango (como TDL PA) → ruptura → cierre que invierte el FVG en contra (iFVG) · entrada al
         cierre, retest del iFVG (borde o CE) o del borde del rango; a cualquier hora del día
   RBO   la misma ruptura de rango sola: comparación para ver si el iFVG aporta
+  ZON   zonas de Mi Mesa: límite en la entrada de toda zona tocada (sin el filtro de 'armada', que se
+        conoce después) frente a entrar en el gatillo; stop de la zona; TP1, 1R, 2R o fin de ventana
   PB    retroceso a EMA20 / VWAP de 5m · límite o cierre de rechazo · stop swing / 0.5 ATR ·
         1R, 2R o máximo del día; trendTest compara tendencia 1h a favor frente a en contra
 
@@ -36,6 +38,7 @@ llenado de un límite solo cuenta el stop; sin salida al cierre NY = se cierra a
 Uso:  python3 lab/stats.py [--dry]
 Python 3.11 stdlib.
 """
+import bisect
 import datetime as dt
 import glob
 import json
@@ -662,6 +665,24 @@ def fam_pullback(bars, rth, cfg, cost, mk):
     return out
 
 
+def zone_entry_table(lab):
+    """Zonas: las tres formas de entrar con la misma salida (límite honesto vs gatillo)."""
+    z = lab.get("ZON")
+    if not z:
+        return None
+    by = {v["var"]: v for v in z["variants"]}
+    rows = []
+    for tg in ("tp1", "tp1|half1", "tp1|be1", "1R", "2R", "hold"):
+        row = {"exit": tg}
+        for kind in ("limit", "trigger", "trigRt"):
+            v = by.get(f"{kind}|{tg}")
+            if v:
+                row[kind] = {k: v.get(k) for k in ("n", "expR", "winPct", "fillPct", "edgeVsCtrl", "lb")}
+        if len(row) > 1:
+            rows.append(row)
+    return rows
+
+
 def vs_rbo(lab):
     """Mejor variante del setup frente a la mejor ruptura simple, con el mismo stop y target."""
     a, b = lab.get("RIF"), lab.get("RBO")
@@ -902,6 +923,129 @@ def fam_range_ifvg(bars, sym, crypto, cfg, cost, ctx_for):
         bf["#boToInv"] = inv - bo
         bf["#fvgAge"] = inv - f["i"]
         run("RIF", ev, f, inv, c["entries"]["RIF"], d, bf)
+    return out, summ
+
+
+# ================================================================ zonas de Mi Mesa (eventos del indicador)
+
+ZONE_KEYS = ["loH", "sh5", "ibh", "pdh", "sh4h", "ema200"]   # las que más separaban en el reporte teórico
+
+
+def load_zone_events(cfg):
+    """Eventos tocada / armada del indicador de zonas de Mi Mesa (session-analyst-bus/zones/events).
+    En la GitHub Action se clona en _sa/; ZONES_DIR lo sobrescribe."""
+    cands = [os.environ.get("ZONES_DIR"), os.path.join(ROOT, "_sa", "zones", "events"),
+             os.path.join(os.path.dirname(ROOT), "session-analyst-bus", "zones", "events"),
+             os.path.join(os.path.dirname(ROOT), "jesusreyna2016", "session-analyst-bus", "zones", "events")]
+    d = next((c for c in cands if c and os.path.isdir(c)), None)
+    out, seen = defaultdict(list), set()
+    if not d:
+        return out, None
+    for path in sorted(glob.glob(os.path.join(d, "*.jsonl"))):
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                try:
+                    e = json.loads(line)
+                except ValueError:
+                    continue
+                if e.get("ev") not in ("tocada", "armada"):
+                    continue
+                sym = norm_sym(e.get("sym"), cfg)
+                k = (sym, e["ev"], e.get("id"), e.get("t"))
+                if sym not in cfg["symbols"] or k in seen or None in (e.get("entry"), e.get("stop"), e.get("t")):
+                    continue
+                seen.add(k)
+                out[sym].append(e)
+    for v in out.values():
+        v.sort(key=lambda e: e["t"])
+    return out, d
+
+
+def zone_feats(e, d):
+    f = e.get("f") or {}
+    out = {"side": "long" if d > 0 else "short", "grade": e.get("grade") or "·"}
+    al = str(f.get("al", ""))
+    out["zoneBias"] = {"1": "favor", "0": "neutral", "-1": "contra"}.get(al, "·")
+    ch, st, rr = num(f.get("chop")), num(f.get("str")), num(f.get("rr"))
+    if ch is not None:
+        out["zoneChop"] = "<50" if ch < 50 else ">=61.8" if ch >= 61.8 else "50-61.8"
+    if st is not None:
+        out["stretchVwap"] = "<1" if abs(st) < 1 else ">=2" if abs(st) >= 2 else "1-2"
+    if rr is not None:
+        out["rrTp1"] = "<1.5" if rr < 1.5 else ">=2.5" if rr >= 2.5 else "1.5-2.5"
+    keys = set(str(f.get("keys") or "").split("+"))
+    for k in ZONE_KEYS:
+        out["k_" + k] = "yes" if k in keys else "no"
+    return out
+
+
+def fam_zones(bars, sym, evs, crypto, cfg, cost, ctx_for):
+    """ZON: límite en la entrada de TODA zona tocada (la orden puede estar puesta antes del toque:
+    la zona ya está dibujada), sin el filtro de 'armada', que se decide después. Se cancela si la
+    zona se resuelve (cierre más allá del stop o del TP1) antes de llenarse. Comparación: entrar al
+    cierre del gatillo ('armada') y gatillo + límite si regresa a la entrada."""
+    c = cfg["zones"]
+    ix = {b["t"]: i for i, b in enumerate(bars)}
+    ts = [b["t"] for b in bars]
+    out = []
+    summ = {"touched": 0, "armed": 0}
+
+    def first_idx(t):
+        i = ix.get(t)
+        if i is None:
+            i = bisect.bisect_left(ts, t)
+            i = i if i < len(bars) and bars[i]["t"] - t <= 3600 else None
+        return i
+
+    def resolved(b, d, stop, tp1):
+        return ((b["c"] < stop) if d > 0 else (b["c"] > stop)) or \
+               (tp1 is not None and ((b["c"] >= tp1) if d > 0 else (b["c"] <= tp1)))
+
+    def limit_fill(i0, d, entry, stop, tp1, n):
+        for j in range(i0, min(len(bars), i0 + n)):
+            b = bars[j]
+            if (b["l"] <= entry) if d > 0 else (b["h"] >= entry):
+                return j
+            if resolved(b, d, stop, tp1):
+                return None
+        return None
+
+    def emit(kind, e, k, entry, lim, d):
+        stop, tp1 = num(e["stop"]), num(e.get("tp1"))
+        date = str(dt.datetime.fromtimestamp(bars[k]["t"] if k is not None else e["t"] / 1000, NY).date())
+        feats = None
+        for tg in c["targets"]:
+            var = f"{kind}|{tg}"
+            if k is None:
+                out.append({"fam": "ZON", "var": var, "dir": d, "res": "nofill", "feat": feats or {}, "sym": sym, "date": date})
+                continue
+            if feats is None:
+                feats = {**ctx_for(k, d), **zone_feats(e, d)}
+                feats["time"] = (e.get("f") or {}).get("sess") or ses_of(bars[k]["t"])
+            tp = tp1 if tg == "tp1" else target_px(tg, entry, stop, d)
+            if tg == "tp1" and (tp1 is None or (tp1 - entry) * d <= 0):
+                continue
+            end_t = end_of_hold(bars[k]["t"], crypto, c["maxHoldHours"])
+            t = trade(bars, k, end_t, d, entry, stop, tp, cost, lim)
+            if t:
+                out.append({"fam": "ZON", "var": var, "dir": d, **t, "feat": feats, "sym": sym, "date": date})
+
+    for e in evs:
+        d = 1 if e.get("side") == "long" else -1
+        i0 = first_idx(e["t"] // 1000)
+        if i0 is None:
+            continue
+        entry, stop, tp1 = num(e["entry"]), num(e["stop"]), num(e.get("tp1"))
+        if e["ev"] == "tocada":
+            summ["touched"] += 1
+            emit("limit", e, limit_fill(i0, d, entry, stop, tp1, c["fillBars"]), entry, True, d)
+        else:
+            summ["armed"] += 1
+            # en 5m el indicador marca 'armada' con la hora de apertura de la vela del gatillo
+            # (barstate.isconfirmed): se entra a su cierre, no antes
+            k = i0
+            emit("trigger", e, k, bars[k]["c"], False, d)
+            emit("trigRt", e, limit_fill(k + 1, d, entry, stop, tp1, c["fillBars"]) if k + 1 < len(bars) else None, entry, True, d)
     return out, summ
 
 
@@ -1189,6 +1333,8 @@ def main():
                             parity["diffs"].append(f"ORB|{sym}|{date}|{w}m")
 
     rif_sum = {"breaks": 0, "withInversion": 0}
+    zevs, zdir = load_zone_events(cfg)
+    zon_sum = {"touched": 0, "armed": 0, "source": "session-analyst-bus/zones/events" if zdir else None}
     for sym, bars in bars_by.items():
         crypto = sym in cfg.get("crypto", [])
         tick = cfg["tick"].get(sym, 0.01)
@@ -1203,9 +1349,14 @@ def main():
             return features(_b[k], d, _s, date, at(date, "09:30"), ctx)
 
         rr, sm = fam_range_ifvg(bars, sym, crypto, cfg, cost, ctx_for)
-        rr = [r for r in rr if dt.date.fromisoformat(r["date"]) >= min_date]
         for k in rif_sum:
             rif_sum[k] += sm[k]
+        if zevs.get(sym):
+            zr, zs = fam_zones(bars, sym, zevs[sym], crypto, cfg, cost, ctx_for)
+            rr += zr
+            for k in ("touched", "armed"):
+                zon_sum[k] += zs[k]
+        rr = [r for r in rr if dt.date.fromisoformat(r["date"]) >= min_date]
         extra = []
         for r in rr:
             for m, a in (r.pop("alt", None) or {}).items():
@@ -1220,9 +1371,9 @@ def main():
     lab = {}
     comboN = cfg.get("comboMinN", 2 * minN)
     wf = cfg.get("walkForward", {})
-    for fam in ("ORB", "IBB", "IBL", "IBR", "SWR", "SWC", "VA80", "PB", "RIF", "RBO"):
+    for fam in ("ORB", "IBB", "IBL", "IBR", "SWR", "SWC", "VA80", "PB", "RIF", "RBO", "ZON"):
         bucketize([r for r in recs if r["fam"] == fam])
-    for fam in ("ORB", "IBB", "IBL", "SWR", "SWC", "VA80", "PB", "RIF", "RBO"):
+    for fam in ("ORB", "IBB", "IBL", "SWR", "SWC", "VA80", "PB", "RIF", "RBO", "ZON"):
         fr = [r for r in recs if r["fam"] == fam]
         if fr:
             lab[fam] = {**rank(fr, minN, comboN), "confluence": feature_effect(fr, minN),
@@ -1253,6 +1404,7 @@ def main():
                  "collection": collection(cfg), "walkForwardMinDays": cfg.get("walkForward", {}).get("minDays", 20)},
         "lab": lab,
         "va80": va80,
+        "zones": {**zon_sum, "byEntry": zone_entry_table(lab)},
         "rangeIfvg": {**rif_sum, "inversionPct": round(100 * rif_sum["withInversion"] / rif_sum["breaks"], 1) if rif_sum["breaks"] else None,
                       "vsBreakout": vs_rbo(lab)},
         "ibLevels": {"levels": ib_levels, "controlAvg": respect_stats(ctrl_rows) if ctrl_rows else None},

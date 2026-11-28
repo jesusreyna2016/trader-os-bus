@@ -234,5 +234,16 @@
    "mm",
    "hold"
   ]
+ },
+ "zones": {
+  "_doc": "Eventos del indicador de zonas de Mi Mesa (session-analyst-bus/zones/events)",
+  "fillBars": 48,
+  "maxHoldHours": 6,
+  "targets": [
+   "tp1",
+   "1R",
+   "2R",
+   "hold"
+  ]
  }
 }

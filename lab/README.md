@@ -28,6 +28,7 @@ Ruta: FEED1 → `tos-ingest` (blob `tvbar:<día>:<SYM>`) → `tos-bus-snapshot` 
 | **VA80** | regla del 80 %: abre fuera del value area de ayer y vuelve a entrar con 2 cierres de 5m | al 2º cierre · retest del borde | borde ∓ 0.25 ATR5 · extremo de la sesión | POC · otro borde del VA · 1R · 2R |
 | **RIF** | rango como TDL PA (5m: 16 velas, alto ≤ 2.5 ATR100, ruptura con cierre 0.05 ATR14 fuera) → ruptura → cierre que **invierte el FVG en contra** formado antes de la ruptura (≤ 20 velas, sin volver al rango) · a cualquier hora | al cierre de la inversión · retest del iFVG · CE del iFVG · retest del borde del rango | otro lado del rango · medio del rango · tras el iFVG · swing desde la ruptura | 1R · 2R · 3R · medida del rango · fin de ventana (6 h; futuros cierran 17:00) |
 | **RBO** | la misma ruptura sin exigir iFVG (comparación) | al cierre de la ruptura · retest del borde | otro lado · medio · swing | igual |
+| **ZON** | zonas del indicador de Mi Mesa (eventos `tocada` / `armada` de `session-analyst-bus/zones/events`) | **límite en la entrada de toda zona tocada** (sin el filtro de armada, que se conoce después; se cancela si la zona se resuelve antes) · al cierre del gatillo · gatillo + límite si regresa | el stop de la zona | TP1 de la zona · 1R · 2R · fin de ventana |
 | **PB** | retroceso a **EMA20** o **VWAP** de 5m (venía ≥ 0.5 ATR5 del mismo lado; nivel de la vela anterior) | límite en la referencia · cierre de rechazo (vela del toque o la siguiente) | swing del toque · 0.5 ATR5 | 1R · 2R · máximo / mínimo del día |
 
 **Base de control:** IBL/IBR incluyen niveles a 12.5 / 37.5 / 62.5 / 87.5 % del IB. Si 25/50/75
@@ -38,6 +39,9 @@ RIF: `rangeIfvg` dice cuántas rupturas terminan invirtiendo un FVG y `vsBreakou
 la ruptura sola con el mismo stop y target. Confluencias propias: `priorTrend` (tendencia de las 24 velas antes
 del rango: en contra = reversa, el setup original), `sweptOpp` (el rango barrió el otro lado), `fakeBefore`,
 `rangeBars`, `rangeAtr`, `boToInv` y `fvgAge`.
+ZON: `zones.byEntry` compara las tres entradas con la misma salida. Confluencias propias: grado, lado, sesgo de
+la zona (`al`), chop y estirado que manda el indicador, R hasta TP1 y si la zona tiene loH, sh5, ibh, pdh, sh4h o
+ema200 entre sus niveles (las que más separaban en el reporte teórico; aquí se ve si se sostienen).
 PB: la dirección la da el lado de llegada, no la tendencia, así que los toques con la tendencia 1h en
 contra son el control; `lab.PB.trendTest` compara cada variante a favor frente a en contra.
 
