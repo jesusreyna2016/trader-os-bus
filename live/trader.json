@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-28",
-  "asOf": "2026-11-28T19:15:35.829Z",
+  "asOf": "2026-11-28T19:30:40.882Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 4,
@@ -140,7 +140,7 @@
       "openedAt": 1795886837199,
       "hadStop": true,
       "flags": [],
-      "distZone": 0
+      "distZone": 1
     },
     {
       "acct": "jh78sxh81psmmc05jqsesbkh6n8k04x1",
@@ -154,7 +154,7 @@
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 0
+      "distZone": 1
     }
   ],
   "captures": [],
