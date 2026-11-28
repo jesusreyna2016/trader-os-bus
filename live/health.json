@@ -1,6 +1,6 @@
 {
  "schema": "health-1",
- "checkedAt": "2026-11-28T20:00:41.512Z",
+ "checkedAt": "2026-11-28T21:15:28.435Z",
  "status": "ok",
  "marketOpen": false,
  "issues": [],
@@ -11,7 +11,7 @@
    "writer": "TradingView -> tos-bus-snapshot",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-28T19:45:30.052Z",
+   "at": "2026-11-28T21:00:40.855Z",
    "note": "mercado cerrado"
   },
   {
@@ -20,7 +20,7 @@
    "writer": "tos-market",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-28T19:45:31.704Z",
+   "at": "2026-11-28T21:00:45.715Z",
    "note": "mercado cerrado"
   },
   {
@@ -29,7 +29,7 @@
    "writer": "lente Edge",
    "status": "off",
    "ageMin": 15,
-   "at": "2026-11-28T19:45:34.889Z",
+   "at": "2026-11-28T21:00:49.028Z",
    "note": "mercado cerrado"
   },
   {
@@ -37,8 +37,8 @@
    "label": "Velas 5m del dia",
    "writer": "tos-bus-bars (cada hora)",
    "status": "off",
-   "ageMin": 52,
-   "at": "2026-11-28T19:09:06.604Z",
+   "ageMin": 6,
+   "at": "2026-11-28T21:09:06.686Z",
    "note": "mercado cerrado"
   },
   {
@@ -47,7 +47,7 @@
    "writer": "tos-coach",
    "status": "ok",
    "ageMin": 15,
-   "at": "2026-11-28T19:45:31.940Z",
+   "at": "2026-11-28T21:00:45.931Z",
    "note": "al dia"
   },
   {
@@ -55,7 +55,7 @@
    "label": "Plan de futuros (pre-asia)",
    "writer": "lente Contexto (17:20 CT)",
    "status": "ok",
-   "ageMin": 231,
+   "ageMin": 305,
    "at": "2026-11-28T16:10:00.000Z",
    "note": "hoy no toca"
   },
@@ -64,7 +64,7 @@
    "label": "Plan de cripto",
    "writer": "lente Contexto (00:15Z)",
    "status": "ok",
-   "ageMin": 310,
+   "ageMin": 385,
    "at": "2026-11-28T14:50:30.000Z",
    "note": "al dia"
   },
@@ -73,7 +73,7 @@
    "label": "Paridad (Paso 4)",
    "writer": "parity.py en pre-asia",
    "status": "ok",
-   "ageMin": 2658,
+   "ageMin": 2733,
    "at": "2026-11-26T23:42:34.022Z",
    "note": "hoy no toca"
   },
@@ -82,7 +82,7 @@
    "label": "Velas para el Lab",
    "writer": "TDL Feed -> tos-ingest -> snapshot",
    "status": "ok",
-   "ageMin": 21,
+   "ageMin": 20,
    "at": null,
    "note": "futuros cerrados · crypto al dia"
   }
