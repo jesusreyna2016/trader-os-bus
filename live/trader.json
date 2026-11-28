@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-28",
-  "asOf": "2026-11-28T07:00:42.264Z",
+  "asOf": "2026-11-28T07:15:31.132Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 2,
@@ -16,17 +16,17 @@
   ],
   "sessionBudget": {
     "maxTrades": 5,
-    "used": 0,
+    "used": 1,
     "riskPerTrade": 50,
     "dayStop": 500,
-    "pnl": 0,
-    "pnlR": 0,
+    "pnl": 205.8,
+    "pnlR": 4.12,
     "maxLossStreak": 0
   },
   "offZone": {
     "count": 0,
     "pnl": 0,
-    "ofTrades": 0
+    "ofTrades": 1
   },
   "dataHealth": {
     "scanned": 4,
@@ -38,7 +38,7 @@
   "openFlags": [
     {
       "rule": "stop",
-      "at": 1795843913488,
+      "at": 1795849747726,
       "sym": "ETH",
       "note": "posicion abierta sin stop"
     },
@@ -49,8 +49,7 @@
       "note": "posicion abierta sin stop"
     }
   ],
-  "todayTrades": [],
-  "openPositions": [
+  "todayTrades": [
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
       "name": "Elite 3% DLL 10K Challenge",
@@ -58,26 +57,43 @@
       "side": "short",
       "size": 15,
       "entry": 1654.54,
+      "exit": 1639.79,
+      "pnl": 205.8,
+      "r": 4.12,
       "openedAt": 1795843913488,
+      "closedAt": 1795849729000,
+      "flags": [],
+      "distZone": 0
+    }
+  ],
+  "openPositions": [
+    {
+      "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
+      "name": "Elite 3% DLL 10K Challenge",
+      "sym": "ETH",
+      "side": "short",
+      "size": 10,
+      "entry": 1649.4275,
+      "openedAt": 1795849747726,
       "hadStop": false,
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 2
+      "distZone": 5
     },
     {
       "acct": "jh78sxh81psmmc05jqsesbkh6n8k04x1",
       "name": "Elite 3% DLL 25K Challenge",
       "sym": "ETH",
       "side": "short",
-      "size": 10,
-      "entry": 1657.89,
+      "size": 15,
+      "entry": 1657.17333333,
       "openedAt": 1795842325311,
       "hadStop": false,
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 1
+      "distZone": 0
     }
   ],
   "captures": [],
