@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-28",
-  "asOf": "2026-11-28T18:30:42.791Z",
+  "asOf": "2026-11-28T18:45:34.102Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 4,
@@ -75,7 +75,7 @@
       "openedAt": 1795842325311,
       "closedAt": 1795884397154,
       "flags": [],
-      "distZone": 0
+      "distZone": 2
     },
     {
       "acct": "jh71ca7mcr0tqaqjzm0q3689p18k017q",
@@ -109,7 +109,7 @@
       "flags": [
         "R1_REVENGE"
       ],
-      "distZone": 0
+      "distZone": 2
     },
     {
       "acct": "jh78sxh81psmmc05jqsesbkh6n8k04x1",
