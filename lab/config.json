@@ -179,5 +179,60 @@
   "full",
   "be1",
   "half1"
- ]
+ ],
+ "crypto": [
+  "ETH",
+  "BTC"
+ ],
+ "rangeIfvg": {
+  "_doc": "Igual que TDL PA en 5m: rangeBars 16, rangeMult 2.5 x ATR100, boBuf 0.05 x ATR14, fakeBars 3, maxBars 300, FVG >= 0.15 x ATR14",
+  "rangeBars": 16,
+  "rangeMult": 2.5,
+  "boBuf": 0.05,
+  "fakeBars": 3,
+  "maxBars": 300,
+  "fvgMin": 0.15,
+  "fvgMaxAge": 300,
+  "invWindow": 20,
+  "priorBars": 24,
+  "priorAtr": 2.0,
+  "maxHoldHours": 6,
+  "entries": {
+   "RIF": [
+    "close",
+    "ifvg",
+    "ce",
+    "rangeRt"
+   ],
+   "RBO": [
+    "close",
+    "rangeRt"
+   ]
+  },
+  "retestBars": {
+   "ifvg": 12,
+   "ce": 12,
+   "rangeRt": 24
+  },
+  "stops": {
+   "RIF": [
+    "rangeOpp",
+    "rangeMid",
+    "ifvgFar",
+    "swing"
+   ],
+   "RBO": [
+    "rangeOpp",
+    "rangeMid",
+    "swing"
+   ]
+  },
+  "targets": [
+   "1R",
+   "2R",
+   "3R",
+   "mm",
+   "hold"
+  ]
+ }
 }

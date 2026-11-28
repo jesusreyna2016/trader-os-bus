@@ -19,6 +19,9 @@ Familias (cada una con su rejilla de variantes, ver config.json):
   SWC   barrida aceptada (2 cierres fuera) → continuación
   VA80  regla del 80 %: abre fuera del value area de ayer, vuelve a entrar → hacia el otro lado;
         control = % de días que tocan los dos bordes del VA de todos modos
+  RIF   rango (como TDL PA) → ruptura → cierre que invierte el FVG en contra (iFVG) · entrada al
+        cierre, retest del iFVG (borde o CE) o del borde del rango; a cualquier hora del día
+  RBO   la misma ruptura de rango sola: comparación para ver si el iFVG aporta
   PB    retroceso a EMA20 / VWAP de 5m · límite o cierre de rechazo · stop swing / 0.5 ATR ·
         1R, 2R o máximo del día; trendTest compara tendencia 1h a favor frente a en contra
 
@@ -307,7 +310,7 @@ def control(bars, rth, rec, key):
 
 def target_px(spec, entry, stop, d, edge=None, rng=None):
     R = (entry - stop) * d
-    if spec == "eod":
+    if spec in ("eod", "hold"):
         return None
     if spec.endswith("R"):
         return entry + float(spec[:-1]) * R * d
@@ -659,6 +662,23 @@ def fam_pullback(bars, rth, cfg, cost, mk):
     return out
 
 
+def vs_rbo(lab):
+    """Mejor variante del setup frente a la mejor ruptura simple, con el mismo stop y target."""
+    a, b = lab.get("RIF"), lab.get("RBO")
+    if not a or not b:
+        return None
+    rb = {v["var"].split("|", 1)[1]: v for v in b["variants"] if "|" in v["var"]}
+    out = []
+    for v in a["variants"][:10]:
+        tail = v["var"].split("|", 1)[1]
+        if tail in rb:
+            o = rb[tail]
+            out.append({"var": v["var"], "rif": {k: v.get(k) for k in ("n", "expR")},
+                        "rbo": {"var": o["var"], **{k: o.get(k) for k in ("n", "expR")}},
+                        "diffR": round((v.get("expR") or 0) - (o.get("expR") or 0), 3)})
+    return out
+
+
 def trend_split(recs, minN):
     """Pullback: cada variante con la tendencia 1h a favor frente a en contra (el control)."""
     by = defaultdict(lambda: {"favor": [], "contra": []})
@@ -674,6 +694,215 @@ def trend_split(recs, minN):
                         "contra": {k: b.get(k) for k in ("n", "expR", "winPct")},
                         "diffR": round(a["expR"] - b["expR"], 3)})
     return sorted(out, key=lambda x: -x["diffR"])[:20]
+
+
+# ================================================================ rango + iFVG (setup de TDL PA)
+
+def atr_series(bars, n):
+    """ta.atr de Pine: RMA del true range, sembrada con la media de las primeras n velas."""
+    out, a, prev, acc = [None] * len(bars), None, None, []
+    for i, b in enumerate(bars):
+        tr = b["h"] - b["l"] if prev is None else max(b["h"] - b["l"], abs(b["h"] - prev), abs(b["l"] - prev))
+        prev = b["c"]
+        if a is None:
+            acc.append(tr)
+            if len(acc) == n:
+                a = sum(acc) / n
+        else:
+            a = (a * (n - 1) + tr) / n
+        out[i] = a
+    return out
+
+
+def ses_of(t):
+    x = dt.datetime.fromtimestamp(t, NY)
+    m = x.hour * 60 + x.minute
+    return "asia" if m >= 1080 or m < 180 else "london" if m < 570 else "ny" if m < 960 else "close"
+
+
+def ranges_tdl_pa(bars, crypto, c):
+    """Rangos como TDL PA en 5m: ventana de rangeBars velas con alto - bajo ≤ mult × ATR(100);
+    ruptura = cierre fuera ± buf × ATR(14); fakeout = vuelve a cerrar dentro antes de fakeBars velas
+    (el rango sigue vivo); sweeps = mecha fuera ≥ 40 % de la vela y cierre dentro; en futuros el rango
+    muere al empezar el día (18:00 NY). Devuelve las rupturas con los datos del rango."""
+    L, a14, a100 = c["rangeBars"], atr_series(bars, 14), atr_series(bars, 100)
+    events, state, r_end, top = [], 0, -1, None
+    fake_bar, fake_dir, sw_last = -1000, 0, -1000
+    for i, b in enumerate(bars):
+        new_day = False
+        if i > 0 and not crypto:
+            anc = at(dt.datetime.fromtimestamp(b["t"], NY).date(), "18:00")
+            if anc > b["t"]:
+                anc -= 86400
+            new_day = bars[i - 1]["t"] < anc <= b["t"]
+        if new_day and state == 1:
+            state, r_end = 0, i
+        if a14[i] is None or a100[i] is None or i < L - 1:
+            continue
+        buf = c["boBuf"] * a14[i]
+        if state == 0:
+            hh = max(x["h"] for x in bars[i - L + 1:i + 1])
+            ll = min(x["l"] for x in bars[i - L + 1:i + 1])
+            if hh - ll <= c["rangeMult"] * a100[i] and i - L + 1 > r_end:
+                top, bot, start, sw_up, sw_dn, state = hh, ll, i - L + 1, 0, 0, 1
+        elif state == 1:
+            rng = b["h"] - b["l"]
+            if b["c"] > top + buf or b["c"] < bot - buf:
+                d = 1 if b["c"] > top else -1
+                events.append({"bo": i, "dir": d, "top": top, "bot": bot, "start": start,
+                               "swOpp": sw_dn if d > 0 else sw_up,
+                               "fakeBefore": fake_dir == d and i - fake_bar <= 10})
+                state, bo, r_end = 2 * d, i, i
+            elif b["h"] > top and b["c"] <= top and i - sw_last > 2 and (b["h"] - max(b["o"], b["c"])) >= 0.4 * rng:
+                sw_up, sw_last = sw_up + 1, i
+            elif b["l"] < bot and b["c"] >= bot and i - sw_last > 2 and (min(b["o"], b["c"]) - b["l"]) >= 0.4 * rng:
+                sw_dn, sw_last = sw_dn + 1, i
+            elif i - start > c["maxBars"]:
+                state, r_end = 0, i
+        elif state == 2:
+            if b["c"] < top:
+                fake_bar, fake_dir, state = i, 1, 1
+            elif i - bo >= c["fakeBars"]:
+                state = 0
+        elif state == -2:
+            if b["c"] > bot:
+                fake_bar, fake_dir, state = i, -1, 1
+            elif i - bo >= c["fakeBars"]:
+                state = 0
+    return events, a14
+
+
+def fvgs_tdl_pa(bars, a14, c):
+    """FVG como TDL PA (hueco ≥ minSize × ATR14) con la vela en que se invierte por cierre."""
+    out = []
+    for i in range(2, len(bars)):
+        if a14[i] is None:
+            continue
+        b, b2 = bars[i], bars[i - 2]
+        if b["h"] < b2["l"] and b2["l"] - b["h"] >= c["fvgMin"] * a14[i]:      # bajista: hueco arriba
+            out.append({"i": i, "dir": -1, "top": b2["l"], "bot": b["h"]})
+        elif b["l"] > b2["h"] and b["l"] - b2["h"] >= c["fvgMin"] * a14[i]:    # alcista: hueco abajo
+            out.append({"i": i, "dir": 1, "top": b["l"], "bot": b2["h"]})
+    for f in out:
+        f["inv"] = next((j for j in range(f["i"] + 1, min(len(bars), f["i"] + c["fvgMaxAge"]))
+                         if ((bars[j]["c"] > f["top"]) if f["dir"] < 0 else (bars[j]["c"] < f["bot"]))), None)
+    return out
+
+
+def end_of_hold(t, crypto, hours):
+    e = t + hours * 3600
+    if not crypto:
+        x = dt.datetime.fromtimestamp(t, NY)
+        close = at(x.date(), "17:00")
+        if close <= t:
+            close += 86400
+        e = min(e, close)
+    return e
+
+
+def fam_range_ifvg(bars, sym, crypto, cfg, cost, ctx_for):
+    """RIF: rango → ruptura → cierre que invierte un FVG en contra que estaba antes de la ruptura.
+    RBO: la misma ruptura sola (comparación: ¿la inversión del FVG aporta?)."""
+    c = cfg["rangeIfvg"]
+    events, a14 = ranges_tdl_pa(bars, crypto, c)
+    fv = fvgs_tdl_pa(bars, a14, c)
+    used, out, summ = set(), [], {"breaks": 0, "withInversion": 0}
+    by_inv = defaultdict(list)
+    for f in fv:
+        if f["inv"] is not None:
+            by_inv[f["inv"]].append(f)
+
+    def lim_fill(level, d, i0, n):
+        return next((j for j in range(i0 + 1, min(len(bars), i0 + 1 + n))
+                     if ((bars[j]["l"] <= level) if d > 0 else (bars[j]["h"] >= level))), None)
+
+    def stop_for(st, d, ev, f, k_lo, k_hi, atr):
+        if st == "rangeOpp":
+            return (ev["bot"] - 0.1 * atr) if d > 0 else (ev["top"] + 0.1 * atr)
+        if st == "rangeMid":
+            return (ev["top"] + ev["bot"]) / 2
+        if st == "ifvgFar":
+            return None if f is None else ((f["bot"] - 0.1 * atr) if d > 0 else (f["top"] + 0.1 * atr))
+        if st == "swing":
+            seg = bars[k_lo:k_hi + 1]
+            return (min(x["l"] for x in seg) - 0.1 * atr) if d > 0 else (max(x["h"] for x in seg) + 0.1 * atr)
+
+    def run(fam, ev, f, sig, entries, d, base_feats):
+        atr = a14[sig] or 0
+        if not atr:
+            return
+        edge = ev["top"] if d > 0 else ev["bot"]
+        mm = edge + (ev["top"] - ev["bot"]) * d
+        lvl = {"close": None, "rangeRt": edge}
+        if f is not None:
+            lvl["ifvg"] = f["top"] if d > 0 else f["bot"]
+            lvl["ce"] = (f["top"] + f["bot"]) / 2
+        for ent in entries:
+            if ent == "close":
+                ek, entry, lim = sig, bars[sig]["c"], False
+            else:
+                L = lvl.get(ent)
+                if L is None:
+                    continue
+                ek, entry, lim = lim_fill(L, d, sig, c["retestBars"][ent]), L, True
+            for st in c["stops"][fam]:
+                for tg in c["targets"]:
+                    var = f"{ent}|{st}|{tg}"
+                    if ek is None:
+                        out.append({"fam": fam, "var": var, "dir": d, "res": "nofill", "feat": base_feats,
+                                    "sym": sym, "date": str(dt.datetime.fromtimestamp(bars[sig]["t"], NY).date())})
+                        continue
+                    stop = stop_for(st, d, ev, f, ev["bo"], sig, atr)
+                    if stop is None:
+                        continue
+                    tp = mm if tg == "mm" else target_px(tg, entry, stop, d)
+                    end_t = end_of_hold(bars[ek]["t"], crypto, c["maxHoldHours"])
+                    t = trade(bars, ek, end_t, d, entry, stop, tp, cost, lim)
+                    if t:
+                        date = str(dt.datetime.fromtimestamp(bars[ek]["t"], NY).date())
+                        out.append({"fam": fam, "var": var, "dir": d, **t, "feat": base_feats, "sym": sym, "date": date})
+
+    for ev in events:
+        d, bo = ev["dir"], ev["bo"]
+        summ["breaks"] += 1
+        pre0 = ev["start"] - 1
+        prior = None
+        if pre0 - c["priorBars"] >= 0 and a14[pre0]:
+            mv = (bars[pre0]["c"] - bars[pre0 - c["priorBars"]]["c"]) / a14[pre0]
+            prior = "flat" if abs(mv) < c["priorAtr"] else ("favor" if mv * d > 0 else "contra")
+
+        def feats(k):
+            f = ctx_for(k, d)
+            f["time"] = ses_of(bars[k]["t"])
+            if prior:
+                f["priorTrend"] = prior
+            f["sweptOpp"] = "yes" if ev["swOpp"] else "no"
+            f["fakeBefore"] = "yes" if ev["fakeBefore"] else "no"
+            f["#rangeBars"] = bo - ev["start"]
+            if a14[bo]:
+                f["#rangeAtr"] = (ev["top"] - ev["bot"]) / a14[bo]
+            return f
+
+        run("RBO", ev, None, bo, c["entries"]["RBO"], d, feats(bo))
+        # FVG en contra (bajista para un largo) formado antes de la ruptura, sin invertir aún,
+        # fuera del rango del lado de la ruptura, invertido dentro de invWindow velas
+        cands = [f for j in range(bo, bo + c["invWindow"] + 1) for f in by_inv.get(j, ())
+                 if f["dir"] == -d and f["i"] < bo and id(f) not in used
+                 and ((f["top"] > ev["top"]) if d > 0 else (f["bot"] < ev["bot"]))]
+        if not cands:
+            continue
+        f = min(cands, key=lambda x: (x["inv"], x["top"] if d > 0 else -x["bot"]))
+        inv = f["inv"]
+        # si antes de invertir volvió a cerrar dentro del rango, la ruptura falló
+        if any(((bars[j]["c"] < ev["top"]) if d > 0 else (bars[j]["c"] > ev["bot"])) for j in range(bo + 1, inv + 1)):
+            continue
+        used.add(id(f))
+        summ["withInversion"] += 1
+        bf = feats(inv)
+        bf["#boToInv"] = inv - bo
+        bf["#fvgAge"] = inv - f["i"]
+        run("RIF", ev, f, inv, c["entries"]["RIF"], d, bf)
+    return out, summ
 
 
 # ================================================================ agregados
@@ -731,6 +960,9 @@ def respect_stats(rows):
             "undecidedPct": round(100 * (n - dec) / n, 1) if n else None}
 
 
+COMBO_TOP, COMBO_BOTTOM = 15, 5
+
+
 def rank(recs, minN, comboN):
     by_var = defaultdict(list)
     for r in recs:
@@ -742,17 +974,20 @@ def rank(recs, minN, comboN):
         s["ctrl"] = bool(rows[0].get("ctrl"))
         variants.append(s)
     variants.sort(key=lambda s: (s["n"] >= minN, s.get("lb") if s.get("lb") is not None else -9), reverse=True)
+    # combinaciones solo sobre las mejores y las peores variantes con muestra: menos
+    # comparaciones (menos "ganadores" por suerte) y tiempo acotado
+    ok = [s["var"] for s in variants if s["n"] >= comboN]
+    pick = ok[:COMBO_TOP] + [v for v in ok[-COMBO_BOTTOM:] if v not in ok[:COMBO_TOP]]
     combos = []
-    for v, rows in by_var.items():
-        fills = [r for r in rows if r["res"] != "nofill"]
-        if len(fills) < comboN:
-            continue
+    for v in pick:
+        fills = [r for r in by_var[v] if r["res"] != "nofill"]
         keys = sorted({k for r in fills for k in r["feat"]})
         for i, f1 in enumerate(keys):
             for val in {r["feat"].get(f1) for r in fills} - {None}:
                 sub = [r for r in fills if r["feat"].get(f1) == val]
-                if len(sub) >= comboN:
-                    combos.append({"var": v, "when": {f1: val}, **stats(sub)})
+                if len(sub) < comboN:
+                    continue
+                combos.append({"var": v, "when": {f1: val}, **stats(sub)})
                 for f2 in keys[i + 1:]:
                     for val2 in {r["feat"].get(f2) for r in sub} - {None}:
                         sub2 = [r for r in sub if r["feat"].get(f2) == val2]
@@ -953,12 +1188,41 @@ def main():
                         else:
                             parity["diffs"].append(f"ORB|{sym}|{date}|{w}m")
 
+    rif_sum = {"breaks": 0, "withInversion": 0}
+    for sym, bars in bars_by.items():
+        crypto = sym in cfg.get("crypto", [])
+        tick = cfg["tick"].get(sym, 0.01)
+        cost = cfg["costTicks"] * tick
+        by_date = defaultdict(list)
+        for i, b in enumerate(bars):
+            by_date[str(dt.datetime.fromtimestamp(b["t"], NY).date())].append(i)
+
+        def ctx_for(k, d, _s=sym, _b=bars):
+            date = dt.datetime.fromtimestamp(_b[k]["t"], NY).date()
+            ctx = {"kl": kl_at, "plans": plans, "news": news, "dayOpen": None}
+            return features(_b[k], d, _s, date, at(date, "09:30"), ctx)
+
+        rr, sm = fam_range_ifvg(bars, sym, crypto, cfg, cost, ctx_for)
+        rr = [r for r in rr if dt.date.fromisoformat(r["date"]) >= min_date]
+        for k in rif_sum:
+            rif_sum[k] += sm[k]
+        extra = []
+        for r in rr:
+            for m, a in (r.pop("alt", None) or {}).items():
+                extra.append({**r, **a, "var": f'{r["var"]}|{m}'})
+        rr += extra
+        for r in rr:
+            if "Rpx" in r:
+                pool = by_date.get(r["date"]) or []
+                r["cr"] = control(bars, pool, r, f'{sym}|{r["date"]}|{r["fam"]}|{r["var"]}|{r["ek"]}')
+        recs += rr
+
     lab = {}
     comboN = cfg.get("comboMinN", 2 * minN)
     wf = cfg.get("walkForward", {})
-    for fam in ("ORB", "IBB", "IBL", "IBR", "SWR", "SWC", "VA80", "PB"):
+    for fam in ("ORB", "IBB", "IBL", "IBR", "SWR", "SWC", "VA80", "PB", "RIF", "RBO"):
         bucketize([r for r in recs if r["fam"] == fam])
-    for fam in ("ORB", "IBB", "IBL", "SWR", "SWC", "VA80", "PB"):
+    for fam in ("ORB", "IBB", "IBL", "SWR", "SWC", "VA80", "PB", "RIF", "RBO"):
         fr = [r for r in recs if r["fam"] == fam]
         if fr:
             lab[fam] = {**rank(fr, minN, comboN), "confluence": feature_effect(fr, minN),
@@ -989,6 +1253,8 @@ def main():
                  "collection": collection(cfg), "walkForwardMinDays": cfg.get("walkForward", {}).get("minDays", 20)},
         "lab": lab,
         "va80": va80,
+        "rangeIfvg": {**rif_sum, "inversionPct": round(100 * rif_sum["withInversion"] / rif_sum["breaks"], 1) if rif_sum["breaks"] else None,
+                      "vsBreakout": vs_rbo(lab)},
         "ibLevels": {"levels": ib_levels, "controlAvg": respect_stats(ctrl_rows) if ctrl_rows else None},
         "klLevels": kl_lab(kl_ev, minN),
         "parity": {**parity, "diffs": parity["diffs"][-20:]},

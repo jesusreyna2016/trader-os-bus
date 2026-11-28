@@ -26,12 +26,18 @@ Ruta: FEED1 → `tos-ingest` (blob `tvbar:<día>:<SYM>`) → `tos-bus-snapshot` 
 | **SWR** | barrida de Asia, Londres, ON, PDH/PDL en NY + cierre de vuelta en 3 velas → reversa | al cierre del reclaim | extremo · extremo + 0.25 ATR | 1R · 2R · otro lado del rango · cierre |
 | **SWC** | barrida aceptada (2 cierres fuera) → continuación | al 2º cierre | nivel ∓ 1 ATR5 | 1R · 2R · cierre |
 | **VA80** | regla del 80 %: abre fuera del value area de ayer y vuelve a entrar con 2 cierres de 5m | al 2º cierre · retest del borde | borde ∓ 0.25 ATR5 · extremo de la sesión | POC · otro borde del VA · 1R · 2R |
+| **RIF** | rango como TDL PA (5m: 16 velas, alto ≤ 2.5 ATR100, ruptura con cierre 0.05 ATR14 fuera) → ruptura → cierre que **invierte el FVG en contra** formado antes de la ruptura (≤ 20 velas, sin volver al rango) · a cualquier hora | al cierre de la inversión · retest del iFVG · CE del iFVG · retest del borde del rango | otro lado del rango · medio del rango · tras el iFVG · swing desde la ruptura | 1R · 2R · 3R · medida del rango · fin de ventana (6 h; futuros cierran 17:00) |
+| **RBO** | la misma ruptura sin exigir iFVG (comparación) | al cierre de la ruptura · retest del borde | otro lado · medio · swing | igual |
 | **PB** | retroceso a **EMA20** o **VWAP** de 5m (venía ≥ 0.5 ATR5 del mismo lado; nivel de la vela anterior) | límite en la referencia · cierre de rechazo (vela del toque o la siguiente) | swing del toque · 0.5 ATR5 | 1R · 2R · máximo / mínimo del día |
 
 **Base de control:** IBL/IBR incluyen niveles a 12.5 / 37.5 / 62.5 / 87.5 % del IB. Si 25/50/75
 no superan al control, el nivel no aporta (mismo criterio que la medición de TDL KL del 11-nov).
 VA80: `va80.control` da el % de días que tocan los dos bordes del VA sin la regla (días que abren dentro
 y todos los días); la regla solo vale si `afterReentry.reachedFarPct` queda claramente arriba.
+RIF: `rangeIfvg` dice cuántas rupturas terminan invirtiendo un FVG y `vsBreakout` compara cada variante con
+la ruptura sola con el mismo stop y target. Confluencias propias: `priorTrend` (tendencia de las 24 velas antes
+del rango: en contra = reversa, el setup original), `sweptOpp` (el rango barrió el otro lado), `fakeBefore`,
+`rangeBars`, `rangeAtr`, `boToInv` y `fvgAge`.
 PB: la dirección la da el lado de llegada, no la tendencia, así que los toques con la tendencia 1h en
 contra son el control; `lab.PB.trendTest` compara cada variante a favor frente a en contra.
 
