@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-28",
-  "asOf": "2026-11-28T06:45:31.780Z",
+  "asOf": "2026-11-28T07:00:42.264Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 2,
@@ -70,14 +70,14 @@
       "name": "Elite 3% DLL 25K Challenge",
       "sym": "ETH",
       "side": "short",
-      "size": 5,
-      "entry": 1658.99,
+      "size": 10,
+      "entry": 1657.89,
       "openedAt": 1795842325311,
       "hadStop": false,
       "flags": [
         "NO_STOP"
       ],
-      "distZone": 0
+      "distZone": 1
     }
   ],
   "captures": [],
