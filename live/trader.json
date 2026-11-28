@@ -2,7 +2,7 @@
   "_writer": "coach",
   "_schema": 1,
   "_day": "2026-11-28",
-  "asOf": "2026-11-28T07:30:40.136Z",
+  "asOf": "2026-11-28T07:45:34.846Z",
   "state": "TILT",
   "disciplineStreak": 0,
   "todayViolations": 2,
@@ -29,9 +29,9 @@
     "ofTrades": 1
   },
   "dataHealth": {
-    "scanned": 4,
-    "total": 260,
-    "ok": 4,
+    "scanned": 6,
+    "total": 262,
+    "ok": 6,
     "failed": [],
     "partial": false
   },
